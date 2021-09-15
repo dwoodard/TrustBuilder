@@ -69,6 +69,12 @@
             link: '/admin/clients',
             icon: 'mdi-account-box-multiple'
           },
+
+          {
+            title: 'Invoices',
+            link: '/admin/invoices',
+            icon: 'mdi-receipt'
+          },
           {
             title: 'Pages',
             link: '/admin/pages',

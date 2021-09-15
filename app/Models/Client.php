@@ -20,15 +20,15 @@ class Client extends Model
         return $this->belongsTo(User::class);
     }
 
-//    public function invoices()
-//    {
-//        return $this->hasMany(Invoice::class);
-//    }
-//
-//    public function payments()
-//    {
-//        return $this->hasMany(Payment::class);
-//    }
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 
     public function getFullNameAttribute()
     {
@@ -38,5 +38,9 @@ class Client extends Model
     public function getStatusAttribute()
     {
         return $this->status == 1 ? 'Active' : 'Inactive';
+    }
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
     }
 }

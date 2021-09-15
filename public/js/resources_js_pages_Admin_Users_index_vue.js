@@ -130,6 +130,10 @@ __webpack_require__.r(__webpack_exports__);
         link: '/admin/clients',
         icon: 'mdi-account-box-multiple'
       }, {
+        title: 'Invoices',
+        link: '/admin/invoices',
+        icon: 'mdi-receipt'
+      }, {
         title: 'Pages',
         link: '/admin/pages',
         icon: 'mdi-file-document-multiple-outline'
@@ -229,7 +233,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      this.form.post(route('admin.users.create'), {
+      this.form.get(route('admin.users.create'), {
         onSuccess: function onSuccess(data) {
           _this.form.reset();
 
@@ -379,7 +383,10 @@ __webpack_require__.r(__webpack_exports__);
     deleteItemConfirm: function deleteItemConfirm() {
       var _this = this;
 
-      this.$inertia["delete"](route('admin.users.delete', this.selectedUser), {
+      console.log(this.selectedUser);
+      this.$inertia["delete"](route('admin.users.destroy', {
+        user: this.selectedUser
+      }), {
         onSuccess: function onSuccess(data) {
           _this.showDeleteConfirm = false;
         }
@@ -1196,7 +1203,12 @@ var render = function() {
               return [
                 _c(
                   "inertia-link",
-                  { attrs: { href: "/admin/users/" + item.id, as: "button" } },
+                  {
+                    attrs: {
+                      href: "/admin/users/" + item.id + "/edit",
+                      as: "button"
+                    }
+                  },
                   [
                     _c(
                       "v-icon",

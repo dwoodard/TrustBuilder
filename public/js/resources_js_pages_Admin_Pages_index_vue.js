@@ -130,6 +130,10 @@ __webpack_require__.r(__webpack_exports__);
         link: '/admin/clients',
         icon: 'mdi-account-box-multiple'
       }, {
+        title: 'Invoices',
+        link: '/admin/invoices',
+        icon: 'mdi-receipt'
+      }, {
         title: 'Pages',
         link: '/admin/pages',
         icon: 'mdi-file-document-multiple-outline'

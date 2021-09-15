@@ -67,7 +67,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      this.form.post(route('admin.clients.create'), {
+      this.form.post(route('admin.clients.store'), {
         onSuccess: function onSuccess(data) {
           _this.form.reset();
 

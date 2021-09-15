@@ -17,7 +17,7 @@ class CreateClientsTable extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->integer('user_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
@@ -27,9 +27,11 @@ class CreateClientsTable extends Migration
             $table->string('country')->nullable();
             $table->string('company')->nullable();
             $table->string('notes')->nullable();
-            $table->string('status')->nullable();
+            $table->enum('status', ['Active' , 'Inactive']);
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

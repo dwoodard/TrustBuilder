@@ -54,7 +54,7 @@
     },
     methods: {
       submit() {
-        this.form.post(route('admin.clients.create'), {
+        this.form.post(route('admin.clients.store'), {
           onSuccess: (data) => {
             this.form.reset();
             this.show = false;
