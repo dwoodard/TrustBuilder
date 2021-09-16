@@ -24,11 +24,9 @@
           </v-tooltip>
           <v-tooltip bottom>
             <template #activator="{ on, attrs }">
-              <v-icon v-bind="attrs"
-                      v-on="on"
-                      @click.prevent="showEditClient = true">
+              <inertia-link :href="editClient()" as="v-icon" v-bind="attrs" v-on="on">
                 mdi-account-edit
-              </v-icon>
+              </inertia-link>
             </template>
             <span>Edit Client</span>
           </v-tooltip>
@@ -36,7 +34,7 @@
       </v-row>
     </v-card-title>
 
-    <v-expansion-panels class="primary">
+    <v-expansion-panels>
       <v-expansion-panel v-for="(project,i) in client.projects" :key="i">
         <v-expansion-panel-header>
           <v-row>
@@ -79,6 +77,11 @@
         showCreateProject: false,
         showEditClient: false
       };
+    },
+    methods: {
+      editClient() {
+        return this.route('admin.clients.edit', {id: this.client.id});
+      }
     }
   };
 </script>

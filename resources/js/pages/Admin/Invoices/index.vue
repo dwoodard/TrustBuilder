@@ -12,20 +12,32 @@
       :item-key="id"
       :footer-props="{'items-per-page-options': [5, 10, 25, 100]}">
       <template #no-data>
-        <v-alert :value="true" color="error" icon="warning">
-          Sorry, nothing to display here :(
-        </v-alert>
+        <span>
+          <v-icon>
+            mdi-alert
+          </v-icon>
+          Sorry, No Invoices
+        </span>
       </template>
-      <template #no-results>
-        <v-alert :value="true" color="error" icon="warning">
-          Sorry, no results match your query :(
-        </v-alert>
-      </template>
+
       <template #items="rows">
-        <td v-for="(element, label, index) in rows.item"
+        <td v-for="(element, label, index) in rows.item" :key="index"
             @click="cellClick(element)">
           {{ element }}
         </td>
+      </template>
+
+      <template #item.actions="{ item }">
+        <inertia-link :href="`/admin/invoices/${item.id}/edit`" as="button">
+          <v-icon small class="mr-2">
+            mdi-pencil
+          </v-icon>
+        </inertia-link>
+        <v-icon
+          small
+          @click="deleteItem(item)">
+          mdi-delete
+        </v-icon>
       </template>
     </v-data-table>
   </v-container>

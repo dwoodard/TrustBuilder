@@ -7,6 +7,7 @@ use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Schema;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -43,24 +44,20 @@ class ClientController extends Controller
     public function edit(Client $client): Response
     {
         return Inertia::render('Admin/Clients/edit', [
-            'user' => [
-                'id' => $client->id,
-                'first_name' => $client->first_name,
-                'last_name' => $client->last_name
-            ],
-        ]);
+            'client' => ClientResource::collection([$client])
+            ]);
     }
 
     public function update(Request $request, Client $client): \Illuminate\Http\RedirectResponse
     {
-        Request::validate([
+        $request->validate([
             'first_name' => ['required', 'max:50'],
             'last_name' => ['required', 'max:50'],
         ]);
 
-        $client->update(Request::only('first_name', 'last_name'));
+        $client->update($request->only(Schema::getColumnListing($client->getTable())));
 
-        return Redirect::back()->with('success', 'User updated.');
+        return Redirect::back()->with('success', 'Client updated.');
     }
 
     public function destroy(Client $client): \Illuminate\Http\RedirectResponse

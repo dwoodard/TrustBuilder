@@ -202,6 +202,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Invoices',
@@ -780,30 +792,12 @@ var render = function() {
             fn: function() {
               return [
                 _c(
-                  "v-alert",
-                  { attrs: { value: true, color: "error", icon: "warning" } },
+                  "span",
                   [
-                    _vm._v(
-                      "\n        Sorry, nothing to display here :(\n      "
-                    )
-                  ]
-                )
-              ]
-            },
-            proxy: true
-          },
-          {
-            key: "no-results",
-            fn: function() {
-              return [
-                _c(
-                  "v-alert",
-                  { attrs: { value: true, color: "error", icon: "warning" } },
-                  [
-                    _vm._v(
-                      "\n        Sorry, no results match your query :(\n      "
-                    )
-                  ]
+                    _c("v-icon", [_vm._v("\n          mdi-alert\n        ")]),
+                    _vm._v("\n        Sorry, No Invoices\n      ")
+                  ],
+                  1
                 )
               ]
             },
@@ -816,6 +810,7 @@ var render = function() {
                 return _c(
                   "td",
                   {
+                    key: index,
                     on: {
                       click: function($event) {
                         return _vm.cellClick(element)
@@ -825,6 +820,44 @@ var render = function() {
                   [_vm._v("\n        " + _vm._s(element) + "\n      ")]
                 )
               })
+            }
+          },
+          {
+            key: "item.actions",
+            fn: function(ref) {
+              var item = ref.item
+              return [
+                _c(
+                  "inertia-link",
+                  {
+                    attrs: {
+                      href: "/admin/invoices/" + item.id + "/edit",
+                      as: "button"
+                    }
+                  },
+                  [
+                    _c(
+                      "v-icon",
+                      { staticClass: "mr-2", attrs: { small: "" } },
+                      [_vm._v("\n          mdi-pencil\n        ")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-icon",
+                  {
+                    attrs: { small: "" },
+                    on: {
+                      click: function($event) {
+                        return _vm.deleteItem(item)
+                      }
+                    }
+                  },
+                  [_vm._v("\n        mdi-delete\n      ")]
+                )
+              ]
             }
           }
         ])

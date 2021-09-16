@@ -77,8 +77,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     client: {
@@ -91,6 +89,13 @@ __webpack_require__.r(__webpack_exports__);
       showCreateProject: false,
       showEditClient: false
     };
+  },
+  methods: {
+    editClient: function editClient() {
+      return this.route('admin.clients.edit', {
+        id: this.client.id
+      });
+    }
   }
 });
 
@@ -939,18 +944,16 @@ var render = function() {
                             var attrs = ref.attrs
                             return [
                               _c(
-                                "v-icon",
+                                "inertia-link",
                                 _vm._g(
                                   _vm._b(
                                     {
-                                      on: {
-                                        click: function($event) {
-                                          $event.preventDefault()
-                                          _vm.showEditClient = true
-                                        }
+                                      attrs: {
+                                        href: _vm.editClient(),
+                                        as: "v-icon"
                                       }
                                     },
-                                    "v-icon",
+                                    "inertia-link",
                                     attrs,
                                     false
                                   ),
@@ -981,7 +984,6 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-expansion-panels",
-        { staticClass: "primary" },
         _vm._l(_vm.client.projects, function(project, i) {
           return _c(
             "v-expansion-panel",

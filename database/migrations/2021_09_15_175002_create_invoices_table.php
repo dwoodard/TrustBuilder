@@ -18,15 +18,15 @@ class CreateInvoicesTable extends Migration
             $table->unsignedBigInteger('project_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('client_id');
-            $table->enum('status', ['draft', 'sent', 'paid']);
-            $table->date('date');
-            $table->date('due_date');
-            $table->string('description');
-            $table->decimal('amount', 10, 2);
-            $table->decimal('rate', 10, 2);
-            $table->decimal('paid_amount', 10, 2);
-            $table->date('paid_date');
-            $table->enum('paid_status', ['paid', 'unpaid']);
+            $table->enum('status', ['draft', 'sent', 'paid'])->default('draft');
+            $table->date('date')->nullable();
+            $table->date('due_date')->nullable();
+            $table->string('description')->nullable();
+            $table->decimal('amount', 10, 2)->nullable();
+            $table->decimal('rate', 10, 2)->nullable();
+            $table->decimal('paid_amount', 10, 2)->nullable();
+            $table->date('paid_date')->nullable();
+            $table->enum('paid_status', ['paid', 'unpaid'])->default('unpaid');
             $table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
