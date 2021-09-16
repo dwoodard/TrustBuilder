@@ -44,22 +44,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     client: {
       type: Object,
       required: true
-    },
-    data: function data() {
-      return {
-        showProjects: false
-      };
-    },
-    methods: {
-      toggleProjects: function toggleProjects() {
-        this.showProjects = !this.showProjects;
-      }
     }
+  },
+  data: function data() {
+    return {
+      showCreateProject: false,
+      showEditClient: false
+    };
   }
 });
 
@@ -345,6 +376,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_UiAvatar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/UiAvatar */ "./resources/js/components/UiAvatar.vue");
 /* harmony import */ var _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/layouts/Admin/Layout */ "./resources/js/layouts/Admin/Layout.vue");
 /* harmony import */ var _pages_Admin_Clients_create__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/pages/Admin/Clients/create */ "./resources/js/pages/Admin/Clients/create.vue");
+//
 //
 //
 //
@@ -830,26 +862,116 @@ var render = function() {
   return _c(
     "v-card",
     [
-      _c("v-card-title", [
-        _c("span", { staticClass: "headline" }, [
-          _vm._v(
-            _vm._s(_vm.client.first_name) + " " + _vm._s(_vm.client.last_name)
-          )
-        ])
-      ]),
-      _vm._v(" "),
       _c(
-        "v-card-actions",
+        "v-card-title",
         [
-          _c("v-spacer"),
-          _vm._v(" "),
           _c(
-            "v-btn",
-            { attrs: { icon: "" }, on: { click: _vm.toggleProjects } },
+            "v-row",
             [
-              _vm.showProjects
-                ? _c("v-icon", [_vm._v("mdi-menu-down")])
-                : _c("v-icon", [_vm._v("mdi-menu-up")])
+              _c("v-col", [
+                _c("span", [
+                  _vm._v(
+                    _vm._s(_vm.client.first_name) +
+                      " " +
+                      _vm._s(_vm.client.last_name)
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { attrs: { align: "right" } },
+                [
+                  _c(
+                    "v-tooltip",
+                    {
+                      attrs: { bottom: "" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            var attrs = ref.attrs
+                            return [
+                              _c(
+                                "v-icon",
+                                _vm._g(
+                                  _vm._b(
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          _vm.showCreateProject = true
+                                        }
+                                      }
+                                    },
+                                    "v-icon",
+                                    attrs,
+                                    false
+                                  ),
+                                  on
+                                ),
+                                [
+                                  _vm._v(
+                                    "\n              mdi-folder-plus\n            "
+                                  )
+                                ]
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [_vm._v(" "), _c("span", [_vm._v("Add Project")])]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-tooltip",
+                    {
+                      attrs: { bottom: "" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            var attrs = ref.attrs
+                            return [
+                              _c(
+                                "v-icon",
+                                _vm._g(
+                                  _vm._b(
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          _vm.showEditClient = true
+                                        }
+                                      }
+                                    },
+                                    "v-icon",
+                                    attrs,
+                                    false
+                                  ),
+                                  on
+                                ),
+                                [
+                                  _vm._v(
+                                    "\n              mdi-account-edit\n            "
+                                  )
+                                ]
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [_vm._v(" "), _c("span", [_vm._v("Edit Client")])]
+                  )
+                ],
+                1
+              )
             ],
             1
           )
@@ -859,19 +981,82 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-expansion-panels",
-        _vm._l(5, function(item, i) {
+        { staticClass: "primary" },
+        _vm._l(_vm.client.projects, function(project, i) {
           return _c(
             "v-expansion-panel",
             { key: i },
             [
-              _c("v-expansion-panel-header", [
-                _vm._v("\n        Item\n      ")
-              ]),
+              _c(
+                "v-expansion-panel-header",
+                [
+                  _c(
+                    "v-row",
+                    [
+                      _c("v-col", [_c("span", [_vm._v(_vm._s(project.name))])]),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { attrs: { align: "right" } },
+                        [
+                          _c(
+                            "v-tooltip",
+                            {
+                              attrs: { bottom: "" },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "activator",
+                                    fn: function(ref) {
+                                      var on = ref.on
+                                      var attrs = ref.attrs
+                                      return [
+                                        _c(
+                                          "v-icon",
+                                          _vm._g(
+                                            _vm._b(
+                                              {
+                                                on: {
+                                                  click: function($event) {
+                                                    $event.preventDefault()
+                                                    _vm.showEditProject = true
+                                                  }
+                                                }
+                                              },
+                                              "v-icon",
+                                              attrs,
+                                              false
+                                            ),
+                                            on
+                                          ),
+                                          [
+                                            _vm._v(
+                                              "\n                  mdi-folder-edit\n                "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    }
+                                  }
+                                ],
+                                null,
+                                true
+                              )
+                            },
+                            [_vm._v(" "), _c("span", [_vm._v("Edit Project")])]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
               _vm._v(" "),
               _c("v-expansion-panel-content", [
-                _vm._v(
-                  "\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n      "
-                )
+                _c("pre", [_vm._v(_vm._s(project))])
               ])
             ],
             1
@@ -1391,8 +1576,8 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-row",
-        { staticClass: "mt-4" },
-        _vm._l(_vm.clients, function(client, index) {
+        { staticClass: "mt-2" },
+        _vm._l(_vm.clients.data, function(client, index) {
           return _c(
             "v-col",
             { key: client.id, attrs: { cols: "12", sm: "12", md: "3" } },

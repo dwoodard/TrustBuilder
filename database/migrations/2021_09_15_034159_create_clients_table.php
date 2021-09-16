@@ -27,7 +27,7 @@ class CreateClientsTable extends Migration
             $table->string('country')->nullable();
             $table->string('company')->nullable();
             $table->string('notes')->nullable();
-            $table->enum('status', ['Active' , 'Inactive']);
+            $table->enum('status', ['active' , 'inactive'])->default('active');
             $table->softDeletes();
             $table->timestamps();
 
@@ -45,3 +45,4 @@ class CreateClientsTable extends Migration
         Schema::dropIfExists('clients');
     }
 }
+

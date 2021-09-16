@@ -6,24 +6,59 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ client.first_name }} {{ client.last_name }}</span>
+      <v-row>
+        <v-col>
+          <span>{{ client.first_name }} {{ client.last_name }}</span>
+        </v-col>
+        <v-spacer/>
+        <v-col align="right">
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-icon v-bind="attrs"
+                      v-on="on"
+                      @click.prevent="showCreateProject = true">
+                mdi-folder-plus
+              </v-icon>
+            </template>
+            <span>Add Project</span>
+          </v-tooltip>
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <v-icon v-bind="attrs"
+                      v-on="on"
+                      @click.prevent="showEditClient = true">
+                mdi-account-edit
+              </v-icon>
+            </template>
+            <span>Edit Client</span>
+          </v-tooltip>
+        </v-col>
+      </v-row>
     </v-card-title>
 
-    <v-card-actions>
-      <v-spacer/>
-      <!--create a icon that has a dropdown button and expanding panel that shows a list of projects-->
-      <v-btn icon @click="toggleProjects">
-        <v-icon v-if="showProjects">mdi-menu-down</v-icon>
-        <v-icon v-else>mdi-menu-up</v-icon>
-      </v-btn>
-    </v-card-actions>
-    <v-expansion-panels>
-      <v-expansion-panel v-for="(item,i) in 5" :key="i">
+    <v-expansion-panels class="primary">
+      <v-expansion-panel v-for="(project,i) in client.projects" :key="i">
         <v-expansion-panel-header>
-          Item
+          <v-row>
+            <v-col>
+              <span>{{ project.name }}</span>
+            </v-col>
+            <v-col align="right">
+              <v-tooltip bottom>
+                <template #activator="{ on, attrs }">
+                  <v-icon v-bind="attrs"
+                          v-on="on"
+                          @click.prevent="showEditProject = true">
+                    mdi-folder-edit
+                  </v-icon>
+                </template>
+                <span>Edit Project</span>
+              </v-tooltip>
+            </v-col>
+          </v-row>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <pre>{{ project }}</pre>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -37,17 +72,13 @@
       client: {
         type: Object,
         required: true
-      },
-      data() {
-        return {
-          showProjects: false
-        };
-      },
-      methods: {
-        toggleProjects() {
-          this.showProjects = !this.showProjects;
-        }
       }
+    },
+    data() {
+      return {
+        showCreateProject: false,
+        showEditClient: false
+      };
     }
   };
 </script>

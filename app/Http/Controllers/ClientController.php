@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ClientResource;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,14 +15,7 @@ class ClientController extends Controller
     public function index(): Response
     {
         return Inertia::render('Admin/Clients/index', [
-            'clients' => Client::all()
-                ->transform(function ($client) {
-                    return [
-                        'id' => $client->id,
-                        'first_name' =>$client->first_name,
-                        'last_name' =>$client->last_name
-                    ];
-                }),
+            'clients' => ClientResource::collection(Client::all())
         ]);
     }
 

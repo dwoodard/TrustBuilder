@@ -15,17 +15,17 @@ class Client extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function invoices()
+    public function invoices(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Invoice::class);
     }
 
-    public function payments()
+    public function payments(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Payment::class);
     }
@@ -35,11 +35,7 @@ class Client extends Model
         return $this->first_name . ' ' . $this->last_name;
     }
 
-    public function getStatusAttribute()
-    {
-        return $this->status == 1 ? 'Active' : 'Inactive';
-    }
-    public function projects()
+    public function projects(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Project::class);
     }

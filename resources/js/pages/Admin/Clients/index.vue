@@ -17,8 +17,9 @@
       <ShowCreateClient v-model="ShowCreateClient"/>
     </v-app-bar>
 
-    <v-row class="mt-4">
-      <v-col v-for="(client,index) in clients" :key="client.id" cols="12" sm="12" md="3">
+
+    <v-row class="mt-2">
+      <v-col v-for="(client,index) in clients.data" :key="client.id" cols="12" sm="12" md="3">
         <ClientCard :client="client"/>
       </v-col>
     </v-row>
