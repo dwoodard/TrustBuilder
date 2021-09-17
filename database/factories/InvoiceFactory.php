@@ -32,9 +32,9 @@ class InvoiceFactory extends Factory
             'date' => now(),
             'due_date' => now(),
             'description' => 'Invoice description',
-            'amount' => '100',
-            'rate' => '100',
-            'paid_amount' => '100',
+            'amount' => $this->faker->randomFloat(2, 0, 1000),
+            'rate' => $this->faker->randomFloat(2, 0, 1000),
+            'paid_amount' => $this->faker->randomFloat(2, 0, 1000),
             'paid_date' => now(),
             'paid_status' => $this->faker->randomElement(['paid', 'unpaid']),
         ];
