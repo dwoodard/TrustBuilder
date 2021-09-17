@@ -23,7 +23,7 @@ class ProjectFactory extends Factory
     {
         return [
             //name, user_id, client_id, type, status, start_date, end_date
-            'name' => "Trust" . $this->faker->name,
+            'name' => $this->faker->name . " Trust",
             'user_id' => \App\Models\User::factory()->create()->id,
             'client_id' => \App\Models\Client::factory()->create()->id,
             'type' => $this->faker->randomElement(['Trust', 'Contract']),

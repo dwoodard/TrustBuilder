@@ -44,11 +44,9 @@
             <v-col align="right">
               <v-tooltip bottom>
                 <template #activator="{ on, attrs }">
-                  <v-icon v-bind="attrs"
-                          v-on="on"
-                          @click.prevent="showEditProject = true">
+                  <inertia-link :href="editClientProject(project)" as="v-icon" v-bind="attrs" v-on="on">
                     mdi-folder-edit
-                  </v-icon>
+                  </inertia-link>
                 </template>
                 <span>Edit Project</span>
               </v-tooltip>
@@ -81,6 +79,14 @@
     methods: {
       editClient() {
         return this.route('admin.clients.edit', {id: this.client.id});
+      },
+      editClientProject(project) {
+        this.showEditProject = true;
+
+        return this.route('admin.client.project.index', {
+          client: this.client.id,
+          project: project.id
+        });
       }
     }
   };

@@ -19,19 +19,28 @@ Route::group(['as'=>'admin.','middleware' => ['web','role:admin']], function(){
     //users
     Route::resource('users', 'Admin\UserController');
     /*
-    GET|HEAD       admin/users .................. admin.users.index
-    POST           admin/users .................. admin.users.store
-    GET|HEAD       admin/users/create ........... admin.users.create
-    PUT|PATCH      admin/users/{user} ........... admin.users.update
-    DELETE         admin/users/{user} ........... admin.users.destroy
-    GET|HEAD       admin/users/{user} ........... admin.users.show
-    GET|HEAD       admin/users/{user}/edit ...... admin.users.edit
+    GET    admin/users .................. admin.users.index
+    POST   admin/users .................. admin.users.store
+    GET    admin/users/create ........... admin.users.create
+    PUT    admin/users/{user} ........... admin.users.update
+    DELETE admin/users/{user} ........... admin.users.destroy
+    GET    admin/users/{user} ........... admin.users.show
+    GET    admin/users/{user}/edit ...... admin.users.edit
     */
-    //Clients
+
+    // Clients
     Route::resource('clients', 'ClientController');
     Route::resource('invoices', 'InvoiceController');
     Route::resource('projects', 'ProjectController');
     Route::resource('documents', 'DocumentController');
+
+
+    //ClientProject
+    Route::get('client/{client}/project/{project}', [\App\Http\Controllers\ClientProjectController::class, 'index'])->name('client.project.index');
+
+
+
+
 
     //pages
     Route::get('/pages', [AdminController::class, 'pages'])->name('pages');
