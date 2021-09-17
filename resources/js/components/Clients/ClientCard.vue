@@ -10,7 +10,7 @@
         <v-col>
           <span>{{ client.first_name }} {{ client.last_name }}</span>
         </v-col>
-        <v-spacer/>
+
         <v-col align="right">
           <v-tooltip bottom>
             <template #activator="{ on, attrs }">

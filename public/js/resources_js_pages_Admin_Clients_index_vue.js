@@ -413,6 +413,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -422,9 +424,23 @@ __webpack_require__.r(__webpack_exports__);
   props: ['clients'],
   data: function data() {
     return {
+      search: '',
       ShowCreateClient: false,
       reveal: false
     };
+  },
+  computed: {
+    filteredClients: function filteredClients() {
+      var _this = this;
+
+      return this.clients.data.filter(function (client) {
+        // filter by first_name or last_name
+        return client.first_name.toLowerCase().includes(_this.search.toLowerCase()) // filter by first_name
+        || client.last_name.toLowerCase().includes(_this.search.toLowerCase()) // filter by last_name
+        || client.email.toLowerCase().includes(_this.search.toLowerCase()) // filter by email
+        || client.phone.toLowerCase().includes(_this.search.toLowerCase()); // filter by phone
+      });
+    }
   },
   components: {
     ShowCreateClient: _pages_Admin_Clients_create__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -882,8 +898,6 @@ var render = function() {
                   )
                 ])
               ]),
-              _vm._v(" "),
-              _c("v-spacer"),
               _vm._v(" "),
               _c(
                 "v-col",
@@ -1524,6 +1538,24 @@ var render = function() {
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              label: "Search",
+              solo: "",
+              dense: "",
+              "append-icon": "mdi-magnify"
+            },
+            model: {
+              value: _vm.search,
+              callback: function($$v) {
+                _vm.search = $$v
+              },
+              expression: "search"
+            }
+          }),
+          _vm._v(" "),
+          _c("v-spacer"),
+          _vm._v(" "),
           _c(
             "v-tooltip",
             {
@@ -1579,10 +1611,10 @@ var render = function() {
       _c(
         "v-row",
         { staticClass: "mt-2" },
-        _vm._l(_vm.clients.data, function(client, index) {
+        _vm._l(_vm.filteredClients, function(client, index) {
           return _c(
             "v-col",
-            { key: client.id, attrs: { cols: "12", sm: "12", md: "3" } },
+            { key: client.id, attrs: { cols: "12", sm: "12", md: "4" } },
             [_c("ClientCard", { attrs: { client: client } })],
             1
           )

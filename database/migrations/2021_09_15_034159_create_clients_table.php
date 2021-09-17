@@ -26,7 +26,7 @@ class CreateClientsTable extends Migration
             $table->string('zip')->nullable();
             $table->string('country')->nullable();
             $table->string('company')->nullable();
-            $table->string('notes')->nullable();
+            $table->text('notes')->nullable();
             $table->enum('status', ['active' , 'inactive'])->default('active');
             $table->softDeletes();
             $table->timestamps();

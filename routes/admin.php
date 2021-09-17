@@ -31,6 +31,7 @@ Route::group(['as'=>'admin.','middleware' => ['web','role:admin']], function(){
     Route::resource('clients', 'ClientController');
     Route::resource('invoices', 'InvoiceController');
     Route::resource('projects', 'ProjectController');
+    Route::resource('documents', 'DocumentController');
 
     //pages
     Route::get('/pages', [AdminController::class, 'pages'])->name('pages');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rule;
@@ -17,7 +18,7 @@ class UserController extends Controller
     public function index(Request $request):Response
     {
         $data = [
-            'users' => UserResource::collection(User::paginate(15))
+            'users' => UserResource::collection(User::all())
         ];
 
         return Inertia::render('Admin/Users/index', $data);
@@ -67,7 +68,7 @@ class UserController extends Controller
         $user = User::find($user->id);
 
         $data = $request->validate([
-            'username' => ['required', 'min:3', Rule::unique('users')],
+            'username' => ['required', 'min:3', Rule::unique('users')->ignore($user->id)],
             'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
             'password' => ['nullable']
         ]);
