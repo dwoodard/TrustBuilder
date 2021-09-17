@@ -55,7 +55,7 @@ class ClientController extends Controller
             'last_name' => ['required', 'max:50'],
         ]);
 
-        $client->update($request->only(Schema::getColumnListing($client->getTable())));
+        $client->update($request->only(OnlyColumns($client)));
 
         return Redirect::back()->with('success', 'Client updated.');
     }

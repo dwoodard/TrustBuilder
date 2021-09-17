@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Validation\Rule;
 use Inertia\Controller;
 use Inertia\Inertia;
@@ -65,15 +66,13 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
-        $user = User::find($user->id);
-
-        $data = $request->validate([
+        $request->validate([
             'username' => ['required', 'min:3', Rule::unique('users')->ignore($user->id)],
             'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
             'password' => ['nullable']
         ]);
 
-        $user->update($data);
+        $user->update($request->only(OnlyColumns($user)));
 
         return Redirect::back();
     }
