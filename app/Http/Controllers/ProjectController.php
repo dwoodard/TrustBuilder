@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class ProjectController extends Controller
 {
@@ -76,10 +78,11 @@ class ProjectController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Project  $project
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return Redirect::route('admin.clients.index');
     }
 }

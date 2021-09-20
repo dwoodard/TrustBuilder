@@ -197,11 +197,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   layout: _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: 'Index',
-  props: ['client', 'project']
+  props: ['client', 'project'],
+  data: function data() {
+    return {
+      search: null,
+      form: this.$inertia.form({}),
+      showDelete: false,
+      DocumentItems: [{
+        title: 'Trust'
+      }, {
+        title: 'Schedule A'
+      }, {
+        title: 'Schedule B'
+      }, {
+        title: 'Schedule C'
+      }, {
+        title: 'Schedule D'
+      }, {
+        title: 'Allodial Title'
+      }, {
+        title: 'Meeting Minutes'
+      }]
+    };
+  },
+  methods: {
+    onConfirmDelete: function onConfirmDelete() {
+      this.showDelete = false;
+      this.form["delete"](route('admin.projects.destroy', {
+        project: this.project
+      }));
+    }
+  },
+  components: {}
 });
 
 /***/ }),
@@ -705,7 +778,6 @@ var render = function() {
     [
       _c(
         "v-toolbar",
-        { attrs: { color: "primary" } },
         [
           _c("v-toolbar-title", [
             _vm._v(
@@ -717,7 +789,153 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("v-toolbar-items", [_c("v-toolbar-item", [_vm._v("test")])], 1)
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c(
+            "v-dialog",
+            {
+              attrs: { "max-width": "500" },
+              scopedSlots: _vm._u([
+                {
+                  key: "activator",
+                  fn: function(ref) {
+                    var on = ref.on
+                    var attrs = ref.attrs
+                    return [
+                      _c(
+                        "v-btn",
+                        _vm._g(
+                          _vm._b(
+                            {
+                              attrs: { text: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.showDelete = !_vm.showDelete
+                                }
+                              }
+                            },
+                            "v-btn",
+                            attrs,
+                            false
+                          ),
+                          on
+                        ),
+                        [_c("v-icon", [_vm._v("mdi-delete")])],
+                        1
+                      )
+                    ]
+                  }
+                }
+              ]),
+              model: {
+                value: _vm.showDelete,
+                callback: function($$v) {
+                  _vm.showDelete = $$v
+                },
+                expression: "showDelete"
+              }
+            },
+            [
+              _vm._v(" "),
+              _c(
+                "v-card",
+                [
+                  _c("v-card-title", [
+                    _c("span", { staticClass: "headline" }, [
+                      _vm._v(_vm._s("Are you sure you want to delete this?"))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "error", text: "" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.showDelete = false
+                            }
+                          }
+                        },
+                        [_vm._v(_vm._s("Cancel"))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "error" },
+                          nativeOn: {
+                            click: function($event) {
+                              return _vm.onConfirmDelete.apply(null, arguments)
+                            }
+                          }
+                        },
+                        [_vm._v("Delete")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-menu",
+            {
+              attrs: { "offset-y": "" },
+              scopedSlots: _vm._u([
+                {
+                  key: "activator",
+                  fn: function(ref) {
+                    var on = ref.on
+                    var attrs = ref.attrs
+                    return [
+                      _c(
+                        "v-btn",
+                        _vm._g(
+                          _vm._b(
+                            { attrs: { color: "primary", dark: "", icon: "" } },
+                            "v-btn",
+                            attrs,
+                            false
+                          ),
+                          on
+                        ),
+                        [
+                          _c("v-icon", [
+                            _vm._v("\n            mdi-plus\n          ")
+                          ])
+                        ],
+                        1
+                      )
+                    ]
+                  }
+                }
+              ])
+            },
+            [
+              _vm._v(" "),
+              _c(
+                "v-list",
+                _vm._l(_vm.DocumentItems, function(item, index) {
+                  return _c(
+                    "v-list-item",
+                    { key: index },
+                    [_c("v-list-item-title", [_vm._v(_vm._s(item.title))])],
+                    1
+                  )
+                }),
+                1
+              )
+            ],
+            1
+          )
         ],
         1
       ),

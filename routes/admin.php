@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ClientProjectController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Route;
 //
 Route::group(['as'=>'admin.','middleware' => ['web','role:admin']], function(){
 
-    Route::get('/', function (){
-        return Redirect::route('admin.dashboard');
-    })->name('index');
+        Route::get('/', function (){return Redirect::route('admin.dashboard');})->name('index');
 
     //dashboard
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
@@ -36,10 +34,9 @@ Route::group(['as'=>'admin.','middleware' => ['web','role:admin']], function(){
 
 
     //ClientProject
-    Route::get('client/{client}/project/{project}', [\App\Http\Controllers\ClientProjectController::class, 'index'])->name('client.project.index');
-
-
-
+    Route::get('client/{client}/project/{project}', [ClientProjectController::class, 'index'])->name('client.project.index');
+    Route::get('client/{client}/project/create', [ClientProjectController::class, 'create'])->name('client.project.create');
+    Route::post('client/{client}/project', [ClientProjectController::class, 'store'])->name('client.project.store');
 
 
     //pages
@@ -53,5 +50,3 @@ Route::group(['as'=>'admin.','middleware' => ['web','role:admin']], function(){
     Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
 
 });
-
-

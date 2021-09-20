@@ -82,14 +82,47 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    save: function save() {
-      this.$emit('save', this.editor);
+    save: function save(data) {
+      this.$emit('save', data);
     }
   },
   mounted: function mounted() {
+    var _this = this;
+
     this.editor = grapesjs__WEBPACK_IMPORTED_MODULE_5___default().init({
       container: '#gjs',
       fromElement: false,
+      commands: {
+        defaults: [{
+          id: "undo",
+          run: function run(editor, sender) {
+            sender.set("active", false);
+            editor.UndoManager.undo(1);
+          }
+        }, {
+          id: "redo",
+          run: function run(editor, sender) {
+            sender.set("active", false);
+            editor.UndoManager.redo(1);
+          }
+        }, {
+          id: "clean-all",
+          run: function run(editor, sender) {
+            sender.set("active", false);
+
+            if (confirm("Are you sure to clean the canvas?")) {
+              var comps = editor.DomComponents.clear();
+            }
+          }
+        }, {
+          id: "save",
+          run: function run(editor, senderBtn) {
+            sender.set("active", false);
+            saveHtmlToList(editor);
+          },
+          stop: function stop(editor, senderBtn) {}
+        }]
+      },
       storageManager: {
         id: '',
         // Prefix identifier that will be used inside storing and loading
@@ -113,11 +146,32 @@ __webpack_require__.r(__webpack_exports__);
       },
       plugins: [(grapesjs_component_countdown__WEBPACK_IMPORTED_MODULE_3___default()), (grapesjs_custom_code__WEBPACK_IMPORTED_MODULE_2___default()), (grapesjs_blocks_basic__WEBPACK_IMPORTED_MODULE_1___default()), (grapesjs_plugin_export__WEBPACK_IMPORTED_MODULE_4___default())]
     });
+    var pnm = this.editor.Panels;
+    pnm.addButton("options", [{
+      id: "undo",
+      className: "fa fa-undo icon-undo",
+      command: function command(editor, sender) {
+        sender.set("active", 0);
+        editor.UndoManager.undo(1);
+      },
+      attributes: {
+        title: "Undo (CTRL/CMD + Z)"
+      }
+    }, {
+      id: "redo",
+      className: "fa fa-repeat icon-redo",
+      command: function command(editor, sender) {
+        sender.set("active", 0);
+        editor.UndoManager.redo(1);
+      },
+      attributes: {
+        title: "Redo (CTRL/CMD + Y)"
+      }
+    }]);
     this.editor.setComponents(this.components);
     this.editor.setStyle(this.styles);
     this.editor.on('storage:start:store', function (objectToStore) {
-      console.log('storage:start:store');
-      console.log(objectToStore);
+      _this.save(objectToStore);
     });
     this.editor.Panels.addButton('options', {
       id: 'gjs-save-btn',

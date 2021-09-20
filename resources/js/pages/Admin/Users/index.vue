@@ -129,7 +129,6 @@
       },
 
       deleteItemConfirm() {
-        console.log(this.selectedUser);
         this.$inertia.delete(route('admin.users.destroy', {user: this.selectedUser}), {
           onSuccess: (data) => {
             this.showDeleteConfirm = false;

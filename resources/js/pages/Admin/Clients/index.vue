@@ -7,6 +7,7 @@
                     label="Search"
                     solo
                     dense
+                    clearable
                     append-icon="mdi-magnify"/>
       <v-spacer/>
       <v-tooltip bottom>
@@ -25,7 +26,7 @@
 
 
     <v-row class="mt-2">
-      <v-col v-for="(client,index) in filteredClients" :key="client.id" cols="12" sm="12" md="4">
+      <v-col v-for="(client) in filteredClients" :key="client.id" cols="12" sm="12" md="4">
         <ClientCard :client="client"/>
       </v-col>
     </v-row>
@@ -34,9 +35,9 @@
 
 <script>
   import ClientCard from '@/components/Clients/ClientCard';
-  import UiAvatar from '@/components/UiAvatar';
   import Admin from '@/layouts/Admin/Layout';
   import ShowCreateClient from '@/pages/Admin/Clients/create';
+  import {score} from '@/helper';
 
   export default {
     layout: Admin,
@@ -44,26 +45,30 @@
     data() {
       return {
         search: '',
-        ShowCreateClient: false,
-        reveal: false
+        ShowCreateClient: false
       };
     },
     computed: {
       filteredClients() {
+        if (this.search === '') {
+          return this.clients.data;
+        }
         return this.clients.data.filter((client) => {
-          // filter by first_name or last_name
-          return client.first_name.toLowerCase().includes(this.search.toLowerCase()) // filter by first_name
-            || client.last_name.toLowerCase().includes(this.search.toLowerCase()) // filter by last_name
-            || client.email.toLowerCase().includes(this.search.toLowerCase()) // filter by email
-            || client.phone.toLowerCase().includes(this.search.toLowerCase()); // filter by phone
+          return client.first_name?.score(this.search) > 0.4
+            || client.last_name?.score(this.search) > 0.4
+            || client.email?.score(this.search) > 0.4
+            || client.phone?.score(this.search) > 0.4
+            || client.city?.score(this.search) > 0.4;
         });
       }
     },
+    mounted() {
+      // eslint-disable-next-line no-extend-native
+      String.prototype.score = score;
+    },
     components: {
       ShowCreateClient,
-      UiAvatar,
       ClientCard
-
     }
   };
 </script>

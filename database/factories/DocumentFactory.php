@@ -24,7 +24,7 @@ class DocumentFactory extends Factory
         // project_id, name, document_data
         return [
             'project_id' => \App\Models\Project::factory()->create()->id,
-            'name' => $this->faker->name,
+            'name' => $this->faker->randomElement(['foo', 'bar', 'baz']),
             'document_data' => json_encode([])
         ];
     }

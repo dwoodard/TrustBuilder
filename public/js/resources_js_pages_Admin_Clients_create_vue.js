@@ -38,6 +38,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     value: Boolean
@@ -179,83 +182,89 @@ var render = function() {
       }
     },
     [
-      _c("v-card", [
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.submit.apply(null, arguments)
+      _c(
+        "v-card",
+        [
+          _c("v-card-title", [_vm._v("\n      Create New Client\n    ")]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.submit.apply(null, arguments)
+                }
               }
-            }
-          },
-          [
-            _c(
-              "v-card-text",
-              [
-                _c("v-text-field", {
-                  attrs: {
-                    "error-messages": _vm.form.errors.first_name,
-                    label: "First Name",
-                    required: ""
-                  },
-                  model: {
-                    value: _vm.form.first_name,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "first_name", $$v)
+            },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "error-messages": _vm.form.errors.first_name,
+                      label: "First Name",
+                      required: ""
                     },
-                    expression: "form.first_name"
-                  }
-                }),
-                _vm._v(" "),
-                _c("v-text-field", {
-                  attrs: {
-                    "error-messages": _vm.form.errors.last_name,
-                    label: "Last Name",
-                    required: ""
-                  },
-                  model: {
-                    value: _vm.form.last_name,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "last_name", $$v)
-                    },
-                    expression: "form.last_name"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-card-actions",
-              [
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { color: "primary", text: "" },
-                    on: {
-                      click: function($event) {
-                        $event.stopPropagation()
-                        _vm.show = false
-                      }
+                    model: {
+                      value: _vm.form.first_name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "first_name", $$v)
+                      },
+                      expression: "form.first_name"
                     }
-                  },
-                  [_vm._v("Close")]
-                ),
-                _vm._v(" "),
-                _c("v-spacer"),
-                _vm._v(" "),
-                _c("v-btn", { attrs: { type: "submit", color: "primary" } }, [
-                  _vm._v("Create")
-                ])
-              ],
-              1
-            )
-          ],
-          1
-        )
-      ])
+                  }),
+                  _vm._v(" "),
+                  _c("v-text-field", {
+                    attrs: {
+                      "error-messages": _vm.form.errors.last_name,
+                      label: "Last Name",
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.form.last_name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "last_name", $$v)
+                      },
+                      expression: "form.last_name"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary", text: "" },
+                      on: {
+                        click: function($event) {
+                          $event.stopPropagation()
+                          _vm.show = false
+                        }
+                      }
+                    },
+                    [_vm._v("Close")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c("v-btn", { attrs: { type: "submit", color: "primary" } }, [
+                    _vm._v("Create")
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
     1
   )

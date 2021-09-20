@@ -383,7 +383,6 @@ __webpack_require__.r(__webpack_exports__);
     deleteItemConfirm: function deleteItemConfirm() {
       var _this = this;
 
-      console.log(this.selectedUser);
       this.$inertia["delete"](route('admin.users.destroy', {
         user: this.selectedUser
       }), {

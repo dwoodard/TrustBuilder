@@ -1,21 +1,21 @@
 <template>
   <v-dialog v-model="show" max-width="500px" class="pa-3">
     <v-card>
-      <v-card-title>
-        Create New Client
-      </v-card-title>
+      <v-card-title>Add Project</v-card-title>
       <form @submit.prevent="submit">
         <v-card-text>
           <v-text-field
-            v-model="form.first_name"
-            :error-messages="form.errors.first_name"
-            label="First Name"
+            v-model="form.name"
+            :error-messages="form.errors.name"
+            label="Name"
+            placeholder="ABC Trust"
             required/>
-          <v-text-field
-            v-model="form.last_name"
-            :error-messages="form.errors.last_name"
-            label="Last Name"
-            required/>
+          <v-select
+            v-model="form.type"
+            :error-messages="form.errors.type"
+            label="Project Type"
+            required
+            :items="['Trust', 'Contract']"/>
         </v-card-text>
 
         <v-card-actions>
@@ -32,13 +32,20 @@
 
   export default {
     props: {
-      value: Boolean
+      value: {
+        type: Boolean
+      },
+      client: {
+        type: Object,
+        required: true
+      }
     },
     data() {
       return {
         form: this.$inertia.form({
-          first_name: '',
-          last_name: ''
+          client: this.client,
+          name: '',
+          type: ''
         })
       };
     },
@@ -57,7 +64,9 @@
     },
     methods: {
       submit() {
-        this.form.post(route('admin.clients.store'), {
+        this.form.post(route('admin.client.project.store', {
+          client: this.client
+        }), {
           onSuccess: (data) => {
             this.form.reset();
             this.show = false;

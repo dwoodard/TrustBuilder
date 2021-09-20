@@ -1,8 +1,3 @@
-<!--
- using vuetify ClientCard takes a prop of client
- -->
-
-<!---->
 <template>
   <v-card>
     <v-card-title>
@@ -16,11 +11,12 @@
             <template #activator="{ on, attrs }">
               <v-icon v-bind="attrs"
                       v-on="on"
-                      @click.prevent="showCreateProject = true">
+                      @click.stop="showCreateProject = true">
                 mdi-folder-plus
               </v-icon>
             </template>
             <span>Add Project</span>
+            <ClientProjectCreate v-model="showCreateProject" :client="client"/>
           </v-tooltip>
           <v-tooltip bottom>
             <template #activator="{ on, attrs }">
@@ -61,8 +57,10 @@
   </v-card>
 </template>
 
-
 <script>
+  import ClientProjectCreate from '@/pages/Admin/ClientProject/create';
+  import UiAvatar from '@/components/UiAvatar';
+
   export default {
     props: {
       client: {
@@ -88,6 +86,10 @@
           project: project.id
         });
       }
+    },
+    components: {
+      ClientProjectCreate,
+      UiAvatar
     }
   };
 </script>
