@@ -30,30 +30,24 @@
       </v-row>
     </v-card-title>
 
-    <v-expansion-panels>
-      <v-expansion-panel v-for="(project,i) in client.projects" :key="i">
-        <v-expansion-panel-header>
-          <v-row>
-            <v-col>
-              <span>{{ project.name }}</span>
-            </v-col>
-            <v-col align="right">
-              <v-tooltip bottom>
-                <template #activator="{ on, attrs }">
-                  <inertia-link :href="editClientProject(project)" as="v-icon" v-bind="attrs" v-on="on">
-                    mdi-folder-edit
-                  </inertia-link>
-                </template>
-                <span>Edit Project</span>
-              </v-tooltip>
-            </v-col>
-          </v-row>
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <pre>{{ project }}</pre>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
+
+    <v-container>
+      <v-row v-for="(project,i) in client.projects" :key="i" justify="2" class="grey lighten-4">
+        <v-col>
+          <span>{{ project.name }}</span>
+        </v-col>
+        <v-col align="right">
+          <v-tooltip bottom>
+            <template #activator="{ on, attrs }">
+              <inertia-link :href="editClientProject(project)" as="v-icon" v-bind="attrs" v-on="on">
+                mdi-folder-edit
+              </inertia-link>
+            </template>
+            <span>Edit Project</span>
+          </v-tooltip>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-card>
 </template>
 

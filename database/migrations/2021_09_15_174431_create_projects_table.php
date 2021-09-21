@@ -22,8 +22,8 @@ class CreateProjectsTable extends Migration
             $table->enum('status',['new', 'in-progress', 'pending', 'completed', 'cancelled',])->default('new');
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
-            $table->json('document_data');
-            $table->text('custom_template');
+            $table->json('document_data')->nullable();
+            $table->text('custom_template')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

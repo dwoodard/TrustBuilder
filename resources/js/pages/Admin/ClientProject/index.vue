@@ -2,6 +2,10 @@
 <template>
   <v-container fluid>
     <v-toolbar>
+      <inertia-link href="/admin/clients" as="button">
+        <v-icon>mdi-menu-left</v-icon>
+      </inertia-link>
+
       <v-toolbar-title>{{ client.first_name }} {{ client.last_name }} {{ project.name }}</v-toolbar-title>
       <v-spacer/>
 
@@ -27,28 +31,6 @@
         </v-card>
       </v-dialog>
       <!-- end confirm delete dialog -->
-
-      <v-menu offset-y>
-        <template #activator="{ on, attrs }">
-          <v-btn
-            color="primary"
-            dark
-            icon
-            v-bind="attrs"
-            v-on="on">
-            <v-icon>
-              mdi-plus
-            </v-icon>
-          </v-btn>
-        </template>
-        <v-list>
-          <v-list-item
-            v-for="(item, index) in DocumentItems"
-            :key="index">
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
     </v-toolbar>
 
 

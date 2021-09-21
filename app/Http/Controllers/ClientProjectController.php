@@ -21,7 +21,7 @@ class ClientProjectController extends \Inertia\Controller
     public function index(Client $client, Project $project)
     {
         $data = [
-            'client' => ClientResource::collection([$client])->jsonSerialize(),
+            'client' => ClientResource::collection([$client])->first()->jsonSerialize(),
             'project' => ProjectResource::collection([$project])->first()->jsonSerialize()
         ];
 

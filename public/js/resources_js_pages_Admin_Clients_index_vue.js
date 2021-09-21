@@ -66,12 +66,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -1242,83 +1236,65 @@ var render = function() {
       ),
       _vm._v(" "),
       _c(
-        "v-expansion-panels",
+        "v-container",
         _vm._l(_vm.client.projects, function(project, i) {
           return _c(
-            "v-expansion-panel",
-            { key: i },
+            "v-row",
+            { key: i, staticClass: "grey lighten-4", attrs: { justify: "2" } },
             [
+              _c("v-col", [_c("span", [_vm._v(_vm._s(project.name))])]),
+              _vm._v(" "),
               _c(
-                "v-expansion-panel-header",
+                "v-col",
+                { attrs: { align: "right" } },
                 [
                   _c(
-                    "v-row",
-                    [
-                      _c("v-col", [_c("span", [_vm._v(_vm._s(project.name))])]),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { align: "right" } },
+                    "v-tooltip",
+                    {
+                      attrs: { bottom: "" },
+                      scopedSlots: _vm._u(
                         [
-                          _c(
-                            "v-tooltip",
-                            {
-                              attrs: { bottom: "" },
-                              scopedSlots: _vm._u(
-                                [
-                                  {
-                                    key: "activator",
-                                    fn: function(ref) {
-                                      var on = ref.on
-                                      var attrs = ref.attrs
-                                      return [
-                                        _c(
-                                          "inertia-link",
-                                          _vm._g(
-                                            _vm._b(
-                                              {
-                                                attrs: {
-                                                  href: _vm.editClientProject(
-                                                    project
-                                                  ),
-                                                  as: "v-icon"
-                                                }
-                                              },
-                                              "inertia-link",
-                                              attrs,
-                                              false
-                                            ),
-                                            on
-                                          ),
-                                          [
-                                            _vm._v(
-                                              "\n                  mdi-folder-edit\n                "
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    }
-                                  }
-                                ],
-                                null,
-                                true
-                              )
-                            },
-                            [_vm._v(" "), _c("span", [_vm._v("Edit Project")])]
-                          )
+                          {
+                            key: "activator",
+                            fn: function(ref) {
+                              var on = ref.on
+                              var attrs = ref.attrs
+                              return [
+                                _c(
+                                  "inertia-link",
+                                  _vm._g(
+                                    _vm._b(
+                                      {
+                                        attrs: {
+                                          href: _vm.editClientProject(project),
+                                          as: "v-icon"
+                                        }
+                                      },
+                                      "inertia-link",
+                                      attrs,
+                                      false
+                                    ),
+                                    on
+                                  ),
+                                  [
+                                    _vm._v(
+                                      "\n              mdi-folder-edit\n            "
+                                    )
+                                  ]
+                                )
+                              ]
+                            }
+                          }
                         ],
-                        1
+                        null,
+                        true
                       )
-                    ],
-                    1
+                    },
+                    [_vm._v(" "), _c("span", [_vm._v("Edit Project")])]
                   )
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c("v-expansion-panel-content", [
-                _c("pre", [_vm._v(_vm._s(project))])
-              ])
+              )
             ],
             1
           )

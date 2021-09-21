@@ -217,24 +217,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   layout: _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -775,6 +757,13 @@ var render = function() {
       _c(
         "v-toolbar",
         [
+          _c(
+            "inertia-link",
+            { attrs: { href: "/admin/clients", as: "button" } },
+            [_c("v-icon", [_vm._v("mdi-menu-left")])],
+            1
+          ),
+          _vm._v(" "),
           _c("v-toolbar-title", [
             _vm._v(
               _vm._s(_vm.client.first_name) +
@@ -875,58 +864,6 @@ var render = function() {
                     1
                   )
                 ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-menu",
-            {
-              attrs: { "offset-y": "" },
-              scopedSlots: _vm._u([
-                {
-                  key: "activator",
-                  fn: function(ref) {
-                    var on = ref.on
-                    var attrs = ref.attrs
-                    return [
-                      _c(
-                        "v-btn",
-                        _vm._g(
-                          _vm._b(
-                            { attrs: { color: "primary", dark: "", icon: "" } },
-                            "v-btn",
-                            attrs,
-                            false
-                          ),
-                          on
-                        ),
-                        [
-                          _c("v-icon", [
-                            _vm._v("\n            mdi-plus\n          ")
-                          ])
-                        ],
-                        1
-                      )
-                    ]
-                  }
-                }
-              ])
-            },
-            [
-              _vm._v(" "),
-              _c(
-                "v-list",
-                _vm._l(_vm.DocumentItems, function(item, index) {
-                  return _c(
-                    "v-list-item",
-                    { key: index },
-                    [_c("v-list-item-title", [_vm._v(_vm._s(item.title))])],
-                    1
-                  )
-                }),
                 1
               )
             ],
