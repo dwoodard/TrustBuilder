@@ -56,11 +56,7 @@
       <v-card-title>
         <v-row>
           <v-col cols="12">
-            <v-text-field
-              v-model="search"
-              prepend-icon="mdi-magnify"
-              label="Search"
-              clearable/>
+            hey
           </v-col>
         </v-row>
       </v-card-title>

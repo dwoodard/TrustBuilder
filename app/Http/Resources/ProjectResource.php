@@ -24,8 +24,7 @@ class ProjectResource extends JsonResource
             'status' => $this->status,
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
-            'name' => $this->name,
-            'documents' => DocumentResource::collection($this->whenLoaded('documents')),
+            'name' => $this->name
         ];
     }
 }

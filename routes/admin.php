@@ -30,7 +30,6 @@ Route::group(['as'=>'admin.','middleware' => ['web','role:admin']], function(){
     Route::resource('clients', 'ClientController');
     Route::resource('invoices', 'InvoiceController');
     Route::resource('projects', 'ProjectController');
-    Route::resource('documents', 'DocumentController');
 
 
     //ClientProject

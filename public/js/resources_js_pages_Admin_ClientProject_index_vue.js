@@ -235,10 +235,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   layout: _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -949,27 +945,9 @@ var render = function() {
               _c(
                 "v-row",
                 [
-                  _c(
-                    "v-col",
-                    { attrs: { cols: "12" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          "prepend-icon": "mdi-magnify",
-                          label: "Search",
-                          clearable: ""
-                        },
-                        model: {
-                          value: _vm.search,
-                          callback: function($$v) {
-                            _vm.search = $$v
-                          },
-                          expression: "search"
-                        }
-                      })
-                    ],
-                    1
-                  )
+                  _c("v-col", { attrs: { cols: "12" } }, [
+                    _vm._v("\n          hey\n        ")
+                  ])
                 ],
                 1
               )
