@@ -11,124 +11,82 @@
     <v-expansion-panels>
       <v-expansion-panel>
         <v-expansion-panel-header>
-          Info
+          Client Info
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-form ref="form">
-            <v-text-field
-              v-model="form.first_name"
-              dense
-              :error-messages="form.errors.first_name"
-              label="First name"
-              required/>
-            <v-text-field
-              v-model="form.last_name"
-              dense
-              :error-messages="form.errors.last_name"
-              label="Last name"
-              required/>
-            <v-text-field
-              v-model="form.email"
-              dense
-              :error-messages="form.errors.email"
-              label="Email"
-              required/>
-            <v-text-field
-              v-model="form.phone"
-              dense
-              :error-messages="form.errors.phone"
-              label="Phone"
-              required/>
-            <v-text-field
-              v-model="form.address"
-              dense
-              :error-messages="form.errors.address"
-              label="Address"
-              required/>
-            <v-text-field
-              v-model="form.city"
-              dense
-              :error-messages="form.errors.city"
-              label="City"
-              required/>
-            <v-text-field
-              v-model="form.state"
-              dense
-              :error-messages="form.errors.state"
-              label="State"
-              required/>
-            <v-text-field
-              v-model="form.zip"
-              dense
-              :error-messages="form.errors.zip"
-              label="Zip"
-              required/>
-            <v-text-field
-              v-model="form.country"
-              dense
-              :error-messages="form.errors.country"
-              label="Country"
-              required/>
-            <v-text-field
-              v-model="form.company"
-              dense
-              :error-messages="form.errors.company"
-              label="Company"
-              required/>
+            <div class="d-flex ">
+              <v-text-field v-model="form.first_name"
+                            filled
+                            :error-messages="form.errors.first_name"
+                            label="First name"
+                            required/>
+              <v-text-field v-model="form.last_name"
+                            filled
+                            :error-messages="form.errors.last_name"
+                            label="Last name"
+                            required/>
+            </div>
+
+            <div class="d-flex">
+              <v-text-field v-model="form.email"
+                            filled
+                            :error-messages="form.errors.email"
+                            label="Email"
+                            required/>
+              <v-text-field v-model="form.phone"
+                            filled
+                            :error-messages="form.errors.phone"
+                            label="Phone"
+                            required/>
+            </div>
+
+            <v-text-field v-model="form.address"
+                          filled
+                          :error-messages="form.errors.address"
+                          label="Address"
+                          required/>
+
+            <div class="d-flex">
+              <v-text-field v-model="form.city"
+                            filled
+                            :error-messages="form.errors.city"
+                            label="City"
+                            required/>
+              <v-text-field v-model="form.state"
+                            filled
+                            :error-messages="form.errors.state"
+                            label="State"
+                            required/>
+              <v-text-field v-model="form.zip"
+                            filled
+                            :error-messages="form.errors.zip"
+                            label="Zip"
+                            required/>
+            </div>
+
+            <v-text-field v-model="form.country"
+                          filled
+                          :error-messages="form.errors.country"
+                          label="Country"
+                          required/>
+            <v-text-field v-model="form.company"
+                          filled
+                          :error-messages="form.errors.company"
+                          label="Company"
+                          required/>
             <v-select
               v-model="form.status"
-              dense
               :error-messages="form.errors.status"
               label="Status"
-              required>
-              <v-option
-                v-for="status in ['active', 'inactive']"
-                :key="status"
-                :value="status">
-                {{ status }}
-              </v-option>
-            </v-select>
+              required
+              :items="['active', 'inactive']"/>
             <v-textarea
               v-model="form.notes"
-              dense
               :error-messages="form.errors.notes"
               label="Notes"
               required/>
           </v-form>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-
-      <v-expansion-panel>
-        <v-expansion-panel-header>Projects</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-data-table
-            :headers="[
-              {
-                text: 'Name',
-                align: 'start',
-                sortable: true,
-                value: 'name'
-              },
-              {
-                text: 'Actions',
-                value: 'actions',
-                sortable: false
-              }
-            ]"
-            :items="form.projects">
-            <template #item.actions="{ item }">
-              <inertia-link :href="`/admin/projects/${item.id}/edit`" as="button">
-                <v-icon small class="mr-2">
-                  mdi-pencil
-                </v-icon>
-              </inertia-link>
-              <v-icon
-                small
-                @click="deleteItem(item)">
-                mdi-delete
-              </v-icon>
-            </template>
-          </v-data-table>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>

@@ -6,7 +6,7 @@
         <v-icon>mdi-menu-left</v-icon>
       </inertia-link>
 
-      <v-toolbar-title>{{ client.first_name }} {{ client.last_name }} {{ project.name }}</v-toolbar-title>
+      <v-toolbar-title><small>{{ client.first_name }} {{ client.last_name }}</small> {{ project.name }} ({{ project.type }})</v-toolbar-title>
       <v-spacer/>
 
       <!-- confirm delete dialog -->

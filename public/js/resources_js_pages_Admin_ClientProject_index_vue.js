@@ -765,12 +765,19 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("v-toolbar-title", [
+            _c("small", [
+              _vm._v(
+                _vm._s(_vm.client.first_name) +
+                  " " +
+                  _vm._s(_vm.client.last_name)
+              )
+            ]),
             _vm._v(
-              _vm._s(_vm.client.first_name) +
-                " " +
-                _vm._s(_vm.client.last_name) +
-                " " +
-                _vm._s(_vm.project.name)
+              " " +
+                _vm._s(_vm.project.name) +
+                " (" +
+                _vm._s(_vm.project.type) +
+                ")"
             )
           ]),
           _vm._v(" "),

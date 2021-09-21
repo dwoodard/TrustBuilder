@@ -304,48 +304,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -1024,7 +982,7 @@ var render = function() {
             "v-expansion-panel",
             [
               _c("v-expansion-panel-header", [
-                _vm._v("\n        Info\n      ")
+                _vm._v("\n        Client Info\n      ")
               ]),
               _vm._v(" "),
               _c(
@@ -1034,73 +992,87 @@ var render = function() {
                     "v-form",
                     { ref: "form" },
                     [
-                      _c("v-text-field", {
-                        attrs: {
-                          dense: "",
-                          "error-messages": _vm.form.errors.first_name,
-                          label: "First name",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.form.first_name,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "first_name", $$v)
-                          },
-                          expression: "form.first_name"
-                        }
-                      }),
+                      _c(
+                        "div",
+                        { staticClass: "d-flex " },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              filled: "",
+                              "error-messages": _vm.form.errors.first_name,
+                              label: "First name",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.first_name,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "first_name", $$v)
+                              },
+                              expression: "form.first_name"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              filled: "",
+                              "error-messages": _vm.form.errors.last_name,
+                              label: "Last name",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.last_name,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "last_name", $$v)
+                              },
+                              expression: "form.last_name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "d-flex" },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              filled: "",
+                              "error-messages": _vm.form.errors.email,
+                              label: "Email",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.email,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "email", $$v)
+                              },
+                              expression: "form.email"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              filled: "",
+                              "error-messages": _vm.form.errors.phone,
+                              label: "Phone",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.phone,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "phone", $$v)
+                              },
+                              expression: "form.phone"
+                            }
+                          })
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c("v-text-field", {
                         attrs: {
-                          dense: "",
-                          "error-messages": _vm.form.errors.last_name,
-                          label: "Last name",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.form.last_name,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "last_name", $$v)
-                          },
-                          expression: "form.last_name"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          dense: "",
-                          "error-messages": _vm.form.errors.email,
-                          label: "Email",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.form.email,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "email", $$v)
-                          },
-                          expression: "form.email"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          dense: "",
-                          "error-messages": _vm.form.errors.phone,
-                          label: "Phone",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.form.phone,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "phone", $$v)
-                          },
-                          expression: "form.phone"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          dense: "",
+                          filled: "",
                           "error-messages": _vm.form.errors.address,
                           label: "Address",
                           required: ""
@@ -1114,57 +1086,64 @@ var render = function() {
                         }
                       }),
                       _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          dense: "",
-                          "error-messages": _vm.form.errors.city,
-                          label: "City",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.form.city,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "city", $$v)
-                          },
-                          expression: "form.city"
-                        }
-                      }),
+                      _c(
+                        "div",
+                        { staticClass: "d-flex" },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              filled: "",
+                              "error-messages": _vm.form.errors.city,
+                              label: "City",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.city,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "city", $$v)
+                              },
+                              expression: "form.city"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              filled: "",
+                              "error-messages": _vm.form.errors.state,
+                              label: "State",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.state,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "state", $$v)
+                              },
+                              expression: "form.state"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              filled: "",
+                              "error-messages": _vm.form.errors.zip,
+                              label: "Zip",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.zip,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "zip", $$v)
+                              },
+                              expression: "form.zip"
+                            }
+                          })
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c("v-text-field", {
                         attrs: {
-                          dense: "",
-                          "error-messages": _vm.form.errors.state,
-                          label: "State",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.form.state,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "state", $$v)
-                          },
-                          expression: "form.state"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          dense: "",
-                          "error-messages": _vm.form.errors.zip,
-                          label: "Zip",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.form.zip,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "zip", $$v)
-                          },
-                          expression: "form.zip"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          dense: "",
+                          filled: "",
                           "error-messages": _vm.form.errors.country,
                           label: "Country",
                           required: ""
@@ -1180,7 +1159,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("v-text-field", {
                         attrs: {
-                          dense: "",
+                          filled: "",
                           "error-messages": _vm.form.errors.company,
                           label: "Company",
                           required: ""
@@ -1194,42 +1173,24 @@ var render = function() {
                         }
                       }),
                       _vm._v(" "),
-                      _c(
-                        "v-select",
-                        {
-                          attrs: {
-                            dense: "",
-                            "error-messages": _vm.form.errors.status,
-                            label: "Status",
-                            required: ""
-                          },
-                          model: {
-                            value: _vm.form.status,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "status", $$v)
-                            },
-                            expression: "form.status"
-                          }
+                      _c("v-select", {
+                        attrs: {
+                          "error-messages": _vm.form.errors.status,
+                          label: "Status",
+                          required: "",
+                          items: ["active", "inactive"]
                         },
-                        _vm._l(["active", "inactive"], function(status) {
-                          return _c(
-                            "v-option",
-                            { key: status, attrs: { value: status } },
-                            [
-                              _vm._v(
-                                "\n              " +
-                                  _vm._s(status) +
-                                  "\n            "
-                              )
-                            ]
-                          )
-                        }),
-                        1
-                      ),
+                        model: {
+                          value: _vm.form.status,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "status", $$v)
+                          },
+                          expression: "form.status"
+                        }
+                      }),
                       _vm._v(" "),
                       _c("v-textarea", {
                         attrs: {
-                          dense: "",
                           "error-messages": _vm.form.errors.notes,
                           label: "Notes",
                           required: ""
@@ -1245,87 +1206,6 @@ var render = function() {
                     ],
                     1
                   )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-expansion-panel",
-            [
-              _c("v-expansion-panel-header", [_vm._v("Projects")]),
-              _vm._v(" "),
-              _c(
-                "v-expansion-panel-content",
-                [
-                  _c("v-data-table", {
-                    attrs: {
-                      headers: [
-                        {
-                          text: "Name",
-                          align: "start",
-                          sortable: true,
-                          value: "name"
-                        },
-                        {
-                          text: "Actions",
-                          value: "actions",
-                          sortable: false
-                        }
-                      ],
-                      items: _vm.form.projects
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "item.actions",
-                        fn: function(ref) {
-                          var item = ref.item
-                          return [
-                            _c(
-                              "inertia-link",
-                              {
-                                attrs: {
-                                  href: "/admin/projects/" + item.id + "/edit",
-                                  as: "button"
-                                }
-                              },
-                              [
-                                _c(
-                                  "v-icon",
-                                  { staticClass: "mr-2", attrs: { small: "" } },
-                                  [
-                                    _vm._v(
-                                      "\n                mdi-pencil\n              "
-                                    )
-                                  ]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-icon",
-                              {
-                                attrs: { small: "" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.deleteItem(item)
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n              mdi-delete\n            "
-                                )
-                              ]
-                            )
-                          ]
-                        }
-                      }
-                    ])
-                  })
                 ],
                 1
               )
