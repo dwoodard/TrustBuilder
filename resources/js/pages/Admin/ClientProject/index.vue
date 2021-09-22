@@ -34,20 +34,16 @@
     </v-toolbar>
 
 
-    <v-card>
-      <v-card-title>
-        <v-row>
-          <v-col cols="12">
-            hey
-          </v-col>
-        </v-row>
-      </v-card-title>
-    </v-card>
+    <v-jsoneditor v-model="json" :options="options" :plus="false" height="400px" @error="onError"/>
+
+    <pre>{{ json }}</pre>
   </v-container>
 </template>
 
 <script>
+  import VJsoneditor from 'v-jsoneditor/src/index';
   import Admin from '@/layouts/Admin/Layout';
+
 
   export default {
     layout: Admin,
@@ -55,18 +51,29 @@
     props: ['client', 'project'],
     data() {
       return {
-        search: null,
+        json: {
+          trust_name: '',
+          first_trustee: '',
+          mail_address: {
+            address: '',
+            city: '',
+            state: '',
+            zip: '',
+            county: ''
+          },
+          meeting_date: '',
+          settlor: '',
+          purpose_of_trust: '',
+          settlor_gift: '',
+          term_of_trust: '',
+          secondary_trustees: [
+            'John Doe'
+          ]
+        },
+
         form: this.$inertia.form({}),
-        showDelete: false,
-        DocumentItems: [
-          {title: 'Trust'},
-          {title: 'Schedule A'},
-          {title: 'Schedule B'},
-          {title: 'Schedule C'},
-          {title: 'Schedule D'},
-          {title: 'Allodial Title'},
-          {title: 'Meeting Minutes'}
-        ]
+        showDelete: false
+
       };
     },
     methods: {
@@ -78,6 +85,7 @@
       }
     },
     components: {
+      VJsoneditor
     }
   };
 </script>
