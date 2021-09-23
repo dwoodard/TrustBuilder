@@ -33,11 +33,13 @@
     "jquery": "^3.6.0",
     "laravel-mix": "^6.0.6",
     "lodash": "^4.17.19",
+    "node-sass": "^6.0.1",
     "popper.js": "^1.16.0",
     "portal-vue": "^2.1.7",
     "postcss": "^8.1.14",
     "postcss-import": "^12.0.1",
     "postcss-nesting": "^7.0.1",
+    "sass-loader": "^12.1.0",
     "v-mask": "^2.2.4",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.6",
@@ -46,6 +48,7 @@
     "vuetify": "^2.5.4"
   },
   "dependencies": {
-    "v-jsoneditor": "^1.4.5"
+    "v-jsoneditor": "^1.4.5",
+    "vue-document-editor": "^1.2.5"
   }
 }

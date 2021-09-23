@@ -33,8 +33,13 @@
       <!-- end confirm delete dialog -->
     </v-toolbar>
 
+    <VueDocumentEditor :content.sync="content"/>
 
-    <v-jsoneditor v-model="json" :options="options" :plus="false" height="400px" @error="onError"/>
+
+    <div>hey</div>
+
+    <v-jsoneditor v-model="json" :plus="false" height="400px"/>
+
 
     <pre>{{ json }}</pre>
   </v-container>
@@ -42,6 +47,7 @@
 
 <script>
   import VJsoneditor from 'v-jsoneditor/src/index';
+  import VueDocumentEditor from 'vue-document-editor';
   import Admin from '@/layouts/Admin/Layout';
 
 
@@ -71,6 +77,8 @@
           ]
         },
 
+        content: [' Hello! Fill this page with text and new pages will be created as it overflows.', 'test'],
+
         form: this.$inertia.form({}),
         showDelete: false
 
@@ -85,7 +93,9 @@
       }
     },
     components: {
-      VJsoneditor
+      VJsoneditor,
+      VueDocumentEditor
+
     }
   };
 </script>
