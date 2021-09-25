@@ -1240,7 +1240,7 @@ var render = function() {
         _vm._l(_vm.client.projects, function(project, i) {
           return _c(
             "v-row",
-            { key: i, staticClass: "grey lighten-4", attrs: { justify: "2" } },
+            { key: i, staticClass: "grey lighten-4" },
             [
               _c("v-col", [_c("span", [_vm._v(_vm._s(project.name))])]),
               _vm._v(" "),

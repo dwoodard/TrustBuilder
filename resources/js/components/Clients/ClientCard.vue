@@ -32,7 +32,7 @@
 
 
     <v-container>
-      <v-row v-for="(project,i) in client.projects" :key="i" justify="2" class="grey lighten-4">
+      <v-row v-for="(project,i) in client.projects" :key="i" class="grey lighten-4">
         <v-col>
           <span>{{ project.name }}</span>
         </v-col>

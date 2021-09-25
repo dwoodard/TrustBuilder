@@ -1,0 +1,35 @@
+<template>
+  <div>
+    <header>
+      <h1>Contract</h1>
+      <div>Title</div>
+      <div>subTitle</div>
+
+      <h3>Client</h3>
+      <code>{{ client }}</code>
+
+      <h3>Project</h3>
+      <code>{{ project }}</code>
+    </header>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'Trust.vue',
+    props: {
+      client: {
+        type: Object,
+        required: true
+      },
+      project: {
+        type: Object,
+        required: true
+      }
+    }
+  };
+</script>
+
+<style scoped>
+
+</style>
