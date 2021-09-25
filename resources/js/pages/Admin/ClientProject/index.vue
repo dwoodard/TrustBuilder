@@ -363,12 +363,8 @@
       },
       // Formats management
       current_format_name() {
-        const format = this.formats.find(
-          ([, width_mm, height_mm]) => (this.page_format_mm[0] == width_mm
-            && this.page_format_mm[1] == height_mm)
-        );
-        return format ? format[0] : (`${this.page_format_mm[0]}mm x ${
-          this.page_format_mm[1]}mm`);
+        const format = this.formats.find(([, widthMm, heightMm]) => (this.page_format_mm[0] === widthMm && this.page_format_mm[1] === heightMm));
+        return format ? format[0] : (`${this.page_format_mm[0]}mm x ${this.page_format_mm[1]}mm`);
       },
       formats: () => [
         ['A0', 841, 1189],
@@ -389,7 +385,7 @@
       // Margins management
       current_margins_name() {
         const margins = this.margins.find(
-          ([, margins]) => (this.page_margins == margins)
+          ([, margins]) => (this.page_margins === margins)
         );
         return margins ? margins[0] : margins[1];
       },

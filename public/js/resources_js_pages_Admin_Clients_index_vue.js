@@ -1242,7 +1242,13 @@ var render = function() {
             "v-row",
             { key: i, staticClass: "grey lighten-4" },
             [
-              _c("v-col", [_c("span", [_vm._v(_vm._s(project.name))])]),
+              _c("v-col", [
+                _c("span", [
+                  _vm._v(
+                    " (" + _vm._s(project.type) + ") " + _vm._s(project.name)
+                  )
+                ])
+              ]),
               _vm._v(" "),
               _c(
                 "v-col",

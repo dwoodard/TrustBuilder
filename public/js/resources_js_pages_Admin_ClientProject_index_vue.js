@@ -713,10 +713,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
       var format = this.formats.find(function (_ref7) {
         var _ref8 = _slicedToArray(_ref7, 3),
-            width_mm = _ref8[1],
-            height_mm = _ref8[2];
+            widthMm = _ref8[1],
+            heightMm = _ref8[2];
 
-        return _this2.page_format_mm[0] == width_mm && _this2.page_format_mm[1] == height_mm;
+        return _this2.page_format_mm[0] === widthMm && _this2.page_format_mm[1] === heightMm;
       });
       return format ? format[0] : "".concat(this.page_format_mm[0], "mm x ").concat(this.page_format_mm[1], "mm");
     },
@@ -731,7 +731,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         var _ref10 = _slicedToArray(_ref9, 2),
             margins = _ref10[1];
 
-        return _this3.page_margins == margins;
+        return _this3.page_margins === margins;
       });
       return margins ? margins[0] : margins[1];
     },

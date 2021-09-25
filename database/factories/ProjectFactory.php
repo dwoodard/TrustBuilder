@@ -23,7 +23,7 @@ class ProjectFactory extends Factory
     {
         return [
             //name, user_id, client_id, type, status, start_date, end_date
-            'name' => $this->faker->name . " Trust",
+            'name' => $this->random_string(),
             'user_id' => \App\Models\User::factory()->create()->id,
             'client_id' => \App\Models\Client::factory()->create()->id,
             'type' => $this->faker->randomElement(['Trust', 'Contract']),
@@ -31,5 +31,15 @@ class ProjectFactory extends Factory
             'start_date' => $this->faker->dateTimeBetween('-1 years', '+1 years'),
             'end_date' => $this->faker->dateTimeBetween('+1 years', '+2 years'),
         ];
+    }
+
+    private function random_string($length = 5) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }

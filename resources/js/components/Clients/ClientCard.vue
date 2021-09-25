@@ -34,7 +34,7 @@
     <v-container>
       <v-row v-for="(project,i) in client.projects" :key="i" class="grey lighten-4">
         <v-col>
-          <span>{{ project.name }}</span>
+          <span> ({{ project.type }}) {{ project.name }}</span>
         </v-col>
         <v-col align="right">
           <v-tooltip bottom>
