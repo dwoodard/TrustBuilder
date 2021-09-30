@@ -1,16 +1,5 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_Admin_ClientProject_index_vue"],{
 
-/***/ "./node_modules/@babel/runtime/regenerator/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
-
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Contract.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Contract.vue?vue&type=script&lang=js& ***!
@@ -54,10 +43,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -94,8 +83,408 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'Trust.vue',
+  data: function data() {
+    return {
+      step: 1
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vuetify_dist_vuetify_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/dist/vuetify.css */ "./node_modules/vuetify/dist/vuetify.css");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     client: {
       type: Object,
@@ -105,7 +494,30 @@ __webpack_require__.r(__webpack_exports__);
       type: Object,
       required: true
     }
-  }
+  },
+  data: function data() {
+    return {// json: {
+      //   trust_name: '',
+      //   first_trustee: '',
+      //   mail_address: {
+      //     address: '',
+      //     city: '',
+      //     state: '',
+      //     zip: '',
+      //     county: ''
+      //   },
+      //   meeting_date: '',
+      //   settlor: '',
+      //   purpose_of_trust: '',
+      //   settlor_gift: '',
+      //   term_of_trust: '',
+      //   secondary_trustees: [
+      //     'John Doe'
+      //   ]
+      // },
+    };
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -280,120 +692,77 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_document_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-document-editor */ "./node_modules/vue-document-editor/src/DocumentEditor/DocumentEditor.vue");
-/* harmony import */ var vue_file_toolbar_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-file-toolbar-menu */ "./node_modules/vue-file-toolbar-menu/src/Bar/Bar.vue");
-/* harmony import */ var _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/layouts/Admin/Layout */ "./resources/js/layouts/Admin/Layout.vue");
-/* harmony import */ var _document_templates_Trust__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/document_templates/Trust */ "./resources/js/document_templates/Trust.vue");
-/* harmony import */ var _document_templates_Contract__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/document_templates/Contract */ "./resources/js/document_templates/Contract.vue");
+/* harmony import */ var vue_document_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-document-editor */ "./node_modules/vue-document-editor/src/DocumentEditor/DocumentEditor.vue");
+/* harmony import */ var vue_file_toolbar_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-file-toolbar-menu */ "./node_modules/vue-file-toolbar-menu/src/Bar/Bar.vue");
+/* harmony import */ var _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../layouts/Admin/Layout */ "./resources/js/layouts/Admin/Layout.vue");
+/* harmony import */ var _document_templates_Contract__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../document_templates/Contract */ "./resources/js/document_templates/Contract.vue");
+/* harmony import */ var _document_templates_DeclarationOfTrust__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../document_templates/DeclarationOfTrust */ "./resources/js/document_templates/DeclarationOfTrust/index.vue");
+/* harmony import */ var _document_templates_DeclarationOfTrust_TrustWizard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../document_templates/DeclarationOfTrust/TrustWizard */ "./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  layout: _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_3__["default"],
-  name: 'Index',
+  layout: _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_2__["default"],
   props: ['client', 'project'],
   data: function data() {
     return {
-      // json: {
-      //   trust_name: '',
-      //   first_trustee: '',
-      //   mail_address: {
-      //     address: '',
-      //     city: '',
-      //     state: '',
-      //     zip: '',
-      //     county: ''
-      //   },
-      //   meeting_date: '',
-      //   settlor: '',
-      //   purpose_of_trust: '',
-      //   settlor_gift: '',
-      //   term_of_trust: '',
-      //   secondary_trustees: [
-      //     'John Doe'
-      //   ]
-      // },
-      zoom: 0.50,
+      zoom: 1.0,
       zoom_min: 0.10,
-      zoom_max: 5.0,
-      page_format_mm: [210, 297],
-      page_margins: '10mm 15mm',
+      zoom_max: 2.0,
       display: 'grid',
       // ["grid", "vertical", "horizontal"]
       mounted: false,
@@ -407,416 +776,46 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     };
   },
   computed: {
-    content: function content() {
-      return [{
-        template: this.Tempate,
-        props: {
-          client: this.client,
-          project: this.project
+    content: {
+      get: function get() {
+        switch (this.project.type) {
+          case 'Trust':
+            return [{
+              template: _document_templates_DeclarationOfTrust__WEBPACK_IMPORTED_MODULE_4__["default"],
+              props: {
+                client: this.client,
+                project: this.project
+              }
+            }];
+
+          case 'Contract':
+            return [{
+              template: _document_templates_Contract__WEBPACK_IMPORTED_MODULE_3__["default"],
+              props: {
+                client: this.client,
+                project: this.project
+              }
+            }];
+
+          default:
+            return null;
         }
-      }, 'test'];
-    },
-    Tempate: function Tempate() {
-      switch (this.project.type) {
-        case 'Trust':
-          return _document_templates_Trust__WEBPACK_IMPORTED_MODULE_4__["default"];
-
-        case 'Contract':
-          return _document_templates_Contract__WEBPACK_IMPORTED_MODULE_5__["default"];
-
-        default:
-          return null;
+      },
+      set: function set(value) {
+        console.log(value.template);
       }
     },
     // This is the menu content
     menu: function menu() {
-      var _this = this;
-
       return [// Main commands
       {
-        text: 'New',
-        title: 'New',
-        icon: 'description',
-        click: function click() {
-          if (confirm('This will create an empty document. Are you sure?')) {
-            _this.content = [''];
-
-            _this.resetContentHistory();
-          }
-        }
-      }, {
         text: 'Print',
         title: 'Print',
         icon: 'print',
         click: function click() {
           return window.print();
         }
-      }, {
-        is: 'spacer'
-      }, // Undo / redo commands
-      {
-        title: 'Undo',
-        icon: 'undo',
-        disabled: !this.can_undo,
-        hotkey: this.isMacLike ? 'command+z' : 'ctrl+z',
-        click: function click() {
-          return _this.undo();
-        }
-      }, {
-        title: 'Redo',
-        icon: 'redo',
-        disabled: !this.can_redo,
-        hotkey: this.isMacLike ? 'shift+command+z' : 'ctrl+y',
-        click: function click() {
-          return _this.redo();
-        }
-      }, {
-        is: 'spacer'
-      }, // Rich text menus
-      {
-        icon: 'format_align_left',
-        title: 'Align left',
-        active: this.isLeftAligned,
-        disabled: !this.current_text_style,
-        hotkey: this.isMacLike ? 'shift+command+l' : 'ctrl+shift+l',
-        click: function click() {
-          return document.execCommand('justifyLeft');
-        }
-      }, {
-        icon: 'format_align_center',
-        title: 'Align center',
-        active: this.isCentered,
-        disabled: !this.current_text_style,
-        hotkey: this.isMacLike ? 'shift+command+e' : 'ctrl+shift+e',
-        click: function click() {
-          return document.execCommand('justifyCenter');
-        }
-      }, {
-        icon: 'format_align_right',
-        title: 'Align right',
-        active: this.isRightAligned,
-        disabled: !this.current_text_style,
-        hotkey: this.isMacLike ? 'shift+command+r' : 'ctrl+shift+r',
-        click: function click() {
-          return document.execCommand('justifyRight');
-        }
-      }, {
-        icon: 'format_align_justify',
-        title: 'Justify content',
-        active: this.isJustified,
-        disabled: !this.current_text_style,
-        hotkey: this.isMacLike ? 'shift+command+j' : 'ctrl+shift+j',
-        click: function click() {
-          return document.execCommand('justifyFull');
-        }
-      }, {
-        is: 'separator'
-      }, {
-        icon: 'format_bold',
-        title: 'Bold',
-        active: this.isBold,
-        disabled: !this.current_text_style,
-        hotkey: this.isMacLike ? 'command+b' : 'ctrl+b',
-        click: function click() {
-          return document.execCommand('bold');
-        }
-      }, {
-        icon: 'format_italic',
-        title: 'Italic',
-        active: this.isItalic,
-        disabled: !this.current_text_style,
-        hotkey: this.isMacLike ? 'command+i' : 'ctrl+i',
-        click: function click() {
-          return document.execCommand('italic');
-        }
-      }, {
-        icon: 'format_underline',
-        title: 'Underline',
-        active: this.isUnderline,
-        disabled: !this.current_text_style,
-        hotkey: this.isMacLike ? 'command+u' : 'ctrl+u',
-        click: function click() {
-          return document.execCommand('underline');
-        }
-      }, {
-        icon: 'format_strikethrough',
-        title: 'Strike through',
-        active: this.isStrikeThrough,
-        disabled: !this.current_text_style,
-        click: function click() {
-          return document.execCommand('strikethrough');
-        }
-      }, {
-        is: 'button-color',
-        type: 'compact',
-        menu_class: 'align-center',
-        disabled: !this.current_text_style,
-        color: this.curColor,
-        update_color: function update_color(newColor) {
-          return document.execCommand('foreColor', false, newColor.hex8);
-        }
-      }, {
-        is: 'separator'
-      }, {
-        icon: 'format_list_numbered',
-        title: 'Numbered list',
-        active: this.isNumberedList,
-        disabled: !this.current_text_style,
-        click: function click() {
-          return document.execCommand('insertOrderedList');
-        }
-      }, {
-        icon: 'format_list_bulleted',
-        title: 'Bulleted list',
-        active: this.isBulletedList,
-        disabled: !this.current_text_style,
-        click: function click() {
-          return document.execCommand('insertUnorderedList');
-        }
-      }, {
-        html: '<b>H1</b>',
-        title: 'Header 1',
-        active: this.isH1,
-        disabled: !this.current_text_style,
-        click: function click() {
-          return document.execCommand('formatBlock', false, '<h1>');
-        }
-      }, {
-        html: '<b>H2</b>',
-        title: 'Header 2',
-        active: this.isH2,
-        disabled: !this.current_text_style,
-        click: function click() {
-          return document.execCommand('formatBlock', false, '<h2>');
-        }
-      }, {
-        html: '<b>H3</b>',
-        title: 'Header 3',
-        active: this.isH3,
-        disabled: !this.current_text_style,
-        click: function click() {
-          return document.execCommand('formatBlock', false, '<h3>');
-        }
-      }, {
-        icon: 'format_clear',
-        title: 'Clear format',
-        disabled: !this.current_text_style,
-        click: function click() {
-          document.execCommand('removeFormat');
-          document.execCommand('formatBlock', false, '<div>');
-        }
-      }, {
-        icon: 'splitscreen',
-        title: 'Page break',
-        disabled: !this.current_text_style,
-        click: function click() {
-          return _this.insertPageBreak();
-        }
-      }, {
-        is: 'spacer'
-      }, {
-        // Format menu
-        text: this.current_format_name,
-        title: 'Format',
-        icon: 'crop_free',
-        chevron: true,
-        menu: this.formats.map(function (_ref) {
-          var _ref2 = _slicedToArray(_ref, 3),
-              text = _ref2[0],
-              w = _ref2[1],
-              h = _ref2[2];
-
-          return {
-            text: text,
-            active: _this.page_format_mm[0] === w && _this.page_format_mm[1] === h,
-            click: function click() {
-              _this.page_format_mm = [w, h];
-            }
-          };
-        }),
-        menu_width: 80,
-        menu_height: 280
-      }, {
-        // Margins menu
-        text: this.current_margins_name,
-        title: 'Margins',
-        icon: 'select_all',
-        chevron: true,
-        menu: this.margins.map(function (_ref3) {
-          var _ref4 = _slicedToArray(_ref3, 2),
-              text = _ref4[0],
-              value = _ref4[1];
-
-          return {
-            text: "".concat(text, " (").concat(value, ")"),
-            active: _this.page_margins == value,
-            click: function click() {
-              _this.page_margins = value;
-            }
-          };
-        }),
-        menu_width: 200,
-        menu_class: 'align-center'
-      }, {
-        // Zoom menu
-        text: "".concat(Math.floor(this.zoom * 100), "%"),
-        title: 'Zoom',
-        icon: 'zoom_in',
-        chevron: true,
-        menu: [['200%', 2.0], ['150%', 1.5], ['125%', 1.25], ['100%', 1.0], ['75%', 0.75], ['50%', 0.5], ['25%', 0.25]].map(function (_ref5) {
-          var _ref6 = _slicedToArray(_ref5, 2),
-              text = _ref6[0],
-              zoom = _ref6[1];
-
-          return {
-            text: text,
-            active: _this.zoom == zoom,
-            click: function click() {
-              _this.zoom = zoom;
-            }
-          };
-        }),
-        menu_width: 80,
-        menu_height: 280,
-        menu_class: 'align-center'
-      }, {
-        // Display mode menu
-        title: 'Display',
-        icon: this.display == 'horizontal' ? 'view_column' : this.display == 'vertical' ? 'view_stream' : 'view_module',
-        chevron: true,
-        menu: [{
-          icon: 'view_module',
-          active: this.display == 'grid',
-          click: function click() {
-            _this.display = 'grid';
-          }
-        }, {
-          icon: 'view_column',
-          active: this.display == 'horizontal',
-          click: function click() {
-            _this.display = 'horizontal';
-          }
-        }, {
-          icon: 'view_stream',
-          active: this.display == 'vertical',
-          click: function click() {
-            _this.display = 'vertical';
-          }
-        }],
-        menu_width: 55,
-        menu_class: 'align-right'
       }];
-    },
-    // Formats management
-    current_format_name: function current_format_name() {
-      var _this2 = this;
-
-      var format = this.formats.find(function (_ref7) {
-        var _ref8 = _slicedToArray(_ref7, 3),
-            widthMm = _ref8[1],
-            heightMm = _ref8[2];
-
-        return _this2.page_format_mm[0] === widthMm && _this2.page_format_mm[1] === heightMm;
-      });
-      return format ? format[0] : "".concat(this.page_format_mm[0], "mm x ").concat(this.page_format_mm[1], "mm");
-    },
-    formats: function formats() {
-      return [['A0', 841, 1189], ['A0L', 1189, 841], ['A1', 594, 841], ['A1L', 841, 594], ['A2', 420, 594], ['A2L', 594, 420], ['A3', 297, 420], ['A3L', 420, 297], ['A4', 210, 297], ['A4L', 297, 210], ['A5', 148, 210], ['A5L', 210, 148], ['A6', 105, 148], ['A6L', 148, 105]];
-    },
-    // Margins management
-    current_margins_name: function current_margins_name() {
-      var _this3 = this;
-
-      var margins = this.margins.find(function (_ref9) {
-        var _ref10 = _slicedToArray(_ref9, 2),
-            margins = _ref10[1];
-
-        return _this3.page_margins === margins;
-      });
-      return margins ? margins[0] : margins[1];
-    },
-    margins: function margins() {
-      return [['Medium', '20mm'], ['Small', '15mm'], ['Slim', '10mm 15mm'], ['Tiny', '5mm']];
-    },
-    // Current text style management
-    current_text_style: function current_text_style() {
-      var _this$$refs$editor;
-
-      if (!this.$refs.editor) {
-        return {};
-      }
-
-      return this.mounted ? (_this$$refs$editor = this.$refs.editor) === null || _this$$refs$editor === void 0 ? void 0 : _this$$refs$editor.current_text_style : false;
-    },
-    isLeftAligned: function isLeftAligned() {
-      var _this$current_text_st;
-
-      return ['start', 'left', '-moz-left'].includes((_this$current_text_st = this.current_text_style) === null || _this$current_text_st === void 0 ? void 0 : _this$current_text_st.textAlign);
-    },
-    isRightAligned: function isRightAligned() {
-      var _this$current_text_st2;
-
-      return ['end', 'right', '-moz-right'].includes((_this$current_text_st2 = this.current_text_style) === null || _this$current_text_st2 === void 0 ? void 0 : _this$current_text_st2.textAlign);
-    },
-    isCentered: function isCentered() {
-      var _this$current_text_st3;
-
-      return ['center', '-moz-center'].includes((_this$current_text_st3 = this.current_text_style) === null || _this$current_text_st3 === void 0 ? void 0 : _this$current_text_st3.textAlign);
-    },
-    isJustified: function isJustified() {
-      var _this$current_text_st4;
-
-      return ['justify', 'justify-all'].includes((_this$current_text_st4 = this.current_text_style) === null || _this$current_text_st4 === void 0 ? void 0 : _this$current_text_st4.textAlign);
-    },
-    isBold: function isBold() {
-      var fontWeight = this.current_text_style.fontWeight;
-      return fontWeight && (parseInt(fontWeight) > 400 || fontWeight.indexOf('bold') == 0);
-    },
-    isItalic: function isItalic() {
-      return this.current_text_style.fontStyle === 'italic';
-    },
-    isUnderline: function isUnderline() {
-      // text-decoration is not overridden by children, so we query the parent stack
-      var stack = this.current_text_style.textDecorationStack;
-      return stack && stack.some(function (d) {
-        return d.indexOf('underline') === 0;
-      });
-    },
-    isStrikeThrough: function isStrikeThrough() {
-      // text-decoration is not overridden by children, so we query the parent stack
-      var stack = this.current_text_style.textDecorationStack;
-      return stack && stack.some(function (d) {
-        return d.indexOf('line-through') === 0;
-      });
-    },
-    isNumberedList: function isNumberedList() {
-      return this.current_text_style.isList && this.current_text_style.listStyleType === 'decimal';
-    },
-    isBulletedList: function isBulletedList() {
-      return this.current_text_style.isList && ['disc', 'circle'].includes(this.current_text_style.listStyleType);
-    },
-    isH1: function isH1() {
-      return this.current_text_style.headerLevel === 1;
-    },
-    isH2: function isH2() {
-      return this.current_text_style.headerLevel === 2;
-    },
-    isH3: function isH3() {
-      return this.current_text_style.headerLevel === 3;
-    },
-    curColor: function curColor() {
-      return this.current_text_style.color || 'transparent';
-    },
-    // Platform management
-    isMacLike: function isMacLike() {
-      return /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
-    },
-    // Undo / redo flags
-    can_undo: function can_undo() {
-      return this.undo_count > 0;
-    },
-    can_redo: function can_redo() {
-      return this.content_history.length - this.undo_count - 1 > 0;
     }
   },
   methods: {
@@ -832,124 +831,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
       return html;
     },
-    // Undo / redo functions examples
-    undo: function undo() {
-      if (this.can_undo) {
-        this._mute_next_content_watcher = true;
-        this.content = this.content_history[--this.undo_count];
-      }
-    },
-    redo: function redo() {
-      if (this.can_redo) {
-        // eslint-disable-next-line no-underscore-dangle
-        this._mute_next_content_watcher = true;
-        this.content = this.content_history[++this.undo_count];
-      }
-    },
-    resetContentHistory: function resetContentHistory() {
-      this.content_history = [];
-      this.undo_count = -1;
-    },
-    // Insert page break function example
-    insertPageBreak: function insertPageBreak() {
-      var _this4 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var marker, regexp, i, item, match, tags_open, content_plus_tags_close, _i2, _item;
-
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                // insert paragraph at caret position
-                document.execCommand('insertParagraph'); // insert a marker at caret position (start of the new paragraph)
-
-                marker = '###PB###'; // must be regex compatible
-
-                document.execCommand('insertText', false, marker); // wait for DOM update
-
-                _context.next = 5;
-                return _this4.$nextTick();
-
-              case 5:
-                // find the marker inside content items and split this content item in two items between the two paragraphs
-                // only match root tags (p, div, h1, h2...) to avoid non-root tags like <li>
-                regexp = new RegExp("<(p|div|h\\d)( [^/>]+)*>(<[^/>]+>)*".concat(marker));
-                i = 0;
-
-              case 7:
-                if (!(i < _this4.content.length)) {
-                  _context.next = 21;
-                  break;
-                }
-
-                item = _this4.content[i];
-
-                if (!(typeof item !== 'string')) {
-                  _context.next = 11;
-                  break;
-                }
-
-                return _context.abrupt("continue", 18);
-
-              case 11:
-                match = regexp.exec(item);
-
-                if (!match) {
-                  _context.next = 18;
-                  break;
-                }
-
-                tags_open = match[0].slice(0, -marker.length);
-                content_plus_tags_close = item.substr(match.index + match[0].length); // insert <br> to empty pages that would not be handled correctly by contenteditable
-
-                if (content_plus_tags_close.indexOf('</') === 0) content_plus_tags_close = "<br>".concat(content_plus_tags_close);
-
-                _this4.content.splice(i, 1, item.substr(0, match.index), tags_open + content_plus_tags_close);
-
-                return _context.abrupt("return");
-
-              case 18:
-                i++;
-                _context.next = 7;
-                break;
-
-              case 21:
-                _i2 = 0;
-
-              case 22:
-                if (!(_i2 < _this4.content.length)) {
-                  _context.next = 31;
-                  break;
-                }
-
-                _item = _this4.content[_i2];
-
-                if (!(typeof _item !== 'string' || _item.indexOf(marker) < 0)) {
-                  _context.next = 26;
-                  break;
-                }
-
-                return _context.abrupt("continue", 28);
-
-              case 26:
-                _this4.content.splice(_i2, 1, _item.replace(marker, ''));
-
-                return _context.abrupt("break", 31);
-
-              case 28:
-                _i2++;
-                _context.next = 22;
-                break;
-
-              case 31:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
-    },
     // Delete
     onConfirmDelete: function onConfirmDelete() {
       this.showDelete = false;
@@ -961,36 +842,27 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   watch: {
     content: {
       immediate: true,
-      // Fill undo / redo history stack on user input
-      handler: function handler(new_content) {
-        if (!this._mute_next_content_watcher) {
-          // only update the stack when content is changed by user input, not undo/redo commands
-          this.content_history[++this.undo_count] = new_content;
-          this.content_history.length = this.undo_count + 1; // remove all redo items
-        }
-
-        this._mute_next_content_watcher = false;
-      }
+      handler: function handler(newContent) {}
     }
   },
   mounted: function mounted() {
-    console.log('mounted');
     this.mounted = true;
-    this.content[0].template = _document_templates_Trust__WEBPACK_IMPORTED_MODULE_4__["default"];
   },
   created: function created() {
-    var _this5 = this;
+    var _this = this;
 
-    console.log('created'); // Initialize gesture flags
+    this.$nextTick(function (e) {
+      _this.$el.querySelector('.page').style.height = 'auto';
+    }); // Initialize gesture flags
 
-    var start_zoom_gesture = false;
-    var start_dist_touch = false;
-    var start_zoom_touch = false; // Manage ctrl+scroll zoom (or trackpad pinch)
+    var startZoomGesture = false;
+    var startDistTouch = false;
+    var startZoomTouch = false; // Manage ctrl+scroll zoom (or trackpad pinch)
 
     window.addEventListener('wheel', function (e) {
       if (e.ctrlKey) {
         e.preventDefault();
-        _this5.zoom = Math.min(Math.max(_this5.zoom - e.deltaY * 0.01, _this5.zoom_min), _this5.zoom_max);
+        _this.zoom = Math.min(Math.max(_this.zoom - e.deltaY * 0.01, _this.zoom_min), _this.zoom_max);
       }
     }, {
       passive: false
@@ -998,40 +870,40 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
     window.addEventListener('gesturestart', function (e) {
       e.preventDefault();
-      start_zoom_gesture = _this5.zoom;
+      startZoomGesture = _this.zoom;
     });
     window.addEventListener('gesturechange', function (e) {
       e.preventDefault();
 
-      if (!start_zoom_touch) {
-        _this5.zoom = Math.min(Math.max(start_zoom_gesture * e.scale, _this5.zoom_min), _this5.zoom_max);
+      if (!startZoomTouch) {
+        _this.zoom = Math.min(Math.max(startZoomGesture * e.scale, _this.zoom_min), _this.zoom_max);
       }
     });
     window.addEventListener('gestureend', function () {
-      start_zoom_gesture = false;
+      startZoomGesture = false;
     }); // Manage pinch to zoom for touch devices
 
     window.addEventListener('touchstart', function (e) {
       if (e.touches.length === 2) {
         e.preventDefault();
-        start_dist_touch = Math.hypot(e.touches[0].pageX - e.touches[1].pageX, e.touches[0].pageY - e.touches[1].pageY);
-        start_zoom_touch = _this5.zoom;
+        startDistTouch = Math.hypot(e.touches[0].pageX - e.touches[1].pageX, e.touches[0].pageY - e.touches[1].pageY);
+        startZoomTouch = _this.zoom;
       }
     }, {
       passive: false
     });
     window.addEventListener('touchmove', function (e) {
-      if (start_dist_touch && start_zoom_touch) {
+      if (startDistTouch && startZoomTouch) {
         e.preventDefault();
-        var zoom = start_zoom_touch * Math.hypot(e.touches[0].pageX - e.touches[1].pageX, e.touches[0].pageY - e.touches[1].pageY) / start_dist_touch;
-        _this5.zoom = Math.min(Math.max(zoom, _this5.zoom_min), _this5.zoom_max);
+        var zoom = startZoomTouch * Math.hypot(e.touches[0].pageX - e.touches[1].pageX, e.touches[0].pageY - e.touches[1].pageY) / startDistTouch;
+        _this.zoom = Math.min(Math.max(zoom, _this.zoom_min), _this.zoom_max);
       }
     }, {
       passive: false
     });
     window.addEventListener('touchend', function () {
-      start_dist_touch = false;
-      start_zoom_touch = false;
+      startDistTouch = false;
+      startZoomTouch = false;
     }, {
       passive: false
     }); // Manage history undo/redo events
@@ -1042,7 +914,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           e.preventDefault();
           e.stopPropagation();
 
-          _this5.undo();
+          _this.undo();
 
           break;
 
@@ -1050,7 +922,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           e.preventDefault();
           e.stopPropagation();
 
-          _this5.redo();
+          _this.redo();
 
           break;
       }
@@ -1062,9 +934,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     // use window.removeEventListener in the Vue.js beforeDestroy handler
   },
   components: {
-    VueDocumentEditor: vue_document_editor__WEBPACK_IMPORTED_MODULE_1__["default"],
-    VueFileToolbarMenu: vue_file_toolbar_menu__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Trust: _document_templates_Trust__WEBPACK_IMPORTED_MODULE_4__["default"]
+    TrustWizard: _document_templates_DeclarationOfTrust_TrustWizard__WEBPACK_IMPORTED_MODULE_5__["default"],
+    VueDocumentEditor: vue_document_editor__WEBPACK_IMPORTED_MODULE_0__["default"],
+    VueFileToolbarMenu: vue_file_toolbar_menu__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2134,6 +2006,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n.bar-button > .color-square[data-v-9606a000] {\n  width: 15px;\n  height: 15px;\n  border: solid 1px rgba(0, 0, 0, 0.7);\n  margin: 0 3px;\n}\n.bar-button.disabled > .color-square[data-v-9606a000] {\n  border: solid 1px var(--bar-button-disabled-color, rgba(0, 0, 0, 0.3));\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sticky[data-v-ac35b890]{\n  position: sticky;\n  top: 0px;\n  z-index: 1;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4296,770 +4192,6 @@ module.exports = Emoji;
 
 /***/ }),
 
-/***/ "./node_modules/regenerator-runtime/runtime.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime.js ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var runtime = (function (exports) {
-  "use strict";
-
-  var Op = Object.prototype;
-  var hasOwn = Op.hasOwnProperty;
-  var undefined; // More compressible than void 0.
-  var $Symbol = typeof Symbol === "function" ? Symbol : {};
-  var iteratorSymbol = $Symbol.iterator || "@@iterator";
-  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
-  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-
-  function define(obj, key, value) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-    return obj[key];
-  }
-  try {
-    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
-    define({}, "");
-  } catch (err) {
-    define = function(obj, key, value) {
-      return obj[key] = value;
-    };
-  }
-
-  function wrap(innerFn, outerFn, self, tryLocsList) {
-    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
-    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
-    var generator = Object.create(protoGenerator.prototype);
-    var context = new Context(tryLocsList || []);
-
-    // The ._invoke method unifies the implementations of the .next,
-    // .throw, and .return methods.
-    generator._invoke = makeInvokeMethod(innerFn, self, context);
-
-    return generator;
-  }
-  exports.wrap = wrap;
-
-  // Try/catch helper to minimize deoptimizations. Returns a completion
-  // record like context.tryEntries[i].completion. This interface could
-  // have been (and was previously) designed to take a closure to be
-  // invoked without arguments, but in all the cases we care about we
-  // already have an existing method we want to call, so there's no need
-  // to create a new function object. We can even get away with assuming
-  // the method takes exactly one argument, since that happens to be true
-  // in every case, so we don't have to touch the arguments object. The
-  // only additional allocation required is the completion record, which
-  // has a stable shape and so hopefully should be cheap to allocate.
-  function tryCatch(fn, obj, arg) {
-    try {
-      return { type: "normal", arg: fn.call(obj, arg) };
-    } catch (err) {
-      return { type: "throw", arg: err };
-    }
-  }
-
-  var GenStateSuspendedStart = "suspendedStart";
-  var GenStateSuspendedYield = "suspendedYield";
-  var GenStateExecuting = "executing";
-  var GenStateCompleted = "completed";
-
-  // Returning this object from the innerFn has the same effect as
-  // breaking out of the dispatch switch statement.
-  var ContinueSentinel = {};
-
-  // Dummy constructor functions that we use as the .constructor and
-  // .constructor.prototype properties for functions that return Generator
-  // objects. For full spec compliance, you may wish to configure your
-  // minifier not to mangle the names of these two functions.
-  function Generator() {}
-  function GeneratorFunction() {}
-  function GeneratorFunctionPrototype() {}
-
-  // This is a polyfill for %IteratorPrototype% for environments that
-  // don't natively support it.
-  var IteratorPrototype = {};
-  define(IteratorPrototype, iteratorSymbol, function () {
-    return this;
-  });
-
-  var getProto = Object.getPrototypeOf;
-  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
-  if (NativeIteratorPrototype &&
-      NativeIteratorPrototype !== Op &&
-      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
-    // This environment has a native %IteratorPrototype%; use it instead
-    // of the polyfill.
-    IteratorPrototype = NativeIteratorPrototype;
-  }
-
-  var Gp = GeneratorFunctionPrototype.prototype =
-    Generator.prototype = Object.create(IteratorPrototype);
-  GeneratorFunction.prototype = GeneratorFunctionPrototype;
-  define(Gp, "constructor", GeneratorFunctionPrototype);
-  define(GeneratorFunctionPrototype, "constructor", GeneratorFunction);
-  GeneratorFunction.displayName = define(
-    GeneratorFunctionPrototype,
-    toStringTagSymbol,
-    "GeneratorFunction"
-  );
-
-  // Helper for defining the .next, .throw, and .return methods of the
-  // Iterator interface in terms of a single ._invoke method.
-  function defineIteratorMethods(prototype) {
-    ["next", "throw", "return"].forEach(function(method) {
-      define(prototype, method, function(arg) {
-        return this._invoke(method, arg);
-      });
-    });
-  }
-
-  exports.isGeneratorFunction = function(genFun) {
-    var ctor = typeof genFun === "function" && genFun.constructor;
-    return ctor
-      ? ctor === GeneratorFunction ||
-        // For the native GeneratorFunction constructor, the best we can
-        // do is to check its .name property.
-        (ctor.displayName || ctor.name) === "GeneratorFunction"
-      : false;
-  };
-
-  exports.mark = function(genFun) {
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
-    } else {
-      genFun.__proto__ = GeneratorFunctionPrototype;
-      define(genFun, toStringTagSymbol, "GeneratorFunction");
-    }
-    genFun.prototype = Object.create(Gp);
-    return genFun;
-  };
-
-  // Within the body of any async function, `await x` is transformed to
-  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
-  // `hasOwn.call(value, "__await")` to determine if the yielded value is
-  // meant to be awaited.
-  exports.awrap = function(arg) {
-    return { __await: arg };
-  };
-
-  function AsyncIterator(generator, PromiseImpl) {
-    function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
-      if (record.type === "throw") {
-        reject(record.arg);
-      } else {
-        var result = record.arg;
-        var value = result.value;
-        if (value &&
-            typeof value === "object" &&
-            hasOwn.call(value, "__await")) {
-          return PromiseImpl.resolve(value.__await).then(function(value) {
-            invoke("next", value, resolve, reject);
-          }, function(err) {
-            invoke("throw", err, resolve, reject);
-          });
-        }
-
-        return PromiseImpl.resolve(value).then(function(unwrapped) {
-          // When a yielded Promise is resolved, its final value becomes
-          // the .value of the Promise<{value,done}> result for the
-          // current iteration.
-          result.value = unwrapped;
-          resolve(result);
-        }, function(error) {
-          // If a rejected Promise was yielded, throw the rejection back
-          // into the async generator function so it can be handled there.
-          return invoke("throw", error, resolve, reject);
-        });
-      }
-    }
-
-    var previousPromise;
-
-    function enqueue(method, arg) {
-      function callInvokeWithMethodAndArg() {
-        return new PromiseImpl(function(resolve, reject) {
-          invoke(method, arg, resolve, reject);
-        });
-      }
-
-      return previousPromise =
-        // If enqueue has been called before, then we want to wait until
-        // all previous Promises have been resolved before calling invoke,
-        // so that results are always delivered in the correct order. If
-        // enqueue has not been called before, then it is important to
-        // call invoke immediately, without waiting on a callback to fire,
-        // so that the async generator function has the opportunity to do
-        // any necessary setup in a predictable way. This predictability
-        // is why the Promise constructor synchronously invokes its
-        // executor callback, and why async functions synchronously
-        // execute code before the first await. Since we implement simple
-        // async functions in terms of async generators, it is especially
-        // important to get this right, even though it requires care.
-        previousPromise ? previousPromise.then(
-          callInvokeWithMethodAndArg,
-          // Avoid propagating failures to Promises returned by later
-          // invocations of the iterator.
-          callInvokeWithMethodAndArg
-        ) : callInvokeWithMethodAndArg();
-    }
-
-    // Define the unified helper method that is used to implement .next,
-    // .throw, and .return (see defineIteratorMethods).
-    this._invoke = enqueue;
-  }
-
-  defineIteratorMethods(AsyncIterator.prototype);
-  define(AsyncIterator.prototype, asyncIteratorSymbol, function () {
-    return this;
-  });
-  exports.AsyncIterator = AsyncIterator;
-
-  // Note that simple async functions are implemented on top of
-  // AsyncIterator objects; they just return a Promise for the value of
-  // the final result produced by the iterator.
-  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
-    if (PromiseImpl === void 0) PromiseImpl = Promise;
-
-    var iter = new AsyncIterator(
-      wrap(innerFn, outerFn, self, tryLocsList),
-      PromiseImpl
-    );
-
-    return exports.isGeneratorFunction(outerFn)
-      ? iter // If outerFn is a generator, return the full iterator.
-      : iter.next().then(function(result) {
-          return result.done ? result.value : iter.next();
-        });
-  };
-
-  function makeInvokeMethod(innerFn, self, context) {
-    var state = GenStateSuspendedStart;
-
-    return function invoke(method, arg) {
-      if (state === GenStateExecuting) {
-        throw new Error("Generator is already running");
-      }
-
-      if (state === GenStateCompleted) {
-        if (method === "throw") {
-          throw arg;
-        }
-
-        // Be forgiving, per 25.3.3.3.3 of the spec:
-        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
-        return doneResult();
-      }
-
-      context.method = method;
-      context.arg = arg;
-
-      while (true) {
-        var delegate = context.delegate;
-        if (delegate) {
-          var delegateResult = maybeInvokeDelegate(delegate, context);
-          if (delegateResult) {
-            if (delegateResult === ContinueSentinel) continue;
-            return delegateResult;
-          }
-        }
-
-        if (context.method === "next") {
-          // Setting context._sent for legacy support of Babel's
-          // function.sent implementation.
-          context.sent = context._sent = context.arg;
-
-        } else if (context.method === "throw") {
-          if (state === GenStateSuspendedStart) {
-            state = GenStateCompleted;
-            throw context.arg;
-          }
-
-          context.dispatchException(context.arg);
-
-        } else if (context.method === "return") {
-          context.abrupt("return", context.arg);
-        }
-
-        state = GenStateExecuting;
-
-        var record = tryCatch(innerFn, self, context);
-        if (record.type === "normal") {
-          // If an exception is thrown from innerFn, we leave state ===
-          // GenStateExecuting and loop back for another invocation.
-          state = context.done
-            ? GenStateCompleted
-            : GenStateSuspendedYield;
-
-          if (record.arg === ContinueSentinel) {
-            continue;
-          }
-
-          return {
-            value: record.arg,
-            done: context.done
-          };
-
-        } else if (record.type === "throw") {
-          state = GenStateCompleted;
-          // Dispatch the exception by looping back around to the
-          // context.dispatchException(context.arg) call above.
-          context.method = "throw";
-          context.arg = record.arg;
-        }
-      }
-    };
-  }
-
-  // Call delegate.iterator[context.method](context.arg) and handle the
-  // result, either by returning a { value, done } result from the
-  // delegate iterator, or by modifying context.method and context.arg,
-  // setting context.delegate to null, and returning the ContinueSentinel.
-  function maybeInvokeDelegate(delegate, context) {
-    var method = delegate.iterator[context.method];
-    if (method === undefined) {
-      // A .throw or .return when the delegate iterator has no .throw
-      // method always terminates the yield* loop.
-      context.delegate = null;
-
-      if (context.method === "throw") {
-        // Note: ["return"] must be used for ES3 parsing compatibility.
-        if (delegate.iterator["return"]) {
-          // If the delegate iterator has a return method, give it a
-          // chance to clean up.
-          context.method = "return";
-          context.arg = undefined;
-          maybeInvokeDelegate(delegate, context);
-
-          if (context.method === "throw") {
-            // If maybeInvokeDelegate(context) changed context.method from
-            // "return" to "throw", let that override the TypeError below.
-            return ContinueSentinel;
-          }
-        }
-
-        context.method = "throw";
-        context.arg = new TypeError(
-          "The iterator does not provide a 'throw' method");
-      }
-
-      return ContinueSentinel;
-    }
-
-    var record = tryCatch(method, delegate.iterator, context.arg);
-
-    if (record.type === "throw") {
-      context.method = "throw";
-      context.arg = record.arg;
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    var info = record.arg;
-
-    if (! info) {
-      context.method = "throw";
-      context.arg = new TypeError("iterator result is not an object");
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    if (info.done) {
-      // Assign the result of the finished delegate to the temporary
-      // variable specified by delegate.resultName (see delegateYield).
-      context[delegate.resultName] = info.value;
-
-      // Resume execution at the desired location (see delegateYield).
-      context.next = delegate.nextLoc;
-
-      // If context.method was "throw" but the delegate handled the
-      // exception, let the outer generator proceed normally. If
-      // context.method was "next", forget context.arg since it has been
-      // "consumed" by the delegate iterator. If context.method was
-      // "return", allow the original .return call to continue in the
-      // outer generator.
-      if (context.method !== "return") {
-        context.method = "next";
-        context.arg = undefined;
-      }
-
-    } else {
-      // Re-yield the result returned by the delegate method.
-      return info;
-    }
-
-    // The delegate iterator is finished, so forget it and continue with
-    // the outer generator.
-    context.delegate = null;
-    return ContinueSentinel;
-  }
-
-  // Define Generator.prototype.{next,throw,return} in terms of the
-  // unified ._invoke helper method.
-  defineIteratorMethods(Gp);
-
-  define(Gp, toStringTagSymbol, "Generator");
-
-  // A Generator should always return itself as the iterator object when the
-  // @@iterator function is called on it. Some browsers' implementations of the
-  // iterator prototype chain incorrectly implement this, causing the Generator
-  // object to not be returned from this call. This ensures that doesn't happen.
-  // See https://github.com/facebook/regenerator/issues/274 for more details.
-  define(Gp, iteratorSymbol, function() {
-    return this;
-  });
-
-  define(Gp, "toString", function() {
-    return "[object Generator]";
-  });
-
-  function pushTryEntry(locs) {
-    var entry = { tryLoc: locs[0] };
-
-    if (1 in locs) {
-      entry.catchLoc = locs[1];
-    }
-
-    if (2 in locs) {
-      entry.finallyLoc = locs[2];
-      entry.afterLoc = locs[3];
-    }
-
-    this.tryEntries.push(entry);
-  }
-
-  function resetTryEntry(entry) {
-    var record = entry.completion || {};
-    record.type = "normal";
-    delete record.arg;
-    entry.completion = record;
-  }
-
-  function Context(tryLocsList) {
-    // The root entry object (effectively a try statement without a catch
-    // or a finally block) gives us a place to store values thrown from
-    // locations where there is no enclosing try statement.
-    this.tryEntries = [{ tryLoc: "root" }];
-    tryLocsList.forEach(pushTryEntry, this);
-    this.reset(true);
-  }
-
-  exports.keys = function(object) {
-    var keys = [];
-    for (var key in object) {
-      keys.push(key);
-    }
-    keys.reverse();
-
-    // Rather than returning an object with a next method, we keep
-    // things simple and return the next function itself.
-    return function next() {
-      while (keys.length) {
-        var key = keys.pop();
-        if (key in object) {
-          next.value = key;
-          next.done = false;
-          return next;
-        }
-      }
-
-      // To avoid creating an additional object, we just hang the .value
-      // and .done properties off the next function object itself. This
-      // also ensures that the minifier will not anonymize the function.
-      next.done = true;
-      return next;
-    };
-  };
-
-  function values(iterable) {
-    if (iterable) {
-      var iteratorMethod = iterable[iteratorSymbol];
-      if (iteratorMethod) {
-        return iteratorMethod.call(iterable);
-      }
-
-      if (typeof iterable.next === "function") {
-        return iterable;
-      }
-
-      if (!isNaN(iterable.length)) {
-        var i = -1, next = function next() {
-          while (++i < iterable.length) {
-            if (hasOwn.call(iterable, i)) {
-              next.value = iterable[i];
-              next.done = false;
-              return next;
-            }
-          }
-
-          next.value = undefined;
-          next.done = true;
-
-          return next;
-        };
-
-        return next.next = next;
-      }
-    }
-
-    // Return an iterator with no values.
-    return { next: doneResult };
-  }
-  exports.values = values;
-
-  function doneResult() {
-    return { value: undefined, done: true };
-  }
-
-  Context.prototype = {
-    constructor: Context,
-
-    reset: function(skipTempReset) {
-      this.prev = 0;
-      this.next = 0;
-      // Resetting context._sent for legacy support of Babel's
-      // function.sent implementation.
-      this.sent = this._sent = undefined;
-      this.done = false;
-      this.delegate = null;
-
-      this.method = "next";
-      this.arg = undefined;
-
-      this.tryEntries.forEach(resetTryEntry);
-
-      if (!skipTempReset) {
-        for (var name in this) {
-          // Not sure about the optimal order of these conditions:
-          if (name.charAt(0) === "t" &&
-              hasOwn.call(this, name) &&
-              !isNaN(+name.slice(1))) {
-            this[name] = undefined;
-          }
-        }
-      }
-    },
-
-    stop: function() {
-      this.done = true;
-
-      var rootEntry = this.tryEntries[0];
-      var rootRecord = rootEntry.completion;
-      if (rootRecord.type === "throw") {
-        throw rootRecord.arg;
-      }
-
-      return this.rval;
-    },
-
-    dispatchException: function(exception) {
-      if (this.done) {
-        throw exception;
-      }
-
-      var context = this;
-      function handle(loc, caught) {
-        record.type = "throw";
-        record.arg = exception;
-        context.next = loc;
-
-        if (caught) {
-          // If the dispatched exception was caught by a catch block,
-          // then let that catch block handle the exception normally.
-          context.method = "next";
-          context.arg = undefined;
-        }
-
-        return !! caught;
-      }
-
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        var record = entry.completion;
-
-        if (entry.tryLoc === "root") {
-          // Exception thrown outside of any try block that could handle
-          // it, so set the completion value of the entire function to
-          // throw the exception.
-          return handle("end");
-        }
-
-        if (entry.tryLoc <= this.prev) {
-          var hasCatch = hasOwn.call(entry, "catchLoc");
-          var hasFinally = hasOwn.call(entry, "finallyLoc");
-
-          if (hasCatch && hasFinally) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            } else if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-
-          } else if (hasCatch) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            }
-
-          } else if (hasFinally) {
-            if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-
-          } else {
-            throw new Error("try statement without catch or finally");
-          }
-        }
-      }
-    },
-
-    abrupt: function(type, arg) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc <= this.prev &&
-            hasOwn.call(entry, "finallyLoc") &&
-            this.prev < entry.finallyLoc) {
-          var finallyEntry = entry;
-          break;
-        }
-      }
-
-      if (finallyEntry &&
-          (type === "break" ||
-           type === "continue") &&
-          finallyEntry.tryLoc <= arg &&
-          arg <= finallyEntry.finallyLoc) {
-        // Ignore the finally entry if control is not jumping to a
-        // location outside the try/catch block.
-        finallyEntry = null;
-      }
-
-      var record = finallyEntry ? finallyEntry.completion : {};
-      record.type = type;
-      record.arg = arg;
-
-      if (finallyEntry) {
-        this.method = "next";
-        this.next = finallyEntry.finallyLoc;
-        return ContinueSentinel;
-      }
-
-      return this.complete(record);
-    },
-
-    complete: function(record, afterLoc) {
-      if (record.type === "throw") {
-        throw record.arg;
-      }
-
-      if (record.type === "break" ||
-          record.type === "continue") {
-        this.next = record.arg;
-      } else if (record.type === "return") {
-        this.rval = this.arg = record.arg;
-        this.method = "return";
-        this.next = "end";
-      } else if (record.type === "normal" && afterLoc) {
-        this.next = afterLoc;
-      }
-
-      return ContinueSentinel;
-    },
-
-    finish: function(finallyLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.finallyLoc === finallyLoc) {
-          this.complete(entry.completion, entry.afterLoc);
-          resetTryEntry(entry);
-          return ContinueSentinel;
-        }
-      }
-    },
-
-    "catch": function(tryLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc === tryLoc) {
-          var record = entry.completion;
-          if (record.type === "throw") {
-            var thrown = record.arg;
-            resetTryEntry(entry);
-          }
-          return thrown;
-        }
-      }
-
-      // The context.catch method must only be called with a location
-      // argument that corresponds to a known catch block.
-      throw new Error("illegal catch attempt");
-    },
-
-    delegateYield: function(iterable, resultName, nextLoc) {
-      this.delegate = {
-        iterator: values(iterable),
-        resultName: resultName,
-        nextLoc: nextLoc
-      };
-
-      if (this.method === "next") {
-        // Deliberately forget the last sent value so that we don't
-        // accidentally pass it on to the delegate.
-        this.arg = undefined;
-      }
-
-      return ContinueSentinel;
-    }
-  };
-
-  // Regardless of whether this script is executing as a CommonJS module
-  // or not, return the runtime object so that we can declare the variable
-  // regeneratorRuntime in the outer scope, which allows this module to be
-  // injected easily by `bin/regenerator --include-runtime script.js`.
-  return exports;
-
-}(
-  // If this script is executing as a CommonJS module, use module.exports
-  // as the regeneratorRuntime namespace. Otherwise create a new empty
-  // object. Either way, the resulting object will be used to initialize
-  // the regeneratorRuntime variable at the top of this file.
-   true ? module.exports : 0
-));
-
-try {
-  regeneratorRuntime = runtime;
-} catch (accidentalStrictMode) {
-  // This module should not be running in strict mode, so the above
-  // assignment should always work unless something is misconfigured. Just
-  // in case runtime.js accidentally runs in strict mode, in modern engines
-  // we can explicitly access globalThis. In older engines we can escape
-  // strict mode using a global Function call. This could conceivably fail
-  // if a Content Security Policy forbids using Function, but in that case
-  // the proper solution is to fix the accidental strict mode problem. If
-  // you've misconfigured your bundler to force strict mode and applied a
-  // CSP to forbid Function, and you're not willing to fix either of those
-  // problems, please detail your unique predicament in a GitHub issue.
-  if (typeof globalThis === "object") {
-    globalThis.regeneratorRuntime = runtime;
-  } else {
-    Function("r", "regeneratorRuntime = r")(runtime);
-  }
-}
-
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue-document-editor/src/DocumentEditor/DocumentEditor.vue?vue&type=style&index=1&id=448921d6&lang=scss&scoped=true&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue-document-editor/src/DocumentEditor/DocumentEditor.vue?vue&type=style&index=1&id=448921d6&lang=scss&scoped=true& ***!
@@ -5207,6 +4339,36 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_vue_loader_lib_index_js_vue_loader_options_BarButtonColor_vue_vue_type_style_index_0_id_9606a000_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_ac35b890_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_ac35b890_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_ac35b890_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -5710,7 +4872,7 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }
-      
+
 
       // Restore selection and remove empty elements
       if(document.body.contains(start_marker)){
@@ -5905,7 +5067,7 @@ __webpack_require__.r(__webpack_exports__);
           overlay_clone.style.overflow = "hidden";
           page_clone.prepend(overlay_clone);
         }
-        
+
         print_body.append(page_clone);
       }
 
@@ -6693,10 +5855,10 @@ component.options.__file = "resources/js/document_templates/Contract.vue"
 
 /***/ }),
 
-/***/ "./resources/js/document_templates/Trust.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/document_templates/Trust.vue ***!
-  \***************************************************/
+/***/ "./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue":
+/*!****************************************************************************!*\
+  !*** ./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6704,9 +5866,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Trust_vue_vue_type_template_id_6f03f83c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Trust.vue?vue&type=template&id=6f03f83c&scoped=true& */ "./resources/js/document_templates/Trust.vue?vue&type=template&id=6f03f83c&scoped=true&");
-/* harmony import */ var _Trust_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Trust.vue?vue&type=script&lang=js& */ "./resources/js/document_templates/Trust.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TrustWizard_vue_vue_type_template_id_684d2a32___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrustWizard.vue?vue&type=template&id=684d2a32& */ "./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=template&id=684d2a32&");
+/* harmony import */ var _TrustWizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TrustWizard.vue?vue&type=script&lang=js& */ "./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -6715,19 +5877,58 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Trust_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Trust_vue_vue_type_template_id_6f03f83c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Trust_vue_vue_type_template_id_6f03f83c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _TrustWizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TrustWizard_vue_vue_type_template_id_684d2a32___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TrustWizard_vue_vue_type_template_id_684d2a32___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
-  "6f03f83c",
+  null,
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/document_templates/Trust.vue"
+component.options.__file = "resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/document_templates/DeclarationOfTrust/index.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/document_templates/DeclarationOfTrust/index.vue ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _index_vue_vue_type_template_id_a92d1114___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=a92d1114& */ "./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=template&id=a92d1114&");
+/* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _index_vue_vue_type_template_id_a92d1114___WEBPACK_IMPORTED_MODULE_0__.render,
+  _index_vue_vue_type_template_id_a92d1114___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/document_templates/DeclarationOfTrust/index.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -6821,23 +6022,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=ac35b890& */ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&");
+/* harmony import */ var _index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=ac35b890&scoped=true& */ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true&");
 /* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _index_vue_vue_type_style_index_0_id_ac35b890_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css& */ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__.render,
-  _index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
-  null,
+  "ac35b890",
   null
   
 )
@@ -6865,10 +6068,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/document_templates/Trust.vue?vue&type=script&lang=js&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/document_templates/Trust.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************/
+/***/ "./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6876,8 +6079,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Trust_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Trust.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Trust_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TrustWizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TrustWizard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TrustWizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -6977,6 +6196,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_loader_dist_cjs_js_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_vue_loader_lib_index_js_vue_loader_options_BarButtonColor_vue_vue_type_style_index_0_id_9606a000_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../style-loader/dist/cjs.js!../../../laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../vue-loader/lib/index.js??vue-loader-options!./BarButtonColor.vue?vue&type=style&index=0&id=9606a000&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue-file-toolbar-menu/src/Bar/BarButtonColor.vue?vue&type=style&index=0&id=9606a000&scoped=true&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_ac35b890_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=style&index=0&id=ac35b890&scoped=true&lang=css&");
 
 
 /***/ }),
@@ -7247,19 +6479,36 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/document_templates/Trust.vue?vue&type=template&id=6f03f83c&scoped=true&":
-/*!**********************************************************************************************!*\
-  !*** ./resources/js/document_templates/Trust.vue?vue&type=template&id=6f03f83c&scoped=true& ***!
-  \**********************************************************************************************/
+/***/ "./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=template&id=684d2a32&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=template&id=684d2a32& ***!
+  \***********************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Trust_vue_vue_type_template_id_6f03f83c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Trust_vue_vue_type_template_id_6f03f83c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TrustWizard_vue_vue_type_template_id_684d2a32___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TrustWizard_vue_vue_type_template_id_684d2a32___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Trust_vue_vue_type_template_id_6f03f83c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Trust.vue?vue&type=template&id=6f03f83c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust.vue?vue&type=template&id=6f03f83c&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TrustWizard_vue_vue_type_template_id_684d2a32___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TrustWizard.vue?vue&type=template&id=684d2a32& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=template&id=684d2a32&");
+
+
+/***/ }),
+
+/***/ "./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=template&id=a92d1114&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=template&id=a92d1114& ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_a92d1114___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_a92d1114___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_a92d1114___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=a92d1114& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=template&id=a92d1114&");
 
 
 /***/ }),
@@ -7298,19 +6547,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890& ***!
-  \*****************************************************************************************/
+/***/ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true& ***!
+  \*****************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=ac35b890& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=ac35b890&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true&");
 
 
 /***/ }),
@@ -7871,10 +7120,228 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust.vue?vue&type=template&id=6f03f83c&scoped=true&":
-/*!*************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust.vue?vue&type=template&id=6f03f83c&scoped=true& ***!
-  \*************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=template&id=684d2a32&":
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/TrustWizard.vue?vue&type=template&id=684d2a32& ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      [
+        _c(
+          "v-stepper",
+          {
+            attrs: { "alt-labels": "" },
+            model: {
+              value: _vm.step,
+              callback: function($$v) {
+                _vm.step = $$v
+              },
+              expression: "step"
+            }
+          },
+          [
+            _c(
+              "v-stepper-header",
+              [
+                _c(
+                  "v-stepper-step",
+                  { attrs: { complete: _vm.step > 1, step: "1" } },
+                  [_vm._v("\n          Client Info\n        ")]
+                ),
+                _vm._v(" "),
+                _c("v-divider"),
+                _vm._v(" "),
+                _c(
+                  "v-stepper-step",
+                  {
+                    attrs: {
+                      complete: _vm.step > 2,
+                      rules: [
+                        function() {
+                          return true
+                        }
+                      ],
+                      step: "2"
+                    }
+                  },
+                  [
+                    _vm._v("\n          Trust Basic Info\n          "),
+                    _vm.step == 2
+                      ? _c("small", [_vm._v("Lorem ipsum dolor sit amet")])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c("v-divider"),
+                _vm._v(" "),
+                _c(
+                  "v-stepper-step",
+                  { attrs: { complete: _vm.step > 3, step: "3" } },
+                  [_vm._v("\n          Trustees\n        ")]
+                ),
+                _vm._v(" "),
+                _c("v-divider"),
+                _vm._v(" "),
+                _c("v-stepper-step", { attrs: { step: "4" } }, [
+                  _vm._v("\n          Beneficiaries\n        ")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "v-stepper-items",
+              [
+                _c(
+                  "v-stepper-content",
+                  { attrs: { step: "1" } },
+                  [
+                    _c("v-card", {
+                      staticClass: "mb-12",
+                      attrs: { color: "grey lighten-1", height: "200px" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { color: "primary" },
+                        on: {
+                          click: function($event) {
+                            _vm.step = 2
+                          }
+                        }
+                      },
+                      [_vm._v("\n            Continue\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c("v-btn", { attrs: { text: "" } }, [
+                      _vm._v("\n            Cancel\n          ")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-stepper-content",
+                  { attrs: { step: "2" } },
+                  [
+                    _c("v-card", {
+                      staticClass: "mb-12",
+                      attrs: { color: "grey lighten-1", height: "200px" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { color: "primary" },
+                        on: {
+                          click: function($event) {
+                            _vm.step = 3
+                          }
+                        }
+                      },
+                      [_vm._v("\n            Continue\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c("v-btn", { attrs: { text: "" } }, [
+                      _vm._v("\n            Cancel\n          ")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-stepper-content",
+                  { attrs: { step: "3" } },
+                  [
+                    _c("v-card", {
+                      staticClass: "mb-12",
+                      attrs: { color: "grey lighten-1", height: "200px" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { color: "primary" },
+                        on: {
+                          click: function($event) {
+                            _vm.step = 4
+                          }
+                        }
+                      },
+                      [_vm._v("\n            Continue\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c("v-btn", { attrs: { text: "" } }, [
+                      _vm._v("\n            Cancel\n          ")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-stepper-content",
+                  { attrs: { step: "4" } },
+                  [
+                    _c("v-card", {
+                      staticClass: "mb-12",
+                      attrs: { color: "grey lighten-1", height: "200px" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { color: "primary" },
+                        on: {
+                          click: function($event) {
+                            _vm.step = 1
+                          }
+                        }
+                      },
+                      [_vm._v("\n            Continue\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c("v-btn", { attrs: { text: "" } }, [
+                      _vm._v("\n            Cancel\n          ")
+                    ])
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ]
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=template&id=a92d1114&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/DeclarationOfTrust/index.vue?vue&type=template&id=a92d1114& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -7888,30 +7355,755 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("header", [
-      _c("h1", [_vm._v("Trust")]),
+    _c("div", [
+      _c("p", { staticClass: "text-right text-pre" }, [
+        _vm._v(
+          "\n      Domicile & Mailing Address:\n      ATTN: Shalyce Woodard, Trustee\n      " +
+            _vm._s(_vm.project.name) +
+            "\n      7512 Dr. Phillips Blvd. Suite #50-185\n      Orlando, Florida, USA\n    "
+        )
+      ]),
       _vm._v(" "),
-      _c("div", [_vm._v("Title")]),
+      _c("p", { staticClass: "text-h4 pa-3 text-center" }, [
+        _vm._v("\n      DECLARATION OF TRUST\n    ")
+      ]),
       _vm._v(" "),
-      _c("div", [_vm._v("subTitle")]),
+      _c("p", { staticClass: "text-center text-pre" }, [
+        _vm._v(
+          "\n      A Private Contractual Agreement\n      Establishing An Artificial Entity Operating Under The Name:\n    "
+        )
+      ]),
       _vm._v(" "),
-      _c("h3", [_vm._v("Client")]),
+      _c("p", { staticClass: "text-h3 text-center" }, [
+        _vm._v("\n      " + _vm._s(_vm.project.name) + "\n    ")
+      ]),
       _vm._v(" "),
-      _c("code", [_vm._v(_vm._s(_vm.client))]),
+      _vm._m(0),
       _vm._v(" "),
-      _c("h3", [_vm._v("Project")]),
+      _vm._m(1),
       _vm._v(" "),
-      _c("code", [_vm._v(_vm._s(_vm.project))])
+      _c("p", { staticClass: "text-center" }, [
+        _vm._v("On This Date: 24 AUGUST 2020")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-center" }, [
+        _vm._v("THIS DOCUMENT IS CREATED UNDER COMMON LAW RIGHT OF CONTRACT")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n      It is expressly declared that a contractual agreement is hereby established between two parties for the benefit of a third party. This type of entity, created under Common Law Right of Contract, is known by several names, including a Pure Trust Organization, an Irrevocable Declaration of Trust and an Unincorporated Business Trust Organization, hereafter referred to as TRUST. This is not to be misconstrued as a living trust, a partnership, a company, a corporation, a joint venture, a limited partnership, a limited liability company or any other type of statutory entity established by privilege with a federal, state, county or municipal authority.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Although multiple copies of this Trust Document may exist, the only true version is the one held by the FIRST TRUSTEE. Any other version is merely a copy thereof and should not be legally relied upon for validity. The Board of Trustees will not be held responsible for any errors or misunderstandings in the translation of this document into any foreign language. If anyone has any questions as to the interpretation or intention of this document, please refer to the FIRST TRUSTEE."
+        )
+      ])
     ]),
     _vm._v(" "),
-    _c("div", [
-      _vm._v(
-        "\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur dolores earum esse ex fuga fugiat, ipsam quasi quia quidem quis ratione recusandae reiciendis, sed sit soluta suscipit vero. Illum.\n  "
-      )
-    ])
+    _c("div", { staticClass: "pagebreak" }),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v("\n      SETTLOR'S PROVISIONS & RESPONSIBILITIES\n    ")
+        ]),
+        _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v("\n      TRUSTEE'S PROVISIONS & RESPONSIBILITIES\n    ")
+        ]),
+        _vm._v(" "),
+        _vm._m(4),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v(
+            "\n      ADDITIONAL TRUSTEES, MANAGERS, OFFICERS & CONTRACTORS\n    "
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(5),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v("\n      DAILY BUSINESS ACTIVITIES\n    ")
+        ]),
+        _vm._v(" "),
+        _vm._m(6),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v(
+            "\n      CERTIFICATES OF BENEFICIAL OWNERSHIP OF TRUST ASSETS\n    "
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(7),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v(
+            "\n      TRANSFER OF CERTIFICATES UPON DEATH OF BENEFICIARY\n    "
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(8),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v("\n      DISTRIBUTION OF TRUST ASSETS\n    ")
+        ]),
+        _vm._v(" "),
+        _vm._m(9),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v(
+            "\n      JURISDICTION, DOMICILE ADDRESS & MAILING ADDRESS\n    "
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(10),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v("\n      TERMINATION OF TRUST\n    ")
+        ]),
+        _vm._v(" "),
+        _vm._m(11),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v("\n      PRIVACY STRICTLY ENFORCED\n    ")
+        ]),
+        _vm._v(" "),
+        _vm._m(12),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v("\n      MISCELLANEOUS\n    ")
+        ]),
+        _vm._v(" "),
+        _vm._m(13),
+        _vm._v(" "),
+        _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
+          _vm._v("\n      ACCEPTANCE BY PARTIES\n    ")
+        ]),
+        _vm._v(" "),
+        _vm._m(14),
+        _vm._v(" "),
+        _c("div", { staticClass: "pagebreak" }),
+        _vm._v(" "),
+        _c(
+          "v-container",
+          [
+            _c(
+              "v-row",
+              { staticClass: "sm-6" },
+              [
+                _c(
+                  "v-col",
+                  [
+                    _c("v-text-field", {
+                      attrs: {
+                        filled: "",
+                        "persistent-hint": "",
+                        hint: "SETTLOR: Luke Eyre"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-col",
+                  [
+                    _c("v-text-field", {
+                      attrs: {
+                        filled: "",
+                        "persistent-hint": "",
+                        hint: "FIRST TRUSTEE: Shalyce Woodard"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "v-row",
+              [
+                _c("v-col", { staticClass: "sm-6" }, [
+                  _c("div", [
+                    _vm._v("\n            NOTARY Public, Weber County "),
+                    _c("br"),
+                    _vm._v("\n            State of Utah\n          ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("v-col", { staticClass: "sm-6" }, [
+                  _c("div", [
+                    _vm._v("\n            NOTARY Public, Weber County "),
+                    _c("br"),
+                    _vm._v("\n            State of Utah\n          ")
+                  ])
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "v-row",
+              { staticClass: "sm-6" },
+              [
+                _c(
+                  "v-col",
+                  [
+                    _c("v-text-field", {
+                      attrs: {
+                        filled: "",
+                        "persistent-hint": "",
+                        hint: "Notary Public PRINT NAME"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("v-text-field", {
+                      attrs: {
+                        filled: "",
+                        "persistent-hint": "",
+                        hint: "Notary Public SIGNATURE:"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-col",
+                  [
+                    _c("v-text-field", {
+                      attrs: {
+                        filled: "",
+                        "persistent-hint": "",
+                        hint: "Notary Public PRINT NAME:"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("v-text-field", {
+                      attrs: {
+                        filled: "",
+                        "persistent-hint": "",
+                        hint: "Notary Public SIGNATURE:"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "v-row",
+              {
+                staticClass: "sm-6",
+                staticStyle: { height: "60mm", background: "#f1f1f1" }
+              },
+              [
+                _c("v-col", [
+                  _c("div", [
+                    _vm._v("\n            Notary Stamp /Seal:\n          ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("v-col", [
+                  _c("div", [
+                    _vm._v("\n            Notary Stamp /Seal:\n          ")
+                  ])
+                ])
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-center text-pre" }, [
+      _vm._v("\n      Is Hereby Constructed As A\n      "),
+      _c("span", { staticClass: "text-h6" }, [
+        _vm._v("PURE TRUST ORGANIZATION")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-center text-pre" }, [
+      _vm._v("\n      Otherwise Known As An\n      "),
+      _c("span", { staticClass: "text-h6" }, [
+        _vm._v("IRREVOCABLE DECLARATION OF TRUST")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("p", { staticClass: "text-center" }, [_vm._v("DECLARATION OF TRUST")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n      This Declaration of Trust Agreement, Conveyance and Acceptance is created and entered into this 24th day of August A.D., 2020, between Luke Eyre, hereinafter called the SETTLOR and Shalyce Woodard, hereinafter called the TRUSTEE, and also known as the FIRST TRUSTEE, for the sole benefit of one or more BENEFICIARIES, who shall be named in the Trust Indenture Schedule B & Meeting Minute No. 2.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "The TRUST is authorized to exist and function through its Board of Trustees, hereafter BOARD, who are one or more legal persons holding fee simple title, not differentiating between legal and equitable, not as individuals, but collectively as the BOARD who shall operate the TRUST as a PURE TRUST ORGANIZATION under the artificial entity name of:"
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-h6 text-center" }, [
+        _vm._v("\n      BFH TRUST\n    ")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n      The entity, being domiciled in the jurisdiction of the Republic of Florida, pursuant to Florida Statute 609.01, within the united States of America, shall be managed by the BOARD acting in a fiduciary capacity for the use and benefit of the BENEFICIARY.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n      This artificial entity hereby stands on its own, holds any and all of its assets in its own name and unlike a corporation, is not owned by another person or entity. It survives on its own, being fully accountable on its own accord. However, a natural living, breathing person must directly or indirectly sign on behalf of this entity in a fiduciary capacity as Trustee.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n      The moment the SETTLOR funds the Trust by contributing its first assets via the control of the Trustee, it breathes artificial life into the entity so that it may stand and act on its own, in its own name, solely responsible for its own actions as would a natural living, breathing person.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n      Nothing contained herein shall be construed as intent to evade or contravene any law, nor to delegate any special power belonging exclusively to company law or a corporation.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n      This Declaration of Trust shall describe only the highlights of the roles and responsibilities of the two parties herein and the terms and conditions set out for the maintenance of the Trust. Only this Declaration of Trust may be made available to third parties at the sole discretion of the Board. The full set of operating instructions shall be detailed in the Trust Indenture and is privy only to the two parties to this private contract or as otherwise deemed prudent by the Board.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
+        _vm._v("\n      TERM & INTENT OF TRUST\n    ")
+      ]),
+      _vm._v(" "),
+      _c("ul", [
+        _c("li", [
+          _vm._v(
+            "1. The Trust shall exist for a term of ninety-nine (99) years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the Trust's expiration, extend its term."
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _vm._v(
+            "2. The organizational purpose of the TRUST is to sustain and improve the TRUST proactively through any means or business so that the BENEFICIARY may possess the things of life sufficient to provide for growth, health, protection, education, refinement, pro-creation, recreation, welfare, expansion, preservation and continuation and not simply an arrangement to protect and conserve the property for the BENEFICIARY."
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "3. As consideration, the SETTLOR hereby irrevocably assigns and/or conveys as an absolute gift to the BOARD, in trust, certain properties and/or assets to be held in the name and ownership of the Trust and not by any TRUSTEE, the nature, identity and description of which are presently known to both the SETTLOR and the BOARD, and which shall be further identified and described in the Trust Indenture in which the BENEFICIARY(ies) shall NOT have a vested interest, until termination of the TRUST and final distribution of accumulated assets or any early distribution thereof by the BOARD at their sole discretion at any time during the term of the TRUST."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "4. The SETTLOR agrees and covenants that he shall have no further role to administer or make decisions as to the management of the TRUST after the effective date of the TRUST. He also affirms that he has no authority to change any portion of the Trust documents in any manner, nor shall he reserve or retain any dominion or control over the principal or income of the TRUST. Nothing in this paragraph shall be construed as conferring power upon the SETTLOR to reacquire Trust Corpus, or any part thereof by substituting other property of an equivalent value. The moment the SETTLOR signs this private contract, his duties and responsibilities related to the TRUST are completed."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "5. If the SETTLOR performs any role for the TRUST after his/her signing, it can only be in an arm's length relationship via an independent contractor relationship and have nothing to do with direct management functions of the TRUST. If the contracted functions involve any portion of TRUST assets, they must be free of sole discretion over ownership, control or disposition of those assets."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "6. The SETTLOR may, at any time in the future, assign and/or convey additional assets to the TRUST as additional consideration. Additionally, any outside party, including the BOARD or BENEFICIARY, may convey assets to the TRUST by gift, will, exchange, bill of sale, quit claim or by deed, with the consent of the BOARD, to be held for the benefit of the BENEFICIARY with the intent of eventually being distributed to the BENEFICIARY. The title to any assets accepted by the BOARD shall be held in a fiduciary capacity in the name of the TRUST and can only be claimed by the BENEFICIARY to have beneficial, not vested, ownership in those assets."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "7. Because the FIRST TRUSTEE may be just one person on the BOARD, in such instance, the words FIRST TRUSTEE or TRUSTEE can also be referred to hereafter as the BOARD. The FIRST TRUSTEE alone is always considered the BOARD but if other titled officers are also on the BOARD, the BOARD does not always only mean the FIRST TRUSTEE."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "8. The BOARD accepts said conveyed assets into the name and ownership of the Trust and not any TRUSTEE's name and the BOARD presents its own consideration for the Trust Agreement. The BOARD presents its expertise and knowledge in business and/or as a Trust Manager and shall administer the SETTLOR's wishes in establishing the artificial entity and maintaining it for the sole benefit of the BENEFICIARY who is listed in Schedule B of the Trust Indenture & in Meeting Minute Number 2."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "9. The BOARD is authorized to deal with the SETTLOR \"at arm's length,” to purchase property or to sell property, but always at fair market value and for adequate and full consideration."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "10. The BOARD shall, as it deems proper and necessary, provide for operating funds through any type of borrowing, hypothecation, monetization either unsecured or directly or indirectly secured, which shall constitute the operating funds of the TRUST. The BOARD may authorize liquidation of assets for the purpose of adding to said operating funds."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "11. The BOARD shall have all the powers necessary to operate, manage and control the TRUST for the benefit of the BENEFICIARY and shall take any action which it deems necessary and proper to carry out such purposes, provided however, that the BOARD shall not possess any power or take any action contrary to law or inconsistent with the provisions of the Declaration of Trust."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "12. The BOARD shall receive reasonable compensation for their services performed. Any BOARD member may hold two or more offices simultaneously within the TRUST and be deserving of such reasonable compensation for all services rendered at the discretion of the BOARD. However, all BOARD members, Trust Manager(s), other titled officers and executives shall have the right to waive any compensation for their services."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "13. No member of the BOARD shall possess or exercise a power of administration in a nonfiduciary capacity, nor a power exercisable solely by himself to vest the corpus or the income therefrom in himself, or any other power, the possession or exercise of which would cause the income of the Trust to be taxed to any member of the BOARD or to the SETTLOR"
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "14. The BOARD shall, in their fiduciary capacity for the TRUST and not as individuals, assume or incur only such liability as shall attach to the Trust assets. This liability shall not in any manner jeopardize their individual or personal holdings and for any losses they should suffer for any reason through rendering services as the BOARD, they shall be reimbursed from the TRUST assets to the same extent as would non-interested persons, except for any loss sustained by reason of breach of their fiduciary duty."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "15. The BOARD may assign additional members to this TRUST as they deem necessary and prudent and they may increase or decrease the number of BOARD members as appropriate to the affairs of the TRUST. Said additional members may be necessary for the administration of various tasks associated with this TRUST and not necessarily for additional management decisions unless noted to the contrary in a separate Meeting Minute at the time said additional members are assigned. The appointment term for an additional member is controlled to one (1) year increments and can be withdrawn at any time by the FIRST TRUSTEE in a future Meeting Minute. An annual appointment renewal may only be authorized by the FIRST TRUSTEE within thirty (30) days or less prior to expiration of said member's appointment."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "16. Any additional TRUSTEES shall be referred to as SECONDARY TRUSTEES. Unless further clarified at the time of their appointment, the FIRST TRUSTEE shall, from time-to-time, designate specific tasks, roles, duties and/or authorities for which the SECONDARY TRUSTEE shall be consulted or kept apprised"
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "17. All decisions for the management of this TRUST need not be unanimous if more than one TRUSTEE is on the BOARD unless noted to the contrary in this TRUST INDENTURE or in a subsequent Meeting Minute. The FIRST TRUSTEE's decision shall always take priority over any other title if there is dissent. Only a FIRST TRUSTEE can make a decision with their sole signature unless that specific authority is additionally passed down to another title / person on the BOARD in writing (Meeting Minute, Trust Resolution or otherwise)."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "18. Even if there are other currently active Board members, the First Trustee, or equivalent, shall always retain the sole authority, at his/her sole discretion, to amend this Declaration of Trust and/or its corresponding Trust Indenture in any reasonable manner in order to carry out the intended functions of the Board. Said functions can include, but are not limited to, clarifying or rectifying any situation or circumstance of the past, present or future that has not already been addressed therein."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "19. Any BOARD member shall abstain from voting if benefiting personally or in any other manner from the transaction."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "20. The BOARD may employ, hire or contract with, and pay from the TRUST assets, reasonable compensation to any officer, assistant, aide, contractor, subcontractor, agent, clerk, manager, TRUSTEE, attorney, barrister, solicitor, accountant, broker, investment, tax or other advisor as the BOARD deems necessary and prudent for the expedient and proper function of the TRUST."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "21. The BOARD shall, at its discretion, appoint one or more of its TRUSTEES, or qualified non Trustees, to the position of Trust Manager(s). Said appointment will also require an appropriate Independent Contractor Agreement to be on file for said title to become effective. Unless otherwise noted, the Trust Manager(s) shall have full authority to manage the TRUST including, but not limited to, the routine day-to-day operations, subject, at all times, to the scrutiny of the BOARD. If no Trust Manager is appointed, the FIRST TRUSTEE shall retain all management duties."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "22. No TRUSTEE, Trust Manager(s), or other titled officer, currently employed, hired or under contract with the TRUST, shall ever be held liable for any action or default of any TRUSTEE, Trust Manager, other titled officer, or any other person in connection with the administration and management of this TRUST unless caused by the individual's own gross negligence or by commission of a willful act of breach of trust."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "23. The BOARD shall open, maintain or close any bank accounts as necessary to receive, hold or transfer any funds for the use and benefit of the BENEFICIARY."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "24. The BOARD may purchase, sell, invest, reinvest, lease, rent, mortgage, insure, repair or improve, at the BOARD's sole discretion any personal, intangible or real property for the use and benefit of the BENEFICIARY."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "25. The BOARD may sell, liquidate or continue to operate, at the BOARD's sole discretion, any corporation, partnership, limited liability company, any partial interest therein or other business interest, which may be received, acquired, purchased, traded or initiated by the TRUST."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "26. The BOARD may enforce any and all mortgages, pledges and deeds of Trust held by the TRUST and may borrow funds for any TRUST purpose, encumber, lien, hypothecate, pledge or the equivalent, any TRUST assets at the sole discretion of the BOARD."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "27. The BOARD may also designate third parties to hold funds or title to TRUST property in another name for specific purposes necessary to the use and operation of the TRUST."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "28. The BOARD shall initiate or defend, at the BOARD's sole discretion, any litigation affecting the Trust. The BOARD may also submit to arbitration, compromise, release or otherwise adjust, with or without compensation, any and all claims affecting the TRUST."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "29. The BOARD shall pay all property taxes, assessments, charges, debts, bills and obligations arising out of the maintenance, operation and administration of the TRUST."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "30. The BOARD is further authorized to pay expenses of TRUSTEES, other titled officers, executives, managers and like persons, incurred while they are on TRUST business. The BOARD is further authorized to create expense accounts for each TRUSTEE, other titled officers, executives, managers and like persons, at the discretion of the BOARD, by appropriate Meeting Minute and authorized and Notarized Board Resolution(s): this expense account can cover, any and all, personal expenses to include but not limited to; mortgages, utilities, food, travel, entertainment, etc."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "31. Notice shall be given, when appropriate, to all persons or legal entities doing business with, extending credit to, contracting with, or having a claim against the TRUST, that the BOARD is not personally liable when dealing with TRUST property or matters, and such persons must look only to the assets of the TRUST for payment of, or for settlement of any debt, tort, damage, judgment or decree, or for any indebtedness which shall become payable thereunder."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "32. Anyone lending or paying money to the BOARD must be put on notice that they shall not be obliged to see the application of funds thereof."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "33. Each BENEFICIARY shall be assigned a number of Units of Beneficial Ownership (hereafter UNITS) between one (1) and one hundred (100), of which the sum total of all UNITS shall equal one hundred (100). Said number shall similarly represent the percentage of all TRUST assets to which said BENEFICIARY may claim beneficial ownership. Each UNIT shall represent one percent (1%) of all TRUST assets. There shall never be more or less than 100 UNITS available to the BENEFICIARY(ies)."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "34. A Certificate of Beneficial Ownership (hereafter CERTIFICATE) shall be issued to each BENEFICIARY stating the number of UNITS said BENEFICIARY is entitled to claim. If said BENEFICIARY is a minor or an adult of questionable mental stability, said CERTIFICATE may be held by the BOARD or entrusted with the BENEFICIARY's parent or legal guardian as the situation may apply, at the discretion of the BOARD."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "35. The dispersion of a CERTIFICATE to a BENEFICIARY or their representative shall be recorded in the official record of the TRUST."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "36. A Replacement BENEFICIARY shall retain only those rights previously held by a predecessor BENEFICIARY. "
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "37. The holding of a CERTIFICATE does not entitle the BENEFICIARY or a HOLDER to any management power or rights. Nor shall the death of a BENEFICIARY, or transfer by a BENEFICIARY or a HOLDER, entitle his heirs, legal representatives, or transferees to demand any division of the property of the TRUST, any special accounting thereof, or entitlement to any special rights whatsoever."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "38. The proportionate share of distributed assets to which each BENEFICIARY has a beneficial interest is not discretionary, but is determined solely by the number of UNITS stated on the CERTIFICATE held on their behalf."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "39. This Agreement and TRUST created hereby shall be administered, managed, governed, interpreted and regulated in all respects according to applicable Common Law in the Republic of Florida under the Constitution of the united States of America."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "40. The TRUST shall have its original domicile address located in the city of Orlando, Republic of Florida, in the united States of America."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "41. The domicile, and thereby the controlling interpretational laws under which the TRUST shall be administered, managed, governed, interpreted and regulated, may be changed to any other state or Nation as shall be deemed prudent, wise, necessary or appropriate at any time by the BOARD."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "42. The domicile address and the mailing address do not have to be the same and either may be changed by appropriate Meeting Minute by the BOARD. Changing the mailing address does not automatically change the domicile address unless specifically stated in the appropriate Meeting Minute."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "43. The TRUST shall enjoy the benefits of the Uniform Commercial Code (only when and if applicable and/or allowable to remain under the jurisdiction of Common Law) per, but not limited to, the following citations: Section 28: 1-105, TERRITORIAL APPLICATION OF THIS SUBTITLE; PARTIES' POWER TO CHOOSE APPLICABLE LAW, and section 28:1-207, PERFORMANCE OR ACCEPTANCE UNDER RESERVATION OF RIGHTS."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "44. Upon the eventual expiration of the term of the TRUST, the TRUST shall cease to exist and all remaining assets shall be immediately distributed to the BENEFICIARY(ies). In said event, the BOARD shall have the continuing authority to act to wind up the affairs of the TRUST, as is necessary, past the date of expiration. In the event that the Declaration of Trust was recorded, a Notice of Termination shall also be recorded and published as necessary."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "45. The BOARD shall pay all remaining obligations of the TRUST and distribute the remaining assets to the BENEFICIARY(ies) in direct proportion to the number of UNITS held on their CERTIFICATE. Upon receiving receipts for the distribution of the remaining assets to the BENEFICIARY(ies), the BOARD shall be automatically discharged hereunder, provided that their administration and distributions have been made in accordance with the terms and provisions of the TRUST. Otherwise, a court of competent jurisdiction may be called upon to review and correct any tort or error."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "\n        46. It is imperative that no representative of the TRUST (TRUSTEE, Trust Manager, or other titled officer, etc.) disclose to any member of the general public, private business or counsel, any information pertaining to the BENEFICIARY. It is against the intention and wishes of the SETTLOR for anyone to disclose the identities of any and all BENEFICIARIES of the TRUST. Therefore, no non-officer shall be permitted to view any Meeting Minutes of the TRUST or the Declaration of Trust. TRUST Resolutions, however, may be exposed to their appropriate recipients per the discretion of the BOARD.\n      "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "47. Any person shall be entitled to rely upon a COPY of the original DECLARATION OF TRUST and any instruments duly executed in accordance with the provisions thereof, to the same extent as the original document if such copy is approved by the BOARD for display."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "48. An approved Meeting Minute of the BOARD and appropriate distributed Resolution authorizing what it is they determine to do or have done shall be sufficient evidence that such an act is within their power to those doing business with the Trust."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "49. The BOARD shall have the power to amend the TRUST (via an appropriate Meeting Minute) to better carry out the purposes and intent thereof, or in order to conform to or comply with any law, rule, regulation or order of any government body, provided, however, that any such amendment may not be inconsistent with the basic TRUST purposes and intent, and not in derogation of the fiduciary obligations to the BENEFICIARY(ies). No amendment shall be revocable by the SETTLOR or by any other person or entity except for the BOARD."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v("50. This Declaration of Trust consists of eight (8) pages.")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v(
+          "51. The TRUSTEE, through co-execution of this agreement, signifies confirmation and acceptance of his fiduciary position as TRUSTEE, hereby establishing the BOARD and hereby accepting the terms, conditions and provisions of this Declaration of Trust and the Resolutions which are recorded in the Minutes of its meetings from time to time, which shall serve as the governing instruments of the BOARD. The signing and acknowledgement of appropriate TRUST Meeting Minutes by subsequently appointed SECONDARY TRUSTEES, if applicable, shall constitute their acceptance of this Declaration of Trust and related assets in the same manner as the BOARD and the assets and emoluments thereof shall immediately vest in the BOARD as fiduciary for the TRUST without further act or conveyance except as may be required by local law."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "52. The SETTLOR, through co-execution of this Declaration of Trust, signifies confirmation and acceptance of his settlement position to the TRUST by providing the initial asset to fund the TRUST and his Statement of Wishes Letter to the BOARD."
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "53. IN WITNESS WHEREOF, the parties hereto have hereunder set their hands and seals in acknowledgement and acceptance of, assent to and covenant to abide by all conditions herein imposed and expressed on or after the day first written above."
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -8191,10 +8383,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890& ***!
-  \********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8213,6 +8405,7 @@ var render = function() {
     [
       _c(
         "v-toolbar",
+        { staticClass: "sticky" },
         [
           _c(
             "inertia-link",
@@ -8239,6 +8432,11 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("v-spacer"),
+          _vm._v(" "),
+          _c("VueFileToolbarMenu", {
+            staticClass: "bar",
+            attrs: { content: _vm.menu }
+          }),
           _vm._v(" "),
           _c(
             "v-dialog",
@@ -8337,27 +8535,16 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "v-toolbar",
-        [
-          _c("VueFileToolbarMenu", {
-            staticClass: "bar",
-            attrs: { content: _vm.menu }
-          })
-        ],
-        1
-      ),
+      _c("TrustWizard"),
       _vm._v(" "),
-      _vm.Tempate
+      _vm.content
         ? _c("VueDocumentEditor", {
             ref: "editor",
             staticClass: "editor",
             attrs: {
               content: _vm.content,
-              overlay: _vm.overlay,
+              overlay: null,
               zoom: _vm.zoom,
-              page_format_mm: _vm.page_format_mm,
-              page_margins: _vm.page_margins,
               display: _vm.display
             },
             on: {

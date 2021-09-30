@@ -15,7 +15,7 @@ class ClientProjectController extends \Inertia\Controller
 {
     /**
      * Display a listing of the resource.
-     * GET: client/{client}/project/{project}
+     * GET: admin/client/{client}/project/{project}
      * @return \Inertia\Response
      */
     public function index(Client $client, Project $project)
@@ -30,7 +30,7 @@ class ClientProjectController extends \Inertia\Controller
 
     /**
      * Show the form for creating a new resource.
-     * GET: client/{client}/project/{project}/create
+     * GET: admin/client/{client}/project/{project}/create
      * @return \Inertia\Response
      */
     public function create(Request $request, Client $client)
@@ -42,6 +42,12 @@ class ClientProjectController extends \Inertia\Controller
         return Inertia::render('Admin/ClientProject/create', $data);
     }
 
+    /**
+     * Store a newly created resource in storage.
+     * POST: admin/client/{client}/project/{project}
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request, Client $client): \Illuminate\Http\RedirectResponse
     {
         $request->validate([
