@@ -4,12 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\SchemalessAttributes\SchemalessAttributes;
 
 class Project extends Model
 {
     use HasFactory;
     protected $table = 'projects';
 
+    protected $schemalessAttributes = [
+        'document_data',
+    ];
+    protected $casts = [
+        'document_data' => 'array'
+    ];
     protected $fillable = [
         'name',
         'user_id',
@@ -18,9 +25,11 @@ class Project extends Model
         'status',
         'start_date',
         'end_date',
+        "document_data",
+        "custom_template",
         'description',
         'budget',
-        'rate'
+        'rate',
     ];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -33,5 +42,11 @@ class Project extends Model
         return $this->belongsTo(Client::class);
     }
 
+    public function getDocumentData(): SchemalessAttributes
+    {
+        return SchemalessAttributes::createForModel($this, 'document_data');
+    }
+
 }
+
 

@@ -59,6 +59,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+
         return Inertia::render('Projects/Show', compact('project'));
     }
 
@@ -88,9 +89,8 @@ class ProjectController extends Controller
 
         ]);
 
-        $project->update($request->all());
-
-        return Redirect::route('projects.show', $project->id);
+        $project->update($request->only(OnlyColumns($project)));
+        return Redirect::back();
     }
 
     /**

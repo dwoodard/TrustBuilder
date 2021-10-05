@@ -53,6 +53,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      types: [{
+        text: 'Declaration Of Trust',
+        value: 'DeclarationOfTrust'
+      }, {
+        text: 'Trust Indenture',
+        value: 'TrustIndenture'
+      }, {
+        text: 'Contract',
+        value: 'Contract'
+      }],
       form: this.$inertia.form({
         client: this.client,
         name: '',
@@ -231,7 +241,7 @@ var render = function() {
                       "error-messages": _vm.form.errors.type,
                       label: "Project Type",
                       required: "",
-                      items: ["Trust", "Contract"]
+                      items: _vm.types
                     },
                     model: {
                       value: _vm.form.type,

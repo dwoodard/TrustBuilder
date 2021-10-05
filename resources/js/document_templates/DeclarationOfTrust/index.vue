@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="document-template">
     <div>
       <p class="text-right text-pre">
-        Domicile & Mailing Address:
-        ATTN: Shalyce Woodard, Trustee
-        {{ project.name }}
+        Domicile Address:
+        ATTN: <span class="preview-field">{{ first_trustee }}</span>, Trustee
+        <span class="preview-field">{{ trust_name }}</span>
         7512 Dr. Phillips Blvd. Suite #50-185
         Orlando, Florida, USA
       </p>
@@ -18,9 +18,10 @@
         Establishing An Artificial Entity Operating Under The Name:
       </p>
 
-      <p class="text-h3 text-center">
-        {{ project.name }}
+      <p class="text-center text-h3">
+        <span class="preview-field">{{ trust_name }}</span>
       </p>
+
 
       <p class="text-center text-pre">
         Is Hereby Constructed As A
@@ -32,12 +33,14 @@
         <span class="text-h6">IRREVOCABLE DECLARATION OF TRUST</span>
       </p>
 
-      <p class="text-center">On This Date: 24 AUGUST 2020</p>
+      <p class="text-center">On This Date: <span class="preview-field">{{ moment(document_created_at).format('D MMMM YYYY') }}</span></p>
 
-      <p class="text-center">THIS DOCUMENT IS CREATED UNDER COMMON LAW RIGHT OF CONTRACT</p>
+      <p class="text-center"><b>THIS DOCUMENT IS CREATED UNDER COMMON LAW RIGHT OF CONTRACT</b></p>
 
       <p>
-        It is expressly declared that a contractual agreement is hereby established between two parties for the benefit of a third party. This type of entity, created under Common Law Right of Contract, is known by several names, including a Pure Trust Organization, an Irrevocable Declaration of Trust and an Unincorporated Business Trust Organization, hereafter referred to as TRUST. This is not to be misconstrued as a living trust, a partnership, a company, a corporation, a joint venture, a limited partnership, a limited liability company or any other type of statutory entity established by privilege with a federal, state, county or municipal authority.
+        It is expressly declared that a contractual agreement is hereby established between two parties for the benefit of a third party. This type of entity, created under Common Law Right of Contract, is known by several names, including a
+        <b>Pure Trust Organization</b>, an <b>Irrevocable Declaration of Trust</b> and an
+        <b>Unincorporated Business Trust Organization</b>, hereafter referred to as TRUST. This is not to be misconstrued as a living trust, a partnership, a company, a corporation, a joint venture, a limited partnership, a limited liability company or any other type of statutory entity established by privilege with a federal, state, county or municipal authority.
       </p>
 
       <p>Although multiple copies of this Trust Document may exist, the only true version is the one held by the FIRST TRUSTEE. Any other version is merely a copy thereof and should not be legally relied upon for validity. The Board of Trustees will not be held responsible for any errors or misunderstandings in the translation of this document into any foreign language. If anyone has any questions as to the interpretation or intention of this document, please refer to the FIRST TRUSTEE.</p>
@@ -50,13 +53,15 @@
       <p class="text-center">DECLARATION OF TRUST</p>
 
       <p>
-        This Declaration of Trust Agreement, Conveyance and Acceptance is created and entered into this 24th day of August A.D., 2020, between Luke Eyre, hereinafter called the SETTLOR and Shalyce Woodard, hereinafter called the TRUSTEE, and also known as the FIRST TRUSTEE, for the sole benefit of one or more BENEFICIARIES, who shall be named in the Trust Indenture Schedule B & Meeting Minute No. 2.
+        This Declaration of Trust Agreement, Conveyance and Acceptance is created and entered into this
+        <span class="preview-field">{{ moment(document_created_at).format('Do [day of] MMMM [A.D.], YYYY') }}</span>, between <span class="preview-field"><b>{{ settlor }}</b></span>, hereinafter called the SETTLOR and
+        <span class="preview-field"> <b>{{ first_trustee }}</b> </span>, hereinafter called the TRUSTEE, and also known as the FIRST TRUSTEE, for the sole benefit of one or more BENEFICIARIES, who shall be named in the Trust Indenture Schedule B & Meeting Minute No. 2.
       </p>
 
-      <p>The TRUST is authorized to exist and function through its Board of Trustees, hereafter BOARD, who are one or more legal persons holding fee simple title, not differentiating between legal and equitable, not as individuals, but collectively as the BOARD who shall operate the TRUST as a PURE TRUST ORGANIZATION under the artificial entity name of:</p>
+      <p>The TRUST is authorized to exist and function through its Board of Trustees, hereafter BOARD, who are one or more legal persons holding fee simple title, not differentiating between legal and equitable, not as individuals, but collectively as the BOARD who shall operate the TRUST as a <b>PURE TRUST ORGANIZATION</b> under the artificial entity name of:</p>
 
       <p class="text-h6 text-center">
-        BFH TRUST
+        <span class="preview-field">{{ trust_name }}</span>
       </p>
 
       <p>
@@ -107,7 +112,9 @@
       </div>
       <ul>
         <li>7. Because the FIRST TRUSTEE may be just one person on the BOARD, in such instance, the words FIRST TRUSTEE or TRUSTEE can also be referred to hereafter as the BOARD. The FIRST TRUSTEE alone is always considered the BOARD but if other titled officers are also on the BOARD, the BOARD does not always only mean the FIRST TRUSTEE.</li>
-        <li>8. The BOARD accepts said conveyed assets into the name and ownership of the Trust and not any TRUSTEE's name and the BOARD presents its own consideration for the Trust Agreement. The BOARD presents its expertise and knowledge in business and/or as a Trust Manager and shall administer the SETTLOR's wishes in establishing the artificial entity and maintaining it for the sole benefit of the BENEFICIARY who is listed in Schedule B of the Trust Indenture & in Meeting Minute Number 2.</li>
+        <li>
+          8. The BOARD accepts said conveyed assets into the name and ownership of the Trust and not any TRUSTEE's name and the BOARD presents its own consideration for the Trust Agreement. The BOARD presents its expertise and knowledge in business and/or as a Trust Manager and shall administer the SETTLOR's wishes in establishing the artificial entity and maintaining it for the sole benefit of the BENEFICIARY who is listed in <b>Schedule B</b> of the Trust Indenture & in <b>Meeting Minute Number 2</b>.
+        </li>
         <li>9. The BOARD is authorized to deal with the SETTLOR "at arm's length,” to purchase property or to sell property, but always at fair market value and for adequate and full consideration.</li>
         <li>10. The BOARD shall, as it deems proper and necessary, provide for operating funds through any type of borrowing, hypothecation, monetization either unsecured or directly or indirectly secured, which shall constitute the operating funds of the TRUST. The BOARD may authorize liquidation of assets for the purpose of adding to said operating funds.</li>
         <li>11. The BOARD shall have all the powers necessary to operate, manage and control the TRUST for the benefit of the BENEFICIARY and shall take any action which it deems necessary and proper to carry out such purposes, provided however, that the BOARD shall not possess any power or take any action contrary to law or inconsistent with the provisions of the Declaration of Trust.</li>
@@ -229,13 +236,13 @@
             <v-text-field
               filled
               persistent-hint
-              :hint="'SETTLOR: Luke Eyre'"/>
+              :hint="`SETTLOR: ${settlor}`"/>
           </v-col>
           <v-col>
             <v-text-field
               filled
               persistent-hint
-              :hint="'FIRST TRUSTEE: Shalyce Woodard'"/>
+              :hint="`FIRST TRUSTEE: ${first_trustee}`"/>
           </v-col>
         </v-row>
 
@@ -256,6 +263,8 @@
 
         <v-row class="sm-6">
           <v-col>
+            <h4 class="mb-5">WITNESS:</h4>
+
             <v-text-field
               filled
               persistent-hint
@@ -267,6 +276,8 @@
           </v-col>
 
           <v-col>
+            <h4 class="mb-5">WITNESS:</h4>
+
             <v-text-field
               filled
               persistent-hint
@@ -281,13 +292,13 @@
         <v-row class="sm-6" style="height: 60mm; background: #f1f1f1;">
           <v-col>
             <div>
-              Notary Stamp /Seal:
+              Notary Stamp / Seal:
             </div>
           </v-col>
 
           <v-col>
             <div>
-              Notary Stamp /Seal:
+              Notary Stamp / Seal:
             </div>
           </v-col>
         </v-row>
@@ -298,6 +309,7 @@
 
 <script>
   import 'vuetify/dist/vuetify.css';
+  import moment from 'moment';
 
   export default {
     props: {
@@ -310,31 +322,31 @@
         required: true
       }
     },
-    data() {
-      return {
-      // json: {
-      //   trust_name: '',
-      //   first_trustee: '',
-      //   mail_address: {
-      //     address: '',
-      //     city: '',
-      //     state: '',
-      //     zip: '',
-      //     county: ''
-      //   },
-      //   meeting_date: '',
-      //   settlor: '',
-      //   purpose_of_trust: '',
-      //   settlor_gift: '',
-      //   term_of_trust: '',
-      //   secondary_trustees: [
-      //     'John Doe'
-      //   ]
-      // },
-      };
+    computed: {
+      document_created_at() {
+        return this.project?.document_data?.document_created_at || new Date();
+      },
+      first_trustee() {
+        return this.project?.document_data?.first_trustee || `${this?.client?.first_name} ${this?.client?.last_name}`;
+      },
+      trust_name() {
+        return this.project?.document_data?.trust_name || this?.project?.name;
+      },
+      settlor() {
+        return this.project?.document_data?.settlor;
+      }
     },
-    mounted() {
-
+    methods: {
+      moment
     }
   };
 </script>
+
+<style scoped>
+.document-template .preview-field{
+  color: #ff3d00;
+}
+.print .document-template .preview-field{
+  color: #000000;
+}
+</style>

@@ -34,7 +34,7 @@
     <v-container>
       <v-row v-for="(project,i) in client.projects" :key="i" class="grey lighten-4">
         <v-col>
-          <span> ({{ project.type }}) {{ project.name }}</span>
+          <span>({{ pascelToTitleCase(project.type ) }} ) <br/>{{ project.name }}</span>
         </v-col>
         <v-col align="right">
           <v-tooltip bottom>
@@ -54,6 +54,7 @@
 <script>
   import ClientProjectCreate from '@/pages/Admin/ClientProject/create';
   import UiAvatar from '@/components/UiAvatar';
+  import {pascelToTitleCase} from '@/helper';
 
   export default {
     props: {
@@ -69,6 +70,7 @@
       };
     },
     methods: {
+      pascelToTitleCase,
       editClient() {
         return this.route('admin.clients.edit', {id: this.client.id});
       },

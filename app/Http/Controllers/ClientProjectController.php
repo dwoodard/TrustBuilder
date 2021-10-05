@@ -68,6 +68,23 @@ class ClientProjectController extends \Inertia\Controller
 
         return Redirect::back()->with($data);
     }
+
+    /**
+     * Preview for Print
+     * GET: admin/client/{client}/project/{project}/print
+     * @return \Inertia\Response
+     */
+    public function print(Client $client, Project $project)
+    {
+
+        $data = [
+            'client' => ClientResource::collection([$client])->first()->jsonSerialize(),
+            'project' => ProjectResource::collection([$project])->first()->jsonSerialize()
+        ];
+
+        return Inertia::render('Admin/ClientProject/print', $data);
+    }
+
 }
 
 

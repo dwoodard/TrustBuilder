@@ -1,12 +1,12 @@
 <template>
   <v-container fluid>
-    <v-toolbar class="sticky">
+    <v-toolbar>
       <inertia-link href="/admin/clients" as="button">
         <v-icon>mdi-menu-left</v-icon>
       </inertia-link>
 
       <v-toolbar-title>
-        <small>{{ client.first_name }} {{ client.last_name }}</small> {{ project.name }} ({{ project.type }})
+        <small>{{ client.first_name }} {{ client.last_name }}</small> {{ project.name }} ({{ pascelToTitleCase(project.type) }})
       </v-toolbar-title>
 
       <v-spacer/>
@@ -37,7 +37,11 @@
       <!-- end confirm delete dialog -->
     </v-toolbar>
 
-    <TrustWizard/>
+    <component :is="content[0].wizard"
+               :project.sync="project"
+               :client.sync="client"
+               @updateProject="onUpdateProject"/>
+
 
     <VueDocumentEditor
       v-if="content"
@@ -53,9 +57,14 @@
   import VueDocumentEditor from 'vue-document-editor';
   import VueFileToolbarMenu from 'vue-file-toolbar-menu';
   import Admin from '../../../layouts/Admin/Layout';
-  import Contract from '../../../document_templates/Contract';
-  import Trust from '../../../document_templates/DeclarationOfTrust';
-  import TrustWizard from '../../../document_templates/DeclarationOfTrust/TrustWizard';
+
+  import DeclarationOfTrust from '../../../document_templates/DeclarationOfTrust';
+  import TrustIndenture from '../../../document_templates/TrustIndenture';
+
+  import DeclarationOfTrustWizard from '../../../document_templates/DeclarationOfTrust/Wizard';
+  import TrustIndentureWizard from '../../../document_templates/TrustIndenture/Wizard';
+
+  import {pascelToTitleCase} from '../../../helper';
 
   export default {
     layout: Admin,
@@ -72,7 +81,10 @@
         content_history: [], // contains the content states for undo/redo operations
 
 
-        form: this.$inertia.form({}),
+        form: this.$inertia.form({
+          project: this.project.id,
+          document_data: this.project.document_data
+        }), // Project
         showDelete: false
 
       };
@@ -81,14 +93,21 @@
       content: {
         get() {
           switch (this.project.type) {
-            case 'Trust':
+            case 'DeclarationOfTrust':
               return [
-                {template: Trust, props: {client: this.client, project: this.project}}
+                {
+                  template: DeclarationOfTrust,
+                  wizard: DeclarationOfTrustWizard,
+                  props: {client: this.client, project: this.project}
+                }
               ];
-            case 'Contract':
+            case 'TrustIndenture':
               return [
-                {template: Contract, props: {client: this.client, project: this.project}}
-
+                {
+                  template: TrustIndenture,
+                  wizard: TrustIndentureWizard,
+                  props: {client: this.client, project: this.project}
+                }
               ];
             default:
               return null;
@@ -102,11 +121,14 @@
       menu() {
         return [
           // Main commands
+
           {
-            text: 'Print',
-            title: 'Print',
+            text: 'Preview',
+            title: 'Preview',
             icon: 'print',
-            click: () => window.print()
+            click: () => {
+              window.open(`/admin/client/${this.client.id}/project/${this.project.id}/print`, '_blank');
+            }
           }
 
         ];
@@ -115,20 +137,17 @@
 
     },
     methods: {
-      // Page overlays (headers, footers, page numbers)
-      overlay(page, total) {
-        // Add page numbers on each page
-        let html = `<div style="position: absolute; bottom: 8mm; ${
-          (page % 2) ? 'right' : 'left'}: 10mm">Page ${page} of ${
-          total}</div>`;
-        // Add custom headers and footers from page 3
-        if (page >= 3) {
-          html += '<div style="position: absolute; left: 0; top: 0; right: 0; padding: 3mm 5mm; background: rgba(200, 220, 240, 0.5)"><strong>MYCOMPANY</strong> example.com /// This is a custom header overlay</div>';
-          html += '<div style="position: absolute; left: 10mm; right: 10mm; bottom: 5mm; text-align:center; font-size:10pt">Copyright (c) 2020 Romain Lamothe, MIT License /// This is a custom footer overlay</div>';
-        }
-        return html;
+      pascelToTitleCase,
+      updatePageHeight() {
+        this.$nextTick((e) => {
+          this.onUpdateProject();
+        });
       },
 
+
+      onUpdateProject() {
+        this.$el.querySelector('.page').style.height = 'auto';
+      },
 
       // Delete
       onConfirmDelete() {
@@ -148,9 +167,8 @@
       this.mounted = true;
     },
     created() {
-      this.$nextTick((e) => {
-        this.$el.querySelector('.page').style.height = 'auto';
-      });
+      console.log('created');
+      this.updatePageHeight();
 
 
       // Initialize gesture flags
@@ -207,41 +225,26 @@
         startDistTouch = false;
         startZoomTouch = false;
       }, {passive: false});
-      // Manage history undo/redo events
-      const manage_undo_redo = (e) => {
-        switch (e && e.inputType) {
-          case 'historyUndo':
-            e.preventDefault();
-            e.stopPropagation();
-            this.undo();
-            break;
-          case 'historyRedo':
-            e.preventDefault();
-            e.stopPropagation();
-            this.redo();
-            break;
-        }
-      };
-      window.addEventListener('beforeinput', manage_undo_redo);
-      window.addEventListener('input', manage_undo_redo); // in case of beforeinput event is not implemented (Firefox)
+
       // If your component is susceptible to be destroyed, don't forget to
       // use window.removeEventListener in the Vue.js beforeDestroy handler
     },
 
+    updated() {
+      this.updatePageHeight();
+    },
+
 
     components: {
-      TrustWizard,
+      DeclarationOfTrustWizard,
       VueDocumentEditor,
       VueFileToolbarMenu
     }
+
+
   };
 </script>
 
 <style scoped>
-.sticky{
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  z-index: 1;
-}
+
 </style>

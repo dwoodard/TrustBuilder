@@ -22,6 +22,8 @@ class ProjectResource extends JsonResource
             'client_id' => $this->client_id,
             'type' => $this->type,
             'status' => $this->status,
+            'document_data' => $this->document_data,
+            'custom_template' => $this->custom_template,
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
             'name' => $this->name

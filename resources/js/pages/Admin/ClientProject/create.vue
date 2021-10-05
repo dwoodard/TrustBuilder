@@ -15,7 +15,7 @@
             :error-messages="form.errors.type"
             label="Project Type"
             required
-            :items="['Trust', 'Contract']"/>
+            :items="types"/>
         </v-card-text>
 
         <v-card-actions>
@@ -42,6 +42,16 @@
     },
     data() {
       return {
+        types: [{
+          text: 'Declaration Of Trust',
+          value: 'DeclarationOfTrust'
+        }, {
+          text: 'Trust Indenture',
+          value: 'TrustIndenture'
+        }, {
+          text: 'Contract',
+          value: 'Contract'
+        }],
         form: this.$inertia.form({
           client: this.client,
           name: '',

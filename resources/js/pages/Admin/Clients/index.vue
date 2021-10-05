@@ -8,6 +8,7 @@
                     solo
                     dense
                     clearable
+                    hint="first_name, last_name, email, phone, city, zip"
                     append-icon="mdi-magnify"/>
       <v-spacer/>
       <v-tooltip bottom>
@@ -58,7 +59,8 @@
             || client.last_name?.score(this.search) > 0.4
             || client.email?.score(this.search) > 0.4
             || client.phone?.score(this.search) > 0.4
-            || client.city?.score(this.search) > 0.4;
+            || client.city?.score(this.search) > 0.4
+            || client.zip?.score(this.search) > 0.4;
         });
       }
     },

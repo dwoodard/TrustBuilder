@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _pages_Admin_ClientProject_create__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/pages/Admin/ClientProject/create */ "./resources/js/pages/Admin/ClientProject/create.vue");
 /* harmony import */ var _components_UiAvatar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/UiAvatar */ "./resources/js/components/UiAvatar.vue");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/helper */ "./resources/js/helper.js");
 //
 //
 //
@@ -66,6 +67,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -82,6 +84,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    pascelToTitleCase: _helper__WEBPACK_IMPORTED_MODULE_2__.pascelToTitleCase,
     editClient: function editClient() {
       return this.route('admin.clients.edit', {
         id: this.client.id
@@ -341,6 +344,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      types: [{
+        text: 'Declaration Of Trust',
+        value: 'DeclarationOfTrust'
+      }, {
+        text: 'Trust Indenture',
+        value: 'TrustIndenture'
+      }, {
+        text: 'Contract',
+        value: 'Contract'
+      }],
       form: this.$inertia.form({
         client: this.client,
         name: '',
@@ -513,6 +526,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -535,9 +549,9 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return this.clients.data.filter(function (client) {
-        var _client$first_name, _client$last_name, _client$email, _client$phone, _client$city;
+        var _client$first_name, _client$last_name, _client$email, _client$phone, _client$city, _client$zip;
 
-        return ((_client$first_name = client.first_name) === null || _client$first_name === void 0 ? void 0 : _client$first_name.score(_this.search)) > 0.4 || ((_client$last_name = client.last_name) === null || _client$last_name === void 0 ? void 0 : _client$last_name.score(_this.search)) > 0.4 || ((_client$email = client.email) === null || _client$email === void 0 ? void 0 : _client$email.score(_this.search)) > 0.4 || ((_client$phone = client.phone) === null || _client$phone === void 0 ? void 0 : _client$phone.score(_this.search)) > 0.4 || ((_client$city = client.city) === null || _client$city === void 0 ? void 0 : _client$city.score(_this.search)) > 0.4;
+        return ((_client$first_name = client.first_name) === null || _client$first_name === void 0 ? void 0 : _client$first_name.score(_this.search)) > 0.4 || ((_client$last_name = client.last_name) === null || _client$last_name === void 0 ? void 0 : _client$last_name.score(_this.search)) > 0.4 || ((_client$email = client.email) === null || _client$email === void 0 ? void 0 : _client$email.score(_this.search)) > 0.4 || ((_client$phone = client.phone) === null || _client$phone === void 0 ? void 0 : _client$phone.score(_this.search)) > 0.4 || ((_client$city = client.city) === null || _client$city === void 0 ? void 0 : _client$city.score(_this.search)) > 0.4 || ((_client$zip = client.zip) === null || _client$zip === void 0 ? void 0 : _client$zip.score(_this.search)) > 0.4;
       });
     }
   },
@@ -563,7 +577,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "toTitleCase": () => (/* binding */ toTitleCase),
 /* harmony export */   "toKebabCase": () => (/* binding */ toKebabCase),
-/* harmony export */   "score": () => (/* binding */ score)
+/* harmony export */   "score": () => (/* binding */ score),
+/* harmony export */   "toPascalCase": () => (/* binding */ toPascalCase),
+/* harmony export */   "pascelToTitleCase": () => (/* binding */ pascelToTitleCase)
 /* harmony export */ });
 var toTitleCase = function toTitleCase(str) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -574,8 +590,8 @@ var toKebabCase = function toKebabCase(str) {
   return str.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\s+/g, '-').toLowerCase();
 };
 var score = function score(a, b) {
-  if (this == a) return 1;
-  if (a == '') return 0;
+  if (this === a) return 1;
+  if (a === '') return 0;
   var c = 0;
   var d = a.length;
   var e = this;
@@ -602,6 +618,14 @@ var score = function score(a, b) {
 
   h = c / d, j = (h * (d / f) + h) / 2, j /= i, g && j + 0.15 < 1 && (j += 0.15);
   return j;
+};
+var toPascalCase = function toPascalCase(str) {
+  return str.replace(/[-_\s]+/g, ' ').split(' ').map(function (word) {
+    return word[0].toUpperCase() + word.slice(1);
+  }).join('');
+};
+var pascelToTitleCase = function pascelToTitleCase(str) {
+  return str.replace(/([A-Z])/g, ' $1').replace(/^\s/, '');
 };
 
 /***/ }),
@@ -1245,8 +1269,10 @@ var render = function() {
               _c("v-col", [
                 _c("span", [
                   _vm._v(
-                    " (" + _vm._s(project.type) + ") " + _vm._s(project.name)
-                  )
+                    "(" + _vm._s(_vm.pascelToTitleCase(project.type)) + " ) "
+                  ),
+                  _c("br"),
+                  _vm._v(_vm._s(project.name))
                 ])
               ]),
               _vm._v(" "),
@@ -1691,7 +1717,7 @@ var render = function() {
                       "error-messages": _vm.form.errors.type,
                       label: "Project Type",
                       required: "",
-                      items: ["Trust", "Contract"]
+                      items: _vm.types
                     },
                     model: {
                       value: _vm.form.type,
@@ -1902,6 +1928,7 @@ var render = function() {
               solo: "",
               dense: "",
               clearable: "",
+              hint: "first_name, last_name, email, phone, city, zip",
               "append-icon": "mdi-magnify"
             },
             model: {
