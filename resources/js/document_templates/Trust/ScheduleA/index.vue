@@ -1,5 +1,5 @@
 <template>
-  <div class="document-template">
+  <div class="document-template break-before">
     <h1>SCHEDULE A</h1>
     <h2 class="mb-10">SETTLEMENT OF ASSETS</h2>
 
@@ -86,6 +86,7 @@
         </v-col>
       </v-row>
     </v-container>
+    <div class="break-after"></div>
   </div>
 </template>
 

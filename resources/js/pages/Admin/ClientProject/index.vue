@@ -15,6 +15,7 @@
       <v-spacer/>
 
       <v-select
+          max-width="200"
           v-model="currentDocument"
           :items="templates" />
       <VueFileToolbarMenu :content="menu" class="bar"/>
@@ -142,6 +143,7 @@
 
       onUpdateProject() {
         this.$el.querySelector('.page').style.height = 'auto';
+        this.$el.querySelector('.page').style.top = '0';
       },
 
       // Delete

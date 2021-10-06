@@ -1,5 +1,5 @@
 <template>
-  <div class="document-template">
+  <div class="document-template break-before">
     <h3>SCHEDULE B</h3>
     <h4 class="mb-10">SETTLOR'S STATEMENT OF WISHES</h4>
 
@@ -81,6 +81,7 @@
         </v-col>
       </v-row>
     </v-container>
+    <div class="break-after"></div>
   </div>
 </template>
 

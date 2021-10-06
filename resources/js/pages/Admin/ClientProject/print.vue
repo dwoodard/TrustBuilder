@@ -1,25 +1,40 @@
 <template>
   <v-container>
-    <component :is="DocumentTemplateType"
-               :project.sync="project"
-               :client.sync="client"/>
+    <div v-for="template in dynamicComponents">
+
+      <component :is="template"
+                 :project.sync="project"
+                 :client.sync="client"/>
+    </div>
   </v-container>
 </template>
 
 <script>
   import DocumentTemplate from '../../../layouts/Admin/DocumentTemplate';
+  require('../../../../css/print.css')
 
   export default {
     layout: DocumentTemplate,
-    props: ['client', 'project'],
+    props: ['client', 'project', 'templates'],
+    data() {
+      return {
+
+
+      };
+    },
+    mounted () {
+
+    },
     computed: {
-      DocumentTemplateType() {
-        return () => import(`../../../document_templates/${this.project.type}`);
+      dynamicComponents() {
+        return this.templates.map((template) => () => import(`../../../document_templates/${this.project.type}/${template}`));
       }
     },
+
+
+
   };
 </script>
 
 <style scoped>
-
-</style>
+ </style>

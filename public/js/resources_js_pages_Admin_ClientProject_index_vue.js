@@ -245,6 +245,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -317,6 +318,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     onUpdateProject: function onUpdateProject() {
       this.$el.querySelector('.page').style.height = 'auto';
+      this.$el.querySelector('.page').style.top = '0';
     },
     // Delete
     onConfirmDelete: function onConfirmDelete() {
@@ -6644,7 +6646,7 @@ var render = function() {
           _c("v-spacer"),
           _vm._v(" "),
           _c("v-select", {
-            attrs: { items: _vm.templates },
+            attrs: { "max-width": "200", items: _vm.templates },
             model: {
               value: _vm.currentDocument,
               callback: function($$v) {

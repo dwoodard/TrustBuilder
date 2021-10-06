@@ -482,6 +482,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -22116,7 +22117,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "document-template" },
+    { staticClass: "document-template break-before" },
     [
       _c("p", { staticClass: "text-right text-pre" }, [
         _vm._v("\n    Domicile Address:\n    ATTN: "),
@@ -22475,7 +22476,9 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "break-after" })
     ],
     1
   )

@@ -21,13 +21,13 @@ class ClientProjectController extends \Inertia\Controller
      */
     public function index(Client $client, Project $project)
     {
-        $templates = $this->getProjectTemplates($project);
+
 
 
         $data = [
             'client' => ClientResource::collection([$client])->first()->jsonSerialize(),
             'project' => ProjectResource::collection([$project])->first()->jsonSerialize(),
-            'templates' => $templates,
+            'templates' => $this->getProjectTemplates($project),
         ];
 
         return Inertia::render('Admin/ClientProject/index', $data);
@@ -84,7 +84,9 @@ class ClientProjectController extends \Inertia\Controller
 
         $data = [
             'client' => ClientResource::collection([$client])->first()->jsonSerialize(),
-            'project' => ProjectResource::collection([$project])->first()->jsonSerialize()
+            'project' => ProjectResource::collection([$project])->first()->jsonSerialize(),
+            'templates' => $this->getProjectTemplates($project)
+
         ];
 
         return Inertia::render('Admin/ClientProject/print', $data);

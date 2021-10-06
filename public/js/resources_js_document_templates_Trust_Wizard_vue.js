@@ -179,13 +179,11 @@ __webpack_require__.r(__webpack_exports__);
       this.form.put(route('admin.projects.update', {
         project: this.project.id,
         document_data: this.form.data()
-      }));
-      this.$emit('updateProject');
+      })); // this.$emit('updateProject');
     },
     onClick: function onClick() {
       var steps = this.$el.querySelectorAll('.v-stepper__step').length;
       this.currentStep = this.currentStep === steps ? 1 : this.currentStep + 1;
-      this.updateProject();
     }
   }
 });

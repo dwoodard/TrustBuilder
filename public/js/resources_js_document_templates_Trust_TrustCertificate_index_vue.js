@@ -48,6 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -21683,7 +21684,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "document-template",
+      staticClass: "document-template break-before",
       staticStyle: { border: "ridge 4px #333", padding: "20px" }
     },
     [
@@ -21728,8 +21729,9 @@ var render = function() {
         )
       ]),
       _vm._v(
-        "\n\n\n  Kaitlyn Woodard       - CERTIFICATE 001 - 25 UNITS of Beneficial Ownership\n  Kira Woodard          - CERTIFICATE 002 - 25 UNITS of Beneficial Ownership\n  Tyler Woodard         - CERTIFICATE 003 - 25 UNITS of Beneficial Ownership\n  Klarity Woodard       - CERTIFICATE 004 - 25 UNITS of Beneficial Ownership\n"
-      )
+        "\n\n\n  Kaitlyn Woodard       - CERTIFICATE 001 - 25 UNITS of Beneficial Ownership\n  Kira Woodard          - CERTIFICATE 002 - 25 UNITS of Beneficial Ownership\n  Tyler Woodard         - CERTIFICATE 003 - 25 UNITS of Beneficial Ownership\n  Klarity Woodard       - CERTIFICATE 004 - 25 UNITS of Beneficial Ownership\n  "
+      ),
+      _c("div", { staticClass: "break-after" })
     ]
   )
 }

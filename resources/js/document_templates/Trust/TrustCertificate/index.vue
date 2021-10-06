@@ -1,5 +1,5 @@
 <template>
-  <div class="document-template" style="border: ridge 4px #333; padding: 20px">
+  <div class="document-template break-before" style="border: ridge 4px #333; padding: 20px">
     <h3>Trust Certificate</h3>
 
     <p>
@@ -30,6 +30,7 @@
     Kira Woodard          - CERTIFICATE 002 - 25 UNITS of Beneficial Ownership
     Tyler Woodard         - CERTIFICATE 003 - 25 UNITS of Beneficial Ownership
     Klarity Woodard       - CERTIFICATE 004 - 25 UNITS of Beneficial Ownership
+    <div class="break-after"></div>
   </div>
 </template>
 

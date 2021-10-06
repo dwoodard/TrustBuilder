@@ -21958,7 +21958,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "document-template" }, [
+  return _c("div", { staticClass: "document-template break-before" }, [
     _c("div", [
       _c("p", { staticClass: "text-right text-pre" }, [
         _vm._v("\n      Domicile Address:\n      ATTN: "),
@@ -22014,7 +22014,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "pagebreak" }),
+    _c("div", { staticClass: "break-after" }),
     _vm._v(" "),
     _c("div", [
       _c("p", { staticClass: "text-center" }, [_vm._v("DECLARATION OF TRUST")]),
@@ -22173,7 +22173,7 @@ var render = function() {
         _vm._v(" "),
         _vm._m(17),
         _vm._v(" "),
-        _c("div", { staticClass: "pagebreak" }),
+        _c("div", { staticClass: "break-after" }),
         _vm._v(" "),
         _c(
           "v-container",
@@ -22318,7 +22318,7 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "pagebreak" })
+    _c("div", { staticClass: "break-after" })
   ])
 }
 var staticRenderFns = [

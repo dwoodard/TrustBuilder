@@ -166,12 +166,11 @@
           document_data: this.form.data()
         }));
 
-        this.$emit('updateProject');
+        // this.$emit('updateProject');
       },
       onClick() {
         const steps = this.$el.querySelectorAll('.v-stepper__step').length;
         this.currentStep = this.currentStep === steps ? 1 : this.currentStep + 1;
-        this.updateProject();
       }
     }
   };
