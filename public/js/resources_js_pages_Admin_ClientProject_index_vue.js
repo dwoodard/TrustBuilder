@@ -136,6 +136,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['project', 'client'],
@@ -30530,6 +30532,27 @@ var render = function() {
                             _vm._v(" "),
                             _c("v-date-picker", {
                               attrs: { "show-adjacent-months": "" },
+                              on: {
+                                blur: _vm.updateProject,
+                                keydown: function($event) {
+                                  if (
+                                    !$event.type.indexOf("key") &&
+                                    _vm._k(
+                                      $event.keyCode,
+                                      "enter",
+                                      13,
+                                      $event.key,
+                                      "Enter"
+                                    )
+                                  ) {
+                                    return null
+                                  }
+                                  return _vm.updateProject.apply(
+                                    null,
+                                    arguments
+                                  )
+                                }
+                              },
                               model: {
                                 value: _vm.form.document_created_at,
                                 callback: function($$v) {

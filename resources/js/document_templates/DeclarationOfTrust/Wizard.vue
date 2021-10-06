@@ -76,7 +76,9 @@
                 </template>
                 <v-date-picker
                   v-model="form.document_created_at"
-                  show-adjacent-months/>
+                  show-adjacent-months
+                  @blur="updateProject"
+                  @keydown.enter="updateProject"/>
               </v-menu>
 
               <v-text-field
