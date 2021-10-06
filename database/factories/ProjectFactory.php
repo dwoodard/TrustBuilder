@@ -26,10 +26,9 @@ class ProjectFactory extends Factory
             'name' => $this->random_string(),
             'user_id' => \App\Models\User::factory()->create()->id,
             'client_id' => \App\Models\Client::factory()->create()->id,
-            'type' => $this->faker->randomElement(['DeclarationOfTrust', 'TrustIndenture']),
+            'type' => $this->faker->randomElement(['Trust', 'DeclarationOfStatus']),
             'status' => $this->faker->randomElement(['new', 'in-progress', 'pending', 'completed', 'cancelled']),
-            'start_date' => $this->faker->dateTimeBetween('-1 years', '+1 years'),
-            'end_date' => $this->faker->dateTimeBetween('+1 years', '+2 years'),
+
         ];
     }
 

@@ -305,6 +305,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../helper */ "./resources/js/helper.js");
 //
 //
 //
@@ -335,6 +336,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     value: {
@@ -355,13 +357,14 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
-    documentTypes: function documentTypes() {
-      return this.$page.props.documentTypes.map(function (type) {
-        return {
-          text: type.name,
-          value: type.filename
-        };
-      });
+    projectTypes: function projectTypes() {
+      return [{
+        text: 'Trust',
+        value: 'Trust'
+      }, {
+        text: 'Declaration of Status',
+        value: 'DeclarationOfStatus'
+      }];
     },
     show: {
       get: function get() {
@@ -534,7 +537,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   layout: _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_1__["default"],
-  props: ['clients', 'documentTypes'],
+  props: ['clients'],
   data: function data() {
     return {
       search: '',
@@ -1718,7 +1721,7 @@ var render = function() {
                       "error-messages": _vm.form.errors.type,
                       label: "Project Type",
                       required: "",
-                      items: _vm.documentTypes
+                      items: _vm.projectTypes
                     },
                     model: {
                       value: _vm.form.type,

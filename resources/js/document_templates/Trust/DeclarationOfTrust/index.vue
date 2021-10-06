@@ -46,7 +46,7 @@
       <p>Although multiple copies of this Trust Document may exist, the only true version is the one held by the FIRST TRUSTEE. Any other version is merely a copy thereof and should not be legally relied upon for validity. The Board of Trustees will not be held responsible for any errors or misunderstandings in the translation of this document into any foreign language. If anyone has any questions as to the interpretation or intention of this document, please refer to the FIRST TRUSTEE.</p>
     </div>
 
-    <div class="pagebreak"></div>
+    <div class="break-after"></div>
 
 
     <div>
@@ -230,7 +230,7 @@
         <li>53. IN WITNESS WHEREOF, the parties hereto have hereunder set their hands and seals in acknowledgement and acceptance of, assent to and covenant to abide by all conditions herein imposed and expressed on or after the day first written above.</li>
       </ul>
 
-      <div class="pagebreak"></div>
+      <div class="break-after"></div>
       <v-container>
         <v-row class="sm-6">
           <v-col>
@@ -305,6 +305,7 @@
         </v-row>
       </v-container>
     </div>
+    <div class="break-after"></div>
   </div>
 </template>
 

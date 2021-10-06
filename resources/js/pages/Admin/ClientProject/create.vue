@@ -15,7 +15,7 @@
             :error-messages="form.errors.type"
             label="Project Type"
             required
-            :items="documentTypes"/>
+            :items="projectTypes"/>
         </v-card-text>
 
         <v-card-actions>
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+  import {pascelToTitleCase} from '../../../helper';
 
   export default {
     props: {
@@ -51,13 +52,11 @@
       };
     },
     computed: {
-      documentTypes() {
-        return this.$page.props.documentTypes.map((type) => {
-          return {
-            text: type.name,
-            value: type.filename
-          };
-        });
+      projectTypes() {
+        return [
+          {text: 'Trust', value: 'Trust'},
+          {text: 'Declaration of Status', value: 'DeclarationOfStatus'}
+        ];
       },
       show: {
         get() {

@@ -9,11 +9,15 @@
       </inertia-link>
 
       <v-toolbar-title>
-        <small>{{ client.first_name }} {{ client.last_name }}</small> {{ project.name }} ({{ pascelToTitleCase(project.type) }})
+        <small>{{ client.first_name }} {{ client.last_name }}</small> {{ project.name }} ({{pascelToTitleCase(project.type)}})
       </v-toolbar-title>
 
       <v-spacer/>
 
+      <v-select
+          max-width="200"
+          v-model="currentDocument"
+          :items="templates" />
       <VueFileToolbarMenu :content="menu" class="bar"/>
 
       <!-- confirm delete dialog -->
@@ -39,6 +43,7 @@
       </v-dialog>
       <!-- end confirm delete dialog -->
     </v-app-bar>
+
 
 
     <v-container fluid id="document-container">
@@ -70,25 +75,15 @@
   import VueFileToolbarMenu from 'vue-file-toolbar-menu';
   import Admin from '../../../layouts/Admin/Layout';
 
-  import DeclarationOfTrust from '../../../document_templates/DeclarationOfTrust';
-  import DeclarationOfTrustWizard from '../../../document_templates/DeclarationOfTrust/Wizard';
-
-  import TrustIndenture from '../../../document_templates/TrustIndenture';
-  import TrustIndentureWizard from '../../../document_templates/TrustIndenture/Wizard';
-
-  import ScheduleA from '../../../document_templates/ScheduleA';
-  import ScheduleAWizard from '../../../document_templates/ScheduleA/Wizard';
-
-  import ScheduleB from '../../../document_templates/ScheduleB';
-  import ScheduleBWizard from '../../../document_templates/ScheduleB/Wizard';
 
   import {pascelToTitleCase} from '../../../helper';
 
   export default {
     layout: Admin,
-    props: ['client', 'project'],
+    props: ['client', 'project', 'templates'],
     data() {
       return {
+        currentDocument: this.templates[0],
         zoom: 1.0,
         zoom_min: 0.10,
         zoom_max: 2.0,
@@ -108,8 +103,11 @@
     computed: {
 
       content(){
+
+        console.log(this.currentDocument);
+
         return [{
-          template: () => import(`../../../document_templates/${this.project.type}`),
+          template: () => import(`../../../document_templates/${this.project.type}/${this.currentDocument}`),
           wizard: () => import(`../../../document_templates/${this.project.type}/Wizard`),
           props: {client: this.client, project: this.project},
         }]
@@ -120,7 +118,6 @@
       menu() {
         return [
           // Main commands
-
           {
             text: 'Preview',
             title: 'Preview',
@@ -146,6 +143,7 @@
 
       onUpdateProject() {
         this.$el.querySelector('.page').style.height = 'auto';
+        this.$el.querySelector('.page').style.top = '0';
       },
 
       // Delete
@@ -235,7 +233,6 @@
 
 
     components: {
-      DeclarationOfTrustWizard,
       VueDocumentEditor,
       VueFileToolbarMenu
     }
