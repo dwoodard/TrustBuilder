@@ -18,7 +18,6 @@ class ClientController extends Controller
     {
         return Inertia::render('Admin/Clients/index', [
             'clients' => ClientResource::collection(Client::all()),
-            'documentTypes' => DocumentType::all()
         ]);
     }
 

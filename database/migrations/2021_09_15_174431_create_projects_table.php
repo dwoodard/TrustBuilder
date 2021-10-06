@@ -20,8 +20,6 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('client_id');
             $table->string('type');
             $table->enum('status',['new', 'in-progress', 'pending', 'completed', 'cancelled',])->default('new');
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
             $table->schemalessAttributes('document_data');
             $table->text('custom_template')->nullable();
             $table->timestamps();

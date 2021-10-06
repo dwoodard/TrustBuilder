@@ -287,125 +287,101 @@ render._withStripped = true
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./DeclarationOfTrust": [
-		"./resources/js/document_templates/DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_DeclarationOfTrust_index_vue"
+	"./DeclarationOfStatus/Wizard": [
+		"./resources/js/document_templates/DeclarationOfStatus/Wizard.vue",
+		"resources_js_document_templates_DeclarationOfStatus_Wizard_vue"
 	],
-	"./DeclarationOfTrust/": [
-		"./resources/js/document_templates/DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_DeclarationOfTrust_index_vue"
+	"./DeclarationOfStatus/Wizard.vue": [
+		"./resources/js/document_templates/DeclarationOfStatus/Wizard.vue",
+		"resources_js_document_templates_DeclarationOfStatus_Wizard_vue"
 	],
-	"./DeclarationOfTrust/Wizard": [
-		"./resources/js/document_templates/DeclarationOfTrust/Wizard.vue",
-		"resources_js_document_templates_DeclarationOfTrust_Wizard_vue"
+	"./Trust/DeclarationOfTrust": [
+		"./resources/js/document_templates/Trust/DeclarationOfTrust/index.vue",
+		"resources_js_document_templates_Trust_DeclarationOfTrust_index_vue"
 	],
-	"./DeclarationOfTrust/Wizard.vue": [
-		"./resources/js/document_templates/DeclarationOfTrust/Wizard.vue",
-		"resources_js_document_templates_DeclarationOfTrust_Wizard_vue"
+	"./Trust/DeclarationOfTrust/": [
+		"./resources/js/document_templates/Trust/DeclarationOfTrust/index.vue",
+		"resources_js_document_templates_Trust_DeclarationOfTrust_index_vue"
 	],
-	"./DeclarationOfTrust/index": [
-		"./resources/js/document_templates/DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_DeclarationOfTrust_index_vue"
+	"./Trust/DeclarationOfTrust/index": [
+		"./resources/js/document_templates/Trust/DeclarationOfTrust/index.vue",
+		"resources_js_document_templates_Trust_DeclarationOfTrust_index_vue"
 	],
-	"./DeclarationOfTrust/index.vue": [
-		"./resources/js/document_templates/DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_DeclarationOfTrust_index_vue"
+	"./Trust/DeclarationOfTrust/index.vue": [
+		"./resources/js/document_templates/Trust/DeclarationOfTrust/index.vue",
+		"resources_js_document_templates_Trust_DeclarationOfTrust_index_vue"
 	],
-	"./ScheduleA": [
-		"./resources/js/document_templates/ScheduleA/index.vue",
-		"resources_js_document_templates_ScheduleA_index_vue"
+	"./Trust/ScheduleA": [
+		"./resources/js/document_templates/Trust/ScheduleA/index.vue",
+		"resources_js_document_templates_Trust_ScheduleA_index_vue"
 	],
-	"./ScheduleA/": [
-		"./resources/js/document_templates/ScheduleA/index.vue",
-		"resources_js_document_templates_ScheduleA_index_vue"
+	"./Trust/ScheduleA/": [
+		"./resources/js/document_templates/Trust/ScheduleA/index.vue",
+		"resources_js_document_templates_Trust_ScheduleA_index_vue"
 	],
-	"./ScheduleA/Wizard": [
-		"./resources/js/document_templates/ScheduleA/Wizard.vue",
-		"resources_js_document_templates_ScheduleA_Wizard_vue"
+	"./Trust/ScheduleA/index": [
+		"./resources/js/document_templates/Trust/ScheduleA/index.vue",
+		"resources_js_document_templates_Trust_ScheduleA_index_vue"
 	],
-	"./ScheduleA/Wizard.vue": [
-		"./resources/js/document_templates/ScheduleA/Wizard.vue",
-		"resources_js_document_templates_ScheduleA_Wizard_vue"
+	"./Trust/ScheduleA/index.vue": [
+		"./resources/js/document_templates/Trust/ScheduleA/index.vue",
+		"resources_js_document_templates_Trust_ScheduleA_index_vue"
 	],
-	"./ScheduleA/index": [
-		"./resources/js/document_templates/ScheduleA/index.vue",
-		"resources_js_document_templates_ScheduleA_index_vue"
+	"./Trust/ScheduleB": [
+		"./resources/js/document_templates/Trust/ScheduleB/index.vue",
+		"resources_js_document_templates_Trust_ScheduleB_index_vue"
 	],
-	"./ScheduleA/index.vue": [
-		"./resources/js/document_templates/ScheduleA/index.vue",
-		"resources_js_document_templates_ScheduleA_index_vue"
+	"./Trust/ScheduleB/": [
+		"./resources/js/document_templates/Trust/ScheduleB/index.vue",
+		"resources_js_document_templates_Trust_ScheduleB_index_vue"
 	],
-	"./ScheduleB": [
-		"./resources/js/document_templates/ScheduleB/index.vue",
-		"resources_js_document_templates_ScheduleB_index_vue"
+	"./Trust/ScheduleB/index": [
+		"./resources/js/document_templates/Trust/ScheduleB/index.vue",
+		"resources_js_document_templates_Trust_ScheduleB_index_vue"
 	],
-	"./ScheduleB/": [
-		"./resources/js/document_templates/ScheduleB/index.vue",
-		"resources_js_document_templates_ScheduleB_index_vue"
+	"./Trust/ScheduleB/index.vue": [
+		"./resources/js/document_templates/Trust/ScheduleB/index.vue",
+		"resources_js_document_templates_Trust_ScheduleB_index_vue"
 	],
-	"./ScheduleB/Wizard": [
-		"./resources/js/document_templates/ScheduleB/Wizard.vue",
-		"resources_js_document_templates_ScheduleB_Wizard_vue"
+	"./Trust/TrustCertificate": [
+		"./resources/js/document_templates/Trust/TrustCertificate/index.vue",
+		"resources_js_document_templates_Trust_TrustCertificate_index_vue"
 	],
-	"./ScheduleB/Wizard.vue": [
-		"./resources/js/document_templates/ScheduleB/Wizard.vue",
-		"resources_js_document_templates_ScheduleB_Wizard_vue"
+	"./Trust/TrustCertificate/": [
+		"./resources/js/document_templates/Trust/TrustCertificate/index.vue",
+		"resources_js_document_templates_Trust_TrustCertificate_index_vue"
 	],
-	"./ScheduleB/index": [
-		"./resources/js/document_templates/ScheduleB/index.vue",
-		"resources_js_document_templates_ScheduleB_index_vue"
+	"./Trust/TrustCertificate/index": [
+		"./resources/js/document_templates/Trust/TrustCertificate/index.vue",
+		"resources_js_document_templates_Trust_TrustCertificate_index_vue"
 	],
-	"./ScheduleB/index.vue": [
-		"./resources/js/document_templates/ScheduleB/index.vue",
-		"resources_js_document_templates_ScheduleB_index_vue"
+	"./Trust/TrustCertificate/index.vue": [
+		"./resources/js/document_templates/Trust/TrustCertificate/index.vue",
+		"resources_js_document_templates_Trust_TrustCertificate_index_vue"
 	],
-	"./TrustCertificate": [
-		"./resources/js/document_templates/TrustCertificate/index.vue",
-		"resources_js_document_templates_TrustCertificate_index_vue"
+	"./Trust/TrustIndenture": [
+		"./resources/js/document_templates/Trust/TrustIndenture/index.vue",
+		"resources_js_document_templates_Trust_TrustIndenture_index_vue"
 	],
-	"./TrustCertificate/": [
-		"./resources/js/document_templates/TrustCertificate/index.vue",
-		"resources_js_document_templates_TrustCertificate_index_vue"
+	"./Trust/TrustIndenture/": [
+		"./resources/js/document_templates/Trust/TrustIndenture/index.vue",
+		"resources_js_document_templates_Trust_TrustIndenture_index_vue"
 	],
-	"./TrustCertificate/Wizard": [
-		"./resources/js/document_templates/TrustCertificate/Wizard.vue",
-		"resources_js_document_templates_TrustCertificate_Wizard_vue-_ad340"
+	"./Trust/TrustIndenture/index": [
+		"./resources/js/document_templates/Trust/TrustIndenture/index.vue",
+		"resources_js_document_templates_Trust_TrustIndenture_index_vue"
 	],
-	"./TrustCertificate/Wizard.vue": [
-		"./resources/js/document_templates/TrustCertificate/Wizard.vue",
-		"resources_js_document_templates_TrustCertificate_Wizard_vue-_ad340"
+	"./Trust/TrustIndenture/index.vue": [
+		"./resources/js/document_templates/Trust/TrustIndenture/index.vue",
+		"resources_js_document_templates_Trust_TrustIndenture_index_vue"
 	],
-	"./TrustCertificate/index": [
-		"./resources/js/document_templates/TrustCertificate/index.vue",
-		"resources_js_document_templates_TrustCertificate_index_vue"
+	"./Trust/Wizard": [
+		"./resources/js/document_templates/Trust/Wizard.vue",
+		"resources_js_document_templates_Trust_Wizard_vue"
 	],
-	"./TrustCertificate/index.vue": [
-		"./resources/js/document_templates/TrustCertificate/index.vue",
-		"resources_js_document_templates_TrustCertificate_index_vue"
-	],
-	"./TrustIndenture": [
-		"./resources/js/document_templates/TrustIndenture/index.vue",
-		"resources_js_document_templates_TrustIndenture_index_vue"
-	],
-	"./TrustIndenture/": [
-		"./resources/js/document_templates/TrustIndenture/index.vue",
-		"resources_js_document_templates_TrustIndenture_index_vue"
-	],
-	"./TrustIndenture/Wizard": [
-		"./resources/js/document_templates/TrustIndenture/Wizard.vue",
-		"resources_js_document_templates_TrustIndenture_Wizard_vue"
-	],
-	"./TrustIndenture/Wizard.vue": [
-		"./resources/js/document_templates/TrustIndenture/Wizard.vue",
-		"resources_js_document_templates_TrustIndenture_Wizard_vue"
-	],
-	"./TrustIndenture/index": [
-		"./resources/js/document_templates/TrustIndenture/index.vue",
-		"resources_js_document_templates_TrustIndenture_index_vue"
-	],
-	"./TrustIndenture/index.vue": [
-		"./resources/js/document_templates/TrustIndenture/index.vue",
-		"resources_js_document_templates_TrustIndenture_index_vue"
+	"./Trust/Wizard.vue": [
+		"./resources/js/document_templates/Trust/Wizard.vue",
+		"resources_js_document_templates_Trust_Wizard_vue"
 	]
 };
 function webpackAsyncContext(req) {

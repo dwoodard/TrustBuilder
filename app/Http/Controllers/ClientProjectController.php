@@ -9,6 +9,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class ClientProjectController extends \Inertia\Controller
@@ -20,9 +21,13 @@ class ClientProjectController extends \Inertia\Controller
      */
     public function index(Client $client, Project $project)
     {
+        $templates = $this->getProjectTemplates($project);
+
+
         $data = [
             'client' => ClientResource::collection([$client])->first()->jsonSerialize(),
-            'project' => ProjectResource::collection([$project])->first()->jsonSerialize()
+            'project' => ProjectResource::collection([$project])->first()->jsonSerialize(),
+            'templates' => $templates,
         ];
 
         return Inertia::render('Admin/ClientProject/index', $data);
@@ -83,6 +88,20 @@ class ClientProjectController extends \Inertia\Controller
         ];
 
         return Inertia::render('Admin/ClientProject/print', $data);
+    }
+
+    /**
+     * @param Project $project
+     * @return \Illuminate\Support\Collection
+     */
+    private function getProjectTemplates(Project $project): \Illuminate\Support\Collection
+    {
+        $TemplatePath = resource_path('js/document_templates/' . $project->type);
+        $dirs = glob($TemplatePath . '/*', GLOB_ONLYDIR);
+        $templates = collect($dirs)->map(function ($dir) {
+            return basename($dir);
+        });
+        return $templates;
     }
 
 }
