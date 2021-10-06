@@ -1,5 +1,5 @@
 <template>
-  <div class="document-template break-before">
+  <div class="document-template">
     <h1>SCHEDULE A</h1>
     <h2 class="mb-10">SETTLEMENT OF ASSETS</h2>
 

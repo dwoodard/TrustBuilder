@@ -1,5 +1,5 @@
 <template>
-  <div class="document-template break-before">
+  <div class="document-template">
     <p class="text-right text-pre">
       Domicile Address:
       ATTN: <span class="preview-field">{{ first_trustee }}</span>, Trustee

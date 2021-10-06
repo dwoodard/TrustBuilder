@@ -1,5 +1,5 @@
 <template>
-  <div class="document-template break-before">
+  <div class="document-template">
     <div>
       <p class="text-right text-pre">
         Domicile Address:

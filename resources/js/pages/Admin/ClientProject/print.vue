@@ -5,6 +5,7 @@
       <component :is="template"
                  :project.sync="project"
                  :client.sync="client"/>
+      <div class="break-before"></div>
     </div>
   </v-container>
 </template>

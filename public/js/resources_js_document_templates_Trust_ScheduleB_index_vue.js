@@ -21734,7 +21734,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "document-template break-before" },
+    { staticClass: "document-template" },
     [
       _c("h3", [_vm._v("SCHEDULE B")]),
       _vm._v(" "),

@@ -21739,7 +21739,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "document-template break-before" },
+    { staticClass: "document-template" },
     [
       _c("h1", [_vm._v("SCHEDULE A")]),
       _vm._v(" "),

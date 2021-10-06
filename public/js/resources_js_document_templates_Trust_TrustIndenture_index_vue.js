@@ -22117,7 +22117,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "document-template break-before" },
+    { staticClass: "document-template" },
     [
       _c("p", { staticClass: "text-right text-pre" }, [
         _vm._v("\n    Domicile Address:\n    ATTN: "),

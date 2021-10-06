@@ -50,6 +50,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 __webpack_require__(/*! ../../../../css/print.css */ "./resources/css/print.css");
@@ -337,7 +338,9 @@ var render = function() {
                 _vm.client = $event
               }
             }
-          })
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "break-before" })
         ],
         1
       )

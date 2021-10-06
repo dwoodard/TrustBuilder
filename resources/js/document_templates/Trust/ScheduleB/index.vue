@@ -1,5 +1,5 @@
 <template>
-  <div class="document-template break-before">
+  <div class="document-template">
     <h3>SCHEDULE B</h3>
     <h4 class="mb-10">SETTLOR'S STATEMENT OF WISHES</h4>
 
