@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DocumentType extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     protected $fillable = [
         'name',
         'filename',

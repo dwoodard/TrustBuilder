@@ -61,6 +61,9 @@
       client: {
         type: Object,
         required: true
+      },
+      documenttypes: {
+        type: Object
       }
     },
     data() {

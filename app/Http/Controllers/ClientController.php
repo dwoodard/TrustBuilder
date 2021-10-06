@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\ClientResource;
 use App\Models\Client;
+use App\Models\DocumentType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -16,13 +17,16 @@ class ClientController extends Controller
     public function index(): Response
     {
         return Inertia::render('Admin/Clients/index', [
-            'clients' => ClientResource::collection(Client::all())
+            'clients' => ClientResource::collection(Client::all()),
+            'documentTypes' => DocumentType::all()
         ]);
     }
 
     public function create(): Response
     {
-        return Inertia::render('Admin/Clients/Create');
+        return Inertia::render('Admin/Clients/Create',[
+            'documentTypes' => DocumentType::all()
+        ]);
     }
 
     public function store(Request $request): \Illuminate\Http\RedirectResponse

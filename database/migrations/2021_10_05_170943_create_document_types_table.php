@@ -18,7 +18,6 @@ class CreateDocumentTypesTable extends Migration
             $table->string('name');
             $table->string('filename');
             $table->string('description');
-            $table->timestamps();
         });
 
         $documentTypes = [
@@ -59,7 +58,7 @@ class CreateDocumentTypesTable extends Migration
             ]
         ];
 
-        \App\Models\DocumentType::createMany($documentTypes);
+        \App\Models\DocumentType::insert($documentTypes);
 
     }
 

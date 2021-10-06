@@ -379,7 +379,7 @@
       <li>87. An approved Meeting Minute of the BOARD and distributed TRUST Resolution authorizing what it is they determine to do or have done shall be sufficient evidence that such an act is within their power to those doing business with this TRUST.</li>
       <li>88. The BOARD shall have the power to amend, modify or replace any portion of this TRUST INDENTURE (via an appropriate Meeting Minute) to better carry out the purposes and intentions thereof, or in order to conform to or comply with any law, rule, regulation or order of any government body, provided that any such amendment may not be inconsistent with the basic TRUST purposes and intentions, and not in derogation of the fiduciary obligations to the BENEFICIARY. No amendment shall be revocable by the SETTLOR or by any other person or entity except the BOARD.</li>
       <li>89. A majority of all the TRUSTEES shall constitute a quorum for conducting business at any meeting</li>
-      <li>90. This Trust Indenture consists of fifteen (15) pages.</li>
+      <li>90. This Trust Indenture consists of thirteen (13) pages.</li>
     </ul>
 
     <div class="grey lighten-2 pa-2 text-center ">

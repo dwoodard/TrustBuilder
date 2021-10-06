@@ -1,6 +1,9 @@
 <template>
-  <v-container fluid>
-    <v-toolbar>
+
+
+  <div >
+    <v-app-bar >
+
       <inertia-link href="/admin/clients" as="button">
         <v-icon>mdi-menu-left</v-icon>
       </inertia-link>
@@ -17,10 +20,10 @@
       <v-dialog v-model="showDelete" max-width="500">
         <template #activator="{ on, attrs }">
           <v-btn
-            text
-            v-bind="attrs"
-            v-on="on"
-            @click="showDelete = !showDelete">
+              text
+              v-bind="attrs"
+              v-on="on"
+              @click="showDelete = !showDelete">
             <v-icon>mdi-delete</v-icon>
           </v-btn>
         </template>
@@ -35,22 +38,31 @@
         </v-card>
       </v-dialog>
       <!-- end confirm delete dialog -->
-    </v-toolbar>
-
-    <component :is="content[0].wizard"
-               :project.sync="project"
-               :client.sync="client"
-               @updateProject="onUpdateProject"/>
+    </v-app-bar>
 
 
-    <VueDocumentEditor
-      v-if="content"
-      ref="editor"
-      class="editor" :content.sync="content"
-      :overlay="null"
-      :zoom="zoom"
-      :display="display"/>
-  </v-container>
+    <v-container fluid id="document-container">
+      <v-row no-gutters>
+        <v-col cols="12" sm="12" md="4" >
+          <component :is="content[0].wizard"
+                     :project.sync="project"
+                     :client.sync="client"
+                     @updateProject="onUpdateProject"/>
+
+        </v-col>
+        <v-col cols="12" sm="12" md="8">
+          <VueDocumentEditor
+              v-if="content"
+              ref="editor"
+              class="editor" :content.sync="content"
+              :overlay="null"
+              :zoom="zoom"
+              :display="display"/>
+        </v-col>
+
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -59,10 +71,16 @@
   import Admin from '../../../layouts/Admin/Layout';
 
   import DeclarationOfTrust from '../../../document_templates/DeclarationOfTrust';
-  import TrustIndenture from '../../../document_templates/TrustIndenture';
-
   import DeclarationOfTrustWizard from '../../../document_templates/DeclarationOfTrust/Wizard';
+
+  import TrustIndenture from '../../../document_templates/TrustIndenture';
   import TrustIndentureWizard from '../../../document_templates/TrustIndenture/Wizard';
+
+  import ScheduleA from '../../../document_templates/ScheduleA';
+  import ScheduleAWizard from '../../../document_templates/ScheduleA/Wizard';
+
+  import ScheduleB from '../../../document_templates/ScheduleB';
+  import ScheduleBWizard from '../../../document_templates/ScheduleB/Wizard';
 
   import {pascelToTitleCase} from '../../../helper';
 
@@ -71,7 +89,6 @@
     props: ['client', 'project'],
     data() {
       return {
-
         zoom: 1.0,
         zoom_min: 0.10,
         zoom_max: 2.0,
@@ -80,43 +97,25 @@
         undo_count: -1, // contains the number of times user can undo (= current position in content_history)
         content_history: [], // contains the content states for undo/redo operations
 
-
         form: this.$inertia.form({
           project: this.project.id,
           document_data: this.project.document_data
-        }), // Project
+        }),
         showDelete: false
 
       };
     },
     computed: {
-      content: {
-        get() {
-          switch (this.project.type) {
-            case 'DeclarationOfTrust':
-              return [
-                {
-                  template: DeclarationOfTrust,
-                  wizard: DeclarationOfTrustWizard,
-                  props: {client: this.client, project: this.project}
-                }
-              ];
-            case 'TrustIndenture':
-              return [
-                {
-                  template: TrustIndenture,
-                  wizard: TrustIndentureWizard,
-                  props: {client: this.client, project: this.project}
-                }
-              ];
-            default:
-              return null;
-          }
-        },
-        set(value) {
-          console.log(value.template);
-        }
+
+      content(){
+        return [{
+          template: () => import(`../../../document_templates/${this.project.type}`),
+          wizard: () => import(`../../../document_templates/${this.project.type}/Wizard`),
+          props: {client: this.client, project: this.project},
+        }]
       },
+
+
       // This is the menu content
       menu() {
         return [

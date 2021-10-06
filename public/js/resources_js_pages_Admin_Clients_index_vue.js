@@ -75,6 +75,9 @@ __webpack_require__.r(__webpack_exports__);
     client: {
       type: Object,
       required: true
+    },
+    documenttypes: {
+      type: Object
     }
   },
   data: function data() {
@@ -344,16 +347,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      types: [{
-        text: 'Declaration Of Trust',
-        value: 'DeclarationOfTrust'
-      }, {
-        text: 'Trust Indenture',
-        value: 'TrustIndenture'
-      }, {
-        text: 'Contract',
-        value: 'Contract'
-      }],
       form: this.$inertia.form({
         client: this.client,
         name: '',
@@ -362,6 +355,14 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
+    documentTypes: function documentTypes() {
+      return this.$page.props.documentTypes.map(function (type) {
+        return {
+          text: type.name,
+          value: type.filename
+        };
+      });
+    },
     show: {
       get: function get() {
         return this.value;
@@ -533,7 +534,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   layout: _layouts_Admin_Layout__WEBPACK_IMPORTED_MODULE_1__["default"],
-  props: ['clients'],
+  props: ['clients', 'documentTypes'],
   data: function data() {
     return {
       search: '',
@@ -1717,7 +1718,7 @@ var render = function() {
                       "error-messages": _vm.form.errors.type,
                       label: "Project Type",
                       required: "",
-                      items: _vm.types
+                      items: _vm.documentTypes
                     },
                     model: {
                       value: _vm.form.type,

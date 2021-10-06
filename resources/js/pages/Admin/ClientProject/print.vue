@@ -1,34 +1,22 @@
 <template>
   <v-container>
-    <component :is="project.type" :project.sync="project"
+    <component :is="DocumentTemplateType"
+               :project.sync="project"
                :client.sync="client"/>
   </v-container>
 </template>
 
 <script>
-  import DeclarationOfTrust from '../../../document_templates/DeclarationOfTrust';
-  import TrustIndenture from '../../../document_templates/TrustIndenture';
   import DocumentTemplate from '../../../layouts/Admin/DocumentTemplate';
 
   export default {
     layout: DocumentTemplate,
     props: ['client', 'project'],
-    data() {
-      return {
-
-      };
-    },
     computed: {
-
+      DocumentTemplateType() {
+        return () => import(`../../../document_templates/${this.project.type}`);
+      }
     },
-
-
-    components: {
-      DeclarationOfTrust,
-      TrustIndenture
-    }
-
-
   };
 </script>
 

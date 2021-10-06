@@ -15,7 +15,7 @@
             :error-messages="form.errors.type"
             label="Project Type"
             required
-            :items="types"/>
+            :items="documentTypes"/>
         </v-card-text>
 
         <v-card-actions>
@@ -39,19 +39,10 @@
         type: Object,
         required: true
       }
+
     },
     data() {
       return {
-        types: [{
-          text: 'Declaration Of Trust',
-          value: 'DeclarationOfTrust'
-        }, {
-          text: 'Trust Indenture',
-          value: 'TrustIndenture'
-        }, {
-          text: 'Contract',
-          value: 'Contract'
-        }],
         form: this.$inertia.form({
           client: this.client,
           name: '',
@@ -60,6 +51,14 @@
       };
     },
     computed: {
+      documentTypes() {
+        return this.$page.props.documentTypes.map((type) => {
+          return {
+            text: type.name,
+            value: type.filename
+          };
+        });
+      },
       show: {
         get() {
           return this.value;

@@ -217,7 +217,7 @@
         <li>47. Any person shall be entitled to rely upon a COPY of the original DECLARATION OF TRUST and any instruments duly executed in accordance with the provisions thereof, to the same extent as the original document if such copy is approved by the BOARD for display.</li>
         <li>48. An approved Meeting Minute of the BOARD and appropriate distributed Resolution authorizing what it is they determine to do or have done shall be sufficient evidence that such an act is within their power to those doing business with the Trust.</li>
         <li>49. The BOARD shall have the power to amend the TRUST (via an appropriate Meeting Minute) to better carry out the purposes and intent thereof, or in order to conform to or comply with any law, rule, regulation or order of any government body, provided, however, that any such amendment may not be inconsistent with the basic TRUST purposes and intent, and not in derogation of the fiduciary obligations to the BENEFICIARY(ies). No amendment shall be revocable by the SETTLOR or by any other person or entity except for the BOARD.</li>
-        <li>50. This Declaration of Trust consists of eight (8) pages.</li>
+        <li>50. This Declaration of Trust consists of ten (10) pages.</li>
       </ul>
 
       <div class="grey lighten-2 ma-2 pa-2 text-center">
@@ -226,6 +226,7 @@
       <ul>
         <li>51. The TRUSTEE, through co-execution of this agreement, signifies confirmation and acceptance of his fiduciary position as TRUSTEE, hereby establishing the BOARD and hereby accepting the terms, conditions and provisions of this Declaration of Trust and the Resolutions which are recorded in the Minutes of its meetings from time to time, which shall serve as the governing instruments of the BOARD. The signing and acknowledgement of appropriate TRUST Meeting Minutes by subsequently appointed SECONDARY TRUSTEES, if applicable, shall constitute their acceptance of this Declaration of Trust and related assets in the same manner as the BOARD and the assets and emoluments thereof shall immediately vest in the BOARD as fiduciary for the TRUST without further act or conveyance except as may be required by local law.</li>
         <li>52. The SETTLOR, through co-execution of this Declaration of Trust, signifies confirmation and acceptance of his settlement position to the TRUST by providing the initial asset to fund the TRUST and his Statement of Wishes Letter to the BOARD.</li>
+        <div style="page-break-after: always"></div>
         <li>53. IN WITNESS WHEREOF, the parties hereto have hereunder set their hands and seals in acknowledgement and acceptance of, assent to and covenant to abide by all conditions herein imposed and expressed on or after the day first written above.</li>
       </ul>
 

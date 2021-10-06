@@ -42,7 +42,7 @@
 
   export default {
     layout: Admin,
-    props: ['clients'],
+    props: ['clients', 'documentTypes'],
     data() {
       return {
         search: '',
