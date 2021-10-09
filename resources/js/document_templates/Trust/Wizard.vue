@@ -6,6 +6,7 @@
           <v-icon v-if="form.isDirty" color="danger">mdi-sticker-minus</v-icon>
           <v-icon v-else color="green">mdi-sticker-check</v-icon>
         </div>
+
         <v-stepper-header>
           <v-stepper-step
             editable
@@ -107,7 +108,6 @@
             </v-stepper-content>
             <v-stepper-content step="4">
               <!-- -->
-              <!--            <pre>{{ form.beneficiaries }}</pre>-->
               <Beneficiaries :beneficiaries="form.beneficiaries"
                              @add="onAddBeneficiary"
                              @update="onUpdateBeneficiary"
@@ -125,7 +125,7 @@
         </form>
       </v-stepper>
 
-      <VJsoneditor v-model="form" :plus="true" height="400px"/>
+      <!--      <VJsoneditor v-model="form" :plus="true" height="400px"/>-->
     </template>
   </div>
 </template>
@@ -186,6 +186,7 @@
         this.updateProject();
       },
       updateProject() {
+        console.log('updateProject');
         axios.post(`/admin/projects/${this.project.id}`, {
                      _method: 'PUT',
                      name: this.form.trust_name,
@@ -193,23 +194,28 @@
                    },
                    {
                      params: {resetOnSuccess: false}
-                   });
+                   })
+          .then(() => {
+            return this.form.isDirty = false;
+          });
       },
       onEnter() {
+        console.log('save onEnter');
         this.updateProject();
       },
       nextStep() {
         const steps = this.$el.querySelectorAll('.v-stepper__step').length;
         this.currentStep = this.currentStep === steps ? 1 : Number(this.currentStep) + 1;
 
-        if (this.currentStep > steps) {
-          this.updateForm();
-        } else {
+        if (this.currentStep <= steps) {
           this.updateProject();
+        } else {
+          this.updateForm();
         }
       },
 
       updateForm() {
+        console.log('updateForm');
         this
           .form.transform((data) => ({
             name: this.form.trust_name,

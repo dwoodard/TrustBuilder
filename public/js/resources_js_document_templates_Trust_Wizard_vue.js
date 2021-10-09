@@ -84,15 +84,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     beneficiaries: {
@@ -113,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
           return !!value || 'Required.';
         }],
         units: [// (value) => !!value || 'Required.',
-          // (value) => value < 100 || 'Can not be over 100'
+          // (value) => !!value || 'Can not be 0'
         ]
       },
       errors: {
@@ -152,8 +143,7 @@ __webpack_require__.r(__webpack_exports__);
     remove: function remove(index) {
       this.$emit('remove', index);
     },
-    update: function update(event, index) {
-      this.beneficiaries[index].name = event;
+    update: function update() {
       this.$emit('update', this.beneficiaries);
     },
     checkForErrors: function checkForErrors() {
@@ -391,6 +381,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.updateProject();
     },
     updateProject: function updateProject() {
+      var _this = this;
+
+      console.log('updateProject');
       axios__WEBPACK_IMPORTED_MODULE_2___default().post("/admin/projects/".concat(this.project.id), {
         _method: 'PUT',
         name: this.form.trust_name,
@@ -399,27 +392,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         params: {
           resetOnSuccess: false
         }
+      }).then(function () {
+        return _this.form.isDirty = false;
       });
     },
     onEnter: function onEnter() {
+      console.log('save onEnter');
       this.updateProject();
     },
     nextStep: function nextStep() {
       var steps = this.$el.querySelectorAll('.v-stepper__step').length;
       this.currentStep = this.currentStep === steps ? 1 : Number(this.currentStep) + 1;
 
-      if (this.currentStep > steps) {
-        this.updateForm();
-      } else {
+      if (this.currentStep <= steps) {
         this.updateProject();
+      } else {
+        this.updateForm();
       }
     },
     updateForm: function updateForm() {
-      var _this = this;
+      var _this2 = this;
 
+      console.log('updateForm');
       this.form.transform(function (data) {
         return {
-          name: _this.form.trust_name,
+          name: _this2.form.trust_name,
           document_data: _objectSpread({}, data)
         };
       }).put("/admin/projects/".concat(this.project.id), {
@@ -22259,13 +22256,13 @@ var render = function() {
             _vm._l(_vm.beneficiaries, function(item, index) {
               return _c(
                 "v-list-item",
-                { key: index, staticClass: "grey lighten-5 " },
+                { key: index },
                 [
                   _c("v-text-field", {
                     attrs: { outlined: "", "single-line": "" },
                     on: {
                       change: function($event) {
-                        return _vm.update($event, index)
+                        return _vm.update()
                       }
                     },
                     model: {
@@ -22312,23 +22309,7 @@ var render = function() {
               )
             }),
             1
-          ),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("div", { staticClass: " " }, [
-            _vm._v("\n      " + _vm._s(_vm.$props) + "\n      "),
-            _c("br"),
-            _vm._v(
-              "\n      " +
-                _vm._s(_vm.totalUnits) +
-                " " +
-                _vm._s(_vm.totalUnitsLeft) +
-                "\n    "
-            )
-          ]),
-          _vm._v(" "),
-          _c("v-card-text")
+          )
         ],
         1
       )
@@ -22715,18 +22696,7 @@ var render = function() {
             )
           ],
           1
-        ),
-        _vm._v(" "),
-        _c("VJsoneditor", {
-          attrs: { plus: true, height: "400px" },
-          model: {
-            value: _vm.form,
-            callback: function($$v) {
-              _vm.form = $$v
-            },
-            expression: "form"
-          }
-        })
+        )
       ]
     ],
     2

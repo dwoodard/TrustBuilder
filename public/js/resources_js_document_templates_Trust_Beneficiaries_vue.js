@@ -84,15 +84,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     beneficiaries: {
@@ -113,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
           return !!value || 'Required.';
         }],
         units: [// (value) => !!value || 'Required.',
-          // (value) => value < 100 || 'Can not be over 100'
+          // (value) => !!value || 'Can not be 0'
         ]
       },
       errors: {
@@ -152,8 +143,7 @@ __webpack_require__.r(__webpack_exports__);
     remove: function remove(index) {
       this.$emit('remove', index);
     },
-    update: function update(event, index) {
-      this.beneficiaries[index].name = event;
+    update: function update() {
       this.$emit('update', this.beneficiaries);
     },
     checkForErrors: function checkForErrors() {
@@ -449,13 +439,13 @@ var render = function() {
             _vm._l(_vm.beneficiaries, function(item, index) {
               return _c(
                 "v-list-item",
-                { key: index, staticClass: "grey lighten-5 " },
+                { key: index },
                 [
                   _c("v-text-field", {
                     attrs: { outlined: "", "single-line": "" },
                     on: {
                       change: function($event) {
-                        return _vm.update($event, index)
+                        return _vm.update()
                       }
                     },
                     model: {
@@ -502,23 +492,7 @@ var render = function() {
               )
             }),
             1
-          ),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("div", { staticClass: " " }, [
-            _vm._v("\n      " + _vm._s(_vm.$props) + "\n      "),
-            _c("br"),
-            _vm._v(
-              "\n      " +
-                _vm._s(_vm.totalUnits) +
-                " " +
-                _vm._s(_vm.totalUnitsLeft) +
-                "\n    "
-            )
-          ]),
-          _vm._v(" "),
-          _c("v-card-text")
+          )
         ],
         1
       )

@@ -90,7 +90,9 @@ class ProjectController extends Controller
         ]);
         $project->update($request->only(OnlyColumns($project)));
 
-        return redirect()->back();
+        return redirect()->back()->with([
+            'project' => $project
+        ]);
     }
 
     /**

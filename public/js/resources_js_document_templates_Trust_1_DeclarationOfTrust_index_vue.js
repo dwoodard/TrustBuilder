@@ -14,6 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify_dist_vuetify_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/dist/vuetify.css */ "./node_modules/vuetify/dist/vuetify.css");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../helper */ "./resources/js/helper.js");
 //
 //
 //
@@ -325,6 +326,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -358,12 +360,185 @@ __webpack_require__.r(__webpack_exports__);
       var _this$project5, _this$project5$docume;
 
       return (_this$project5 = this.project) === null || _this$project5 === void 0 ? void 0 : (_this$project5$docume = _this$project5.document_data) === null || _this$project5$docume === void 0 ? void 0 : _this$project5$docume.settlor;
+    },
+    term_of_trust: function term_of_trust() {
+      var _this$project6, _this$project6$docume;
+
+      return (_this$project6 = this.project) === null || _this$project6 === void 0 ? void 0 : (_this$project6$docume = _this$project6.document_data) === null || _this$project6$docume === void 0 ? void 0 : _this$project6$docume.term_of_trust;
     }
   },
   methods: {
-    moment: (moment__WEBPACK_IMPORTED_MODULE_1___default())
+    moment: (moment__WEBPACK_IMPORTED_MODULE_1___default()),
+    numberToEnglish: _helper__WEBPACK_IMPORTED_MODULE_2__.numberToEnglish
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/helper.js":
+/*!********************************!*\
+  !*** ./resources/js/helper.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "toTitleCase": () => (/* binding */ toTitleCase),
+/* harmony export */   "toKebabCase": () => (/* binding */ toKebabCase),
+/* harmony export */   "score": () => (/* binding */ score),
+/* harmony export */   "toPascalCase": () => (/* binding */ toPascalCase),
+/* harmony export */   "pascelToTitleCase": () => (/* binding */ pascelToTitleCase),
+/* harmony export */   "numberToEnglish": () => (/* binding */ numberToEnglish)
+/* harmony export */ });
+var toTitleCase = function toTitleCase(str) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+};
+var toKebabCase = function toKebabCase(str) {
+  return str.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\s+/g, '-').toLowerCase();
+};
+var score = function score(a, b) {
+  if (this === a) return 1;
+  if (a === '') return 0;
+  var c = 0;
+  var d = a.length;
+  var e = this;
+  var f = e.length;
+  var g;
+  var h;
+  var i = 1;
+  var j;
+
+  for (var k = 0, l, m, n, o, p, q; k < d; ++k) {
+    n = a.charAt(k), o = e.indexOf(n.toLowerCase()), p = e.indexOf(n.toUpperCase()), q = Math.min(o, p), m = q > -1 ? q : Math.max(o, p);
+
+    if (m === -1) {
+      if (b) {
+        i += 1 - b;
+        continue;
+      }
+
+      return 0;
+    }
+
+    l = 0.1, e[m] === n && (l += 0.1), m === 0 ? (l += 0.6, k === 0 && (g = 1)) : e.charAt(m - 1) === ' ' && (l += 0.8), e = e.substring(m + 1, f), c += l;
+  }
+
+  h = c / d, j = (h * (d / f) + h) / 2, j /= i, g && j + 0.15 < 1 && (j += 0.15);
+  return j;
+};
+var toPascalCase = function toPascalCase(str) {
+  return str.replace(/[-_\s]+/g, ' ').split(' ').map(function (word) {
+    return word[0].toUpperCase() + word.slice(1);
+  }).join('');
+};
+var pascelToTitleCase = function pascelToTitleCase(str) {
+  return str.replace(/([A-Z])/g, ' $1').replace(/^\s/, '');
+};
+var numberToEnglish = function numberToEnglish(n) {
+  var customJoinCharacter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ' ';
+  var string = n.toString();
+  var units;
+  var tens;
+  var scales;
+  var start;
+  var end;
+  var chunks;
+  var chunksLen;
+  var chunk;
+  var ints;
+  var i;
+  var word;
+  var words;
+  var and = customJoinCharacter || 'and';
+  /* Is number zero? */
+
+  if (parseInt(string) === 0) {
+    return 'zero';
+  }
+  /* Array of units as words */
+
+
+  units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+  /* Array of tens as words */
+
+  tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+  /* Array of scales as words */
+
+  scales = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion', 'decillion', 'undecillion', 'duodecillion', 'tredecillion', 'quatttuor-decillion', 'quindecillion', 'sexdecillion', 'septen-decillion', 'octodecillion', 'novemdecillion', 'vigintillion', 'centillion'];
+  /* Split user arguemnt into 3 digit chunks from right to left */
+
+  start = string.length;
+  chunks = [];
+
+  while (start > 0) {
+    end = start;
+    chunks.push(string.slice(start = Math.max(0, start - 3), end));
+  }
+  /* Check if function has enough scale words to be able to stringify the user argument */
+
+
+  chunksLen = chunks.length;
+
+  if (chunksLen > scales.length) {
+    return '';
+  }
+  /* Stringify each integer in each chunk */
+
+
+  words = [];
+
+  for (i = 0; i < chunksLen; i++) {
+    chunk = parseInt(chunks[i]);
+
+    if (chunk) {
+      /* Split chunk into array of individual integers */
+      ints = chunks[i].split('').reverse().map(parseFloat);
+      /* If tens integer is 1, i.e. 10, then add 10 to units integer */
+
+      if (ints[1] === 1) {
+        ints[0] += 10;
+      }
+      /* Add scale word if chunk is not zero and array item exists */
+
+
+      if (word = scales[i]) {
+        words.push(word);
+      }
+      /* Add unit word if array item exists */
+
+
+      if (word = units[ints[0]]) {
+        words.push(word);
+      }
+      /* Add tens word if array item exists */
+
+
+      if (word = tens[ints[1]]) {
+        words.push(word);
+      }
+      /* Add 'and' string after units or tens integer if: */
+
+
+      if (ints[0] || ints[1]) {
+        /* Chunk has a hundreds integer or chunk is the first of multiple chunks */
+        if (ints[2] || !i && chunksLen) {
+          words.push(and);
+        }
+      }
+      /* Add hundreds word if array item exists */
+
+
+      if (word = units[ints[2]]) {
+        words.push("".concat(word, " hundred"));
+      }
+    }
+  }
+
+  return words.reverse().join(' ');
+};
 
 /***/ }),
 
@@ -22087,7 +22262,28 @@ var render = function() {
         _vm._v("\n      TERM & INTENT OF TRUST\n    ")
       ]),
       _vm._v(" "),
-      _vm._m(5)
+      _c("ul", [
+        _c("li", [
+          _vm._v("1. The Trust shall exist for a term of "),
+          _c("span", { staticClass: "preview-field" }, [
+            _vm._v(
+              _vm._s(_vm.numberToEnglish(_vm.term_of_trust)) +
+                " (" +
+                _vm._s(_vm.term_of_trust) +
+                ")"
+            )
+          ]),
+          _vm._v(
+            " years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the Trust's expiration, extend its term."
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _vm._v(
+            "2. The organizational purpose of the TRUST is to sustain and improve the TRUST proactively through any means or business so that the BENEFICIARY may possess the things of life sufficient to provide for growth, health, protection, education, refinement, pro-creation, recreation, welfare, expansion, preservation and continuation and not simply an arrangement to protect and conserve the property for the BENEFICIARY."
+          )
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c(
@@ -22097,13 +22293,13 @@ var render = function() {
           _vm._v("\n      SETTLOR'S PROVISIONS & RESPONSIBILITIES\n    ")
         ]),
         _vm._v(" "),
-        _vm._m(6),
+        _vm._m(5),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v("\n      TRUSTEE'S PROVISIONS & RESPONSIBILITIES\n    ")
         ]),
         _vm._v(" "),
-        _vm._m(7),
+        _vm._m(6),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v(
@@ -22111,13 +22307,13 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(8),
+        _vm._m(7),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v("\n      DAILY BUSINESS ACTIVITIES\n    ")
         ]),
         _vm._v(" "),
-        _vm._m(9),
+        _vm._m(8),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v(
@@ -22125,7 +22321,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(10),
+        _vm._m(9),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v(
@@ -22133,13 +22329,13 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(11),
+        _vm._m(10),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v("\n      DISTRIBUTION OF TRUST ASSETS\n    ")
         ]),
         _vm._v(" "),
-        _vm._m(12),
+        _vm._m(11),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v(
@@ -22147,31 +22343,31 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(13),
+        _vm._m(12),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v("\n      TERMINATION OF TRUST\n    ")
         ]),
         _vm._v(" "),
-        _vm._m(14),
+        _vm._m(13),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v("\n      PRIVACY STRICTLY ENFORCED\n    ")
         ]),
         _vm._v(" "),
-        _vm._m(15),
+        _vm._m(14),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v("\n      MISCELLANEOUS\n    ")
         ]),
         _vm._v(" "),
-        _vm._m(16),
+        _vm._m(15),
         _vm._v(" "),
         _c("div", { staticClass: "grey lighten-2 ma-2 pa-2 text-center" }, [
           _vm._v("\n      ACCEPTANCE BY PARTIES\n    ")
         ]),
         _vm._v(" "),
-        _vm._m(17),
+        _vm._m(16),
         _vm._v(" "),
         _c("div", { staticClass: "break-after" }),
         _vm._v(" "),
@@ -22382,24 +22578,6 @@ var staticRenderFns = [
       ),
       _c("b", [_vm._v("PURE TRUST ORGANIZATION")]),
       _vm._v(" under the artificial entity name of:")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", [
-      _c("li", [
-        _vm._v(
-          "1. The Trust shall exist for a term of ninety-nine (99) years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the Trust's expiration, extend its term."
-        )
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v(
-          "2. The organizational purpose of the TRUST is to sustain and improve the TRUST proactively through any means or business so that the BENEFICIARY may possess the things of life sufficient to provide for growth, health, protection, education, refinement, pro-creation, recreation, welfare, expansion, preservation and continuation and not simply an arrangement to protect and conserve the property for the BENEFICIARY."
-        )
-      ])
     ])
   },
   function() {

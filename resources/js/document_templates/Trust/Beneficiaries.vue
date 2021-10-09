@@ -48,16 +48,15 @@
         </v-col>
       </v-row>
 
-
       <v-list>
-        <v-list-item v-for="(item,index) in beneficiaries" :key="index" class="grey lighten-5 ">
+        <v-list-item v-for="(item,index) in beneficiaries" :key="index" class="">
           <v-text-field
             v-model="item.name"
             outlined
             single-line
-            @change="update($event, index)"/>
-          <v-spacer/>
+            @change="update()"/>
 
+          <v-spacer/>
 
           <v-text-field
             v-model="item.units"
@@ -69,14 +68,6 @@
           <v-icon color="danger" @click="remove(index)">mdi-trash-can</v-icon>
         </v-list-item>
       </v-list>
-      <hr/>
-      <div class=" ">
-        {{ $props }}
-        <br/>
-        {{ totalUnits }} {{ totalUnitsLeft }}
-      </div>
-      <!-- add a new beneficiary -->
-      <v-card-text/>
     </v-card-text>
   </v-card>
 </template>
@@ -97,7 +88,7 @@
           ],
           units: [
             // (value) => !!value || 'Required.',
-            // (value) => value < 100 || 'Can not be over 100'
+            // (value) => !!value || 'Can not be 0'
           ]
 
         },
@@ -138,8 +129,7 @@
       remove(index) {
         this.$emit('remove', index);
       },
-      update(event, index) {
-        this.beneficiaries[index].name = event;
+      update() {
         this.$emit('update', this.beneficiaries);
       },
       checkForErrors() {

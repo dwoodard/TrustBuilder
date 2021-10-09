@@ -89,7 +89,7 @@
       </div>
 
       <ul>
-        <li>1. The Trust shall exist for a term of ninety-nine (99) years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the Trust's expiration, extend its term.</li>
+        <li>1. The Trust shall exist for a term of <span class="preview-field">{{ numberToEnglish(term_of_trust) }} ({{ term_of_trust }})</span> years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the Trust's expiration, extend its term.</li>
         <li>2. The organizational purpose of the TRUST is to sustain and improve the TRUST proactively through any means or business so that the BENEFICIARY may possess the things of life sufficient to provide for growth, health, protection, education, refinement, pro-creation, recreation, welfare, expansion, preservation and continuation and not simply an arrangement to protect and conserve the property for the BENEFICIARY.</li>
       </ul>
     </div>
@@ -312,6 +312,8 @@
 <script>
   import 'vuetify/dist/vuetify.css';
   import moment from 'moment';
+  import {numberToEnglish} from '../../../helper';
+
 
   export default {
     props: {
@@ -336,10 +338,14 @@
       },
       settlor() {
         return this.project?.document_data?.settlor;
+      },
+      term_of_trust() {
+        return this.project?.document_data?.term_of_trust;
       }
     },
     methods: {
-      moment
+      moment,
+      numberToEnglish
     }
   };
 </script>
