@@ -70,6 +70,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     beneficiaries: {
@@ -84,6 +107,18 @@ __webpack_require__.r(__webpack_exports__);
       newBeneficiary: {
         name: '',
         units: 0
+      },
+      rules: {
+        name: [function (value) {
+          return !!value || 'Required.';
+        }],
+        units: [// (value) => !!value || 'Required.',
+          // (value) => value < 100 || 'Can not be over 100'
+        ]
+      },
+      errors: {
+        name: null,
+        units: null
       }
     };
   },
@@ -97,17 +132,22 @@ __webpack_require__.r(__webpack_exports__);
     totalUnitsLeft: function totalUnitsLeft() {
       return 100 - this.totalUnits;
     },
-    hasUnitsLeft: function hasUnitsLeft() {
+    hasUnits: function hasUnits() {
       return this.totalUnitsLeft > 0;
     }
   },
   methods: {
     add: function add() {
+      if (this.checkForErrors()) {
+        return;
+      }
+
       this.$emit('add', this.newBeneficiary);
       this.newBeneficiary = {
         name: '',
         units: 0
       };
+      this.checkForErrors();
     },
     remove: function remove(index) {
       this.$emit('remove', index);
@@ -115,6 +155,26 @@ __webpack_require__.r(__webpack_exports__);
     update: function update(event, index) {
       this.beneficiaries[index].name = event;
       this.$emit('update', this.beneficiaries);
+    },
+    checkForErrors: function checkForErrors() {
+      var _this = this;
+
+      var hasError = false;
+      Object.keys(this.rules).forEach(function (key) {
+        var rules = _this.rules[key];
+        var value = _this.newBeneficiary[key];
+        rules.forEach(function (rule) {
+          var error = rule(value);
+
+          if (typeof error === 'string') {
+            _this.errors[key] = error;
+            hasError = true;
+          } else {
+            _this.errors[key] = null;
+          }
+        });
+      });
+      return hasError;
     }
   }
 });
@@ -211,11 +271,12 @@ var render = function() {
     [
       _c("v-card-title", [_vm._v("Beneficiaries ")]),
       _vm._v(" "),
-      _vm.hasUnitsLeft
+      _vm.hasUnits
         ? _c("v-card-subtitle", [
             _vm._v(
-              "Units Left " +
-                _vm._s(_vm.totalUnitsLeft - _vm.newBeneficiary.units)
+              "\n    Units Left " +
+                _vm._s(_vm.totalUnitsLeft - _vm.newBeneficiary.units) +
+                "\n  "
             )
           ])
         : _vm._e(),
@@ -224,71 +285,164 @@ var render = function() {
         "v-card-text",
         [
           _c(
-            "div",
-            { staticClass: "d-flex flex-row" },
-            [
-              _c("v-text-field", {
-                attrs: {
-                  rules: [
-                    function() {
-                      return !!_vm.newBeneficiary.name
-                    }
-                  ],
-                  label: "Beneficiary Name",
-                  "prepend-icon": "account_circle",
-                  "append-icon-click": "add"
-                },
-                model: {
-                  value: _vm.newBeneficiary.name,
-                  callback: function($$v) {
-                    _vm.$set(_vm.newBeneficiary, "name", $$v)
-                  },
-                  expression: "newBeneficiary.name"
+            "v-row",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.hasUnits,
+                  expression: "hasUnits"
                 }
-              }),
+              ]
+            },
+            [
+              _c(
+                "v-col",
+                { attrs: { cols: "12", sm: "6" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      rules: _vm.rules.name,
+                      "error-messages": _vm.errors.name,
+                      label: "Beneficiary Name",
+                      "prepend-icon": "account_circle",
+                      "append-icon-click": "add"
+                    },
+                    on: {
+                      keyup: [
+                        _vm.checkForErrors,
+                        function($event) {
+                          if (
+                            !$event.type.indexOf("key") &&
+                            _vm._k(
+                              $event.keyCode,
+                              "enter",
+                              13,
+                              $event.key,
+                              "Enter"
+                            )
+                          ) {
+                            return null
+                          }
+                          return _vm.add.apply(null, arguments)
+                        }
+                      ]
+                    },
+                    model: {
+                      value: _vm.newBeneficiary.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.newBeneficiary, "name", $$v)
+                      },
+                      expression: "newBeneficiary.name"
+                    }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
               _c(
-                "v-btn",
-                { attrs: { color: "primary" }, on: { click: _vm.add } },
-                [_vm._v("Add Beneficiary")]
+                "v-col",
+                { attrs: { cols: "12", sm: "6" } },
+                [
+                  _c("v-text-field", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !!_vm.newBeneficiary.name,
+                        expression: "!!newBeneficiary.name"
+                      }
+                    ],
+                    attrs: {
+                      "error-messages": _vm.errors.units,
+                      label: "Units",
+                      type: "number"
+                    },
+                    on: {
+                      keyup: [
+                        _vm.checkForErrors,
+                        function($event) {
+                          if (
+                            !$event.type.indexOf("key") &&
+                            _vm._k(
+                              $event.keyCode,
+                              "enter",
+                              13,
+                              $event.key,
+                              "Enter"
+                            )
+                          ) {
+                            return null
+                          }
+                          return _vm.add.apply(null, arguments)
+                        }
+                      ]
+                    },
+                    model: {
+                      value: _vm.newBeneficiary.units,
+                      callback: function($$v) {
+                        _vm.$set(_vm.newBeneficiary, "units", $$v)
+                      },
+                      expression: "newBeneficiary.units"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("v-slider", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !!_vm.newBeneficiary.name,
+                        expression: "!!newBeneficiary.name"
+                      }
+                    ],
+                    attrs: {
+                      min: "0",
+                      disabled: !_vm.hasUnits,
+                      max: _vm.totalUnitsLeft,
+                      hint:
+                        _vm.newBeneficiary.name +
+                        " will receive " +
+                        _vm.newBeneficiary.units +
+                        " Units",
+                      "persistent-hint": ""
+                    },
+                    model: {
+                      value: _vm.newBeneficiary.units,
+                      callback: function($$v) {
+                        _vm.$set(_vm.newBeneficiary, "units", $$v)
+                      },
+                      expression: "newBeneficiary.units"
+                    }
+                  })
+                ],
+                1
               )
             ],
             1
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            [
-              _c("v-slider", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !!_vm.newBeneficiary.name,
-                    expression: "!!newBeneficiary.name"
-                  }
+          _vm.hasUnits
+            ? _c(
+                "v-row",
+                [
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6", offset: "6" } },
+                    [
+                      _c(
+                        "v-btn",
+                        { attrs: { color: "primary" }, on: { click: _vm.add } },
+                        [_vm._v("Add Beneficiary")]
+                      )
+                    ],
+                    1
+                  )
                 ],
-                attrs: {
-                  min: "0",
-                  disabled: !_vm.hasUnitsLeft,
-                  "prepend-icon": "mdi-percent",
-                  max: _vm.totalUnitsLeft,
-                  label: "Units",
-                  hint: String(_vm.newBeneficiary.units + " units left "),
-                  "persistent-hint": "",
-                  "append-icon-click": "add"
-                },
-                model: {
-                  value: _vm.newBeneficiary.units,
-                  callback: function($$v) {
-                    _vm.$set(_vm.newBeneficiary, "units", $$v)
-                  },
-                  expression: "newBeneficiary.units"
-                }
-              })
-            ],
-            1
-          ),
+                1
+              )
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "v-list",
@@ -297,31 +451,51 @@ var render = function() {
                 "v-list-item",
                 { key: index, staticClass: "grey lighten-5 " },
                 [
-                  _c(
-                    "v-text-field",
-                    {
-                      attrs: { outlined: "", "single-line": "" },
-                      on: {
-                        change: function($event) {
-                          return _vm.update($event, index)
-                        }
-                      },
-                      model: {
-                        value: item.name,
-                        callback: function($$v) {
-                          _vm.$set(item, "name", $$v)
-                        },
-                        expression: "item.name"
+                  _c("v-text-field", {
+                    attrs: { outlined: "", "single-line": "" },
+                    on: {
+                      change: function($event) {
+                        return _vm.update($event, index)
                       }
                     },
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c("v-icon", { attrs: { color: "danger" } }, [
-                        _vm._v("mdi-trash-can")
-                      ])
-                    ],
-                    1
+                    model: {
+                      value: item.name,
+                      callback: function($$v) {
+                        _vm.$set(item, "name", $$v)
+                      },
+                      expression: "item.name"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c("v-text-field", {
+                    attrs: {
+                      type: "number",
+                      min: "0",
+                      max: _vm.totalUnitsLeft,
+                      label: item.units + " Units"
+                    },
+                    model: {
+                      value: item.units,
+                      callback: function($$v) {
+                        _vm.$set(item, "units", $$v)
+                      },
+                      expression: "item.units"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-icon",
+                    {
+                      attrs: { color: "danger" },
+                      on: {
+                        click: function($event) {
+                          return _vm.remove(index)
+                        }
+                      }
+                    },
+                    [_vm._v("mdi-trash-can")]
                   )
                 ],
                 1

@@ -51,7 +51,7 @@
 
               <v-btn
                 color="primary"
-                @click="onClick">
+                @click="nextStep">
                 Continue
               </v-btn>
             </v-stepper-content>
@@ -88,7 +88,7 @@
 
               <v-btn
                 color="primary"
-                @click="onClick">
+                @click="nextStep">
                 Continue
               </v-btn>
             </v-stepper-content>
@@ -101,7 +101,7 @@
 
               <v-btn
                 color="primary"
-                @click="onClick">
+                @click="nextStep">
                 Continue
               </v-btn>
             </v-stepper-content>
@@ -117,7 +117,7 @@
 
               <v-btn
                 color="primary"
-                @click="onClick">
+                @click="nextStep">
                 Done
               </v-btn>
             </v-stepper-content>
@@ -132,6 +132,7 @@
 <script>
   import moment from 'moment';
   import VJsoneditor from 'v-jsoneditor';
+  import axios from 'axios';
   import Beneficiaries from './Beneficiaries';
 
   export default {
@@ -142,30 +143,32 @@
       return {
         currentStep: 1,
         MenuDocumentCreated: '',
-        form: this.$inertia.form({
-          trust_name: documentData?.trust_name || this.project.name,
-          first_trustee: documentData?.first_trustee || `${this.client.first_name} ${this.client.last_name}`,
-          settlor: documentData?.settlor || `${user.first_name} ${user.last_name}`,
-          document_created_at: documentData?.document_created_at || this.moment().format('YYYY-MM-DD'),
-          mailing_address: documentData?.mailing_address || {
-            address: null,
-            city: null,
-            state: null,
-            zip: null,
-            county: null
-          },
-          domicile_address: documentData?.domicile_address || {
-            address: null,
-            city: null,
-            state: null,
-            zip: null,
-            county: null
-          },
-          settlor_gift: documentData?.settlor_gift || '$100',
-          term_of_trust: documentData?.term_of_trust || '99',
-          secondary_trustees: documentData?.secondary_trustees || [],
-          beneficiaries: documentData?.beneficiaries || []
-        })
+        form: this.$inertia.form(
+          {
+            trust_name: documentData?.trust_name || this.project.name,
+            first_trustee: documentData?.first_trustee || `${this.client.first_name} ${this.client.last_name}`,
+            settlor: documentData?.settlor || `${user.first_name} ${user.last_name}`,
+            document_created_at: documentData?.document_created_at || this.moment().format('YYYY-MM-DD'),
+            mailing_address: documentData?.mailing_address || {
+              address: null,
+              city: null,
+              state: null,
+              zip: null,
+              county: null
+            },
+            domicile_address: documentData?.domicile_address || {
+              address: null,
+              city: null,
+              state: null,
+              zip: null,
+              county: null
+            },
+            settlor_gift: documentData?.settlor_gift || '$100',
+            term_of_trust: documentData?.term_of_trust || '99',
+            secondary_trustees: documentData?.secondary_trustees || [],
+            beneficiaries: documentData?.beneficiaries || []
+          }
+        )
       };
     },
     methods: {
@@ -175,7 +178,7 @@
         this.updateProject();
       },
       onDeleteBeneficiary(beneficiaryIndex) {
-        this.form.beneficiaries.slice(beneficiaryIndex, 1);
+        this.form.beneficiaries.splice(beneficiaryIndex, 1);
         this.updateProject();
       },
       onUpdateBeneficiary(beneficiaries, index) {
@@ -183,6 +186,30 @@
         this.updateProject();
       },
       updateProject() {
+        axios.post(`/admin/projects/${this.project.id}`, {
+                     _method: 'PUT',
+                     name: this.form.trust_name,
+                     document_data: this.form.data()
+                   },
+                   {
+                     params: {resetOnSuccess: false}
+                   });
+      },
+      onEnter() {
+        this.updateProject();
+      },
+      nextStep() {
+        const steps = this.$el.querySelectorAll('.v-stepper__step').length;
+        this.currentStep = this.currentStep === steps ? 1 : Number(this.currentStep) + 1;
+
+        if (this.currentStep > steps) {
+          this.updateForm();
+        } else {
+          this.updateProject();
+        }
+      },
+
+      updateForm() {
         this
           .form.transform((data) => ({
             name: this.form.trust_name,
@@ -197,14 +224,6 @@
                {
                  resetOnSuccess: false
                });
-      },
-      onEnter() {
-        this.updateProject();
-      },
-      onClick() {
-        const steps = this.$el.querySelectorAll('.v-stepper__step').length;
-        this.currentStep = this.currentStep === steps ? 1 : this.currentStep + 1;
-        // this.updateProject();
       }
     },
     components: {
