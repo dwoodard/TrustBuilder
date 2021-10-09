@@ -115,9 +115,14 @@
             </v-btn>
           </v-stepper-content>
           <v-stepper-content step="4">
-            <v-card class="mb-12">
-              <!-- -->
-            </v-card>
+            <!-- -->
+            <!--            <pre>{{ form.beneficiaries }}</pre>-->
+            <Beneficiaries :beneficiaries="form.beneficiaries"
+                           @add="onAddBeneficiary"
+                           @update="onUpdateBeneficiary"
+                           @remove="onDeleteBeneficiary"/>
+            <!-- -->
+
 
             <v-btn
               color="primary"
@@ -128,54 +133,72 @@
         </v-stepper-items>
       </v-stepper>
 
-      <VJsoneditor v-model="form.data()" :plus="false" height="400px" @error="onError"/>
+      <VJsoneditor v-model="form.data()" :plus="false" height="400px"/>
     </template>
   </div>
 </template>
 <script>
   import moment from 'moment';
   import VJsoneditor from 'v-jsoneditor';
+  import Beneficiaries from './Beneficiaries';
 
   export default {
     props: ['project', 'client'],
     data() {
+      const user = this.$page.props.auth.user.data;
+      const documentData = this.project?.document_data;
       return {
         currentStep: 1,
         MenuDocumentCreated: '',
         form: this.$inertia.form({
-          trust_name: this.project?.document_data?.trust_name || this.project.name,
-          first_trustee: this.project?.document_data?.first_trustee || `${this.client.first_name} ${this.client.last_name}`,
-          settlor: this.project?.document_data?.settlor,
-          document_created_at: this.project?.document_data?.document_created_at || this.moment().format('YYYY-MM-DD'),
-          mailing_address: this.project?.document_data?.mailing_address || {
+          trust_name: documentData?.trust_name || this.project.name,
+          first_trustee: documentData?.first_trustee || `${this.client.first_name} ${this.client.last_name}`,
+          settlor: documentData?.settlor || `${user.first_name} ${user.last_name}`,
+          document_created_at: documentData?.document_created_at || this.moment().format('YYYY-MM-DD'),
+          mailing_address: documentData?.mailing_address || {
             address: null,
             city: null,
             state: null,
             zip: null,
             county: null
           },
-          domicile_address: this.project?.document_data?.domicile_address || {
+          domicile_address: documentData?.domicile_address || {
             address: null,
             city: null,
             state: null,
             zip: null,
             county: null
           },
-          settlor_gift: this.project?.document_data?.settlor_gift || '$100',
-          term_of_trust: this.project?.document_data?.term_of_trust || '99',
-          secondary_trustees: this.project?.document_data?.secondary_trustees || []
+          settlor_gift: documentData?.settlor_gift || '$100',
+          term_of_trust: documentData?.term_of_trust || '99',
+          secondary_trustees: documentData?.secondary_trustees || [],
+          beneficiaries: documentData?.beneficiaries || []
         })
       };
     },
     methods: {
       moment,
+      onAddBeneficiary(beneficiary) {
+        this.form.beneficiaries.push(beneficiary);
+        this.updateProject();
+      },
+      onDeleteBeneficiary(beneficiaryIndex) {
+        this.form.beneficiaries.slice(beneficiaryIndex, 1);
+        this.updateProject();
+      },
+      onUpdateBeneficiary(name, index) {
+        this.form.beneficiaries[index].name = name;
+        this.updateProject();
+      },
       updateProject() {
-        this.form.put(route('admin.projects.update', {
-          project: this.project.id,
-          document_data: this.form.data()
-        }));
-
-        // this.$emit('updateProject');
+        this.form.put(route('admin.projects.update'), {
+                        preserveScroll: true,
+                        project: this.project.id,
+                        document_data: this.form.data()
+                      },
+                      {
+                        resetOnSuccess: false
+                      });
       },
       onClick() {
         const steps = this.$el.querySelectorAll('.v-stepper__step').length;
@@ -183,6 +206,7 @@
       }
     },
     components: {
+      Beneficiaries,
       VJsoneditor
     }
   };

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ClientResource;
+use App\Http\Resources\ProjectResource;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -90,7 +92,7 @@ class ProjectController extends Controller
         ]);
 
         $project->update($request->only(OnlyColumns($project)));
-        return Redirect::back();
+        return redirect()->back();
     }
 
     /**

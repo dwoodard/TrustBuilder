@@ -10,35 +10,35 @@
         <form @submit.prevent="updatePassword">
           <div class="col-span-6 sm:col-span-4">
             <v-text-field
-                ref="current_password"
-                v-model="form.current_password"
-                :error-messages="form.errors.current_password"
-                label="Current Password"
-                type="password"
-                autocomplete="current-password"/>
+              ref="current_password"
+              v-model="form.current_password"
+              :error-messages="form.errors.current_password"
+              label="Current Password"
+              type="password"
+              autocomplete="current-password"/>
           </div>
 
           <div class="col-span-6 sm:col-span-4">
             <v-text-field
-                v-model="form.password"
-                :error-messages="form.errors.password"
-                label="password"
-                required
-                autocomplete="password"
-                :append-icon="hidepassword ? 'mdi-eye' : 'mdi-eye-off'"
-                :type="hidepassword ? 'password' : 'text'"
-                @click:append="() => (hidepassword = !hidepassword)"/>
+              v-model="form.password"
+              :error-messages="form.errors.password"
+              label="password"
+              required
+              autocomplete="password"
+              :append-icon="hidepassword ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="hidepassword ? 'password' : 'text'"
+              @click:append="() => (hidepassword = !hidepassword)"/>
           </div>
 
           <div class="col-span-6 sm:col-span-4">
             <v-text-field
-                v-model="form.password_confirmation"
-                :error-messages="form.errors.password_confirmation"
-                :append-icon="(form.password === form.password_confirmation) ? 'mdi-check-circle' : 'mdi-alert-circle-outline'"
-                label="Confirm Password"
-                :type="hidepassword ? 'password' : 'text'"
-                required
-                autocomplete="new-password"/>
+              v-model="form.password_confirmation"
+              :error-messages="form.errors.password_confirmation"
+              :append-icon="(form.password === form.password_confirmation) ? 'mdi-check-circle' : 'mdi-alert-circle-outline'"
+              label="Confirm Password"
+              :type="hidepassword ? 'password' : 'text'"
+              required
+              autocomplete="new-password"/>
           </div>
 
           <v-btn type="submit" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -55,43 +55,43 @@
 </template>
 
 <script>
-import ActionMessage from '@/components/ActionMessage';
+  import ActionMessage from '@/components/ActionMessage';
 
-export default {
+  export default {
 
-  data() {
-    return {
-      hidepassword: true,
-      form: this.$inertia.form({
-        current_password: '',
-        password: '',
-        password_confirmation: ''
-      })
-    };
-  },
+    data() {
+      return {
+        hidepassword: true,
+        form: this.$inertia.form({
+          current_password: '',
+          password: '',
+          password_confirmation: ''
+        })
+      };
+    },
 
-  methods: {
-    updatePassword() {
-      this.form.put(route('password.update'), {
-        errorBag: 'updatePassword',
-        preserveScroll: true,
-        onSuccess: () => this.form.reset(),
-        onError: (errors) => {
-          this.form.errors = errors;
-          if (this.form.errors.password) {
-            this.form.reset('password', 'password_confirmation');
+    methods: {
+      updatePassword() {
+        this.form.put(route('password.update'), {
+          errorBag: 'updatePassword',
+          preserveScroll: true,
+          onSuccess: () => this.form.reset(),
+          onError: (errors) => {
+            this.form.errors = errors;
+            if (this.form.errors.password) {
+              this.form.reset('password', 'password_confirmation');
+            }
+
+            if (this.form.errors.current_password) {
+              this.form.reset('current_password');
+              this.$refs.current_password.focus();
+            }
           }
-
-          if (this.form.errors.current_password) {
-            this.form.reset('current_password');
-            this.$refs.current_password.focus();
-          }
-        }
-      });
+        });
+      }
+    },
+    components: {
+      ActionMessage
     }
-  },
-  components: {
-    ActionMessage
-  }
-};
+  };
 </script>
