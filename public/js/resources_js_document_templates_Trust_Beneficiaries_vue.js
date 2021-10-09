@@ -112,8 +112,9 @@ __webpack_require__.r(__webpack_exports__);
     remove: function remove(index) {
       this.$emit('remove', index);
     },
-    update: function update() {
-      this.$emit('update');
+    update: function update(event, index) {
+      this.beneficiaries[index].name = event;
+      this.$emit('update', this.beneficiaries);
     }
   }
 });
@@ -299,15 +300,18 @@ var render = function() {
                   _c(
                     "v-text-field",
                     {
-                      attrs: {
-                        outlined: "",
-                        "single-line": "",
-                        value: item.name
-                      },
+                      attrs: { outlined: "", "single-line": "" },
                       on: {
                         change: function($event) {
                           return _vm.update($event, index)
                         }
+                      },
+                      model: {
+                        value: item.name,
+                        callback: function($$v) {
+                          _vm.$set(item, "name", $$v)
+                        },
+                        expression: "item.name"
                       }
                     },
                     [

@@ -37,9 +37,9 @@
       <v-list>
         <v-list-item v-for="(item,index) in beneficiaries" :key="index" class="grey lighten-5 ">
           <v-text-field
+            v-model="item.name"
             outlined
             single-line
-            :value="item.name"
             @change="update($event, index)">
             <v-spacer/>
             <v-icon color="danger">mdi-trash-can</v-icon>
@@ -95,8 +95,9 @@
       remove(index) {
         this.$emit('remove', index);
       },
-      update() {
-        this.$emit('update');
+      update(event, index) {
+        this.beneficiaries[index].name = event;
+        this.$emit('update', this.beneficiaries);
       }
     }
   };

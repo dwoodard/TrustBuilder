@@ -6986,14 +6986,6 @@ var map = {
 	"./Trust/Wizard.vue": [
 		"./resources/js/document_templates/Trust/Wizard.vue",
 		"resources_js_document_templates_Trust_Wizard_vue"
-	],
-	"./Trust/old____Beneficiaries": [
-		"./resources/js/document_templates/Trust/old____Beneficiaries.vue",
-		"resources_js_document_templates_Trust_old____Beneficiaries_vue"
-	],
-	"./Trust/old____Beneficiaries.vue": [
-		"./resources/js/document_templates/Trust/old____Beneficiaries.vue",
-		"resources_js_document_templates_Trust_old____Beneficiaries_vue"
 	]
 };
 function webpackAsyncContext(req) {

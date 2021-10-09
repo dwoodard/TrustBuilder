@@ -112,8 +112,9 @@ __webpack_require__.r(__webpack_exports__);
     remove: function remove(index) {
       this.$emit('remove', index);
     },
-    update: function update() {
-      this.$emit('update');
+    update: function update(event, index) {
+      this.beneficiaries[index].name = event;
+      this.$emit('update', this.beneficiaries);
     }
   }
 });
@@ -136,14 +137,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var v_jsoneditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! v-jsoneditor */ "./node_modules/v-jsoneditor/dist/v-jsoneditor.min.js");
 /* harmony import */ var v_jsoneditor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(v_jsoneditor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Beneficiaries__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Beneficiaries */ "./resources/js/document_templates/Trust/Beneficiaries.vue");
-//
-//
-//
-//
-//
-//
-//
-//
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -324,22 +323,33 @@ __webpack_require__.r(__webpack_exports__);
       this.form.beneficiaries.slice(beneficiaryIndex, 1);
       this.updateProject();
     },
-    onUpdateBeneficiary: function onUpdateBeneficiary(name, index) {
-      this.form.beneficiaries[index].name = name;
+    onUpdateBeneficiary: function onUpdateBeneficiary(beneficiaries, index) {
+      this.form.beneficiaries = beneficiaries;
       this.updateProject();
     },
     updateProject: function updateProject() {
-      this.form.put(route('admin.projects.update'), {
+      var _this = this;
+
+      this.form.transform(function (data) {
+        return {
+          name: _this.form.trust_name,
+          document_data: _objectSpread({}, data)
+        };
+      }).put("/admin/projects/".concat(this.project.id), {
         preserveScroll: true,
-        project: this.project.id,
-        document_data: this.form.data()
+        onSuccess: function onSuccess(e) {
+          console.log(e);
+        }
       }, {
         resetOnSuccess: false
       });
     },
+    onEnter: function onEnter() {
+      this.updateProject();
+    },
     onClick: function onClick() {
       var steps = this.$el.querySelectorAll('.v-stepper__step').length;
-      this.currentStep = this.currentStep === steps ? 1 : this.currentStep + 1;
+      this.currentStep = this.currentStep === steps ? 1 : this.currentStep + 1; // this.updateProject();
     }
   },
   components: {
@@ -22080,15 +22090,18 @@ var render = function() {
                   _c(
                     "v-text-field",
                     {
-                      attrs: {
-                        outlined: "",
-                        "single-line": "",
-                        value: item.name
-                      },
+                      attrs: { outlined: "", "single-line": "" },
                       on: {
                         change: function($event) {
                           return _vm.update($event, index)
                         }
+                      },
+                      model: {
+                        value: item.name,
+                        callback: function($$v) {
+                          _vm.$set(item, "name", $$v)
+                        },
+                        expression: "item.name"
                       }
                     },
                     [
@@ -22170,6 +22183,20 @@ var render = function() {
           },
           [
             _c(
+              "div",
+              [
+                _vm.form.isDirty
+                  ? _c("v-icon", { attrs: { color: "danger" } }, [
+                      _vm._v("mdi-sticker-minus")
+                    ])
+                  : _c("v-icon", { attrs: { color: "green" } }, [
+                      _vm._v("mdi-sticker-check")
+                    ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
               "v-stepper-header",
               [
                 _c(
@@ -22227,372 +22254,264 @@ var render = function() {
             ),
             _vm._v(" "),
             _c(
-              "v-stepper-items",
+              "form",
+              {
+                on: {
+                  keyup: function($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.onEnter.apply(null, arguments)
+                  }
+                }
+              },
               [
                 _c(
-                  "v-stepper-content",
-                  { attrs: { step: "1" } },
+                  "v-stepper-items",
                   [
                     _c(
-                      "v-card",
-                      {
-                        staticClass: "mb-12",
-                        attrs: { color: "grey lighten-5" }
-                      },
+                      "v-stepper-content",
+                      { attrs: { step: "1" } },
                       [
                         _c(
-                          "v-flex",
-                          { attrs: { "md-6": "" } },
+                          "v-card",
+                          {
+                            staticClass: "mb-12",
+                            attrs: { color: "grey lighten-5" }
+                          },
                           [
-                            _c("v-text-field", {
-                              attrs: { label: "First Trustee" },
-                              on: {
-                                blur: _vm.updateProject,
-                                keydown: function($event) {
-                                  if (
-                                    !$event.type.indexOf("key") &&
-                                    _vm._k(
-                                      $event.keyCode,
-                                      "enter",
-                                      13,
-                                      $event.key,
-                                      "Enter"
-                                    )
-                                  ) {
-                                    return null
+                            _c(
+                              "v-flex",
+                              { attrs: { "md-6": "" } },
+                              [
+                                _c("v-text-field", {
+                                  attrs: { label: "First Trustee" },
+                                  model: {
+                                    value: _vm.form.first_trustee,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.form, "first_trustee", $$v)
+                                    },
+                                    expression: "form.first_trustee"
                                   }
-                                  return _vm.updateProject.apply(
-                                    null,
-                                    arguments
-                                  )
-                                }
-                              },
-                              model: {
-                                value: _vm.form.first_trustee,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "first_trustee", $$v)
-                                },
-                                expression: "form.first_trustee"
-                              }
-                            })
+                                })
+                              ],
+                              1
+                            )
                           ],
                           1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-btn",
+                          {
+                            attrs: { color: "primary" },
+                            on: { click: _vm.onClick }
+                          },
+                          [_vm._v("\n              Continue\n            ")]
                         )
                       ],
                       1
                     ),
                     _vm._v(" "),
                     _c(
-                      "v-btn",
-                      {
-                        attrs: { color: "primary" },
-                        on: { click: _vm.onClick }
-                      },
-                      [_vm._v("\n            Continue\n          ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-content",
-                  { attrs: { step: "2" } },
-                  [
-                    _c(
-                      "v-card",
-                      { staticClass: "mb-12" },
+                      "v-stepper-content",
+                      { attrs: { step: "2" } },
                       [
-                        _c("v-text-field", {
-                          attrs: { label: "Trust Name" },
-                          on: {
-                            blur: _vm.updateProject,
-                            keydown: function($event) {
-                              if (
-                                !$event.type.indexOf("key") &&
-                                _vm._k(
-                                  $event.keyCode,
-                                  "enter",
-                                  13,
-                                  $event.key,
-                                  "Enter"
-                                )
-                              ) {
-                                return null
-                              }
-                              return _vm.updateProject.apply(null, arguments)
-                            }
-                          },
-                          model: {
-                            value: _vm.form.trust_name,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "trust_name", $$v)
-                            },
-                            expression: "form.trust_name"
-                          }
-                        }),
-                        _vm._v(" "),
                         _c(
-                          "v-menu",
-                          {
-                            attrs: {
-                              label: "Document Created",
-                              "close-on-content-click": false,
-                              "max-width": "290"
-                            },
-                            scopedSlots: _vm._u([
-                              {
-                                key: "activator",
-                                fn: function(ref) {
-                                  var on = ref.on
-                                  var attrs = ref.attrs
-                                  return [
-                                    _c(
-                                      "v-text-field",
-                                      _vm._g(
-                                        _vm._b(
-                                          {
-                                            attrs: {
-                                              value:
-                                                _vm.form.document_created_at,
-                                              clearable: "",
-                                              readonly: ""
-                                            },
-                                            on: {
-                                              click: function($event) {
-                                                _vm.form.document_created_at = null
-                                              }
-                                            }
-                                          },
-                                          "v-text-field",
-                                          attrs,
-                                          false
-                                        ),
-                                        on
-                                      )
-                                    )
-                                  ]
-                                }
-                              }
-                            ]),
-                            model: {
-                              value: _vm.MenuDocumentCreated,
-                              callback: function($$v) {
-                                _vm.MenuDocumentCreated = $$v
-                              },
-                              expression: "MenuDocumentCreated"
-                            }
-                          },
+                          "v-card",
+                          { staticClass: "mb-12" },
                           [
+                            _c("v-text-field", {
+                              attrs: { label: "Trust Name" },
+                              model: {
+                                value: _vm.form.trust_name,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.form, "trust_name", $$v)
+                                },
+                                expression: "form.trust_name"
+                              }
+                            }),
                             _vm._v(" "),
-                            _c("v-date-picker", {
-                              attrs: { "show-adjacent-months": "" },
-                              on: {
-                                blur: _vm.updateProject,
-                                keydown: function($event) {
-                                  if (
-                                    !$event.type.indexOf("key") &&
-                                    _vm._k(
-                                      $event.keyCode,
-                                      "enter",
-                                      13,
-                                      $event.key,
-                                      "Enter"
-                                    )
-                                  ) {
-                                    return null
+                            _c(
+                              "v-menu",
+                              {
+                                attrs: {
+                                  label: "Document Created",
+                                  "close-on-content-click": false,
+                                  "max-width": "290"
+                                },
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "activator",
+                                    fn: function(ref) {
+                                      var on = ref.on
+                                      var attrs = ref.attrs
+                                      return [
+                                        _c(
+                                          "v-text-field",
+                                          _vm._g(
+                                            _vm._b(
+                                              {
+                                                attrs: {
+                                                  value:
+                                                    _vm.form
+                                                      .document_created_at,
+                                                  clearable: "",
+                                                  readonly: ""
+                                                },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.form.document_created_at = null
+                                                  }
+                                                }
+                                              },
+                                              "v-text-field",
+                                              attrs,
+                                              false
+                                            ),
+                                            on
+                                          )
+                                        )
+                                      ]
+                                    }
                                   }
-                                  return _vm.updateProject.apply(
-                                    null,
-                                    arguments
-                                  )
+                                ]),
+                                model: {
+                                  value: _vm.MenuDocumentCreated,
+                                  callback: function($$v) {
+                                    _vm.MenuDocumentCreated = $$v
+                                  },
+                                  expression: "MenuDocumentCreated"
                                 }
                               },
+                              [
+                                _vm._v(" "),
+                                _c("v-date-picker", {
+                                  attrs: { "show-adjacent-months": "" },
+                                  model: {
+                                    value: _vm.form.document_created_at,
+                                    callback: function($$v) {
+                                      _vm.$set(
+                                        _vm.form,
+                                        "document_created_at",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "form.document_created_at"
+                                  }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("v-text-field", {
+                              attrs: { label: "Settlor" },
                               model: {
-                                value: _vm.form.document_created_at,
+                                value: _vm.form.settlor,
                                 callback: function($$v) {
-                                  _vm.$set(_vm.form, "document_created_at", $$v)
+                                  _vm.$set(_vm.form, "settlor", $$v)
                                 },
-                                expression: "form.document_created_at"
+                                expression: "form.settlor"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("v-text-field", {
+                              attrs: { label: "Settlor Gift" },
+                              model: {
+                                value: _vm.form.settlor_gift,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.form, "settlor_gift", $$v)
+                                },
+                                expression: "form.settlor_gift"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("v-text-field", {
+                              attrs: { label: "Term Of Trust" },
+                              model: {
+                                value: _vm.form.term_of_trust,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.form, "term_of_trust", $$v)
+                                },
+                                expression: "form.term_of_trust"
                               }
                             })
                           ],
                           1
                         ),
                         _vm._v(" "),
-                        _c("v-text-field", {
-                          attrs: { label: "Settlor" },
-                          on: {
-                            blur: _vm.updateProject,
-                            keydown: function($event) {
-                              if (
-                                !$event.type.indexOf("key") &&
-                                _vm._k(
-                                  $event.keyCode,
-                                  "enter",
-                                  13,
-                                  $event.key,
-                                  "Enter"
-                                )
-                              ) {
-                                return null
-                              }
-                              return _vm.updateProject.apply(null, arguments)
-                            }
+                        _c(
+                          "v-btn",
+                          {
+                            attrs: { color: "primary" },
+                            on: { click: _vm.onClick }
                           },
-                          model: {
-                            value: _vm.form.settlor,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "settlor", $$v)
-                            },
-                            expression: "form.settlor"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("v-text-field", {
-                          attrs: { label: "Settlor Gift" },
-                          on: {
-                            blur: _vm.updateProject,
-                            keydown: function($event) {
-                              if (
-                                !$event.type.indexOf("key") &&
-                                _vm._k(
-                                  $event.keyCode,
-                                  "enter",
-                                  13,
-                                  $event.key,
-                                  "Enter"
-                                )
-                              ) {
-                                return null
-                              }
-                              return _vm.updateProject.apply(null, arguments)
-                            }
-                          },
-                          model: {
-                            value: _vm.form.settlor_gift,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "settlor_gift", $$v)
-                            },
-                            expression: "form.settlor_gift"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("v-text-field", {
-                          attrs: { label: "Term Of Trust" },
-                          on: {
-                            blur: _vm.updateProject,
-                            keydown: function($event) {
-                              if (
-                                !$event.type.indexOf("key") &&
-                                _vm._k(
-                                  $event.keyCode,
-                                  "enter",
-                                  13,
-                                  $event.key,
-                                  "Enter"
-                                )
-                              ) {
-                                return null
-                              }
-                              return _vm.updateProject.apply(null, arguments)
-                            }
-                          },
-                          model: {
-                            value: _vm.form.term_of_trust,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "term_of_trust", $$v)
-                            },
-                            expression: "form.term_of_trust"
-                          }
-                        })
+                          [_vm._v("\n              Continue\n            ")]
+                        )
                       ],
                       1
                     ),
                     _vm._v(" "),
                     _c(
-                      "v-btn",
-                      {
-                        attrs: { color: "primary" },
-                        on: { click: _vm.onClick }
-                      },
-                      [_vm._v("\n            Continue\n          ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-content",
-                  { attrs: { step: "3" } },
-                  [
-                    _c(
-                      "v-card",
-                      { staticClass: "mb-12" },
+                      "v-stepper-content",
+                      { attrs: { step: "3" } },
                       [
-                        _c("v-text-field", {
-                          attrs: { label: "TrustName" },
-                          on: {
-                            blur: _vm.updateProject,
-                            keydown: function($event) {
-                              if (
-                                !$event.type.indexOf("key") &&
-                                _vm._k(
-                                  $event.keyCode,
-                                  "enter",
-                                  13,
-                                  $event.key,
-                                  "Enter"
-                                )
-                              ) {
-                                return null
+                        _c(
+                          "v-card",
+                          { staticClass: "mb-12" },
+                          [
+                            _c("v-text-field", {
+                              attrs: { label: "TrustName" },
+                              model: {
+                                value: _vm.form.trust_name,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.form, "trust_name", $$v)
+                                },
+                                expression: "form.trust_name"
                               }
-                              return _vm.updateProject.apply(null, arguments)
-                            }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-btn",
+                          {
+                            attrs: { color: "primary" },
+                            on: { click: _vm.onClick }
                           },
-                          model: {
-                            value: _vm.form.trust_name,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "trust_name", $$v)
-                            },
-                            expression: "form.trust_name"
-                          }
-                        })
+                          [_vm._v("\n              Continue\n            ")]
+                        )
                       ],
                       1
                     ),
                     _vm._v(" "),
                     _c(
-                      "v-btn",
-                      {
-                        attrs: { color: "primary" },
-                        on: { click: _vm.onClick }
-                      },
-                      [_vm._v("\n            Continue\n          ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-content",
-                  { attrs: { step: "4" } },
-                  [
-                    _c("Beneficiaries", {
-                      attrs: { beneficiaries: _vm.form.beneficiaries },
-                      on: {
-                        add: _vm.onAddBeneficiary,
-                        update: _vm.onUpdateBeneficiary,
-                        remove: _vm.onDeleteBeneficiary
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { color: "primary" },
-                        on: { click: _vm.onClick }
-                      },
-                      [_vm._v("\n            Done\n          ")]
+                      "v-stepper-content",
+                      { attrs: { step: "4" } },
+                      [
+                        _c("Beneficiaries", {
+                          attrs: { beneficiaries: _vm.form.beneficiaries },
+                          on: {
+                            add: _vm.onAddBeneficiary,
+                            update: _vm.onUpdateBeneficiary,
+                            remove: _vm.onDeleteBeneficiary
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "v-btn",
+                          {
+                            attrs: { color: "primary" },
+                            on: { click: _vm.onClick }
+                          },
+                          [_vm._v("\n              Done\n            ")]
+                        )
+                      ],
+                      1
                     )
                   ],
                   1
@@ -22605,13 +22524,13 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("VJsoneditor", {
-          attrs: { plus: false, height: "400px" },
+          attrs: { plus: true, height: "400px" },
           model: {
-            value: _vm.form.data(),
+            value: _vm.form,
             callback: function($$v) {
-              _vm.$set(_vm.form, "data()", $$v)
+              _vm.form = $$v
             },
-            expression: "form.data()"
+            expression: "form"
           }
         })
       ]
