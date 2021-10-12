@@ -180,16 +180,20 @@
               <v-card class="mb-12" outlined>
                 <v-card-title>First Trustees</v-card-title>
                 <v-card-text>
-                  <v-row v-for="(item,index) in form.trustees.first" :key="index">
-                    <v-col sm="9">
-                      <v-text-field v-model="form.trustees.first[index]"
-                                    outlined single-line/>
-                    </v-col>
-                    <v-col sm="3">
-                      <v-icon v-if="index !== 0" @click="form.trustees.first.splice(index, 1)">mdi-trash-can</v-icon>
-                    </v-col>
-                  </v-row>
-
+                  <div v-for="(item,index) in form.trustees.first" :key="index">
+                    <v-row>
+                      <v-col sm="9">
+                        <v-text-field
+                          v-model="form.trustees.first[index]"
+                          dense
+                          outlined
+                          single-line/>
+                      </v-col>
+                      <v-col sm="3">
+                        <v-icon v-if="index !== 0" @click="form.trustees.first.splice(index, 1)">mdi-trash-can</v-icon>
+                      </v-col>
+                    </v-row>
+                  </div>
                   <v-icon @click="form.trustees.first.push('')">mdi-plus</v-icon>
                 </v-card-text>
               </v-card>
@@ -199,8 +203,10 @@
                 <v-card-text>
                   <v-row v-for="(item,index) in form.trustees.second" :key="index">
                     <v-col>
-                      <v-text-field v-model="form.trustees.second[index]"
-                                    outlined single-line/>
+                      <v-text-field
+                        v-model="form.trustees.second[index]"
+                        outlined
+                        single-line/>
                     </v-col>
                     <v-col>
                       <v-icon @click="form.trustees.second.splice(index, 1)">mdi-trash-can</v-icon>
@@ -236,7 +242,7 @@
         </form>
       </v-stepper>
 
-      <VJsoneditor v-model="form" :plus="true" height="400px"/>
+      <!--      <VJsoneditor v-model="form" :plus="true" height="400px"/>-->
     </template>
   </div>
 </template>

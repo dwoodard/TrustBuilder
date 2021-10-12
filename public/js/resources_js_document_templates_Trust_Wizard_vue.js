@@ -437,6 +437,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -23177,56 +23183,67 @@ var render = function() {
                                   index
                                 ) {
                                   return _c(
-                                    "v-row",
+                                    "div",
                                     { key: index },
                                     [
                                       _c(
-                                        "v-col",
-                                        { attrs: { sm: "9" } },
+                                        "v-row",
                                         [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              outlined: "",
-                                              "single-line": ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.form.trustees.first[index],
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.form.trustees.first,
-                                                  index,
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "form.trustees.first[index]"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        { attrs: { sm: "3" } },
-                                        [
-                                          index !== 0
-                                            ? _c(
-                                                "v-icon",
-                                                {
-                                                  on: {
-                                                    click: function($event) {
-                                                      return _vm.form.trustees.first.splice(
-                                                        index,
-                                                        1
-                                                      )
-                                                    }
-                                                  }
+                                          _c(
+                                            "v-col",
+                                            { attrs: { sm: "9" } },
+                                            [
+                                              _c("v-text-field", {
+                                                attrs: {
+                                                  dense: "",
+                                                  outlined: "",
+                                                  "single-line": ""
                                                 },
-                                                [_vm._v("mdi-trash-can")]
-                                              )
-                                            : _vm._e()
+                                                model: {
+                                                  value:
+                                                    _vm.form.trustees.first[
+                                                      index
+                                                    ],
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.form.trustees.first,
+                                                      index,
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression:
+                                                    "form.trustees.first[index]"
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-col",
+                                            { attrs: { sm: "3" } },
+                                            [
+                                              index !== 0
+                                                ? _c(
+                                                    "v-icon",
+                                                    {
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.form.trustees.first.splice(
+                                                            index,
+                                                            1
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [_vm._v("mdi-trash-can")]
+                                                  )
+                                                : _vm._e()
+                                            ],
+                                            1
+                                          )
                                         ],
                                         1
                                       )
@@ -23383,18 +23400,7 @@ var render = function() {
             )
           ],
           1
-        ),
-        _vm._v(" "),
-        _c("VJsoneditor", {
-          attrs: { plus: true, height: "400px" },
-          model: {
-            value: _vm.form,
-            callback: function($$v) {
-              _vm.form = $$v
-            },
-            expression: "form"
-          }
-        })
+        )
       ]
     ],
     2
