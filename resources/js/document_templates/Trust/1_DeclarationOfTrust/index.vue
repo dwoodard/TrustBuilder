@@ -4,9 +4,10 @@
       <p class="text-right text-pre">
         Domicile Address:
         ATTN: <span class="preview-field">{{ first_trustee }}</span>, Trustee
-        <span class="preview-field">{{ trust_name }}</span>
-        7512 Dr. Phillips Blvd. Suite #50-185
-        Orlando, Florida, USA
+        <span class="preview-field">{{ trust_name }}
+          {{ domicile_address.address }} {{ domicile_address.apt }}
+          {{ domicile_address.city }}, {{ domicile_address.state }}, {{ domicile_address.country }}
+        </span>
       </p>
 
       <p class="text-h4 pa-3 text-center">
@@ -89,7 +90,7 @@
       </div>
 
       <ul>
-        <li>1. The Trust shall exist for a term of <span class="preview-field">{{ numberToEnglish(term_of_trust) }} ({{ term_of_trust }})</span> years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the Trust's expiration, extend its term.</li>
+        <li>1. The Trust shall exist for a term of <span class="preview-field">{{ toWords(term_of_trust) }} ({{ term_of_trust }})</span> years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the Trust's expiration, extend its term.</li>
         <li>2. The organizational purpose of the TRUST is to sustain and improve the TRUST proactively through any means or business so that the BENEFICIARY may possess the things of life sufficient to provide for growth, health, protection, education, refinement, pro-creation, recreation, welfare, expansion, preservation and continuation and not simply an arrangement to protect and conserve the property for the BENEFICIARY.</li>
       </ul>
     </div>
@@ -217,7 +218,7 @@
         <li>47. Any person shall be entitled to rely upon a COPY of the original DECLARATION OF TRUST and any instruments duly executed in accordance with the provisions thereof, to the same extent as the original document if such copy is approved by the BOARD for display.</li>
         <li>48. An approved Meeting Minute of the BOARD and appropriate distributed Resolution authorizing what it is they determine to do or have done shall be sufficient evidence that such an act is within their power to those doing business with the Trust.</li>
         <li>49. The BOARD shall have the power to amend the TRUST (via an appropriate Meeting Minute) to better carry out the purposes and intent thereof, or in order to conform to or comply with any law, rule, regulation or order of any government body, provided, however, that any such amendment may not be inconsistent with the basic TRUST purposes and intent, and not in derogation of the fiduciary obligations to the BENEFICIARY(ies). No amendment shall be revocable by the SETTLOR or by any other person or entity except for the BOARD.</li>
-        <li>50. This Declaration of Trust consists of ten (10) pages.</li>
+        <li>50. This Declaration of Trust consists of <span class="preview-field">ten (10)</span> pages.</li>
       </ul>
 
       <div class="grey lighten-2 ma-2 pa-2 text-center">
@@ -312,8 +313,8 @@
 <script>
   import 'vuetify/dist/vuetify.css';
   import moment from 'moment';
-  import {numberToEnglish} from '../../../helper';
 
+  const converter = require('number-to-words-en');
 
   export default {
     props: {
@@ -331,7 +332,7 @@
         return this.project?.document_data?.document_created_at || new Date();
       },
       first_trustee() {
-        return this.project?.document_data?.first_trustee || `${this?.client?.first_name} ${this?.client?.last_name}`;
+        return this.project?.document_data?.trustees.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
       },
       trust_name() {
         return this.project?.document_data?.trust_name || this?.project?.name;
@@ -339,22 +340,23 @@
       settlor() {
         return this.project?.document_data?.settlor;
       },
+      domicile_address() {
+        return this.project?.document_data?.domicile_address || {};
+      },
       term_of_trust() {
-        return this.project?.document_data?.term_of_trust;
+        return this.project?.document_data?.term_of_trust || '99';
       }
     },
     methods: {
       moment,
-      numberToEnglish
+      toWords: converter.toWords
+    },
+    mounted() {
+
     }
   };
 </script>
 
 <style scoped>
-.document-template .preview-field{
-  color: #ff3d00;
-}
-.print .document-template .preview-field{
-  color: #000000;
-}
+
 </style>

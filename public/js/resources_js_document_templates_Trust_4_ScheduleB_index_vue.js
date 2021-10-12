@@ -100,6 +100,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -121,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
     first_trustee: function first_trustee() {
       var _this$project2, _this$project2$docume, _this$client, _this$client2;
 
-      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : _this$project2$docume.first_trustee) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
+      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : _this$project2$docume.trustees.first[0]) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
     },
     trust_name: function trust_name() {
       var _this$project3, _this$project3$docume, _this$project4;
@@ -132,6 +137,11 @@ __webpack_require__.r(__webpack_exports__);
       var _this$project5, _this$project5$docume;
 
       return (_this$project5 = this.project) === null || _this$project5 === void 0 ? void 0 : (_this$project5$docume = _this$project5.document_data) === null || _this$project5$docume === void 0 ? void 0 : _this$project5$docume.settlor;
+    },
+    beneficiaries: function beneficiaries() {
+      var _this$project6, _this$project6$docume;
+
+      return ((_this$project6 = this.project) === null || _this$project6 === void 0 ? void 0 : (_this$project6$docume = _this$project6.document_data) === null || _this$project6$docume === void 0 ? void 0 : _this$project6$docume.beneficiaries) || [];
     }
   },
   methods: {
@@ -158,7 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.check[data-v-5e805de0]{\n  color:red\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.ownership[data-v-5e805de0]{\n  padding: 0;\n  margin: 0 0 10px;\n  list-style: none;\n}\n.check[data-v-5e805de0]{\n  color:red\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21743,7 +21753,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("p", [
-        _c("b", [
+        _c("b", { staticClass: "preview-field" }, [
           _vm._v(
             _vm._s(_vm.moment(_vm.document_created_at).format("MMMM D, YYYY"))
           )
@@ -21752,11 +21762,20 @@ var render = function() {
       _vm._v(" "),
       _c("div", [
         _c("span", [_vm._v("To: ")]),
-        _vm._v(
-          "BOARD OF TRUSTEES\n    " +
-            _vm._s(_vm.trust_name) +
-            "\n    7512 Dr. Phillips Blvd. Suite #50-185\n    Orlando, Florida, USA\n  "
-        )
+        _vm._v(" "),
+        _c("div", { staticStyle: { margin: "-24px 0 20px 40px" } }, [
+          _c("b", [_vm._v("BOARD OF TRUSTEES ")]),
+          _c("br"),
+          _vm._v(" "),
+          _c("b", { staticClass: "preview-field" }, [
+            _vm._v(_vm._s(_vm.trust_name))
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v("\n      7512 Dr. Phillips Blvd. Suite #50-185"),
+          _c("br"),
+          _vm._v("\n      Orlando, Florida, USA\n    ")
+        ])
       ]),
       _vm._v(" "),
       _c("p", [
@@ -21773,16 +21792,35 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.trust_name))]),
+      _c("p", { staticClass: "text-center preview-field" }, [
+        _vm._v(_vm._s(_vm.trust_name))
+      ]),
       _vm._v(" "),
       _c("p", [
         _vm._v(
           "to be signed on or after this date, directing you, the Board of Trustees, to make the initial issue of the one hundred (100) Units of Beneficial Ownership to the following entity(ies):"
         )
       ]),
-      _vm._v(
-        "\n\n\n  Kaitlyn Woodard       - CERTIFICATE 001 - 25 UNITS of Beneficial Ownership\n  Kira Woodard          - CERTIFICATE 002 - 25 UNITS of Beneficial Ownership\n  Tyler Woodard         - CERTIFICATE 003 - 25 UNITS of Beneficial Ownership\n  Klarity Woodard       - CERTIFICATE 004 - 25 UNITS of Beneficial Ownership\n\n  "
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "ownership" },
+        _vm._l(_vm.beneficiaries, function(beneficiary, index) {
+          return _c("li", { key: index }, [
+            _vm._v(
+              "\n      " +
+                _vm._s(beneficiary.name) +
+                " - CERTIFICATE " +
+                _vm._s((index + 1).toString().padStart(3, "0")) +
+                " - " +
+                _vm._s(beneficiary.units) +
+                " UNITS of Beneficial Ownership\n    "
+            )
+          ])
+        }),
+        0
       ),
+      _vm._v(" "),
       _c("p", [_vm._v("I thank you for your attention to this matter.")]),
       _vm._v(" "),
       _c("p", [_vm._v("Respectfully,")]),

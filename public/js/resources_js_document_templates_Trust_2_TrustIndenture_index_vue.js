@@ -484,6 +484,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+var converter = __webpack_require__(/*! number-to-words-en */ "./node_modules/number-to-words-en/numberToWords.min.js");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     client: {
@@ -502,9 +505,9 @@ __webpack_require__.r(__webpack_exports__);
       return ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$documen = _this$project.document_data) === null || _this$project$documen === void 0 ? void 0 : _this$project$documen.document_created_at) || new Date();
     },
     first_trustee: function first_trustee() {
-      var _this$project2, _this$project2$docume, _this$client, _this$client2;
+      var _this$project2, _this$project2$docume, _this$project2$docume2, _this$client, _this$client2;
 
-      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : _this$project2$docume.first_trustee) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
+      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : (_this$project2$docume2 = _this$project2$docume.trustees) === null || _this$project2$docume2 === void 0 ? void 0 : _this$project2$docume2.first[0]) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
     },
     trust_name: function trust_name() {
       var _this$project3, _this$project3$docume, _this$project4;
@@ -515,36 +518,18 @@ __webpack_require__.r(__webpack_exports__);
       var _this$project5, _this$project5$docume;
 
       return (_this$project5 = this.project) === null || _this$project5 === void 0 ? void 0 : (_this$project5$docume = _this$project5.document_data) === null || _this$project5$docume === void 0 ? void 0 : _this$project5$docume.settlor;
+    },
+    term_of_trust: function term_of_trust() {
+      var _this$project6, _this$project6$docume;
+
+      return (_this$project6 = this.project) === null || _this$project6 === void 0 ? void 0 : (_this$project6$docume = _this$project6.document_data) === null || _this$project6$docume === void 0 ? void 0 : _this$project6$docume.term_of_trust;
     }
   },
   methods: {
-    moment: (moment__WEBPACK_IMPORTED_MODULE_0___default())
+    moment: (moment__WEBPACK_IMPORTED_MODULE_0___default()),
+    toWords: converter.toWords
   }
 });
-
-/***/ }),
-
-/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css&":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.check[data-v-1f6cb4b7]{\n  color:red\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
 
 /***/ }),
 
@@ -21982,33 +21967,21 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./node_modules/number-to-words-en/numberToWords.min.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/number-to-words-en/numberToWords.min.js ***!
+  \**************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_1f6cb4b7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css&");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_1f6cb4b7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_1f6cb4b7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/*!
+ * Number-To-Words util
+ * @version v1.2.5
+ * @link https://github.com/marlun78/number-to-words
+ * @author Martin Eneqvist (https://github.com/marlun78)
+ * @contributors Aleksey Pilyugin (https://github.com/pilyugin),Jeremiah Hall (https://github.com/jeremiahrhall),Adriano Melo (https://github.com/adrianomelo),dmrzn (https://github.com/dmrzn),Lowell Stewart (https://github.com/opendocx)
+ * @license MIT
+ */
+!function(){"use strict";var e="object"==typeof self&&self.self===self&&self||"object"==typeof __webpack_require__.g&&__webpack_require__.g.global===__webpack_require__.g&&__webpack_require__.g||this,t=9007199254740991;function s(e){return!("number"!=typeof e||e!=e||e===1/0||e===-1/0)}function f(e){return"number"==typeof e&&Math.abs(e)<=t}var n=/(hundred|thousand|(m|b|tr|quadr)illion)$/,o=/teen$/,r=/y$/,i=/(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$/,a={zero:"zeroth",one:"first",two:"second",three:"third",four:"fourth",five:"fifth",six:"sixth",seven:"seventh",eight:"eighth",nine:"ninth",ten:"tenth",eleven:"eleventh",twelve:"twelfth"};function l(e){return n.test(e)||o.test(e)?e+"th":r.test(e)?e.replace(r,"ieth"):i.test(e)?e.replace(i,u):e}function u(e,t){return a[t]}var h=10,v=100,m=1e3,p=1e6,d=1e9,g=1e12,b=1e15,y=9007199254740992,c=["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"],w=["zero","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];function x(e,t){var n,o=!1;"object"==typeof t&&t?("string"!=typeof t.negativePrefix&&(t.negativePrefix="minus"),t.useCommas=Boolean(t.useCommas)):(o=t,t={useCommas:!0,negativePrefix:"minus"});var r=parseInt(e,10);if(!s(r))throw new TypeError("Not a finite number: "+e+" ("+typeof e+")");if(!f(r))throw new RangeError("Input is not a safe number; it’s either too large or too small.");return n=function e(t,n){var o,r,i,s=arguments[2],f=n.useCommas?",":"";if(0===t)return s?(i=s.join(" "),n.useCommas&&(i=i.replace(/,$/,"")),i):"zero";s||(s=[]);t<0&&(s.push(n.negativePrefix),t=Math.abs(t));t<20?(o=0,r=c[t]):t<v?(o=t%h,r=w[Math.floor(t/h)],o&&(r+="-"+c[o],o=0)):t<m?(o=t%v,r=e(Math.floor(t/v),n)+" hundred"):t<p?(o=t%m,r=e(Math.floor(t/m),n)+" thousand"+f):t<d?(o=t%p,r=e(Math.floor(t/p),n)+" million"+f):t<g?(o=t%d,r=e(Math.floor(t/d),n)+" billion"+f):t<b?(o=t%g,r=e(Math.floor(t/g),n)+" trillion"+f):t<=y&&(o=t%b,r=e(Math.floor(t/b),n)+" quadrillion"+f);s.push(r);return e(o,n,s)}(r,t),o?l(n):n}var M={toOrdinal:function(e){var t=parseInt(e,10);if(!s(t))throw new TypeError("Not a finite number: "+e+" ("+typeof e+")");if(!f(t))throw new RangeError("Input is not a safe number; it’s either too large or too small.");var n=String(t),o=Math.abs(t%100),r=11<=o&&o<=13,i=n.charAt(n.length-1);return n+(r?"th":"1"===i?"st":"2"===i?"nd":"3"===i?"rd":"th")},toWords:x,toWordsOrdinal:function(e,t){return l(x(e,t))}}; true?( true&&module.exports&&(exports=module.exports=M),exports.numberToWords=M):0}();
 
 /***/ }),
 
@@ -22025,17 +21998,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _index_vue_vue_type_template_id_1f6cb4b7_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=1f6cb4b7&scoped=true& */ "./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=template&id=1f6cb4b7&scoped=true&");
 /* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=script&lang=js&");
-/* harmony import */ var _index_vue_vue_type_style_index_0_id_1f6cb4b7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css& */ "./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
-;
 
 
 /* normalize component */
-
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _index_vue_vue_type_template_id_1f6cb4b7_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
   _index_vue_vue_type_template_id_1f6cb4b7_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -22066,19 +22037,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css&":
-/*!***********************************************************************************************************************************!*\
-  !*** ./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css& ***!
-  \***********************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_1f6cb4b7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/2_TrustIndenture/index.vue?vue&type=style&index=0&id=1f6cb4b7&scoped=true&lang=css&");
-
 
 /***/ }),
 
@@ -22142,12 +22100,14 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-center text-h3" }, [
-        _vm._v("\n    " + _vm._s(_vm.trust_name) + "\n  ")
+        _c("span", { staticClass: "preview-field" }, [
+          _vm._v(_vm._s(_vm.trust_name))
+        ])
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-center" }, [
         _vm._v("\n    Dated: "),
-        _c("b", [
+        _c("b", { staticClass: "preview-field" }, [
           _vm._v(
             _vm._s(_vm.moment(_vm.document_created_at).format("D YYYY MMMM "))
           )
@@ -22166,7 +22126,7 @@ var render = function() {
         _vm._v(
           " Agreement, Conveyance and Acceptance is created and entered into this\n    "
         ),
-        _c("b", [
+        _c("b", { staticClass: "preview-field" }, [
           _vm._v(
             _vm._s(
               _vm
@@ -22176,7 +22136,9 @@ var render = function() {
           )
         ]),
         _vm._v(", between "),
-        _c("b", [_vm._v(_vm._s(_vm.settlor))]),
+        _c("b", { staticClass: "preview-field" }, [
+          _vm._v(_vm._s(_vm.settlor))
+        ]),
         _vm._v(", hereinafter called the SETTLOR and\n    "),
         _c("b", [_vm._v(_vm._s(_vm.first_trustee))]),
         _vm._v(
@@ -22195,7 +22157,9 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-center text-break" }, [
-        _c("b", [_vm._v(_vm._s(_vm.trust_name))])
+        _c("b", { staticClass: "preview-field" }, [
+          _vm._v(_vm._s(_vm.trust_name))
+        ])
       ]),
       _vm._v(" "),
       _c("p", [
@@ -22232,19 +22196,40 @@ var render = function() {
         _vm._v("\n    TERM & INTENT OF TRUST\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(0),
+      _c("ul", [
+        _c("li", [
+          _vm._v("\n      1. The Trust shall exist for a term of "),
+          _c("span", { staticClass: "preview-field" }, [
+            _vm._v(
+              _vm._s(_vm.toWords(_vm.term_of_trust)) +
+                " (" +
+                _vm._s(_vm.term_of_trust) +
+                ")"
+            )
+          ]),
+          _vm._v(
+            "  years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the TRUST's expiration, extend its term via an appropriate Meeting Minute.\n    "
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _vm._v(
+            "\n      2. The organizational purpose of this TRUST is to sustain and improve this TRUST proactively through any means or business so that the BENEFICIARY may possess the things of life sufficient to provide for growth, health, protection, education, refinement, pro-creation, recreation, welfare, expansion, preservation and continuation and not simply an arrangement to protect and conserve the property for the BENEFICIARY.\n    "
+          )
+        ])
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    SETTLOR'S PROVISIONS & RESPONSIBILITIES\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    TRUSTEE'S PROVISIONS & RESPONSIBILITIES\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v(
@@ -22252,91 +22237,91 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(3),
+      _vm._m(2),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    SUCCESSOR TRUSTEES\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(4),
+      _vm._m(3),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    TRUSTEE REMOVAL FROM OFFICE & RESIGNATION\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(5),
+      _vm._m(4),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    DAILY BUSINESS ACTIVITIES\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(6),
+      _vm._m(5),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    CERTIFICATES OF BENEFICIAL OWNERSHIP OF TRUST ASSETS\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(7),
+      _vm._m(6),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    TRANSFER OF CERTIFICATES OF BENEFICIAL OWNERSHIP\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(8),
+      _vm._m(7),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    TRANSFER OF CERTIFICATES UPON DEATH OF BENEFICIARY\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(9),
+      _vm._m(8),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    DISTRIBUTION OF TRUST ASSETS\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(10),
+      _vm._m(9),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center check" }, [
         _vm._v("\n    COMMUNITY PROPERTY EXCLUSION\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(11),
+      _vm._m(10),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    JURISDICTION, DOMICILE ADDRESS & MAILING ADDRESS\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(12),
+      _vm._m(11),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    TERMINATION OF TRUST\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(13),
+      _vm._m(12),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    PRIVACY STRICTLY ENFORCED\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(14),
+      _vm._m(13),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    BOARD OF TRUSTEE MEETINGS\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(15),
+      _vm._m(14),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center " }, [
         _vm._v("\n    MISCELLANEOUS\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(16),
+      _vm._m(15),
       _vm._v(" "),
       _c("div", { staticClass: "grey lighten-2 pa-2 text-center " }, [
         _vm._v("\n    ACCEPTANCE BY PARTIES\n  ")
       ]),
       _vm._v(" "),
-      _vm._m(17),
+      _vm._m(16),
       _vm._v(" "),
       _c(
         "v-container",
@@ -22484,24 +22469,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", [
-      _c("li", [
-        _vm._v(
-          "\n      1. The Trust shall exist for a term of ninety-nine (99) years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the TRUST's expiration, extend its term via an appropriate Meeting Minute.\n    "
-        )
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v(
-          "\n      2. The organizational purpose of this TRUST is to sustain and improve this TRUST proactively through any means or business so that the BENEFICIARY may possess the things of life sufficient to provide for growth, health, protection, education, refinement, pro-creation, recreation, welfare, expansion, preservation and continuation and not simply an arrangement to protect and conserve the property for the BENEFICIARY.\n    "
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

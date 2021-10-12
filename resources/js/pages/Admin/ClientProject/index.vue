@@ -1,33 +1,30 @@
 <template>
-
-
-  <div >
-    <v-app-bar >
-
+  <div>
+    <v-app-bar>
       <inertia-link href="/admin/clients" as="button">
         <v-icon>mdi-menu-left</v-icon>
       </inertia-link>
 
       <v-toolbar-title>
-        <small>{{ client.first_name }} {{ client.last_name }}</small> {{ project.name }} ({{pascelToTitleCase(project.type)}})
+        <small>{{ client.first_name }} {{ client.last_name }}</small> {{ project.name }} ({{ pascelToTitleCase(project.type) }})
       </v-toolbar-title>
 
       <v-spacer/>
 
       <v-select
-          max-width="200"
-          v-model="currentDocument"
-          :items="templates" />
+        v-model="currentDocument"
+        max-width="200"
+        :items="templates"/>
       <VueFileToolbarMenu :content="menu" class="bar"/>
 
       <!-- confirm delete dialog -->
       <v-dialog v-model="showDelete" max-width="500">
         <template #activator="{ on, attrs }">
           <v-btn
-              text
-              v-bind="attrs"
-              v-on="on"
-              @click="showDelete = !showDelete">
+            text
+            v-bind="attrs"
+            v-on="on"
+            @click="showDelete = !showDelete">
             <v-icon>mdi-delete</v-icon>
           </v-btn>
         </template>
@@ -45,26 +42,23 @@
     </v-app-bar>
 
 
-
-    <v-container fluid id="document-container">
+    <v-container id="document-container" fluid>
       <v-row no-gutters>
-        <v-col cols="12" sm="12" md="4" >
+        <v-col cols="12" sm="12" md="4">
           <component :is="content[0].wizard"
                      :project.sync="project"
                      :client.sync="client"
                      @updateProject="onUpdateProject"/>
-
         </v-col>
         <v-col cols="12" sm="12" md="8">
           <VueDocumentEditor
-              v-if="content"
-              ref="editor"
-              class="editor" :content.sync="content"
-              :overlay="null"
-              :zoom="zoom"
-              :display="display"/>
+            v-if="content"
+            ref="editor"
+            class="editor" :content.sync="content"
+            :overlay="null"
+            :zoom="zoom"
+            :display="display"/>
         </v-col>
-
       </v-row>
     </v-container>
   </div>
@@ -73,10 +67,10 @@
 <script>
   import VueDocumentEditor from 'vue-document-editor';
   import VueFileToolbarMenu from 'vue-file-toolbar-menu';
-  import Admin from '../../../layouts/Admin/Layout';
+  import Admin from '@/layouts/Admin/Layout';
 
 
-  import {pascelToTitleCase} from '../../../helper';
+  import {pascelToTitleCase} from '@/helper';
 
   export default {
     layout: Admin,
@@ -102,15 +96,14 @@
     },
     computed: {
 
-      content(){
-
+      content() {
         console.log(this.currentDocument);
 
         return [{
           template: () => import(`../../../document_templates/${this.project.type}/${this.currentDocument}`),
           wizard: () => import(`../../../document_templates/${this.project.type}/Wizard`),
-          props: {client: this.client, project: this.project},
-        }]
+          props: {client: this.client, project: this.project}
+        }];
       },
 
 

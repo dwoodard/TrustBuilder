@@ -18,11 +18,11 @@
     </p>
 
     <p class="text-center text-h3">
-      {{ trust_name }}
+      <span class="preview-field">{{ trust_name }}</span>
     </p>
 
     <p class="text-center">
-      Dated: <b>{{ moment(document_created_at).format('D YYYY MMMM ') }}</b>
+      Dated: <b class="preview-field">{{ moment(document_created_at).format('D YYYY MMMM ') }}</b>
     </p>
 
     <div style="page-break-after: always"></div>
@@ -33,7 +33,7 @@
 
     <p>
       This <span>TRUST INDENTURE</span> Agreement, Conveyance and Acceptance is created and entered into this
-      <b>{{ moment(document_created_at).format('Do [day of] MMMM [A.D.], YYYY') }}</b>, between <b>{{ settlor }}</b>, hereinafter called the SETTLOR and
+      <b class="preview-field">{{ moment(document_created_at).format('Do [day of] MMMM [A.D.], YYYY') }}</b>, between <b class="preview-field">{{ settlor }}</b>, hereinafter called the SETTLOR and
       <b>{{ first_trustee }}</b>, hereinafter called the TRUSTEE and also known as the FIRST TRUSTEE, for the sole benefit of one or more BENEFICIARIES, who shall be named below in
       <b>Schedule B</b> & <b>Meeting Minute Number 2</b>, attached hereto.
     </p>
@@ -43,7 +43,7 @@
     </p>
 
     <p class="text-center text-break">
-      <b>{{ trust_name }}</b>
+      <b class="preview-field">{{ trust_name }}</b>
     </p>
 
     <p>This entity, being domiciled in the jurisdiction of the Republic of Florida, pursuant to Florida Statute 609.01, within the united States of America, shall be managed by the BOARD acting in a fiduciary capacity for the use and benefit of the BENEFICIARY.</p>
@@ -70,7 +70,7 @@
 
     <ul>
       <li>
-        1. The Trust shall exist for a term of ninety-nine (99) years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the TRUST's expiration, extend its term via an appropriate Meeting Minute.
+        1. The Trust shall exist for a term of <span class="preview-field">{{ toWords(term_of_trust) }} ({{ term_of_trust }})</span>  years from the date of inception (effective date of this Agreement) and the BOARD may, at any time before the TRUST's expiration, extend its term via an appropriate Meeting Minute.
       </li>
       <li>
         2. The organizational purpose of this TRUST is to sustain and improve this TRUST proactively through any means or business so that the BENEFICIARY may possess the things of life sufficient to provide for growth, health, protection, education, refinement, pro-creation, recreation, welfare, expansion, preservation and continuation and not simply an arrangement to protect and conserve the property for the BENEFICIARY.
@@ -471,6 +471,8 @@
 <script>
   import moment from 'moment';
 
+  const converter = require('number-to-words-en');
+
   export default {
     props: {
       client: {
@@ -487,23 +489,25 @@
         return this.project?.document_data?.document_created_at || new Date();
       },
       first_trustee() {
-        return this.project?.document_data?.first_trustee || `${this?.client?.first_name} ${this?.client?.last_name}`;
+        return this.project?.document_data?.trustees?.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
       },
       trust_name() {
         return this.project?.document_data?.trust_name || this?.project?.name;
       },
       settlor() {
         return this.project?.document_data?.settlor;
+      },
+      term_of_trust() {
+        return this.project?.document_data?.term_of_trust;
       }
     },
     methods: {
-      moment
+      moment,
+      toWords: converter.toWords
     }
   };
 </script>
 
 <style scoped>
-.check{
-  color:red
-}
+
 </style>

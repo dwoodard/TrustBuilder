@@ -4,15 +4,18 @@
     <h4 class="mb-10">SETTLOR'S STATEMENT OF WISHES</h4>
 
     <p>
-      <b>{{ moment(document_created_at).format('MMMM D, YYYY') }}</b>
+      <b class="preview-field">{{ moment(document_created_at).format('MMMM D, YYYY') }}</b>
     </p>
 
 
     <div>
-      <span>To: </span>BOARD OF TRUSTEES
-      {{ trust_name }}
-      7512 Dr. Phillips Blvd. Suite #50-185
-      Orlando, Florida, USA
+      <span>To: </span>
+      <div style="margin: -24px 0 20px 40px;">
+        <b>BOARD OF TRUSTEES </b><br/>
+        <b class="preview-field">{{ trust_name }}</b> <br/>
+        7512 Dr. Phillips Blvd. Suite #50-185<br/>
+        Orlando, Florida, USA
+      </div>
     </div>
 
 
@@ -22,15 +25,17 @@
 
     <p>I am writing this letter as my statement of record, which is in accordance with the Declaration of Trust of:</p>
 
-    <p>{{ trust_name }}</p>
+    <p class="text-center preview-field">{{ trust_name }}</p>
 
     <p>to be signed on or after this date, directing you, the Board of Trustees, to make the initial issue of the one hundred (100) Units of Beneficial Ownership to the following entity(ies):</p>
 
 
-    Kaitlyn Woodard       - CERTIFICATE 001 - 25 UNITS of Beneficial Ownership
-    Kira Woodard          - CERTIFICATE 002 - 25 UNITS of Beneficial Ownership
-    Tyler Woodard         - CERTIFICATE 003 - 25 UNITS of Beneficial Ownership
-    Klarity Woodard       - CERTIFICATE 004 - 25 UNITS of Beneficial Ownership
+    <ul class="ownership">
+      <li v-for="(beneficiary, index) in beneficiaries" :key="index" class="">
+        {{ beneficiary.name }} - CERTIFICATE {{ (index+1).toString().padStart(3,"0") }} - {{ beneficiary.units }} UNITS of Beneficial Ownership
+      </li>
+    </ul>
+
 
     <p>I thank you for your attention to this matter.</p>
 
@@ -104,13 +109,16 @@
         return this.project?.document_data?.document_created_at || new Date();
       },
       first_trustee() {
-        return this.project?.document_data?.first_trustee || `${this?.client?.first_name} ${this?.client?.last_name}`;
+        return this.project?.document_data?.trustees.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
       },
       trust_name() {
         return this.project?.document_data?.trust_name || this?.project?.name;
       },
       settlor() {
         return this.project?.document_data?.settlor;
+      },
+      beneficiaries() {
+        return this.project?.document_data?.beneficiaries || [];
       }
     },
     methods: {
@@ -120,6 +128,11 @@
 </script>
 
 <style scoped>
+.ownership{
+  padding: 0;
+  margin: 0 0 10px;
+  list-style: none;
+}
 .check{
   color:red
 }

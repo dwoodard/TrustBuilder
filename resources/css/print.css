@@ -1,24 +1,38 @@
-@media print
-{
+@media print {
+
+    .preview-field {
+        color: #000000;
+    }
+
     .break-before {
         clear: both;
         page-break-after: always;
     }
+
     .break-after {
         clear: both;
         page-break-after: always;
     }
 
     @page {
-        size:8.5in 11in;
-        margin: 2cm
+        size: 8.5in 11in;
+        margin: 1cm;
     }
+
+
 }
 
 
+#trust_certificates {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
 @-moz-document url-prefix() {
-    @media print {
-    {
+    @media print { {
         display: block;
     }
         --wrap {

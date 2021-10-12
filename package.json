@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "moment": "^2.29.1",
-    "number-to-words": "^1.2.4",
+    "number-to-words-en": "^1.2.5",
     "v-jsoneditor": "^1.4.5",
     "vue-document-editor": "^1.2.5",
     "vue-file-toolbar-menu": "^1.3.4"
