@@ -183,6 +183,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -22024,6 +22029,8 @@ var render = function() {
           "\n    The FIRST TRUSTEE hereby waives the requirement to establish an Independent Contractor Agreement with the SECONDARY TRUSTEEs since the role has already been defined. However, the SECONDARY TRUSTEE shall act in all respects as an Independent Contractor with the Trust and hereby denies an employee / employer relationship with same.\n  "
         )
       ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "break-before" }),
       _vm._v(" "),
       _c("b", [_vm._v("MINUTE NO. 7")]),
       _vm._v(

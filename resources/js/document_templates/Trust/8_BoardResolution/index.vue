@@ -66,13 +66,12 @@
       </ul>
     </div>
 
-
     <p>
       As a signatory to said account(s), the officer(s) shall be expected to retain their active duties unless and until one or more of the following events occurs:
     </p>
 
 
-    <div class="ml-16">
+    <div class="ml-5">
       <ul style="list-style: lower-alpha">
         <li>Medically certified death of said officer.</li>
         <li>Certified medical incapacitation of said officer.</li>
@@ -84,7 +83,7 @@
     </div>
 
 
-    <p class="break-before">
+    <p>
       A single or dual signature requirement (if applicable) to affect any of the foregoing authorizations shall be determined by the officer(s) at the time said account is opened.
     </p>
 
@@ -117,7 +116,7 @@
       </v-row>
 
 
-      <p class="text-center mb-10">ORIGINAL SIGNATURE & DATE IN BLUE INK</p>
+      <p class="text-center mb-1">ORIGINAL SIGNATURE & DATE IN BLUE INK</p>
 
 
       <v-row>

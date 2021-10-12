@@ -169,7 +169,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -21935,7 +21934,7 @@ var render = function() {
       _vm._v(" "),
       _vm._m(3),
       _vm._v(" "),
-      _c("p", { staticClass: "break-before" }, [
+      _c("p", [
         _vm._v(
           "\n    A single or dual signature requirement (if applicable) to affect any of the foregoing authorizations shall be determined by the officer(s) at the time said account is opened.\n  "
         )
@@ -22006,7 +22005,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("p", { staticClass: "text-center mb-10" }, [
+          _c("p", { staticClass: "text-center mb-1" }, [
             _vm._v("ORIGINAL SIGNATURE & DATE IN BLUE INK")
           ]),
           _vm._v(" "),
@@ -22129,7 +22128,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-16" }, [
+    return _c("div", { staticClass: "ml-5" }, [
       _c("ul", { staticStyle: { "list-style": "lower-alpha" } }, [
         _c("li", [_vm._v("Medically certified death of said officer.")]),
         _vm._v(" "),

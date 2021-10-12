@@ -65,6 +65,11 @@
     <p>
       The FIRST TRUSTEE hereby waives the requirement to establish an Independent Contractor Agreement with the SECONDARY TRUSTEEs since the role has already been defined. However, the SECONDARY TRUSTEE shall act in all respects as an Independent Contractor with the Trust and hereby denies an employee / employer relationship with same.
     </p>
+
+
+    <div class="break-before"></div>
+
+
     <b>MINUTE NO. 7</b>: It is in the best interest of the TRUST to continue operation in as smooth a manner as possible, even if any TRUSTEE is unable to continue their duties due to death, resignation, permanent incapacitation or removal from office. Should this happen, the BOARD hereby nominates the following named SUCCESSOR TRUSTEE(s) to immediately take the place of the following named TRUSTEE in the event that the BOARD desires to fill the vacancy so created, rather than to reduce the number of TRUSTEES on the BOARD:
 
     <div class="pa-10">
