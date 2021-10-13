@@ -22146,7 +22146,7 @@ var render = function() {
         ),
         _c("b", [_vm._v("Schedule B")]),
         _vm._v(" & "),
-        _c("b", [_vm._v("Meeting Minute Number 2")]),
+        _c("b", [_vm._v("Meeting #001 Minute Number 2")]),
         _vm._v(", attached hereto.\n  ")
       ]),
       _vm._v(" "),
@@ -22281,7 +22281,7 @@ var render = function() {
       _vm._v(" "),
       _vm._m(9),
       _vm._v(" "),
-      _c("div", { staticClass: "grey lighten-2 pa-2 text-center check" }, [
+      _c("div", { staticClass: "grey lighten-2 pa-2 text-center" }, [
         _vm._v("\n    COMMUNITY PROPERTY EXCLUSION\n  ")
       ]),
       _vm._v(" "),
@@ -22530,7 +22530,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("li", [
         _vm._v(
-          "\n      11. The BOARD accepts said conveyed assets into the name and ownership of the TRUST and not into any TRUSTEE's name and the BOARD presents its own consideration for the TRUST Agreement. The BOARD presents its expertise and knowledge in business and/or as a Trust Manager and shall administer the SETTLOR's wishes in establishing this artificial entity and maintain it for the sole benefit of the BENEFICIARY who is listed in Meeting Minute Number 2 / Schedule B, hereto attached.\n    "
+          "\n      11. The BOARD accepts said conveyed assets into the name and ownership of the TRUST and not into any TRUSTEE's name and the BOARD presents its own consideration for the TRUST Agreement. The BOARD presents its expertise and knowledge in business and/or as a Trust Manager and shall administer the SETTLOR's wishes in establishing this artificial entity and maintain it for the sole benefit of the BENEFICIARY(IES) who is listed in Meeting #001 Minute Number 2 / Schedule B, hereto attached.\n    "
         )
       ]),
       _vm._v(" "),
@@ -22552,49 +22552,49 @@ var staticRenderFns = [
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "check" }, [
+      _c("li", [
         _vm._v(
           "\n      15. The BOARD shall have sole authority to determine what shall constitute principal of this TRUST, income therefrom, net income distributable under the terms of this TRUST INDENTURE to the BENEFICIARY and to determine which costs, taxes and other expenses shall be paid out of the TRUST assets. All such decisions  by the BOARD shall be conclusive.\n    "
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "check" }, [
+      _c("li", [
         _vm._v(
-          "\n      16. The BOARD shall receive reasonable compensation for their services performed. Any BOARD member may hold two or more offices simultaneously within the TRUST and be deserving of such reasonable compensation for all services rendered at the discretion of the BOARD. However, all TRUSTEES, Trust Managers, other titled offices and executives shall have the right to waive any compensation for their services.\n    "
+          "\n      16. The BOARD shall receive reasonable compensation for their services performed. Any BOARD member may hold two or more offices simultaneously within the TRUST and be deserving of such reasonable compensation for all services rendered at the discretion of the BOARD. However, all TRUSTEES, Trust Managers, other titled officers and executives shall have the right to waive any compensation for their services.\n    "
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "check" }, [
+      _c("li", [
         _vm._v(
-          "\n      17. No bond for the faithful performance of duties shall be required of any BOARD member under this TRUST INDENTURE,  nor shall any bond be required of any subsequent member appointed to the BOARD, unless the BOARD, by appropriate Meeting Minute, requires such of any newly appointed BOARD member(s)\n    "
+          "\n      17. No bond for the faithful performance of duties shall be required of any BOARD member under this TRUST INDENTURE,  nor shall any bond be required of any subsequent members appointed to the BOARD, unless the BOARD, by appropriate Meeting Minute, requires such of any newly appointed BOARD member(s).\n    "
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "check" }, [
+      _c("li", [
         _vm._v(
           "\n      18. No member of the BOARD shall possess or exercise a power of administration in a nonfiduciary capacity, nor a power exercisable solely by himself to  vest the corpus or the income therefrom in himself, or any other power, the possession or exercise of which would cause the income of this TRUST to be taxed to any member of the BOARD or to the SETTLOR.\n    "
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "check" }, [
+      _c("li", [
         _vm._v(
-          "\n      19. The BOARD shall, in their fiduciary capacity for this TRUST and not as individuals, assume or incur only such liability as shall attach to the TRUST assets. This liability shall not in any manner jeopardize their individual or personal holdings and for any losses they should suffer for any reason through rendering services as the BOARDthey shall be reimbursed from TRUST assets to the same extent as would non-interested persons, except for any loss sustained by reason of breach of their fiduciary duty.\n    "
+          "\n      19. The BOARD shall, in their fiduciary capacity for this TRUST and not as individuals, assume or incur only such liability as shall attach to the TRUST assets. This liability shall not in any manner jeopardize their individual or personal holdings and for any losses they should suffer for any reason through rendering services as the BOARD, they shall be reimbursed from TRUST assets to the same extent as would non-interested persons, except for any loss sustained by reason of breach of their fiduciary duty.\n    "
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "check" }, [
+      _c("li", [
         _vm._v(
-          "\n      20. The BOARD may assign additional members to this TRUST as they deem necessary and prudent and they may increase or decrease the number of BOARD members as appropriate to the affairs of the TRUST. Said additional members may be necessary for the administration of various tasks associated with this TRUST and not necessarily for additional management decisions unless noted to the contrary in a separate Meeting Minute at the time said additional members are assigned. The appointment term for an additional member is controlled to one (1) year increments and annual appointment renewal may only be authorized by the FIRST TRUSTEE within thirty (30)days or less prior to expiration of said member's appointment.\n    "
+          "\n      20. The BOARD may assign additional members to this TRUST as they deem necessary and prudent and they may increase or decrease the number of BOARD members as appropriate to the affairs of the TRUST. Said additional members may be necessary for the administration of various tasks associated with this TRUST and not necessarily for additional management decisions unless noted to the contrary in a separate Meeting Minute at the time said additional members are assigned. The appointment term for an additional member is controlled to one (1) year increments and can be withdrawn at any time by the FIRST TRUSTEE in a future Meeting Minute. An Annual appointment renewal may only be authorized by the FIRST TRUSTEE within thirty (30) days or less prior to expiration of said member's appointment.\n    "
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "check" }, [
+      _c("li", [
         _vm._v(
           "\n      21. All additional TRUSTEES shall be referred to as SECONDARY TRUSTEES. Unless further clarified at the time of their appointment, the FIRST TRUSTEE shall from time-to-time designate specific tasks, roles, duties and/or authorities for which the SECONDARY TRUSTEE shall be consulted or kept apprised.\n    "
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "check" }, [
+      _c("li", [
         _vm._v(
           "\n      22. All decisions for the management of this TRUST need not be unanimous if more than on TRUSTEE is on the BOARD unless noted to the contrary in this TRUST INDENTURE or in a subsequent Meeting Minute. The FIRST TRUSTEE's decision shall always take priority over any other title if there is dissent. Only a FIRST TRUSTEE can make a decision with their sole signature unless that specific authority is additionally passed down to another title / person on the BOARD in writing (Meeting Minute, Trust Resolution or otherwise).\n    "
         )
@@ -22644,7 +22644,7 @@ var staticRenderFns = [
     return _c("ul", [
       _c("li", [
         _vm._v(
-          "\n      28. SUCCESSOR TRUSTEES must be named within the first ten (10) Trust Meeting Minutes by the BOARD and said list of preferences shall be strictly adhere to and can only be modified by a FIRST TRUSTEE.\n    "
+          "\n      28. SUCCESSOR TRUSTEES must be named within the first ten (10) Trust Meeting Minutes by the BOARD and said list of preferences shall be strictly adhered to and can only be modified by a FIRST TRUSTEE.\n    "
         )
       ]),
       _vm._v(" "),
@@ -22692,13 +22692,13 @@ var staticRenderFns = [
     return _c("ul", [
       _c("li", [
         _vm._v(
-          "\n      34. The BOARD shall open, maintain or close any bank accounts as necessary to receive, hold or transfer any funds for the use by the BOARD and for the benefit of the BENEFICIARY.\n    "
+          "\n      34. The BOARD shall open, maintain or close any bank accounts as necessary to receive, hold or transfer any funds for the use by the BOARD and for the benefit of the BENEFICIARY(IES).\n    "
         )
       ]),
       _vm._v(" "),
       _c("li", [
         _vm._v(
-          "\n      35. The BOARD may purchase, sell, invest, reinvest, lease, rent, mortgage, insure, repair or improve, at the BOARD's sole discretion, any personal, intangible or real property for the use by the BOARD and for the benefit of the BENEFICIARY.\n    "
+          "\n      35. The BOARD may purchase, sell, invest, reinvest, lease, rent, mortgage, insure, repair or improve, at the BOARD's sole discretion, any personal, intangible or real property for the use by the BOARD and for the benefit of the BENEFICIARY(IES).\n    "
         )
       ]),
       _vm._v(" "),
@@ -22893,10 +22893,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "check" }, [
+    return _c("ul", [
       _c("li", [
         _vm._v(
-          "64. The proportionate share of distributed assets to which each BENEFICIARY has a beneficial interest is not discretionary, but is determined solely by the number of UNITES stated on the CERTIFICATE held on their behalf."
+          "64. The proportionate share of distributed assets to which each BENEFICIARY has a beneficial interest is not discretionary, but is determined solely by the number of UNITS stated on the CERTIFICATE held on their behalf."
         )
       ]),
       _vm._v(" "),
@@ -22920,7 +22920,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("li", [
         _vm._v(
-          "68. Any decision of the BOARD to distribute or not distribute, or as to the sum of any such advance, shall be final."
+          "68. Any decision of the BOARD to distribute or not to distribute, or as to the sum of any such advance, shall be final."
         )
       ])
     ])
@@ -22929,10 +22929,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "check" }, [
+    return _c("ul", [
       _c("li", [
         _vm._v(
-          "69. No accumulation or distribution of TRUST assets or future benefit (hereafter BENEFIT) devolving on any BENEFICIARY under the TRUST terms shall form or constitute a porrtion of any cummunal or joint estate of such BENEFICIARY, but shall instead be and remain the sole, separate and exclusive property of such BENEFICIARY. Should such BENEFICIARY be married or marry in community of property, then the BENEFICIARY's rights to any BENEFIT shall be expressly excluded from the community. A prenuptial agreement between the BENEFICIARY and the soon-to-be spouse shall not be necessary to withhold the BENEFIT from said community. Such BENEFIT shall also be free from the interference, control or marital power of any spouse of such BENEFICIARY. "
+          "69. No accumulation or distribution of TRUST assets or future benefit (hereafter BENEFIT) devolving on any BENEFICIARY under the TRUST terms shall form or constitute a portion of any communal or joint estate of such BENEFICIARY, but shall instead be and remain the sole, separate and exclusive property of such BENEFICIARY. Should such BENEFICIARY be married or marry in community of property, then the BENEFICIARY's rights to any BENEFIT shall be expressly excluded from the community. A prenuptial agreement between the BENEFICIARY and the soon-to-be spouse shall not be necessary to withhold the BENEFIT from said community. Such BENEFIT shall also be free from the interference, control or marital power of any spouse of such BENEFICIARY. "
         )
       ]),
       _vm._v(" "),

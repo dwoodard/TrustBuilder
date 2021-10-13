@@ -24,12 +24,11 @@
     </p>
     <p>
       <b>MINUTE NO. 01</b>: Be it resolved that this Board hereby grants to the following Trust officer, <b class="preview-field">{{ first_trustee }}</b>, <b>Trustee</b>, the
-      <b>Banking Authority</b> to open any new bank account(s) in any institutions that <span class="check">is deemed </span> appropriate, prudent and/or necessary, at
-      <span class="check">Trustee's</span> discretion, <b>at any time within the next twelve (12) months</b> for this Trust or any of its Subsidiaries. The purpose of said directive is to fulfill any strategies that the Board has derived or will derive toward its gainful purpose of establishing and/or accommodating its own growth plans over the lifetime of the Trust. The Trustee's sole decisions may contractually bind this Trust.
+      <b>Banking Authority</b> to open any new bank account(s) in any institutions that they deem appropriate, prudent and/or necessary, at
+      their discretion, <b>at any time within the next twelve (12) months</b> for this Trust or any of its Subsidiaries. The purpose of said directive is to fulfill any strategies that the Board has derived or will derive toward its gainful purpose of establishing and/or accommodating its own growth plans over the lifetime of the Trust. The Trustee's sole decisions may contractually bind this Trust.
     </p>
     <p>
-      Within said institutions, the officer may place any Trust officer into a signatory position, at <span
-        class="check">their</span> own discretion, either at the time of opening of said account, or at a later date as may be pre-arranged with the institution. The following officer(s) may be utilized in any signatory capacity as described above:
+      Within said institutions, the officer may place any Trust officer into a signatory position, at their own discretion, either at the time of opening of said account, or at a later date as may be pre-arranged with the institution. The following officer(s) may be utilized in any signatory capacity as described above:
     </p>
     <p class="text-center">
       <span class="preview-field">{{ first_trustee }}</span>, Trustee
@@ -67,12 +66,11 @@
       A single or dual signature requirement (if applicable) to affect any of the foregoing authorizations shall be determined by the officer(s) at the time said account is opened.
     </p>
     <p>
-      <b>MINUTE NO. 02</b>: Be it resolved that this Board hereby grants to the following Trust officer, <b>{{ first_trustee }}</b>, Trustee, the Authority to setup any new entity(s) in any structure or jurisdiction that
-      <span class="check">is deemed</span> appropriate, prudent and/or necessary, at <span class="check">Trustee's</span> discretion, <b>at any time within the next twelve (12) months</b> for this Trust or any of its Subsidiaries. The purpose of said directive is to fulfill any strategies that the Board has derived or will derive toward its gainful purpose of establishing and/or accommodating its own growth plans over the lifetime of the Trust. The Trustee's sole decisions may contractually bind this Trust.
+      <b>MINUTE NO. 02</b>: Be it resolved that this Board hereby grants to the following Trust officer, <b>{{ first_trustee }}</b>, Trustee, the Authority to setup any new entity(s) in any structure or jurisdiction that they deem appropriate, prudent and/or necessary, at their discretion, <b>at any time within the next twelve (12) months</b> for this Trust or any of its Subsidiaries. The purpose of said directive is to fulfill any strategies that the Board has derived or will derive toward its gainful purpose of establishing and/or accommodating its own growth plans over the lifetime of the Trust. The Trustee's sole decisions may contractually bind this Trust.
     </p>
 
 
-    <p>Within said entity(s), the officer may place any Trust officer or other officer or employee into a signatory position, or other titled position, at <span class="check">Trustee's</span> own discretion, either at the time of the forming of said entity(s), or at a later date as may deemed necessary. The following officer(s) may be utilized in any signatory capacity as described above:</p>
+    <p>Within said entity(s), the officer may place any Trust officer or other officer or employee into a signatory position, or other titled position, at their own discretion, either at the time of the forming of said entity(s), or at a later date as may deemed necessary. The following officer(s) may be utilized in any signatory capacity as described above:</p>
 
     <p class="text-center">
       <span class="preview-field">{{ first_trustee }}</span>, Trustee

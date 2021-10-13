@@ -153,8 +153,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -21786,18 +21784,20 @@ var render = function() {
         _c("b", [_vm._v("Trustee")]),
         _vm._v(", the\n    "),
         _c("b", [_vm._v("Banking Authority")]),
-        _vm._v(" to open any new bank account(s) in any institutions that "),
-        _c("span", { staticClass: "check" }, [_vm._v("is deemed ")]),
-        _vm._v(" appropriate, prudent and/or necessary, at\n    "),
-        _c("span", { staticClass: "check" }, [_vm._v("Trustee's")]),
-        _vm._v(" discretion, "),
+        _vm._v(
+          " to open any new bank account(s) in any institutions that they deem appropriate, prudent and/or necessary, at\n    their discretion, "
+        ),
         _c("b", [_vm._v("at any time within the next twelve (12) months")]),
         _vm._v(
           " for this Trust or any of its Subsidiaries. The purpose of said directive is to fulfill any strategies that the Board has derived or will derive toward its gainful purpose of establishing and/or accommodating its own growth plans over the lifetime of the Trust. The Trustee's sole decisions may contractually bind this Trust.\n  "
         )
       ]),
       _vm._v(" "),
-      _vm._m(2),
+      _c("p", [
+        _vm._v(
+          "\n    Within said institutions, the officer may place any Trust officer into a signatory position, at their own discretion, either at the time of opening of said account, or at a later date as may be pre-arranged with the institution. The following officer(s) may be utilized in any signatory capacity as described above:\n  "
+        )
+      ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-center" }, [
         _c("span", { staticClass: "preview-field" }, [
@@ -21812,7 +21812,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(3),
+      _vm._m(2),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -21820,7 +21820,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(4),
+      _vm._m(3),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -21835,19 +21835,19 @@ var render = function() {
         ),
         _c("b", [_vm._v(_vm._s(_vm.first_trustee))]),
         _vm._v(
-          ", Trustee, the Authority to setup any new entity(s) in any structure or jurisdiction that\n    "
+          ", Trustee, the Authority to setup any new entity(s) in any structure or jurisdiction that they deem appropriate, prudent and/or necessary, at their discretion, "
         ),
-        _c("span", { staticClass: "check" }, [_vm._v("is deemed")]),
-        _vm._v(" appropriate, prudent and/or necessary, at "),
-        _c("span", { staticClass: "check" }, [_vm._v("Trustee's")]),
-        _vm._v(" discretion, "),
         _c("b", [_vm._v("at any time within the next twelve (12) months")]),
         _vm._v(
           " for this Trust or any of its Subsidiaries. The purpose of said directive is to fulfill any strategies that the Board has derived or will derive toward its gainful purpose of establishing and/or accommodating its own growth plans over the lifetime of the Trust. The Trustee's sole decisions may contractually bind this Trust.\n  "
         )
       ]),
       _vm._v(" "),
-      _vm._m(5),
+      _c("p", [
+        _vm._v(
+          "Within said entity(s), the officer may place any Trust officer or other officer or employee into a signatory position, or other titled position, at their own discretion, either at the time of the forming of said entity(s), or at a later date as may deemed necessary. The following officer(s) may be utilized in any signatory capacity as described above:"
+        )
+      ]),
       _vm._v(" "),
       _c("p", { staticClass: "text-center" }, [
         _c("span", { staticClass: "preview-field" }, [
@@ -21862,7 +21862,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(6),
+      _vm._m(4),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -21870,7 +21870,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(7),
+      _vm._m(5),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -21878,7 +21878,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(8),
+      _vm._m(6),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -21964,20 +21964,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "\n    Within said institutions, the officer may place any Trust officer into a signatory position, at "
-      ),
-      _c("span", { staticClass: "check" }, [_vm._v("their")]),
-      _vm._v(
-        " own discretion, either at the time of opening of said account, or at a later date as may be pre-arranged with the institution. The following officer(s) may be utilized in any signatory capacity as described above:\n  "
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("p", { staticClass: "ml-16" }, [
       _c("ul", { staticStyle: { "list-style": "lower-alpha" } }, [
         _c("li", [
@@ -22026,20 +22012,6 @@ var staticRenderFns = [
           _vm._v("Premature dissolution of this Trust by any legal means.")
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "Within said entity(s), the officer may place any Trust officer or other officer or employee into a signatory position, or other titled position, at "
-      ),
-      _c("span", { staticClass: "check" }, [_vm._v("Trustee's")]),
-      _vm._v(
-        " own discretion, either at the time of the forming of said entity(s), or at a later date as may deemed necessary. The following officer(s) may be utilized in any signatory capacity as described above:"
-      )
     ])
   },
   function() {

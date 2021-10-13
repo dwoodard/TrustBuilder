@@ -35,7 +35,7 @@
       This <span>TRUST INDENTURE</span> Agreement, Conveyance and Acceptance is created and entered into this
       <b class="preview-field">{{ moment(document_created_at).format('Do [day of] MMMM [A.D.], YYYY') }}</b>, between <b class="preview-field">{{ settlor }}</b>, hereinafter called the SETTLOR and
       <b>{{ first_trustee }}</b>, hereinafter called the TRUSTEE and also known as the FIRST TRUSTEE, for the sole benefit of one or more BENEFICIARIES, who shall be named below in
-      <b>Schedule B</b> & <b>Meeting Minute Number 2</b>, attached hereto.
+      <b>Schedule B</b> & <b>Meeting #001 Minute Number 2</b>, attached hereto.
     </p>
 
     <p>
@@ -116,7 +116,7 @@
         10. Because the FIRST TRUSTEE may be just one person on the BOARD, in such instance, the words FIRST TRUSTEE or TRUSTEE can also be referred to hereafter as the BOARD. The FIRST TRUSTEE alone is always considered the BOARD but if other titled officers are also on the BOARD, the BOARD does not always only mean the FIRST TRUSTEE.
       </li>
       <li>
-        11. The BOARD accepts said conveyed assets into the name and ownership of the TRUST and not into any TRUSTEE's name and the BOARD presents its own consideration for the TRUST Agreement. The BOARD presents its expertise and knowledge in business and/or as a Trust Manager and shall administer the SETTLOR's wishes in establishing this artificial entity and maintain it for the sole benefit of the BENEFICIARY who is listed in Meeting Minute Number 2 / Schedule B, hereto attached.
+        11. The BOARD accepts said conveyed assets into the name and ownership of the TRUST and not into any TRUSTEE's name and the BOARD presents its own consideration for the TRUST Agreement. The BOARD presents its expertise and knowledge in business and/or as a Trust Manager and shall administer the SETTLOR's wishes in establishing this artificial entity and maintain it for the sole benefit of the BENEFICIARY(IES) who is listed in Meeting #001 Minute Number 2 / Schedule B, hereto attached.
       </li>
       <li> 12. The BOARD is authorized to deal with the SETTLOR "at arm's length," to purchase property or to sell property, but always at fair market value and for adequate and full consideration.  </li>
       <li>
@@ -125,28 +125,28 @@
       <li>
         14. The BOARD shall have all the powers necessary to operate, manage and control this TRUST for the benefit of the BENEFICIARY and shall take any action which it deems necessary and proper to carry out such purposes, provided however, that the BOARD shall not possess any power or take any action contrary to law or inconsistent with the provisions of this TRUST INDENTURE.
       </li>
-      <li class="check">
+      <li>
         15. The BOARD shall have sole authority to determine what shall constitute principal of this TRUST, income therefrom, net income distributable under the terms of this TRUST INDENTURE to the BENEFICIARY and to determine which costs, taxes and other expenses shall be paid out of the TRUST assets. All such decisions  by the BOARD shall be conclusive.
       </li>
-      <li class="check">
-        16. The BOARD shall receive reasonable compensation for their services performed. Any BOARD member may hold two or more offices simultaneously within the TRUST and be deserving of such reasonable compensation for all services rendered at the discretion of the BOARD. However, all TRUSTEES, Trust Managers, other titled offices and executives shall have the right to waive any compensation for their services.
+      <li>
+        16. The BOARD shall receive reasonable compensation for their services performed. Any BOARD member may hold two or more offices simultaneously within the TRUST and be deserving of such reasonable compensation for all services rendered at the discretion of the BOARD. However, all TRUSTEES, Trust Managers, other titled officers and executives shall have the right to waive any compensation for their services.
       </li>
-      <li class="check">
-        17. No bond for the faithful performance of duties shall be required of any BOARD member under this TRUST INDENTURE,  nor shall any bond be required of any subsequent member appointed to the BOARD, unless the BOARD, by appropriate Meeting Minute, requires such of any newly appointed BOARD member(s)
+      <li>
+        17. No bond for the faithful performance of duties shall be required of any BOARD member under this TRUST INDENTURE,  nor shall any bond be required of any subsequent members appointed to the BOARD, unless the BOARD, by appropriate Meeting Minute, requires such of any newly appointed BOARD member(s).
       </li>
-      <li class="check">
+      <li>
         18. No member of the BOARD shall possess or exercise a power of administration in a nonfiduciary capacity, nor a power exercisable solely by himself to  vest the corpus or the income therefrom in himself, or any other power, the possession or exercise of which would cause the income of this TRUST to be taxed to any member of the BOARD or to the SETTLOR.
       </li>
-      <li class="check">
-        19. The BOARD shall, in their fiduciary capacity for this TRUST and not as individuals, assume or incur only such liability as shall attach to the TRUST assets. This liability shall not in any manner jeopardize their individual or personal holdings and for any losses they should suffer for any reason through rendering services as the BOARDthey shall be reimbursed from TRUST assets to the same extent as would non-interested persons, except for any loss sustained by reason of breach of their fiduciary duty.
+      <li>
+        19. The BOARD shall, in their fiduciary capacity for this TRUST and not as individuals, assume or incur only such liability as shall attach to the TRUST assets. This liability shall not in any manner jeopardize their individual or personal holdings and for any losses they should suffer for any reason through rendering services as the BOARD, they shall be reimbursed from TRUST assets to the same extent as would non-interested persons, except for any loss sustained by reason of breach of their fiduciary duty.
       </li>
-      <li class="check">
-        20. The BOARD may assign additional members to this TRUST as they deem necessary and prudent and they may increase or decrease the number of BOARD members as appropriate to the affairs of the TRUST. Said additional members may be necessary for the administration of various tasks associated with this TRUST and not necessarily for additional management decisions unless noted to the contrary in a separate Meeting Minute at the time said additional members are assigned. The appointment term for an additional member is controlled to one (1) year increments and annual appointment renewal may only be authorized by the FIRST TRUSTEE within thirty (30)days or less prior to expiration of said member's appointment.
+      <li>
+        20. The BOARD may assign additional members to this TRUST as they deem necessary and prudent and they may increase or decrease the number of BOARD members as appropriate to the affairs of the TRUST. Said additional members may be necessary for the administration of various tasks associated with this TRUST and not necessarily for additional management decisions unless noted to the contrary in a separate Meeting Minute at the time said additional members are assigned. The appointment term for an additional member is controlled to one (1) year increments and can be withdrawn at any time by the FIRST TRUSTEE in a future Meeting Minute. An Annual appointment renewal may only be authorized by the FIRST TRUSTEE within thirty (30) days or less prior to expiration of said member's appointment.
       </li>
-      <li class="check">
+      <li>
         21. All additional TRUSTEES shall be referred to as SECONDARY TRUSTEES. Unless further clarified at the time of their appointment, the FIRST TRUSTEE shall from time-to-time designate specific tasks, roles, duties and/or authorities for which the SECONDARY TRUSTEE shall be consulted or kept apprised.
       </li>
-      <li class="check">
+      <li>
         22. All decisions for the management of this TRUST need not be unanimous if more than on TRUSTEE is on the BOARD unless noted to the contrary in this TRUST INDENTURE or in a subsequent Meeting Minute. The FIRST TRUSTEE's decision shall always take priority over any other title if there is dissent. Only a FIRST TRUSTEE can make a decision with their sole signature unless that specific authority is additionally passed down to another title / person on the BOARD in writing (Meeting Minute, Trust Resolution or otherwise).
       </li>
       <li>
@@ -179,7 +179,7 @@
 
     <ul>
       <li>
-        28. SUCCESSOR TRUSTEES must be named within the first ten (10) Trust Meeting Minutes by the BOARD and said list of preferences shall be strictly adhere to and can only be modified by a FIRST TRUSTEE.
+        28. SUCCESSOR TRUSTEES must be named within the first ten (10) Trust Meeting Minutes by the BOARD and said list of preferences shall be strictly adhered to and can only be modified by a FIRST TRUSTEE.
       </li>
       <li>
         29. A SUCCESSOR TRUSTEE may be appointed by a court of competent jurisdiction or by consensus of the remaining TRUSTEES and the Trust Manager(s), if any, and the BENEFICIARY(ies), if of legal age, if circumstances present themselves where there is no SUCCESSOR TRUSTEES capable of taking over upon the death, resignation, incapacitation or removal of any current TRUSTEE. It is at the discretion of the BOARD to replace any TRUSTEE, Trust Manager or other titled officer. Only a FIRST TRUSTEE must be replaced.
@@ -213,10 +213,10 @@
 
     <ul>
       <li>
-        34. The BOARD shall open, maintain or close any bank accounts as necessary to receive, hold or transfer any funds for the use by the BOARD and for the benefit of the BENEFICIARY.
+        34. The BOARD shall open, maintain or close any bank accounts as necessary to receive, hold or transfer any funds for the use by the BOARD and for the benefit of the BENEFICIARY(IES).
       </li>
       <li>
-        35. The BOARD may purchase, sell, invest, reinvest, lease, rent, mortgage, insure, repair or improve, at the BOARD's sole discretion, any personal, intangible or real property for the use by the BOARD and for the benefit of the BENEFICIARY.
+        35. The BOARD may purchase, sell, invest, reinvest, lease, rent, mortgage, insure, repair or improve, at the BOARD's sole discretion, any personal, intangible or real property for the use by the BOARD and for the benefit of the BENEFICIARY(IES).
       </li>
       <li>
         36. The BOARD may sell, liquidate or continue to operate, at the BOARD's sole discretion, any corporation, partnership, limited liability company, any partial interest therein or other business interest, which may be received, acquired, purchased, traded or initiated by this TRUST.
@@ -308,20 +308,20 @@
       DISTRIBUTION OF TRUST ASSETS
     </div>
 
-    <ul class="check">
-      <li>64. The proportionate share of distributed assets to which each BENEFICIARY has a beneficial interest is not discretionary, but is determined solely by the number of UNITES stated on the CERTIFICATE held on their behalf.</li>
+    <ul>
+      <li>64. The proportionate share of distributed assets to which each BENEFICIARY has a beneficial interest is not discretionary, but is determined solely by the number of UNITS stated on the CERTIFICATE held on their behalf.</li>
       <li>65. The BOARD shall review at each annual meeting its current schedule of distribution of assets, if any, and adjust it if necessary, at the discretion</li>
       <li>66. Any BENEFICIARY may apply to the BOARD for an advance towards future distributions of both income and principal. The BOARD may consider such applications based upon emergency circumstances relating to health, education or maintenance. The BOARD, in its sole discretion, may, at any time, distribute to such BENEFICIARY, any sum which the BOARD feels is consistent with the purposes and intent of this TRUST INDENTURE and the rights of any other BENEFICIARY.</li>
       <li>67. Any such distribution shall be charged to the account of such BENEFICIARY and deducted from any future distribution. Should future distributions be insufficient to cover any such advances, the balance of such advance shall be deducted from any share of TRUST assets to be distributed to such BENEFICIARY upon termination of this TRUST.</li>
-      <li>68. Any decision of the BOARD to distribute or not distribute, or as to the sum of any such advance, shall be final.</li>
+      <li>68. Any decision of the BOARD to distribute or not to distribute, or as to the sum of any such advance, shall be final.</li>
     </ul>
 
-    <div class="grey lighten-2 pa-2 text-center check">
+    <div class="grey lighten-2 pa-2 text-center">
       COMMUNITY PROPERTY EXCLUSION
     </div>
 
-    <ul class="check">
-      <li>69. No accumulation or distribution of TRUST assets or future benefit (hereafter BENEFIT) devolving on any BENEFICIARY under the TRUST terms shall form or constitute a porrtion of any cummunal or joint estate of such BENEFICIARY, but shall instead be and remain the sole, separate and exclusive property of such BENEFICIARY. Should such BENEFICIARY be married or marry in community of property, then the BENEFICIARY's rights to any BENEFIT shall be expressly excluded from the community. A prenuptial agreement between the BENEFICIARY and the soon-to-be spouse shall not be necessary to withhold the BENEFIT from said community. Such BENEFIT shall also be free from the interference, control or marital power of any spouse of such BENEFICIARY. </li>
+    <ul>
+      <li>69. No accumulation or distribution of TRUST assets or future benefit (hereafter BENEFIT) devolving on any BENEFICIARY under the TRUST terms shall form or constitute a portion of any communal or joint estate of such BENEFICIARY, but shall instead be and remain the sole, separate and exclusive property of such BENEFICIARY. Should such BENEFICIARY be married or marry in community of property, then the BENEFICIARY's rights to any BENEFIT shall be expressly excluded from the community. A prenuptial agreement between the BENEFICIARY and the soon-to-be spouse shall not be necessary to withhold the BENEFIT from said community. Such BENEFIT shall also be free from the interference, control or marital power of any spouse of such BENEFICIARY. </li>
       <li>70. For the purposes of this Section, the term "benefit" shall include movable and immovable property and the provisions of this Section shall apply moreover not only to the benefit actually delving on such BENEFICIARY, but also to any and all benefits at any time thereafter directly or indirectly acquired by means of the proceeds thereof.</li>
     </ul>
 
