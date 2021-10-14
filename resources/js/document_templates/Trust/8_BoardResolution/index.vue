@@ -33,7 +33,7 @@
     <p>OFFICERS PRESENT AT CORRESPONDING MEETING</p>
 
     <p>
-      Per the Trust Meeting 002 held on {{ moment(document_created_at).format('D MMMM YYYY') }}, <span class="preview-field">{{ first_trustee }}</span>, First Trustee, who was also acting as Meeting Secretary, declared the following:
+      Per the Trust Meeting 002 held on <span class="preview-field">{{ moment(document_created_at).format('D MMMM YYYY') }}, {{ first_trustee }}</span>, First Trustee, who was also acting as Meeting Secretary, declared the following:
     </p>
 
     <p class="text-decoration-underline font-weight-bold">

@@ -21868,13 +21868,13 @@ var render = function() {
       _c("p", [_vm._v("OFFICERS PRESENT AT CORRESPONDING MEETING")]),
       _vm._v(" "),
       _c("p", [
-        _vm._v(
-          "\n    Per the Trust Meeting 002 held on " +
-            _vm._s(_vm.moment(_vm.document_created_at).format("D MMMM YYYY")) +
-            ", "
-        ),
+        _vm._v("\n    Per the Trust Meeting 002 held on "),
         _c("span", { staticClass: "preview-field" }, [
-          _vm._v(_vm._s(_vm.first_trustee))
+          _vm._v(
+            _vm._s(_vm.moment(_vm.document_created_at).format("D MMMM YYYY")) +
+              ", " +
+              _vm._s(_vm.first_trustee)
+          )
         ]),
         _vm._v(
           ", First Trustee, who was also acting as Meeting Secretary, declared the following:\n  "
