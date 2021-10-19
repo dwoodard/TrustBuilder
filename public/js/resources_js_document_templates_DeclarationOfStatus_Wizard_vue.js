@@ -62,82 +62,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['project', 'client'],
@@ -152,25 +76,7 @@ __webpack_require__.r(__webpack_exports__);
         first_trustee: ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : _this$project2$docume.first_trustee) || "".concat(this.client.first_name, " ").concat(this.client.last_name),
         settlor: (_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$docume = _this$project3.document_data) === null || _this$project3$docume === void 0 ? void 0 : _this$project3$docume.settlor,
         document_created_at: ((_this$project4 = this.project) === null || _this$project4 === void 0 ? void 0 : (_this$project4$docume = _this$project4.document_data) === null || _this$project4$docume === void 0 ? void 0 : _this$project4$docume.document_created_at) || this.moment().format('YYYY-MM-DD')
-      }) // document_data: {
-      //   trust_name: null,
-      //   first_trustee: null,
-      //   mail_address: {
-      //     address: null,
-      //     city: null,
-      //     state: null,
-      //     zip: null,
-      //     county: null
-      //   },
-      //   meeting_date: null,
-      //   settlor: null,
-      //   settlor_gift: null,
-      //   term_of_trust: null,
-      //   secondary_trustees: [
-      //     'John Doe'
-      //   ]
-      // }
-
+      })
     };
   },
   methods: {
@@ -21717,361 +21623,141 @@ var render = function() {
   return _c(
     "div",
     [
-      [
-        _c(
-          "v-stepper",
-          {
-            attrs: { "alt-labels": "" },
-            model: {
-              value: _vm.currentStep,
-              callback: function($$v) {
-                _vm.currentStep = $$v
-              },
-              expression: "currentStep"
-            }
-          },
-          [
-            _c(
-              "v-stepper-header",
-              [
-                _c(
-                  "v-stepper-step",
-                  {
-                    attrs: {
-                      editable: "",
-                      complete: _vm.currentStep > 1,
-                      step: "1"
-                    }
-                  },
-                  [_vm._v("\n          Client Info\n        ")]
-                ),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-step",
-                  {
-                    attrs: {
-                      editable: "",
-                      complete: _vm.currentStep > 2,
-                      rules: [
-                        function() {
-                          return true
-                        }
-                      ],
-                      step: "2"
-                    }
-                  },
-                  [_vm._v("\n          Trust Basic Info\n        ")]
-                ),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-step",
-                  {
-                    attrs: {
-                      editable: "",
-                      complete: _vm.currentStep > 3,
-                      step: "3"
-                    }
-                  },
-                  [_vm._v("\n          Trustees\n        ")]
-                ),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c("v-stepper-step", { attrs: { step: "4", editable: "" } }, [
-                  _vm._v("\n          Beneficiaries\n        ")
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-stepper-items",
-              [
-                _c(
-                  "v-stepper-content",
-                  { attrs: { step: "1" } },
-                  [
-                    _c(
-                      "v-card",
-                      {
-                        staticClass: "mb-12",
-                        attrs: { color: "grey lighten-5" }
-                      },
-                      [
-                        _c(
-                          "v-flex",
-                          { attrs: { "md-6": "" } },
-                          [
-                            _c("v-text-field", {
-                              attrs: { label: "Trust Name" },
-                              on: {
-                                blur: _vm.updateProject,
-                                keydown: function($event) {
-                                  if (
-                                    !$event.type.indexOf("key") &&
-                                    _vm._k(
-                                      $event.keyCode,
-                                      "enter",
-                                      13,
-                                      $event.key,
-                                      "Enter"
-                                    )
-                                  ) {
-                                    return null
-                                  }
-                                  return _vm.updateProject.apply(
-                                    null,
-                                    arguments
+      _c(
+        "v-stepper",
+        {
+          attrs: { "alt-labels": "" },
+          model: {
+            value: _vm.currentStep,
+            callback: function($$v) {
+              _vm.currentStep = $$v
+            },
+            expression: "currentStep"
+          }
+        },
+        [
+          _c(
+            "v-stepper-header",
+            [
+              _c(
+                "v-stepper-step",
+                {
+                  attrs: {
+                    editable: "",
+                    complete: _vm.currentStep > 1,
+                    step: "1"
+                  }
+                },
+                [_vm._v("\n        Client Info\n      ")]
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c("v-stepper-step", { attrs: { step: "4", editable: "" } }, [
+                _vm._v("\n        Beneficiaries\n      ")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-stepper-items",
+            [
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "1" } },
+                [
+                  _c(
+                    "v-card",
+                    {
+                      staticClass: "mb-12",
+                      attrs: { color: "grey lighten-5" }
+                    },
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { "md-6": "" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: { label: "Trust Name" },
+                            on: {
+                              blur: _vm.updateProject,
+                              keydown: function($event) {
+                                if (
+                                  !$event.type.indexOf("key") &&
+                                  _vm._k(
+                                    $event.keyCode,
+                                    "enter",
+                                    13,
+                                    $event.key,
+                                    "Enter"
                                   )
+                                ) {
+                                  return null
                                 }
-                              },
-                              model: {
-                                value: _vm.form.trust_name,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "trust_name", $$v)
-                                },
-                                expression: "form.trust_name"
+                                return _vm.updateProject.apply(null, arguments)
                               }
-                            }),
-                            _vm._v(" "),
-                            _c("v-text-field", {
-                              attrs: { label: "First Trustee" },
-                              on: {
-                                blur: _vm.updateProject,
-                                keydown: function($event) {
-                                  if (
-                                    !$event.type.indexOf("key") &&
-                                    _vm._k(
-                                      $event.keyCode,
-                                      "enter",
-                                      13,
-                                      $event.key,
-                                      "Enter"
-                                    )
-                                  ) {
-                                    return null
-                                  }
-                                  return _vm.updateProject.apply(
-                                    null,
-                                    arguments
-                                  )
-                                }
-                              },
-                              model: {
-                                value: _vm.form.first_trustee,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "first_trustee", $$v)
-                                },
-                                expression: "form.first_trustee"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { color: "primary" },
-                        on: { click: _vm.onClick }
-                      },
-                      [_vm._v("\n            Continue\n          ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-content",
-                  { attrs: { step: "2" } },
-                  [
-                    _c(
-                      "v-card",
-                      { staticClass: "mb-12" },
-                      [
-                        _c(
-                          "v-menu",
-                          {
-                            attrs: {
-                              label: "Document Created",
-                              "close-on-content-click": false,
-                              "max-width": "290"
                             },
-                            scopedSlots: _vm._u([
-                              {
-                                key: "activator",
-                                fn: function(ref) {
-                                  var on = ref.on
-                                  var attrs = ref.attrs
-                                  return [
-                                    _c(
-                                      "v-text-field",
-                                      _vm._g(
-                                        _vm._b(
-                                          {
-                                            attrs: {
-                                              value:
-                                                _vm.form.document_created_at,
-                                              clearable: "",
-                                              readonly: ""
-                                            },
-                                            on: {
-                                              click: function($event) {
-                                                _vm.form.document_created_at = null
-                                              }
-                                            }
-                                          },
-                                          "v-text-field",
-                                          attrs,
-                                          false
-                                        ),
-                                        on
-                                      )
-                                    )
-                                  ]
-                                }
-                              }
-                            ]),
                             model: {
-                              value: _vm.MenuDocumentCreated,
+                              value: _vm.form.trust_name,
                               callback: function($$v) {
-                                _vm.MenuDocumentCreated = $$v
+                                _vm.$set(_vm.form, "trust_name", $$v)
                               },
-                              expression: "MenuDocumentCreated"
+                              expression: "form.trust_name"
                             }
-                          },
-                          [
-                            _vm._v(" "),
-                            _c("v-date-picker", {
-                              attrs: { "show-adjacent-months": "" },
-                              on: {
-                                blur: _vm.updateProject,
-                                keydown: function($event) {
-                                  if (
-                                    !$event.type.indexOf("key") &&
-                                    _vm._k(
-                                      $event.keyCode,
-                                      "enter",
-                                      13,
-                                      $event.key,
-                                      "Enter"
-                                    )
-                                  ) {
-                                    return null
-                                  }
-                                  return _vm.updateProject.apply(
-                                    null,
-                                    arguments
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: { label: "First Trustee" },
+                            on: {
+                              blur: _vm.updateProject,
+                              keydown: function($event) {
+                                if (
+                                  !$event.type.indexOf("key") &&
+                                  _vm._k(
+                                    $event.keyCode,
+                                    "enter",
+                                    13,
+                                    $event.key,
+                                    "Enter"
                                   )
+                                ) {
+                                  return null
                                 }
-                              },
-                              model: {
-                                value: _vm.form.document_created_at,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "document_created_at", $$v)
-                                },
-                                expression: "form.document_created_at"
+                                return _vm.updateProject.apply(null, arguments)
                               }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c("v-text-field", {
-                          attrs: { label: "Settlor" },
-                          on: {
-                            blur: _vm.updateProject,
-                            keydown: function($event) {
-                              if (
-                                !$event.type.indexOf("key") &&
-                                _vm._k(
-                                  $event.keyCode,
-                                  "enter",
-                                  13,
-                                  $event.key,
-                                  "Enter"
-                                )
-                              ) {
-                                return null
-                              }
-                              return _vm.updateProject.apply(null, arguments)
-                            }
-                          },
-                          model: {
-                            value: _vm.form.settlor,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "settlor", $$v)
                             },
-                            expression: "form.settlor"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { color: "primary" },
-                        on: { click: _vm.onClick }
-                      },
-                      [_vm._v("\n            Continue\n          ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-content",
-                  { attrs: { step: "3" } },
-                  [
-                    _c("v-card", { staticClass: "mb-12" }),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { color: "primary" },
-                        on: { click: _vm.onClick }
-                      },
-                      [_vm._v("\n            Continue\n          ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-content",
-                  { attrs: { step: "4" } },
-                  [
-                    _c("v-card", { staticClass: "mb-12" }),
-                    _vm._v(" "),
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: { color: "primary" },
-                        on: { click: _vm.onClick }
-                      },
-                      [_vm._v("\n            Done\n          ")]
-                    )
-                  ],
-                  1
-                )
-              ],
-              1
-            )
-          ],
-          1
-        )
-      ]
+                            model: {
+                              value: _vm.form.first_trustee,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "first_trustee", $$v)
+                              },
+                              expression: "form.first_trustee"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { attrs: { color: "primary" }, on: { click: _vm.onClick } },
+                    [_vm._v("\n          Continue\n        ")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []

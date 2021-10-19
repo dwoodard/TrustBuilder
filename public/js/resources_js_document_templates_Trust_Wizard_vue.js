@@ -441,8 +441,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -22473,327 +22471,829 @@ var render = function() {
   return _c(
     "div",
     [
-      [
-        _c(
-          "v-stepper",
-          {
-            attrs: { "alt-labels": "" },
-            model: {
-              value: _vm.currentStep,
-              callback: function($$v) {
-                _vm.currentStep = $$v
-              },
-              expression: "currentStep"
-            }
-          },
-          [
-            _c(
-              "div",
-              [
-                _vm.form.isDirty
-                  ? _c("v-icon", { attrs: { color: "danger" } }, [
-                      _vm._v("mdi-update")
-                    ])
-                  : _c("v-icon", { attrs: { color: "green" } }, [
-                      _vm._v("mdi-sticker-check")
-                    ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-stepper-header",
-              [
-                _c(
-                  "v-stepper-step",
-                  {
-                    attrs: {
-                      editable: "",
-                      complete: _vm.currentStep > 1,
-                      step: "1"
-                    }
-                  },
-                  [_c("small", [_vm._v("Client")])]
-                ),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-step",
-                  {
-                    attrs: {
-                      editable: "",
-                      complete: _vm.currentStep > 2,
-                      rules: [
-                        function() {
-                          return !!_vm.form.trust_name
-                        }
-                      ],
-                      step: "2"
-                    }
-                  },
-                  [_c("small", [_vm._v("Trust")])]
-                ),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c(
-                  "v-stepper-step",
-                  {
-                    attrs: {
-                      editable: "",
-                      complete: _vm.currentStep > 3,
-                      step: "3"
-                    }
-                  },
-                  [_c("small", [_vm._v("Trustees")])]
-                ),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c("v-stepper-step", { attrs: { step: "4", editable: "" } }, [
-                  _c("small", [_vm._v("Beneficiary")])
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                on: {
-                  keyup: function($event) {
-                    if (
-                      !$event.type.indexOf("key") &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    return _vm.onEnter.apply(null, arguments)
+      _c(
+        "v-stepper",
+        {
+          attrs: { "alt-labels": "" },
+          model: {
+            value: _vm.currentStep,
+            callback: function($$v) {
+              _vm.currentStep = $$v
+            },
+            expression: "currentStep"
+          }
+        },
+        [
+          _c(
+            "div",
+            [
+              _vm.form.isDirty
+                ? _c("v-icon", { attrs: { color: "danger" } }, [
+                    _vm._v("mdi-update")
+                  ])
+                : _c("v-icon", { attrs: { color: "green" } }, [
+                    _vm._v("mdi-sticker-check")
+                  ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-stepper-header",
+            [
+              _c(
+                "v-stepper-step",
+                {
+                  attrs: {
+                    editable: "",
+                    complete: _vm.currentStep > 1,
+                    step: "1"
                   }
+                },
+                [_c("small", [_vm._v("Client")])]
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-stepper-step",
+                {
+                  attrs: {
+                    editable: "",
+                    complete: _vm.currentStep > 2,
+                    rules: [
+                      function() {
+                        return !!_vm.form.trust_name
+                      }
+                    ],
+                    step: "2"
+                  }
+                },
+                [_c("small", [_vm._v("Trust")])]
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-stepper-step",
+                {
+                  attrs: {
+                    editable: "",
+                    complete: _vm.currentStep > 3,
+                    step: "3"
+                  }
+                },
+                [_c("small", [_vm._v("Trustees")])]
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c("v-stepper-step", { attrs: { step: "4", editable: "" } }, [
+                _c("small", [_vm._v("Beneficiary")])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              on: {
+                keyup: function($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.onEnter.apply(null, arguments)
                 }
-              },
-              [
-                _c(
-                  "v-stepper-items",
-                  [
-                    _c(
-                      "v-stepper-content",
-                      { attrs: { step: "1" } },
-                      [
-                        _c(
-                          "v-card",
-                          { staticClass: "mb-12", attrs: { outlined: "" } },
-                          [
-                            _c(
-                              "v-container",
-                              [
-                                _c(
-                                  "v-row",
+              }
+            },
+            [
+              _c(
+                "v-stepper-items",
+                [
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "1" } },
+                    [
+                      _c(
+                        "v-card",
+                        { staticClass: "mb-12", attrs: { outlined: "" } },
+                        [
+                          _c(
+                            "v-container",
+                            [
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "First Trustee" },
+                                        model: {
+                                          value: _vm.form.trustees.first[0],
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.trustees.first,
+                                              0,
+                                              $$v
+                                            )
+                                          },
+                                          expression: "form.trustees.first[0]"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Mailing Address" },
+                                        model: {
+                                          value:
+                                            _vm.form.mailing_address.address,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.mailing_address,
+                                              "address",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.mailing_address.address"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "city" },
+                                        model: {
+                                          value: _vm.form.mailing_address.city,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.mailing_address,
+                                              "city",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.mailing_address.city"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "state" },
+                                        model: {
+                                          value: _vm.form.mailing_address.state,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.mailing_address,
+                                              "state",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.mailing_address.state"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "zip" },
+                                        model: {
+                                          value: _vm.form.mailing_address.zip,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.mailing_address,
+                                              "zip",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "form.mailing_address.zip"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "country" },
+                                        model: {
+                                          value:
+                                            _vm.form.mailing_address.country,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.mailing_address,
+                                              "country",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.mailing_address.country"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary" },
+                          on: { click: _vm.nextStep }
+                        },
+                        [_vm._v("\n            Continue\n          ")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "2" } },
+                    [
+                      _c(
+                        "v-card",
+                        { staticClass: "mb-12", attrs: { outlined: "" } },
+                        [
+                          _c("v-card-title", [
+                            _vm._v("\n              Trust Info\n            ")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "v-container",
+                            [
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Trust Name" },
+                                        model: {
+                                          value: _vm.form.trust_name,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form,
+                                              "trust_name",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "form.trust_name"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c(
+                                        "v-menu",
+                                        {
+                                          attrs: {
+                                            label: "Document Created",
+                                            "close-on-content-click": false,
+                                            "max-width": "290"
+                                          },
+                                          scopedSlots: _vm._u([
+                                            {
+                                              key: "activator",
+                                              fn: function(ref) {
+                                                var on = ref.on
+                                                var attrs = ref.attrs
+                                                return [
+                                                  _c(
+                                                    "v-text-field",
+                                                    _vm._g(
+                                                      _vm._b(
+                                                        {
+                                                          attrs: {
+                                                            value:
+                                                              _vm.form
+                                                                .document_created_at,
+                                                            clearable: "",
+                                                            readonly: ""
+                                                          },
+                                                          on: {
+                                                            click: function(
+                                                              $event
+                                                            ) {
+                                                              _vm.form.document_created_at = null
+                                                            }
+                                                          }
+                                                        },
+                                                        "v-text-field",
+                                                        attrs,
+                                                        false
+                                                      ),
+                                                      on
+                                                    )
+                                                  )
+                                                ]
+                                              }
+                                            }
+                                          ]),
+                                          model: {
+                                            value: _vm.MenuDocumentCreated,
+                                            callback: function($$v) {
+                                              _vm.MenuDocumentCreated = $$v
+                                            },
+                                            expression: "MenuDocumentCreated"
+                                          }
+                                        },
+                                        [
+                                          _vm._v(" "),
+                                          _c("v-date-picker", {
+                                            attrs: {
+                                              "show-adjacent-months": ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.form.document_created_at,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.form,
+                                                  "document_created_at",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "form.document_created_at"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Settlor" },
+                                        model: {
+                                          value: _vm.form.settlor,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.form, "settlor", $$v)
+                                          },
+                                          expression: "form.settlor"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Settlor Gift Type" },
+                                        model: {
+                                          value: _vm.form.settlor_gift_type,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form,
+                                              "settlor_gift_type",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "form.settlor_gift_type"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          type: "number",
+                                          "prepend-icon": "mdi-currency-usd",
+                                          label: "Settlor Gift"
+                                        },
+                                        model: {
+                                          value: _vm.form.settlor_gift,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form,
+                                              "settlor_gift",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "form.settlor_gift"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "Term Of Trust" },
+                                        model: {
+                                          value: _vm.form.term_of_trust,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form,
+                                              "term_of_trust",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "form.term_of_trust"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-container",
+                            [
+                              _c("h3", [_vm._v("Domicile Address")]),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "address" },
+                                        model: {
+                                          value:
+                                            _vm.form.domicile_address.address,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.domicile_address,
+                                              "address",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.domicile_address.address"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "apartment" },
+                                        model: {
+                                          value: _vm.form.domicile_address.apt,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.domicile_address,
+                                              "apt",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.domicile_address.apt"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "city" },
+                                        model: {
+                                          value: _vm.form.domicile_address.city,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.domicile_address,
+                                              "city",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.domicile_address.city"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "state" },
+                                        model: {
+                                          value:
+                                            _vm.form.domicile_address.state,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.domicile_address,
+                                              "state",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.domicile_address.state"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "zip" },
+                                        model: {
+                                          value: _vm.form.domicile_address.zip,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.domicile_address,
+                                              "zip",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.domicile_address.zip"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: { label: "country" },
+                                        model: {
+                                          value:
+                                            _vm.form.domicile_address.country,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form.domicile_address,
+                                              "country",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "form.domicile_address.country"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary" },
+                          on: { click: _vm.nextStep }
+                        },
+                        [_vm._v("\n            Continue\n          ")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "3" } },
+                    [
+                      _c(
+                        "v-card",
+                        { staticClass: "mb-12", attrs: { outlined: "" } },
+                        [
+                          _c("v-card-title", [_vm._v("First Trustees")]),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-text",
+                            [
+                              _vm._l(_vm.form.trustees.first, function(
+                                item,
+                                index
+                              ) {
+                                return _c(
+                                  "div",
+                                  { key: index },
                                   [
                                     _c(
-                                      "v-col",
+                                      "v-row",
                                       [
-                                        _c("v-text-field", {
-                                          attrs: { label: "First Trustee" },
-                                          model: {
-                                            value: _vm.form.trustees.first[0],
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.trustees.first,
-                                                0,
-                                                $$v
-                                              )
-                                            },
-                                            expression: "form.trustees.first[0]"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-row",
-                                  [
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "Mailing Address" },
-                                          model: {
-                                            value:
-                                              _vm.form.mailing_address.address,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.mailing_address,
-                                                "address",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.mailing_address.address"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-row",
-                                  [
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "city" },
-                                          model: {
-                                            value:
-                                              _vm.form.mailing_address.city,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.mailing_address,
-                                                "city",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.mailing_address.city"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "state" },
-                                          model: {
-                                            value:
-                                              _vm.form.mailing_address.state,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.mailing_address,
-                                                "state",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.mailing_address.state"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "zip" },
-                                          model: {
-                                            value: _vm.form.mailing_address.zip,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.mailing_address,
-                                                "zip",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.mailing_address.zip"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "country" },
-                                          model: {
-                                            value:
-                                              _vm.form.mailing_address.country,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.mailing_address,
-                                                "country",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.mailing_address.country"
-                                          }
-                                        })
+                                        _c(
+                                          "v-col",
+                                          { attrs: { sm: "9" } },
+                                          [
+                                            _c("v-text-field", {
+                                              attrs: {
+                                                dense: "",
+                                                outlined: "",
+                                                "single-line": ""
+                                              },
+                                              model: {
+                                                value:
+                                                  _vm.form.trustees.first[
+                                                    index
+                                                  ],
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.form.trustees.first,
+                                                    index,
+                                                    $$v
+                                                  )
+                                                },
+                                                expression:
+                                                  "form.trustees.first[index]"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { sm: "3" } },
+                                          [
+                                            index !== 0
+                                              ? _c(
+                                                  "v-icon",
+                                                  {
+                                                    on: {
+                                                      click: function($event) {
+                                                        return _vm.form.trustees.first.splice(
+                                                          index,
+                                                          1
+                                                        )
+                                                      }
+                                                    }
+                                                  },
+                                                  [_vm._v("mdi-trash-can")]
+                                                )
+                                              : _vm._e()
+                                          ],
+                                          1
+                                        )
                                       ],
                                       1
                                     )
                                   ],
                                   1
                                 )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-btn",
-                          {
-                            attrs: { color: "primary" },
-                            on: { click: _vm.nextStep }
-                          },
-                          [_vm._v("\n              Continue\n            ")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-stepper-content",
-                      { attrs: { step: "2" } },
-                      [
-                        _c(
-                          "v-card",
-                          { staticClass: "mb-12", attrs: { outlined: "" } },
-                          [
-                            _c("v-card-title", [
-                              _vm._v(
-                                "\n                Trust Info\n              "
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-icon",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.form.trustees.first.push("")
+                                    }
+                                  }
+                                },
+                                [_vm._v("mdi-plus")]
                               )
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "v-container",
-                              [
-                                _c(
+                            ],
+                            2
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        { staticClass: "mb-12", attrs: { outlined: "" } },
+                        [
+                          _c("v-card-title", [_vm._v("Second Trustees")]),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-text",
+                            [
+                              _vm._l(_vm.form.trustees.second, function(
+                                item,
+                                index
+                              ) {
+                                return _c(
                                   "v-row",
+                                  { key: index },
                                   [
                                     _c(
                                       "v-col",
                                       [
                                         _c("v-text-field", {
-                                          attrs: { label: "Trust Name" },
+                                          attrs: {
+                                            outlined: "",
+                                            "single-line": ""
+                                          },
                                           model: {
-                                            value: _vm.form.trust_name,
+                                            value:
+                                              _vm.form.trustees.second[index],
                                             callback: function($$v) {
                                               _vm.$set(
-                                                _vm.form,
-                                                "trust_name",
+                                                _vm.form.trustees.second,
+                                                index,
                                                 $$v
                                               )
                                             },
-                                            expression: "form.trust_name"
+                                            expression:
+                                              "form.trustees.second[index]"
                                           }
                                         })
                                       ],
@@ -22804,606 +23304,92 @@ var render = function() {
                                       "v-col",
                                       [
                                         _c(
-                                          "v-menu",
+                                          "v-icon",
                                           {
-                                            attrs: {
-                                              label: "Document Created",
-                                              "close-on-content-click": false,
-                                              "max-width": "290"
-                                            },
-                                            scopedSlots: _vm._u([
-                                              {
-                                                key: "activator",
-                                                fn: function(ref) {
-                                                  var on = ref.on
-                                                  var attrs = ref.attrs
-                                                  return [
-                                                    _c(
-                                                      "v-text-field",
-                                                      _vm._g(
-                                                        _vm._b(
-                                                          {
-                                                            attrs: {
-                                                              value:
-                                                                _vm.form
-                                                                  .document_created_at,
-                                                              clearable: "",
-                                                              readonly: ""
-                                                            },
-                                                            on: {
-                                                              click: function(
-                                                                $event
-                                                              ) {
-                                                                _vm.form.document_created_at = null
-                                                              }
-                                                            }
-                                                          },
-                                                          "v-text-field",
-                                                          attrs,
-                                                          false
-                                                        ),
-                                                        on
-                                                      )
-                                                    )
-                                                  ]
-                                                }
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.form.trustees.second.splice(
+                                                  index,
+                                                  1
+                                                )
                                               }
-                                            ]),
-                                            model: {
-                                              value: _vm.MenuDocumentCreated,
-                                              callback: function($$v) {
-                                                _vm.MenuDocumentCreated = $$v
-                                              },
-                                              expression: "MenuDocumentCreated"
                                             }
                                           },
-                                          [
-                                            _vm._v(" "),
-                                            _c("v-date-picker", {
-                                              attrs: {
-                                                "show-adjacent-months": ""
-                                              },
-                                              model: {
-                                                value:
-                                                  _vm.form.document_created_at,
-                                                callback: function($$v) {
-                                                  _vm.$set(
-                                                    _vm.form,
-                                                    "document_created_at",
-                                                    $$v
-                                                  )
-                                                },
-                                                expression:
-                                                  "form.document_created_at"
-                                              }
-                                            })
-                                          ],
-                                          1
+                                          [_vm._v("mdi-trash-can")]
                                         )
                                       ],
                                       1
                                     )
                                   ],
                                   1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-row",
-                                  [
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "Settlor" },
-                                          model: {
-                                            value: _vm.form.settlor,
-                                            callback: function($$v) {
-                                              _vm.$set(_vm.form, "settlor", $$v)
-                                            },
-                                            expression: "form.settlor"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-row",
-                                  [
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "Settlor Gift Type" },
-                                          model: {
-                                            value: _vm.form.settlor_gift_type,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form,
-                                                "settlor_gift_type",
-                                                $$v
-                                              )
-                                            },
-                                            expression: "form.settlor_gift_type"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: {
-                                            type: "number",
-                                            "prepend-icon": "mdi-currency-usd",
-                                            label: "Settlor Gift"
-                                          },
-                                          model: {
-                                            value: _vm.form.settlor_gift,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form,
-                                                "settlor_gift",
-                                                $$v
-                                              )
-                                            },
-                                            expression: "form.settlor_gift"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-row",
-                                  [
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "Term Of Trust" },
-                                          model: {
-                                            value: _vm.form.term_of_trust,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form,
-                                                "term_of_trust",
-                                                $$v
-                                              )
-                                            },
-                                            expression: "form.term_of_trust"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
                                 )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-container",
-                              [
-                                _c("h3", [_vm._v("Domicile Address")]),
-                                _vm._v(" "),
-                                _c(
-                                  "v-row",
-                                  [
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "address" },
-                                          model: {
-                                            value:
-                                              _vm.form.domicile_address.address,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.domicile_address,
-                                                "address",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.domicile_address.address"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "apartment" },
-                                          model: {
-                                            value:
-                                              _vm.form.domicile_address.apt,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.domicile_address,
-                                                "apt",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.domicile_address.apt"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-row",
-                                  [
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "city" },
-                                          model: {
-                                            value:
-                                              _vm.form.domicile_address.city,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.domicile_address,
-                                                "city",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.domicile_address.city"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "state" },
-                                          model: {
-                                            value:
-                                              _vm.form.domicile_address.state,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.domicile_address,
-                                                "state",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.domicile_address.state"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "zip" },
-                                          model: {
-                                            value:
-                                              _vm.form.domicile_address.zip,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.domicile_address,
-                                                "zip",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.domicile_address.zip"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: { label: "country" },
-                                          model: {
-                                            value:
-                                              _vm.form.domicile_address.country,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.domicile_address,
-                                                "country",
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.domicile_address.country"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-btn",
-                          {
-                            attrs: { color: "primary" },
-                            on: { click: _vm.nextStep }
-                          },
-                          [_vm._v("\n              Continue\n            ")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-stepper-content",
-                      { attrs: { step: "3" } },
-                      [
-                        _c(
-                          "v-card",
-                          { staticClass: "mb-12", attrs: { outlined: "" } },
-                          [
-                            _c("v-card-title", [_vm._v("First Trustees")]),
-                            _vm._v(" "),
-                            _c(
-                              "v-card-text",
-                              [
-                                _vm._l(_vm.form.trustees.first, function(
-                                  item,
-                                  index
-                                ) {
-                                  return _c(
-                                    "div",
-                                    { key: index },
-                                    [
-                                      _c(
-                                        "v-row",
-                                        [
-                                          _c(
-                                            "v-col",
-                                            { attrs: { sm: "9" } },
-                                            [
-                                              _c("v-text-field", {
-                                                attrs: {
-                                                  dense: "",
-                                                  outlined: "",
-                                                  "single-line": ""
-                                                },
-                                                model: {
-                                                  value:
-                                                    _vm.form.trustees.first[
-                                                      index
-                                                    ],
-                                                  callback: function($$v) {
-                                                    _vm.$set(
-                                                      _vm.form.trustees.first,
-                                                      index,
-                                                      $$v
-                                                    )
-                                                  },
-                                                  expression:
-                                                    "form.trustees.first[index]"
-                                                }
-                                              })
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "v-col",
-                                            { attrs: { sm: "3" } },
-                                            [
-                                              index !== 0
-                                                ? _c(
-                                                    "v-icon",
-                                                    {
-                                                      on: {
-                                                        click: function(
-                                                          $event
-                                                        ) {
-                                                          return _vm.form.trustees.first.splice(
-                                                            index,
-                                                            1
-                                                          )
-                                                        }
-                                                      }
-                                                    },
-                                                    [_vm._v("mdi-trash-can")]
-                                                  )
-                                                : _vm._e()
-                                            ],
-                                            1
-                                          )
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "v-icon",
-                                  {
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.form.trustees.first.push("")
-                                      }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-icon",
+                                {
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.form.trustees.second.push("")
                                     }
-                                  },
-                                  [_vm._v("mdi-plus")]
-                                )
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-card",
-                          { staticClass: "mb-12", attrs: { outlined: "" } },
-                          [
-                            _c("v-card-title", [_vm._v("Second Trustees")]),
-                            _vm._v(" "),
-                            _c(
-                              "v-card-text",
-                              [
-                                _vm._l(_vm.form.trustees.second, function(
-                                  item,
-                                  index
-                                ) {
-                                  return _c(
-                                    "v-row",
-                                    { key: index },
-                                    [
-                                      _c(
-                                        "v-col",
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              outlined: "",
-                                              "single-line": ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.form.trustees.second[index],
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.form.trustees.second,
-                                                  index,
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "form.trustees.second[index]"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        [
-                                          _c(
-                                            "v-icon",
-                                            {
-                                              on: {
-                                                click: function($event) {
-                                                  return _vm.form.trustees.second.splice(
-                                                    index,
-                                                    1
-                                                  )
-                                                }
-                                              }
-                                            },
-                                            [_vm._v("mdi-trash-can")]
-                                          )
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "v-icon",
-                                  {
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.form.trustees.second.push("")
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("mdi-plus")]
-                                )
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-btn",
-                          {
-                            attrs: { color: "primary" },
-                            on: { click: _vm.nextStep }
-                          },
-                          [_vm._v("\n              Continue\n            ")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-stepper-content",
-                      { attrs: { step: "4" } },
-                      [
-                        _c("Beneficiaries", {
-                          attrs: { beneficiaries: _vm.form.beneficiaries },
-                          on: {
-                            add: _vm.onAddBeneficiary,
-                            update: _vm.onUpdateBeneficiary,
-                            remove: _vm.onDeleteBeneficiary
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "v-btn",
-                          {
-                            attrs: { color: "primary" },
-                            on: { click: _vm.nextStep }
-                          },
-                          [_vm._v("\n              Done\n            ")]
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ],
-              1
-            )
-          ],
-          1
-        )
-      ]
+                                  }
+                                },
+                                [_vm._v("mdi-plus")]
+                              )
+                            ],
+                            2
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary" },
+                          on: { click: _vm.nextStep }
+                        },
+                        [_vm._v("\n            Continue\n          ")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "4" } },
+                    [
+                      _c("Beneficiaries", {
+                        attrs: { beneficiaries: _vm.form.beneficiaries },
+                        on: {
+                          add: _vm.onAddBeneficiary,
+                          update: _vm.onUpdateBeneficiary,
+                          remove: _vm.onDeleteBeneficiary
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary" },
+                          on: { click: _vm.nextStep }
+                        },
+                        [_vm._v("\n            Done\n          ")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []

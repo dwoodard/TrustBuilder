@@ -6829,6 +6829,22 @@ render._withStripped = true
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./DeclarationOfStatus/01_DeclarationOfStatus": [
+		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
+		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
+	],
+	"./DeclarationOfStatus/01_DeclarationOfStatus/": [
+		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
+		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
+	],
+	"./DeclarationOfStatus/01_DeclarationOfStatus/index": [
+		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
+		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
+	],
+	"./DeclarationOfStatus/01_DeclarationOfStatus/index.vue": [
+		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
+		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
+	],
 	"./DeclarationOfStatus/Wizard": [
 		"./resources/js/document_templates/DeclarationOfStatus/Wizard.vue",
 		"resources_js_document_templates_DeclarationOfStatus_Wizard_vue"

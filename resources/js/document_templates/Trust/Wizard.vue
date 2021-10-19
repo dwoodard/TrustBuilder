@@ -1,249 +1,247 @@
 <template>
   <div>
-    <template>
-      <v-stepper v-model="currentStep" alt-labels>
-        <div>
-          <v-icon v-if="form.isDirty" color="danger">mdi-update</v-icon>
-          <v-icon v-else color="green">mdi-sticker-check</v-icon>
-        </div>
+    <v-stepper v-model="currentStep" alt-labels>
+      <div>
+        <v-icon v-if="form.isDirty" color="danger">mdi-update</v-icon>
+        <v-icon v-else color="green">mdi-sticker-check</v-icon>
+      </div>
 
-        <v-stepper-header>
-          <v-stepper-step
-            editable
-            :complete="currentStep > 1"
-            step="1">
-            <small>Client</small>
-          </v-stepper-step>
-          <v-divider/>
-          <v-stepper-step
-            editable
-            :complete="currentStep > 2"
-            :rules="[
-              () => {return !!form.trust_name}
-            ]"
-            step="2">
-            <small>Trust</small>
-          </v-stepper-step>
-          <v-divider/>
-          <v-stepper-step
-            editable
-            :complete="currentStep > 3"
-            step="3">
-            <small>Trustees</small>
-          </v-stepper-step>
-          <v-divider/>
-          <v-stepper-step
-            step="4"
-            editable>
-            <small>Beneficiary</small>
-          </v-stepper-step>
-        </v-stepper-header>
+      <v-stepper-header>
+        <v-stepper-step
+          editable
+          :complete="currentStep > 1"
+          step="1">
+          <small>Client</small>
+        </v-stepper-step>
+        <v-divider/>
+        <v-stepper-step
+          editable
+          :complete="currentStep > 2"
+          :rules="[
+            () => {return !!form.trust_name}
+          ]"
+          step="2">
+          <small>Trust</small>
+        </v-stepper-step>
+        <v-divider/>
+        <v-stepper-step
+          editable
+          :complete="currentStep > 3"
+          step="3">
+          <small>Trustees</small>
+        </v-stepper-step>
+        <v-divider/>
+        <v-stepper-step
+          step="4"
+          editable>
+          <small>Beneficiary</small>
+        </v-stepper-step>
+      </v-stepper-header>
 
-        <form @keyup.enter="onEnter">
-          <v-stepper-items>
-            <v-stepper-content step="1">
-              <v-card outlined class="mb-12">
-                <v-container>
+      <form @keyup.enter="onEnter">
+        <v-stepper-items>
+          <v-stepper-content step="1">
+            <v-card outlined class="mb-12">
+              <v-container>
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      v-model="form.trustees.first[0]"
+                      label="First Trustee"/>
+                  </v-col>
+                </v-row>
+
+
+                <v-row>
+                  <v-col>
+                    <v-text-field v-model="form.mailing_address.address" label="Mailing Address"/>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-text-field v-model="form.mailing_address.city" label="city"/>
+                  </v-col>
+                  <v-col>
+                    <v-text-field v-model="form.mailing_address.state" label="state"/>
+                  </v-col>
+                  <v-col>
+                    <v-text-field v-model="form.mailing_address.zip" label="zip"/>
+                  </v-col>
+                  <v-col>
+                    <v-text-field v-model="form.mailing_address.country" label="country"/>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card>
+
+            <v-btn
+              color="primary"
+              @click="nextStep">
+              Continue
+            </v-btn>
+          </v-stepper-content>
+          <v-stepper-content step="2">
+            <v-card outlined class="mb-12">
+              <v-card-title>
+                Trust Info
+              </v-card-title>
+              <v-container>
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      v-model="form.trust_name"
+                      label="Trust Name"/>
+                  </v-col>
+
+                  <v-col>
+                    <v-menu
+                      v-model="MenuDocumentCreated"
+                      label="Document Created"
+                      :close-on-content-click="false"
+                      max-width="290">
+                      <template #activator="{ on, attrs }">
+                        <v-text-field :value="form.document_created_at" clearable readonly v-bind="attrs" v-on="on" @click="form.document_created_at = null"/>
+                      </template>
+                      <v-date-picker
+                        v-model="form.document_created_at"
+                        show-adjacent-months/>
+                    </v-menu>
+                  </v-col>
+                </v-row>
+
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      v-model="form.settlor"
+                      label="Settlor"/>
+                  </v-col>
+                </v-row>
+
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      v-model="form.settlor_gift_type"
+                      label="Settlor Gift Type"/>
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      v-model="form.settlor_gift"
+                      type="number"
+                      prepend-icon="mdi-currency-usd"
+                      label="Settlor Gift"/>
+                  </v-col>
+                </v-row>
+
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      v-model="form.term_of_trust"
+                      label="Term Of Trust"/>
+                  </v-col>
+                </v-row>
+              </v-container>
+
+              <v-container>
+                <h3>Domicile Address</h3>
+                <v-row>
+                  <v-col>
+                    <v-text-field v-model="form.domicile_address.address" label="address"/>
+                  </v-col>
+                  <v-col>
+                    <v-text-field v-model="form.domicile_address.apt" label="apartment"/>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-text-field v-model="form.domicile_address.city" label="city"/>
+                  </v-col>
+                  <v-col>
+                    <v-text-field v-model="form.domicile_address.state" label="state"/>
+                  </v-col>
+                  <v-col>
+                    <v-text-field v-model="form.domicile_address.zip" label="zip"/>
+                  </v-col>
+                  <v-col>
+                    <v-text-field v-model="form.domicile_address.country" label="country"/>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card>
+
+
+            <v-btn
+              color="primary"
+              @click="nextStep">
+              Continue
+            </v-btn>
+          </v-stepper-content>
+          <v-stepper-content step="3">
+            <v-card class="mb-12" outlined>
+              <v-card-title>First Trustees</v-card-title>
+              <v-card-text>
+                <div v-for="(item,index) in form.trustees.first" :key="index">
                   <v-row>
-                    <v-col>
+                    <v-col sm="9">
                       <v-text-field
-                        v-model="form.trustees.first[0]"
-                        label="First Trustee"/>
-                    </v-col>
-                  </v-row>
-
-
-                  <v-row>
-                    <v-col>
-                      <v-text-field v-model="form.mailing_address.address" label="Mailing Address"/>
-                    </v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col>
-                      <v-text-field v-model="form.mailing_address.city" label="city"/>
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="form.mailing_address.state" label="state"/>
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="form.mailing_address.zip" label="zip"/>
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="form.mailing_address.country" label="country"/>
-                    </v-col>
-                  </v-row>
-                </v-container>
-              </v-card>
-
-              <v-btn
-                color="primary"
-                @click="nextStep">
-                Continue
-              </v-btn>
-            </v-stepper-content>
-            <v-stepper-content step="2">
-              <v-card outlined class="mb-12">
-                <v-card-title>
-                  Trust Info
-                </v-card-title>
-                <v-container>
-                  <v-row>
-                    <v-col>
-                      <v-text-field
-                        v-model="form.trust_name"
-                        label="Trust Name"/>
-                    </v-col>
-
-                    <v-col>
-                      <v-menu
-                        v-model="MenuDocumentCreated"
-                        label="Document Created"
-                        :close-on-content-click="false"
-                        max-width="290">
-                        <template #activator="{ on, attrs }">
-                          <v-text-field :value="form.document_created_at" clearable readonly v-bind="attrs" v-on="on" @click="form.document_created_at = null"/>
-                        </template>
-                        <v-date-picker
-                          v-model="form.document_created_at"
-                          show-adjacent-months/>
-                      </v-menu>
-                    </v-col>
-                  </v-row>
-
-                  <v-row>
-                    <v-col>
-                      <v-text-field
-                        v-model="form.settlor"
-                        label="Settlor"/>
-                    </v-col>
-                  </v-row>
-
-                  <v-row>
-                    <v-col>
-                      <v-text-field
-                        v-model="form.settlor_gift_type"
-                        label="Settlor Gift Type"/>
-                    </v-col>
-                    <v-col>
-                      <v-text-field
-                        v-model="form.settlor_gift"
-                        type="number"
-                        prepend-icon="mdi-currency-usd"
-                        label="Settlor Gift"/>
-                    </v-col>
-                  </v-row>
-
-                  <v-row>
-                    <v-col>
-                      <v-text-field
-                        v-model="form.term_of_trust"
-                        label="Term Of Trust"/>
-                    </v-col>
-                  </v-row>
-                </v-container>
-
-                <v-container>
-                  <h3>Domicile Address</h3>
-                  <v-row>
-                    <v-col>
-                      <v-text-field v-model="form.domicile_address.address" label="address"/>
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="form.domicile_address.apt" label="apartment"/>
-                    </v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col>
-                      <v-text-field v-model="form.domicile_address.city" label="city"/>
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="form.domicile_address.state" label="state"/>
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="form.domicile_address.zip" label="zip"/>
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="form.domicile_address.country" label="country"/>
-                    </v-col>
-                  </v-row>
-                </v-container>
-              </v-card>
-
-
-              <v-btn
-                color="primary"
-                @click="nextStep">
-                Continue
-              </v-btn>
-            </v-stepper-content>
-            <v-stepper-content step="3">
-              <v-card class="mb-12" outlined>
-                <v-card-title>First Trustees</v-card-title>
-                <v-card-text>
-                  <div v-for="(item,index) in form.trustees.first" :key="index">
-                    <v-row>
-                      <v-col sm="9">
-                        <v-text-field
-                          v-model="form.trustees.first[index]"
-                          dense
-                          outlined
-                          single-line/>
-                      </v-col>
-                      <v-col sm="3">
-                        <v-icon v-if="index !== 0" @click="form.trustees.first.splice(index, 1)">mdi-trash-can</v-icon>
-                      </v-col>
-                    </v-row>
-                  </div>
-                  <v-icon @click="form.trustees.first.push('')">mdi-plus</v-icon>
-                </v-card-text>
-              </v-card>
-
-              <v-card class="mb-12" outlined>
-                <v-card-title>Second Trustees</v-card-title>
-                <v-card-text>
-                  <v-row v-for="(item,index) in form.trustees.second" :key="index">
-                    <v-col>
-                      <v-text-field
-                        v-model="form.trustees.second[index]"
+                        v-model="form.trustees.first[index]"
+                        dense
                         outlined
                         single-line/>
                     </v-col>
-                    <v-col>
-                      <v-icon @click="form.trustees.second.splice(index, 1)">mdi-trash-can</v-icon>
+                    <v-col sm="3">
+                      <v-icon v-if="index !== 0" @click="form.trustees.first.splice(index, 1)">mdi-trash-can</v-icon>
                     </v-col>
                   </v-row>
+                </div>
+                <v-icon @click="form.trustees.first.push('')">mdi-plus</v-icon>
+              </v-card-text>
+            </v-card>
 
-                  <v-icon @click="form.trustees.second.push('')">mdi-plus</v-icon>
-                </v-card-text>
-              </v-card>
+            <v-card class="mb-12" outlined>
+              <v-card-title>Second Trustees</v-card-title>
+              <v-card-text>
+                <v-row v-for="(item,index) in form.trustees.second" :key="index">
+                  <v-col>
+                    <v-text-field
+                      v-model="form.trustees.second[index]"
+                      outlined
+                      single-line/>
+                  </v-col>
+                  <v-col>
+                    <v-icon @click="form.trustees.second.splice(index, 1)">mdi-trash-can</v-icon>
+                  </v-col>
+                </v-row>
 
-              <v-btn
-                color="primary"
-                @click="nextStep">
-                Continue
-              </v-btn>
-            </v-stepper-content>
-            <v-stepper-content step="4">
-              <!-- -->
-              <Beneficiaries :beneficiaries="form.beneficiaries"
-                             @add="onAddBeneficiary"
-                             @update="onUpdateBeneficiary"
-                             @remove="onDeleteBeneficiary"/>
-              <!-- -->
+                <v-icon @click="form.trustees.second.push('')">mdi-plus</v-icon>
+              </v-card-text>
+            </v-card>
+
+            <v-btn
+              color="primary"
+              @click="nextStep">
+              Continue
+            </v-btn>
+          </v-stepper-content>
+          <v-stepper-content step="4">
+            <!-- -->
+            <Beneficiaries :beneficiaries="form.beneficiaries"
+                           @add="onAddBeneficiary"
+                           @update="onUpdateBeneficiary"
+                           @remove="onDeleteBeneficiary"/>
+            <!-- -->
 
 
-              <v-btn
-                color="primary"
-                @click="nextStep">
-                Done
-              </v-btn>
-            </v-stepper-content>
-          </v-stepper-items>
-        </form>
-      </v-stepper>
+            <v-btn
+              color="primary"
+              @click="nextStep">
+              Done
+            </v-btn>
+          </v-stepper-content>
+        </v-stepper-items>
+      </form>
+    </v-stepper>
 
-      <!--      <VJsoneditor v-model="form" :plus="true" height="400px"/>-->
-    </template>
+    <!--      <VJsoneditor v-model="form" :plus="true" height="400px"/>-->
   </div>
 </template>
 <script>
