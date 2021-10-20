@@ -6,7 +6,7 @@
       </inertia-link>
 
       <v-app-bar color="transparent" flat>
-        <span >
+        <span>
           {{ project.name }}
         </span>
 
@@ -142,8 +142,6 @@
           this.onUpdateProject();
         });
       },
-
-
       onUpdateProject() {
         // console.log('onUpdateProject');
         this.$el.querySelector('.page').style.height = 'auto';
