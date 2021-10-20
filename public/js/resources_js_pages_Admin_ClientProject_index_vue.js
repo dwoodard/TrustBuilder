@@ -251,13 +251,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -329,6 +322,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     onUpdateProject: function onUpdateProject() {
+      // console.log('onUpdateProject');
       this.$el.querySelector('.page').style.height = 'auto';
       this.$el.querySelector('.page').style.top = '0';
     },
@@ -6663,21 +6657,8 @@ var render = function() {
             "v-app-bar",
             { attrs: { color: "transparent", flat: "" } },
             [
-              _c("v-app-bar-title", [
-                _c("small", [
-                  _vm._v(
-                    _vm._s(_vm.client.first_name) +
-                      " " +
-                      _vm._s(_vm.client.last_name)
-                  )
-                ]),
-                _vm._v(
-                  " " +
-                    _vm._s(_vm.project.name) +
-                    " (" +
-                    _vm._s(_vm.pascelToTitleCase(_vm.project.type)) +
-                    ")\n    "
-                )
+              _c("span", [
+                _vm._v("\n        " + _vm._s(_vm.project.name) + "\n      ")
               ]),
               _vm._v(" "),
               _c("v-spacer"),
@@ -6814,8 +6795,7 @@ var render = function() {
         "v-sheet",
         {
           staticClass: "warm",
-          staticStyle: { position: "relative", "padding-top": "64px" },
-          attrs: { height: "100%" }
+          staticStyle: { position: "relative", "padding-top": "64px" }
         },
         [
           _c(

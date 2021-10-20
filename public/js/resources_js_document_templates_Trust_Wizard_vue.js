@@ -508,6 +508,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     //   this.updateProject();
     // },
     updateProject: function updateProject() {
+      var _this = this;
+
       console.log('updateProject');
       axios__WEBPACK_IMPORTED_MODULE_1___default().post("/admin/projects/".concat(this.project.id), {
         _method: 'PUT',
@@ -517,6 +519,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         params: {
           resetOnSuccess: false
         }
+      }) // eslint-disable-next-line promise/always-return
+      .then(function (result) {
+        _this.$emit('updateProject', JSON.parse(result.config.data));
       });
     },
     onEnter: function onEnter() {
@@ -534,12 +539,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     updateForm: function updateForm() {
-      var _this = this;
+      var _this2 = this;
 
       console.log('updateForm');
       this.form.transform(function (data) {
         return {
-          name: _this.form.trust_name,
+          name: _this2.form.trust_name,
           document_data: _objectSpread({}, data)
         };
       }).put("/admin/projects/".concat(this.project.id), {

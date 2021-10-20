@@ -323,7 +323,11 @@
                    },
                    {
                      params: {resetOnSuccess: false}
-                   });
+                   })
+          // eslint-disable-next-line promise/always-return
+          .then((result) => {
+            this.$emit('updateProject', JSON.parse(result.config.data));
+          });
       },
       onEnter() {
         console.log('save onEnter');
