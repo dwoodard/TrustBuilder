@@ -122,13 +122,11 @@
 
 <style scoped>
 #trust_certificates {
-  padding: inherit;
-  margin: inherit;
+
 }
 
 .trust_certificate {
   border: double 4px #333333;
-  /*padding: 20px;*/
   page-break-after: always;
 }
 </style>
