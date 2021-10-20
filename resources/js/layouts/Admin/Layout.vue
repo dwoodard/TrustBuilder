@@ -10,8 +10,10 @@
       <AdminNav/>
 
 
-      <v-main class="warm">
-        <slot></slot>
+      <v-main class="warm" style="padding-top: 64px;">
+        <v-fade-transition mode="out-in">
+          <slot></slot>
+        </v-fade-transition>
       </v-main>
     </v-app>
 

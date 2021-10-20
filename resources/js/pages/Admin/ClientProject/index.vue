@@ -1,5 +1,5 @@
 <template>
-  <v-card style="padding-top: 64px">
+  <v-card >
     <v-app-bar dark flat app class="primary text--primary rounded-0" fixed style="top:64px" >
       <inertia-link href="/admin/clients" as="button">
         <v-icon color="white">mdi-menu-left</v-icon>
@@ -53,7 +53,7 @@
     <v-sheet
         height="100%"
         class="warm"
-        style="position: relative;"
+        style="position: relative;padding-top: 64px;"
     >
       <v-container id="document-container" fluid>
         <v-row no-gutters>

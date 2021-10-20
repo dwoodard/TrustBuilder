@@ -174,6 +174,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -1417,7 +1419,19 @@ var render = function() {
           _vm._v(" "),
           _c("AdminNav"),
           _vm._v(" "),
-          _c("v-main", { staticClass: "warm" }, [_vm._t("default")], 2)
+          _c(
+            "v-main",
+            { staticClass: "warm", staticStyle: { "padding-top": "64px" } },
+            [
+              _c(
+                "v-fade-transition",
+                { attrs: { mode: "out-in" } },
+                [_vm._t("default")],
+                2
+              )
+            ],
+            1
+          )
         ],
         1
       ),

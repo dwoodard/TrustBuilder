@@ -37,6 +37,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -6371,7 +6373,19 @@ var render = function() {
           _vm._v(" "),
           _c("AdminNav"),
           _vm._v(" "),
-          _c("v-main", { staticClass: "warm" }, [_vm._t("default")], 2)
+          _c(
+            "v-main",
+            { staticClass: "warm", staticStyle: { "padding-top": "64px" } },
+            [
+              _c(
+                "v-fade-transition",
+                { attrs: { mode: "out-in" } },
+                [_vm._t("default")],
+                2
+              )
+            ],
+            1
+          )
         ],
         1
       ),
@@ -6625,7 +6639,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-card",
-    { staticStyle: { "padding-top": "64px" } },
     [
       _c(
         "v-app-bar",
@@ -6801,7 +6814,7 @@ var render = function() {
         "v-sheet",
         {
           staticClass: "warm",
-          staticStyle: { position: "relative" },
+          staticStyle: { position: "relative", "padding-top": "64px" },
           attrs: { height: "100%" }
         },
         [
