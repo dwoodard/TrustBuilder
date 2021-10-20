@@ -240,13 +240,10 @@
         </v-stepper-items>
       </form>
     </v-stepper>
-
-    <!--      <VJsoneditor v-model="form" :plus="true" height="400px"/>-->
   </div>
 </template>
 <script>
   import moment from 'moment';
-  import VJsoneditor from 'v-jsoneditor';
   import axios from 'axios';
   import Beneficiaries from './Beneficiaries';
 
@@ -364,8 +361,14 @@
       }
     },
     components: {
-      Beneficiaries,
-      VJsoneditor
+      Beneficiaries
     }
   };
 </script>
+
+
+<style>
+.v-stepper--alt-labels .v-stepper__step{
+  flex-basis: auto
+}
+</style>

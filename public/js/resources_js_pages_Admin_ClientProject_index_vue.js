@@ -240,6 +240,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5375,7 +5391,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=ac35b890&scoped=true& */ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true&");
+/* harmony import */ var _index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=ac35b890& */ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&");
 /* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=script&lang=js&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -5387,11 +5403,11 @@ __webpack_require__.r(__webpack_exports__);
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
-  _index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__.render,
+  _index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
-  "ac35b890",
+  null,
   null
   
 )
@@ -5786,19 +5802,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true&":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true& ***!
-  \*****************************************************************************************************/
+/***/ "./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890& ***!
+  \*****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=ac35b890&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_ac35b890___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=ac35b890& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&");
 
 
 /***/ }),
@@ -6591,10 +6607,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/index.vue?vue&type=template&id=ac35b890& ***!
+  \********************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6608,136 +6624,165 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "v-card",
+    { staticStyle: { "padding-top": "64px" } },
     [
       _c(
         "v-app-bar",
+        {
+          staticClass: "primary text--primary rounded-0",
+          staticStyle: { top: "64px" },
+          attrs: { dark: "", flat: "", app: "", fixed: "" }
+        },
         [
           _c(
             "inertia-link",
             { attrs: { href: "/admin/clients", as: "button" } },
-            [_c("v-icon", [_vm._v("mdi-menu-left")])],
+            [
+              _c("v-icon", { attrs: { color: "white" } }, [
+                _vm._v("mdi-menu-left")
+              ])
+            ],
             1
           ),
           _vm._v(" "),
-          _c("v-toolbar-title", [
-            _c("small", [
-              _vm._v(
-                _vm._s(_vm.client.first_name) +
-                  " " +
-                  _vm._s(_vm.client.last_name)
-              )
-            ]),
-            _vm._v(
-              " " +
-                _vm._s(_vm.project.name) +
-                " (" +
-                _vm._s(_vm.pascelToTitleCase(_vm.project.type)) +
-                ")\n    "
-            )
-          ]),
-          _vm._v(" "),
-          _c("v-spacer"),
-          _vm._v(" "),
-          _c("v-select", {
-            attrs: { "max-width": "200", items: _vm.templates },
-            model: {
-              value: _vm.currentDocument,
-              callback: function($$v) {
-                _vm.currentDocument = $$v
-              },
-              expression: "currentDocument"
-            }
-          }),
-          _vm._v(" "),
-          _c("VueFileToolbarMenu", {
-            staticClass: "bar",
-            attrs: { content: _vm.menu }
-          }),
-          _vm._v(" "),
           _c(
-            "v-dialog",
-            {
-              attrs: { "max-width": "500" },
-              scopedSlots: _vm._u([
+            "v-app-bar",
+            { attrs: { color: "transparent", flat: "" } },
+            [
+              _c("v-app-bar-title", [
+                _c("small", [
+                  _vm._v(
+                    _vm._s(_vm.client.first_name) +
+                      " " +
+                      _vm._s(_vm.client.last_name)
+                  )
+                ]),
+                _vm._v(
+                  " " +
+                    _vm._s(_vm.project.name) +
+                    " (" +
+                    _vm._s(_vm.pascelToTitleCase(_vm.project.type)) +
+                    ")\n    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c("v-select", {
+                attrs: {
+                  "prepend-icon": "mdi-file-document-multiple-outline",
+                  dark: "",
+                  dense: "",
+                  filled: "",
+                  "max-width": "200",
+                  items: _vm.templates
+                },
+                model: {
+                  value: _vm.currentDocument,
+                  callback: function($$v) {
+                    _vm.currentDocument = $$v
+                  },
+                  expression: "currentDocument"
+                }
+              }),
+              _vm._v(" "),
+              _c("VueFileToolbarMenu", {
+                staticClass: "ml-2 rounded-2 bar white",
+                attrs: { content: _vm.menu }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-dialog",
                 {
-                  key: "activator",
-                  fn: function(ref) {
-                    var on = ref.on
-                    var attrs = ref.attrs
-                    return [
+                  attrs: { "max-width": "500" },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var on = ref.on
+                        var attrs = ref.attrs
+                        return [
+                          _c(
+                            "v-btn",
+                            _vm._g(
+                              _vm._b(
+                                {
+                                  attrs: { dark: "", text: "" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.showDelete = !_vm.showDelete
+                                    }
+                                  }
+                                },
+                                "v-btn",
+                                attrs,
+                                false
+                              ),
+                              on
+                            ),
+                            [_c("v-icon", [_vm._v("mdi-delete")])],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ]),
+                  model: {
+                    value: _vm.showDelete,
+                    callback: function($$v) {
+                      _vm.showDelete = $$v
+                    },
+                    expression: "showDelete"
+                  }
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-card",
+                    [
+                      _c("v-card-title", [
+                        _c("span", { staticClass: "headline" }, [
+                          _vm._v(
+                            _vm._s("Are you sure you want to delete this?")
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
                       _c(
-                        "v-btn",
-                        _vm._g(
-                          _vm._b(
+                        "v-card-text",
+                        [
+                          _c(
+                            "v-btn",
                             {
-                              attrs: { text: "" },
+                              attrs: { color: "error", text: "" },
                               on: {
                                 click: function($event) {
-                                  _vm.showDelete = !_vm.showDelete
+                                  $event.preventDefault()
+                                  _vm.showDelete = false
                                 }
                               }
                             },
-                            "v-btn",
-                            attrs,
-                            false
+                            [_vm._v(_vm._s("Cancel"))]
                           ),
-                          on
-                        ),
-                        [_c("v-icon", [_vm._v("mdi-delete")])],
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "error" },
+                              nativeOn: {
+                                click: function($event) {
+                                  return _vm.onConfirmDelete.apply(
+                                    null,
+                                    arguments
+                                  )
+                                }
+                              }
+                            },
+                            [_vm._v("Delete")]
+                          )
+                        ],
                         1
-                      )
-                    ]
-                  }
-                }
-              ]),
-              model: {
-                value: _vm.showDelete,
-                callback: function($$v) {
-                  _vm.showDelete = $$v
-                },
-                expression: "showDelete"
-              }
-            },
-            [
-              _vm._v(" "),
-              _c(
-                "v-card",
-                [
-                  _c("v-card-title", [
-                    _c("span", { staticClass: "headline" }, [
-                      _vm._v(_vm._s("Are you sure you want to delete this?"))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "error", text: "" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.showDelete = false
-                            }
-                          }
-                        },
-                        [_vm._v(_vm._s("Cancel"))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "error" },
-                          nativeOn: {
-                            click: function($event) {
-                              return _vm.onConfirmDelete.apply(null, arguments)
-                            }
-                          }
-                        },
-                        [_vm._v("Delete")]
                       )
                     ],
                     1
@@ -6753,55 +6798,66 @@ var render = function() {
       ),
       _vm._v(" "),
       _c(
-        "v-container",
-        { attrs: { id: "document-container", fluid: "" } },
+        "v-sheet",
+        {
+          staticClass: "warm",
+          staticStyle: { position: "relative" },
+          attrs: { height: "100%" }
+        },
         [
           _c(
-            "v-row",
-            { attrs: { "no-gutters": "" } },
+            "v-container",
+            { attrs: { id: "document-container", fluid: "" } },
             [
               _c(
-                "v-col",
-                { attrs: { cols: "12", sm: "12", md: "4" } },
+                "v-row",
+                { attrs: { "no-gutters": "" } },
                 [
-                  _c(_vm.content[0].wizard, {
-                    tag: "component",
-                    attrs: { project: _vm.project, client: _vm.client },
-                    on: {
-                      "update:project": function($event) {
-                        _vm.project = $event
-                      },
-                      "update:client": function($event) {
-                        _vm.client = $event
-                      },
-                      updateProject: _vm.onUpdateProject
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-col",
-                { attrs: { cols: "12", sm: "12", md: "8" } },
-                [
-                  _vm.content
-                    ? _c("VueDocumentEditor", {
-                        ref: "editor",
-                        staticClass: "editor",
-                        attrs: {
-                          content: _vm.content,
-                          overlay: null,
-                          zoom: _vm.zoom,
-                          display: _vm.display
-                        },
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "12", md: "4" } },
+                    [
+                      _c(_vm.content[0].wizard, {
+                        tag: "component",
+                        attrs: { project: _vm.project, client: _vm.client },
                         on: {
-                          "update:content": function($event) {
-                            _vm.content = $event
-                          }
+                          "update:project": function($event) {
+                            _vm.project = $event
+                          },
+                          "update:client": function($event) {
+                            _vm.client = $event
+                          },
+                          updateProject: _vm.onUpdateProject
                         }
                       })
-                    : _vm._e()
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "12", md: "8" } },
+                    [
+                      _vm.content
+                        ? _c("VueDocumentEditor", {
+                            ref: "editor",
+                            staticClass: "editor",
+                            attrs: {
+                              content: _vm.content,
+                              overlay: null,
+                              zoom: _vm.zoom,
+                              display: _vm.display
+                            },
+                            on: {
+                              "update:content": function($event) {
+                                _vm.content = $event
+                              }
+                            }
+                          })
+                        : _vm._e()
+                    ],
+                    1
+                  )
                 ],
                 1
               )

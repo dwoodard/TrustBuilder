@@ -1,26 +1,33 @@
 <template>
-  <div>
-    <v-app-bar>
+  <v-card style="padding-top: 64px">
+    <v-app-bar dark flat app class="primary text--primary rounded-0" fixed style="top:64px" >
       <inertia-link href="/admin/clients" as="button">
-        <v-icon>mdi-menu-left</v-icon>
+        <v-icon color="white">mdi-menu-left</v-icon>
       </inertia-link>
 
-      <v-toolbar-title>
+      <v-app-bar color="transparent" flat>
+      <v-app-bar-title>
         <small>{{ client.first_name }} {{ client.last_name }}</small> {{ project.name }} ({{ pascelToTitleCase(project.type) }})
-      </v-toolbar-title>
+      </v-app-bar-title>
 
       <v-spacer/>
 
       <v-select
+          prepend-icon="mdi-file-document-multiple-outline"
+          dark
+          dense
+          filled
         v-model="currentDocument"
         max-width="200"
         :items="templates"/>
-      <VueFileToolbarMenu :content="menu" class="bar"/>
+
+      <VueFileToolbarMenu   :content="menu" class="ml-2 rounded-2 bar white"/>
 
       <!-- confirm delete dialog -->
       <v-dialog v-model="showDelete" max-width="500">
         <template #activator="{ on, attrs }">
           <v-btn
+              dark
             text
             v-bind="attrs"
             v-on="on"
@@ -39,29 +46,38 @@
         </v-card>
       </v-dialog>
       <!-- end confirm delete dialog -->
+
+      </v-app-bar>
     </v-app-bar>
 
+    <v-sheet
+        height="100%"
+        class="warm"
+        style="position: relative;"
+    >
+      <v-container id="document-container" fluid>
+        <v-row no-gutters>
+          <v-col cols="12" sm="12" md="4">
+            <component :is="content[0].wizard"
+                       :project.sync="project"
+                       :client.sync="client"
+                       @updateProject="onUpdateProject"/>
+          </v-col>
+          <v-col cols="12" sm="12" md="8">
+            <VueDocumentEditor
+                v-if="content"
+                ref="editor"
+                class="editor" :content.sync="content"
+                :overlay="null"
+                :zoom="zoom"
+                :display="display"/>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
 
-    <v-container id="document-container" fluid>
-      <v-row no-gutters>
-        <v-col cols="12" sm="12" md="4">
-          <component :is="content[0].wizard"
-                     :project.sync="project"
-                     :client.sync="client"
-                     @updateProject="onUpdateProject"/>
-        </v-col>
-        <v-col cols="12" sm="12" md="8">
-          <VueDocumentEditor
-            v-if="content"
-            ref="editor"
-            class="editor" :content.sync="content"
-            :overlay="null"
-            :zoom="zoom"
-            :display="display"/>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+
+  </v-card>
 </template>
 
 <script>
@@ -234,6 +250,4 @@
   };
 </script>
 
-<style scoped>
 
-</style>

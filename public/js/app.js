@@ -2342,7 +2342,7 @@ new vue__WEBPACK_IMPORTED_MODULE_7__["default"]({
   vuetify: _plugins_vuetify__WEBPACK_IMPORTED_MODULE_5__["default"],
   metaInfo: {
     titleTemplate: function titleTemplate(title) {
-      return title ? " - PROJECT" : 'PROJECT';
+      return title ? ' - PROJECT' : 'PROJECT';
     }
   },
   render: function render(h) {
@@ -2444,7 +2444,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuetify__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var vuetify_dist_vuetify_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/dist/vuetify.css */ "./node_modules/vuetify/dist/vuetify.css");
 /* harmony import */ var _mdi_font_css_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mdi/font/css/materialdesignicons.css */ "./node_modules/@mdi/font/css/materialdesignicons.css");
-
 
 
 
