@@ -345,7 +345,6 @@
       },
 
       updateForm() {
-        console.log('updateForm');
         this
           .form
           .transform((data) => ({
@@ -356,7 +355,7 @@
                {
                  preserveScroll: true,
                  onSuccess: (e) => {
-                   console.log(e);
+                   console.log('updateForm onSuccess', e);
                  }
                },
                {

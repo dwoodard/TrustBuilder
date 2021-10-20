@@ -541,7 +541,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     updateForm: function updateForm() {
       var _this2 = this;
 
-      console.log('updateForm');
       this.form.transform(function (data) {
         return {
           name: _this2.form.trust_name,
@@ -550,7 +549,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }).put("/admin/projects/".concat(this.project.id), {
         preserveScroll: true,
         onSuccess: function onSuccess(e) {
-          console.log(e);
+          console.log('updateForm onSuccess', e);
         }
       }, {
         resetOnSuccess: false

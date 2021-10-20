@@ -841,6 +841,7 @@ var render = function() {
   return _c(
     "v-navigation-drawer",
     {
+      staticStyle: { "padding-top": "64px" },
       attrs: {
         "mini-variant": _vm.mini,
         app: "",

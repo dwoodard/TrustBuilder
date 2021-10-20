@@ -251,6 +251,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -6415,6 +6416,7 @@ var render = function() {
   return _c(
     "v-navigation-drawer",
     {
+      staticStyle: { "padding-top": "64px" },
       attrs: {
         "mini-variant": _vm.mini,
         app: "",

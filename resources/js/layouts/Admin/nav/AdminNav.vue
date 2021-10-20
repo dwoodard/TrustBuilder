@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="sidebarDrawer" :mini-variant.sync="mini" app dark permanent stateless clipped>
+  <v-navigation-drawer v-model="sidebarDrawer" :mini-variant.sync="mini" app dark permanent stateless clipped style="padding-top: 64px;">
     <v-list dense flat outlined>
       <v-list-item class="pointer" @click="toggleMini = !toggleMini">
         <v-icon v-if="!mini">mdi-menu-open</v-icon>
