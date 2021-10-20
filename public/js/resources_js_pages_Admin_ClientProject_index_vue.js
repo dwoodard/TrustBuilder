@@ -252,6 +252,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -297,29 +304,18 @@ __webpack_require__.r(__webpack_exports__);
           project: this.project
         }
       }];
-    },
-    // This is the menu content
-    menu: function menu() {
-      var _this2 = this;
-
-      return [// Main commands
-      {
-        text: 'Preview',
-        title: 'Preview',
-        icon: 'print',
-        click: function click() {
-          window.open("/admin/client/".concat(_this2.client.id, "/project/").concat(_this2.project.id, "/print"), '_blank');
-        }
-      }];
     }
   },
   methods: {
+    onPrint: function onPrint() {
+      window.open("/admin/client/".concat(this.client.id, "/project/").concat(this.project.id, "/print"), '_blank');
+    },
     pascelToTitleCase: _helper__WEBPACK_IMPORTED_MODULE_3__.pascelToTitleCase,
     updatePageHeight: function updatePageHeight() {
-      var _this3 = this;
+      var _this2 = this;
 
       this.$nextTick(function (e) {
-        _this3.onUpdateProject();
+        _this2.onUpdateProject();
       });
     },
     onUpdateProject: function onUpdateProject() {
@@ -345,7 +341,7 @@ __webpack_require__.r(__webpack_exports__);
     this.mounted = true;
   },
   created: function created() {
-    var _this4 = this;
+    var _this3 = this;
 
     console.log('created');
     this.updatePageHeight(); // Initialize gesture flags
@@ -357,7 +353,7 @@ __webpack_require__.r(__webpack_exports__);
     window.addEventListener('wheel', function (e) {
       if (e.ctrlKey) {
         e.preventDefault();
-        _this4.zoom = Math.min(Math.max(_this4.zoom - e.deltaY * 0.01, _this4.zoom_min), _this4.zoom_max);
+        _this3.zoom = Math.min(Math.max(_this3.zoom - e.deltaY * 0.01, _this3.zoom_min), _this3.zoom_max);
       }
     }, {
       passive: false
@@ -365,13 +361,13 @@ __webpack_require__.r(__webpack_exports__);
 
     window.addEventListener('gesturestart', function (e) {
       e.preventDefault();
-      startZoomGesture = _this4.zoom;
+      startZoomGesture = _this3.zoom;
     });
     window.addEventListener('gesturechange', function (e) {
       e.preventDefault();
 
       if (!startZoomTouch) {
-        _this4.zoom = Math.min(Math.max(startZoomGesture * e.scale, _this4.zoom_min), _this4.zoom_max);
+        _this3.zoom = Math.min(Math.max(startZoomGesture * e.scale, _this3.zoom_min), _this3.zoom_max);
       }
     });
     window.addEventListener('gestureend', function () {
@@ -382,7 +378,7 @@ __webpack_require__.r(__webpack_exports__);
       if (e.touches.length === 2) {
         e.preventDefault();
         startDistTouch = Math.hypot(e.touches[0].pageX - e.touches[1].pageX, e.touches[0].pageY - e.touches[1].pageY);
-        startZoomTouch = _this4.zoom;
+        startZoomTouch = _this3.zoom;
       }
     }, {
       passive: false
@@ -391,7 +387,7 @@ __webpack_require__.r(__webpack_exports__);
       if (startDistTouch && startZoomTouch) {
         e.preventDefault();
         var zoom = startZoomTouch * Math.hypot(e.touches[0].pageX - e.touches[1].pageX, e.touches[0].pageY - e.touches[1].pageY) / startDistTouch;
-        _this4.zoom = Math.min(Math.max(zoom, _this4.zoom_min), _this4.zoom_max);
+        _this3.zoom = Math.min(Math.max(zoom, _this3.zoom_min), _this3.zoom_max);
       }
     }, {
       passive: false
@@ -6634,148 +6630,180 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-card",
+    "div",
     [
       _c(
         "v-app-bar",
         {
-          staticClass: "primary text--primary rounded-0",
+          staticClass: "primary rounded-0 text--white",
           staticStyle: { top: "64px" },
           attrs: { dark: "", flat: "", app: "", fixed: "" }
         },
         [
           _c(
-            "inertia-link",
-            { attrs: { href: "/admin/clients", as: "button" } },
+            "v-row",
             [
-              _c("v-icon", { attrs: { color: "white" } }, [
-                _vm._v("mdi-menu-left")
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-app-bar",
-            { attrs: { color: "transparent", flat: "" } },
-            [
-              _c("span", [
-                _vm._v("\n        " + _vm._s(_vm.project.name) + "\n      ")
-              ]),
-              _vm._v(" "),
-              _c("v-spacer"),
-              _vm._v(" "),
-              _c("v-select", {
-                attrs: {
-                  "prepend-icon": "mdi-file-document-multiple-outline",
-                  dark: "",
-                  dense: "",
-                  filled: "",
-                  "max-width": "200",
-                  items: _vm.templates
-                },
-                model: {
-                  value: _vm.currentDocument,
-                  callback: function($$v) {
-                    _vm.currentDocument = $$v
-                  },
-                  expression: "currentDocument"
-                }
-              }),
-              _vm._v(" "),
-              _c("VueFileToolbarMenu", {
-                staticClass: "ml-2 rounded-2 bar white",
-                attrs: { content: _vm.menu }
-              }),
+              _c(
+                "v-col",
+                { staticClass: "d-flex align-center", attrs: { xs3: "" } },
+                [
+                  _c(
+                    "inertia-link",
+                    { attrs: { href: "/admin/clients", as: "button" } },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-menu-left")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "heading" }, [
+                    _vm._v(_vm._s(_vm.project.name))
+                  ])
+                ],
+                1
+              ),
               _vm._v(" "),
               _c(
-                "v-dialog",
-                {
-                  attrs: { "max-width": "500" },
-                  scopedSlots: _vm._u([
+                "v-col",
+                { attrs: { xs3: "" } },
+                [
+                  _c(
+                    "v-btn",
+                    { attrs: { icon: "" }, on: { click: _vm.onPrint } },
+                    [
+                      _c("v-icon", [_vm._v("mdi-printer")]),
+                      _vm._v(" "),
+                      _c("div", [_vm._v("Print")])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { attrs: { xs3: "" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      "hide-details": "auto",
+                      "prepend-icon": "mdi-file-document-multiple-outline",
+                      dark: "",
+                      dense: "",
+                      filled: "",
+                      "max-width": "200",
+                      items: _vm.templates
+                    },
+                    model: {
+                      value: _vm.currentDocument,
+                      callback: function($$v) {
+                        _vm.currentDocument = $$v
+                      },
+                      expression: "currentDocument"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { staticClass: "d-flex justify-end", attrs: { xs3: "" } },
+                [
+                  _c(
+                    "v-dialog",
                     {
-                      key: "activator",
-                      fn: function(ref) {
-                        var on = ref.on
-                        var attrs = ref.attrs
-                        return [
+                      attrs: { "max-width": "500" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            var attrs = ref.attrs
+                            return [
+                              _c(
+                                "v-btn",
+                                _vm._g(
+                                  _vm._b(
+                                    {
+                                      attrs: { dark: "", text: "" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showDelete = !_vm.showDelete
+                                        }
+                                      }
+                                    },
+                                    "v-btn",
+                                    attrs,
+                                    false
+                                  ),
+                                  on
+                                ),
+                                [_c("v-icon", [_vm._v("mdi-delete")])],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ]),
+                      model: {
+                        value: _vm.showDelete,
+                        callback: function($$v) {
+                          _vm.showDelete = $$v
+                        },
+                        expression: "showDelete"
+                      }
+                    },
+                    [
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        [
+                          _c("v-card-title", [
+                            _c("span", { staticClass: "headline" }, [
+                              _vm._v(
+                                _vm._s("Are you sure you want to delete this?")
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
                           _c(
-                            "v-btn",
-                            _vm._g(
-                              _vm._b(
+                            "v-card-text",
+                            [
+                              _c(
+                                "v-btn",
                                 {
-                                  attrs: { dark: "", text: "" },
+                                  attrs: { color: "error", text: "" },
                                   on: {
                                     click: function($event) {
-                                      _vm.showDelete = !_vm.showDelete
+                                      $event.preventDefault()
+                                      _vm.showDelete = false
                                     }
                                   }
                                 },
-                                "v-btn",
-                                attrs,
-                                false
+                                [_vm._v(_vm._s("Cancel"))]
                               ),
-                              on
-                            ),
-                            [_c("v-icon", [_vm._v("mdi-delete")])],
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { color: "error" },
+                                  nativeOn: {
+                                    click: function($event) {
+                                      return _vm.onConfirmDelete.apply(
+                                        null,
+                                        arguments
+                                      )
+                                    }
+                                  }
+                                },
+                                [_vm._v("Delete")]
+                              )
+                            ],
                             1
-                          )
-                        ]
-                      }
-                    }
-                  ]),
-                  model: {
-                    value: _vm.showDelete,
-                    callback: function($$v) {
-                      _vm.showDelete = $$v
-                    },
-                    expression: "showDelete"
-                  }
-                },
-                [
-                  _vm._v(" "),
-                  _c(
-                    "v-card",
-                    [
-                      _c("v-card-title", [
-                        _c("span", { staticClass: "headline" }, [
-                          _vm._v(
-                            _vm._s("Are you sure you want to delete this?")
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-card-text",
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "error", text: "" },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  _vm.showDelete = false
-                                }
-                              }
-                            },
-                            [_vm._v(_vm._s("Cancel"))]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "error" },
-                              nativeOn: {
-                                click: function($event) {
-                                  return _vm.onConfirmDelete.apply(
-                                    null,
-                                    arguments
-                                  )
-                                }
-                              }
-                            },
-                            [_vm._v("Delete")]
                           )
                         ],
                         1

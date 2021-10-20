@@ -1,54 +1,61 @@
 <template>
-  <v-card>
-    <v-app-bar dark flat app class="primary text--primary rounded-0" fixed style="top:64px">
-      <inertia-link href="/admin/clients" as="button">
-        <v-icon color="white">mdi-menu-left</v-icon>
-      </inertia-link>
+  <div>
+    <v-app-bar dark flat app class="primary rounded-0 text--white" fixed style="top:64px">
+      <v-row  >
+        <v-col xs3 class="d-flex align-center">
+          <inertia-link href="/admin/clients" as="button">
+            <v-icon color="white">mdi-menu-left</v-icon>
+          </inertia-link>
+          <span class="heading">{{ project.name }}</span>
+        </v-col>
 
-      <v-app-bar color="transparent" flat>
-        <span>
-          {{ project.name }}
-        </span>
+        <v-col xs3>
+          <v-btn icon @click="onPrint">
+            <v-icon>mdi-printer</v-icon>
+            <div>Print</div>
+          </v-btn>
+        </v-col>
 
-        <v-spacer/>
-
-
-        <v-select
-          v-model="currentDocument"
-          prepend-icon="mdi-file-document-multiple-outline"
-          dark
-          dense
-          filled
-          max-width="200"
-          :items="templates"/>
-
-        <VueFileToolbarMenu :content="menu" class="ml-2 rounded-2 bar white"/>
-
-        <!-- confirm delete dialog -->
-        <v-dialog v-model="showDelete" max-width="500">
-          <template #activator="{ on, attrs }">
-            <v-btn
+        <v-col xs3>
+          <v-select
+              v-model="currentDocument"
+              hide-details="auto"
+              prepend-icon="mdi-file-document-multiple-outline"
               dark
-              text
-              v-bind="attrs"
-              v-on="on"
-              @click="showDelete = !showDelete">
-              <v-icon>mdi-delete</v-icon>
-            </v-btn>
-          </template>
-          <v-card>
-            <v-card-title>
-              <span class="headline">{{ 'Are you sure you want to delete this?' }}</span>
-            </v-card-title>
-            <v-card-text>
-              <v-btn color="error" text @click.prevent="showDelete = false">{{ 'Cancel' }}</v-btn>
-              <v-btn color="error" @click.native="onConfirmDelete">Delete</v-btn>
-            </v-card-text>
-          </v-card>
-        </v-dialog>
-      <!-- end confirm delete dialog -->
-      </v-app-bar>
+              dense
+              filled
+              max-width="200"
+              :items="templates"/>
+        </v-col>
+        <v-col xs3 class="d-flex justify-end">
+          <v-dialog v-model="showDelete" max-width="500">
+            <template #activator="{ on, attrs }">
+              <v-btn
+                  dark
+                  text
+                  v-bind="attrs"
+                  v-on="on"
+                  @click="showDelete = !showDelete">
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title>
+                <span class="headline">{{ 'Are you sure you want to delete this?' }}</span>
+              </v-card-title>
+              <v-card-text>
+                <v-btn color="error" text @click.prevent="showDelete = false">{{ 'Cancel' }}</v-btn>
+                <v-btn color="error" @click.native="onConfirmDelete">Delete</v-btn>
+              </v-card-text>
+            </v-card>
+          </v-dialog>
+        </v-col>
+      </v-row>
     </v-app-bar>
+
+
+
+
 
     <v-sheet class="warm" style="position: relative;padding-top: 64px;">
       <v-container id="document-container" fluid>
@@ -71,7 +78,7 @@
         </v-row>
       </v-container>
     </v-sheet>
-  </v-card>
+  </div>
 </template>
 
 <script>
@@ -114,28 +121,13 @@
           wizard: () => import(`../../../document_templates/${this.project.type}/Wizard`),
           props: {client: this.client, project: this.project}
         }];
-      },
-
-
-      // This is the menu content
-      menu() {
-        return [
-          // Main commands
-          {
-            text: 'Preview',
-            title: 'Preview',
-            icon: 'print',
-            click: () => {
-              window.open(`/admin/client/${this.client.id}/project/${this.project.id}/print`, '_blank');
-            }
-          }
-
-        ];
       }
-
 
     },
     methods: {
+      onPrint() {
+        window.open(`/admin/client/${this.client.id}/project/${this.project.id}/print`, '_blank');
+      },
       pascelToTitleCase,
       updatePageHeight() {
         this.$nextTick((e) => {
