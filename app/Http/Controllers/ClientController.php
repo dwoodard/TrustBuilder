@@ -6,6 +6,7 @@ use App\Http\Resources\ClientResource;
 use App\Models\Client;
 use App\Models\DocumentType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Schema;
@@ -18,6 +19,7 @@ class ClientController extends Controller
     {
         return Inertia::render('Admin/Clients/index', [
             'clients' => ClientResource::collection(Client::all()),
+            'projectTypes' => $this->getTypes(),
         ]);
     }
 
@@ -68,5 +70,19 @@ class ClientController extends Controller
         $client->delete();
 
         return Redirect::back()->with('success', 'User deleted.');
+    }
+
+
+    /**
+     * @return Collection
+     */
+    private function getTypes(): Collection
+    {
+        $typesPath = resource_path('js/document_templates');
+        $dirs = glob($typesPath . '/*', GLOB_ONLYDIR);
+
+        return collect($dirs)->map(function ($dir) {
+            return basename($dir);
+        });
     }
 }

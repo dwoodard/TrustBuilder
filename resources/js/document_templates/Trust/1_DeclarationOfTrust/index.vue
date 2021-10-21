@@ -332,7 +332,7 @@
         return this.project?.document_data?.document_created_at || new Date();
       },
       first_trustee() {
-        return this.project?.document_data?.trustees.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
+        return this.project?.document_data?.trustees?.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
       },
       trust_name() {
         return this.project?.document_data?.trust_name || this?.project?.name;
@@ -344,7 +344,7 @@
         return this.project?.document_data?.domicile_address || {};
       },
       term_of_trust() {
-        return this.project?.document_data?.term_of_trust || '99';
+        return this.project?.document_data?.term_of_trust || 99;
       }
     },
     methods: {

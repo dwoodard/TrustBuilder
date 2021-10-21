@@ -64,13 +64,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     projectTypes: function projectTypes() {
-      return [{
-        text: 'Trust',
-        value: 'Trust'
-      }, {
-        text: 'Declaration of Status',
-        value: 'DeclarationOfStatus'
-      }];
+      return this.$page.props.projectTypes.map(function (type) {
+        return {
+          text: (0,_helper__WEBPACK_IMPORTED_MODULE_0__.pascelToTitleCase)(type),
+          value: type
+        };
+      });
     },
     show: {
       get: function get() {

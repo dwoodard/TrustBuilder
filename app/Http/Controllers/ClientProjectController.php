@@ -23,7 +23,6 @@ class ClientProjectController extends \Inertia\Controller
     {
 
 
-
         $data = [
             'client' => ClientResource::collection([$client])->first()->jsonSerialize(),
             'project' => ProjectResource::collection([$project])->first()->jsonSerialize(),
@@ -42,6 +41,7 @@ class ClientProjectController extends \Inertia\Controller
     {
         $data = [
             'client' => ClientResource::collection([$client])->jsonSerialize(),
+
         ];
 
         return Inertia::render('Admin/ClientProject/create', $data);
@@ -100,10 +100,9 @@ class ClientProjectController extends \Inertia\Controller
     {
         $TemplatePath = resource_path('js/document_templates/' . $project->type);
         $dirs = glob($TemplatePath . '/*', GLOB_ONLYDIR);
-        $templates = collect($dirs)->map(function ($dir) {
+        return collect($dirs)->map(function ($dir) {
             return basename($dir);
         });
-        return $templates;
     }
 
 }

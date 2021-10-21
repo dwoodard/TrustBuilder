@@ -1,179 +1,9 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_document_templates_Trust_Wizard_vue"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77720"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: {
-    beneficiaries: {
-      type: Array,
-      "default": function _default() {
-        return [];
-      }
-    }
-  },
-  data: function data() {
-    return {
-      newBeneficiary: {
-        name: '',
-        units: 0
-      },
-      rules: {
-        name: [function (value) {
-          return !!value || 'Required.';
-        }],
-        units: [// (value) => !!value || 'Required.',
-          // (value) => !!value || 'Can not be 0'
-        ]
-      },
-      errors: {
-        name: null,
-        units: null
-      }
-    };
-  },
-  computed: {
-    totalUnits: function totalUnits() {
-      // convert units to a number and add all units up
-      return this.beneficiaries.reduce(function (total, item) {
-        return total + Number(item.units);
-      }, 0);
-    },
-    totalUnitsLeft: function totalUnitsLeft() {
-      return 100 - this.totalUnits;
-    },
-    hasUnits: function hasUnits() {
-      return this.totalUnitsLeft > 0;
-    }
-  },
-  methods: {
-    add: function add() {
-      if (this.checkForErrors()) {
-        return;
-      }
-
-      this.$emit('add', this.newBeneficiary);
-      this.newBeneficiary = {
-        name: '',
-        units: 0
-      };
-      this.checkForErrors();
-    },
-    remove: function remove(index) {
-      this.$emit('remove', index);
-    },
-    update: function update() {
-      this.$emit('update', this.beneficiaries);
-    },
-    checkForErrors: function checkForErrors() {
-      var _this = this;
-
-      var hasError = false;
-      Object.keys(this.rules).forEach(function (key) {
-        var rules = _this.rules[key];
-        var value = _this.newBeneficiary[key];
-        rules.forEach(function (rule) {
-          var error = rule(value);
-
-          if (typeof error === 'string') {
-            _this.errors[key] = error;
-            hasError = true;
-          } else {
-            _this.errors[key] = null;
-          }
-        });
-      });
-      return hasError;
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -183,85 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Beneficiaries_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Beneficiaries.vue */ "./resources/js/document_templates/Trust/Beneficiaries.vue");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../helper */ "./resources/js/helper.js");
 //
 //
 //
@@ -438,134 +190,75 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 
+
+var converter = __webpack_require__(/*! number-to-words-en */ "./node_modules/number-to-words-en/numberToWords.min.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['project', 'client'],
-  data: function data() {
-    var _this$project;
+  props: {
+    client: {
+      type: Object,
+      required: true
+    },
+    project: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    document_created_at: function document_created_at() {
+      var _this$project, _this$project$documen;
 
-    var user = this.$page.props.auth.user.data;
-    var documentData = (_this$project = this.project) === null || _this$project === void 0 ? void 0 : _this$project.document_data;
-    return {
-      currentStep: 1,
-      MenuDocumentCreated: '',
-      form: this.$inertia.form({
-        trust_name: (documentData === null || documentData === void 0 ? void 0 : documentData.trust_name) || this.project.name,
-        trustees: (documentData === null || documentData === void 0 ? void 0 : documentData.trustees) || {
-          first: ["".concat(this.client.first_name, " ").concat(this.client.last_name)],
-          second: []
-        },
-        settlor: (documentData === null || documentData === void 0 ? void 0 : documentData.settlor) || "".concat(user.first_name, " ").concat(user.last_name),
-        document_created_at: (documentData === null || documentData === void 0 ? void 0 : documentData.document_created_at) || this.moment().format('YYYY-MM-DD'),
-        mailing_address: (documentData === null || documentData === void 0 ? void 0 : documentData.mailing_address) || {
-          address: this.client.address,
-          apt: '',
-          city: this.client.city,
-          state: this.client.state,
-          zip: this.client.zip,
-          country: this.client.country
-        },
-        domicile_address: (documentData === null || documentData === void 0 ? void 0 : documentData.domicile_address) || {
-          address: '7512 Dr. Phillips Blvd.',
-          apt: 'Suite #50-185',
-          city: 'Orlando',
-          state: 'Florida',
-          zip: '32819',
-          country: 'USA'
-        },
-        settlor_gift_type: (documentData === null || documentData === void 0 ? void 0 : documentData.settlor_gift_type) || 'CASH',
-        settlor_gift: (documentData === null || documentData === void 0 ? void 0 : documentData.settlor_gift) || '100',
-        term_of_trust: (documentData === null || documentData === void 0 ? void 0 : documentData.term_of_trust) || '99',
-        beneficiaries: (documentData === null || documentData === void 0 ? void 0 : documentData.beneficiaries) || []
-      })
-    };
+      return ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$documen = _this$project.document_data) === null || _this$project$documen === void 0 ? void 0 : _this$project$documen.document_created_at) || new Date();
+    },
+    first_trustee: function first_trustee() {
+      var _this$project2, _this$project2$docume, _this$project2$docume2, _this$client, _this$client2;
+
+      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : (_this$project2$docume2 = _this$project2$docume.trustees) === null || _this$project2$docume2 === void 0 ? void 0 : _this$project2$docume2.first[0]) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
+    },
+    trustees: function trustees() {
+      var _this$project3, _this$project3$docume;
+
+      return (_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$docume = _this$project3.document_data) === null || _this$project3$docume === void 0 ? void 0 : _this$project3$docume.trustees;
+    },
+    second_trustee: function second_trustee() {
+      var _this$project4, _this$project4$docume, _this$project4$docume2;
+
+      return (_this$project4 = this.project) === null || _this$project4 === void 0 ? void 0 : (_this$project4$docume = _this$project4.document_data) === null || _this$project4$docume === void 0 ? void 0 : (_this$project4$docume2 = _this$project4$docume.trustees) === null || _this$project4$docume2 === void 0 ? void 0 : _this$project4$docume2.second[0];
+    },
+    mailing_address: function mailing_address() {
+      var _this$project5, _this$project5$docume;
+
+      return (_this$project5 = this.project) === null || _this$project5 === void 0 ? void 0 : (_this$project5$docume = _this$project5.document_data) === null || _this$project5$docume === void 0 ? void 0 : _this$project5$docume.mailing_address;
+    },
+    trust_name: function trust_name() {
+      var _this$project6, _this$project6$docume, _this$project7;
+
+      return ((_this$project6 = this.project) === null || _this$project6 === void 0 ? void 0 : (_this$project6$docume = _this$project6.document_data) === null || _this$project6$docume === void 0 ? void 0 : _this$project6$docume.trust_name) || (this === null || this === void 0 ? void 0 : (_this$project7 = this.project) === null || _this$project7 === void 0 ? void 0 : _this$project7.name);
+    },
+    settlor: function settlor() {
+      var _this$project8, _this$project8$docume;
+
+      return (_this$project8 = this.project) === null || _this$project8 === void 0 ? void 0 : (_this$project8$docume = _this$project8.document_data) === null || _this$project8$docume === void 0 ? void 0 : _this$project8$docume.settlor;
+    },
+    beneficiaries: function beneficiaries() {
+      var _this$project9, _this$project9$docume;
+
+      return ((_this$project9 = this.project) === null || _this$project9 === void 0 ? void 0 : (_this$project9$docume = _this$project9.document_data) === null || _this$project9$docume === void 0 ? void 0 : _this$project9$docume.beneficiaries) || [];
+    }
   },
   methods: {
     moment: (moment__WEBPACK_IMPORTED_MODULE_0___default()),
-    onAddBeneficiary: function onAddBeneficiary(beneficiary) {
-      this.form.beneficiaries.push(beneficiary);
-      this.updateProject();
-    },
-    onDeleteBeneficiary: function onDeleteBeneficiary(beneficiaryIndex) {
-      this.form.beneficiaries.splice(beneficiaryIndex, 1);
-      this.updateProject();
-    },
-    onUpdateBeneficiary: function onUpdateBeneficiary(beneficiaries, index) {
-      this.form.beneficiaries = beneficiaries;
-      this.updateProject();
-    },
-    // onAddTrustee(Trustee) {
-    //   this.form.trustees.push(Trustee);
-    //   this.updateProject();
-    // },
-    // onDeleteTrustee(TrusteeIndex) {
-    //   this.form.trustees.splice(TrusteeIndex, 1);
-    //   this.updateProject();
-    // },
-    // onUpdateTrustee(trustees, index) {
-    //   this.form.trustees = trustees;
-    //   this.updateProject();
-    // },
-    updateProject: function updateProject() {
-      var _this = this;
-
-      console.log('updateProject');
-      axios__WEBPACK_IMPORTED_MODULE_1___default().post("/admin/projects/".concat(this.project.id), {
-        _method: 'PUT',
-        name: this.form.trust_name,
-        document_data: this.form.data()
-      }, {
-        params: {
-          resetOnSuccess: false
-        }
-      }) // eslint-disable-next-line promise/always-return
-      .then(function (result) {
-        _this.$emit('updateProject', JSON.parse(result.config.data));
-      });
-    },
-    onEnter: function onEnter() {
-      console.log('save onEnter');
-      this.updateProject();
-    },
-    nextStep: function nextStep() {
-      var steps = this.$el.querySelectorAll('.v-stepper__step').length;
-      this.currentStep = this.currentStep === steps ? 1 : Number(this.currentStep) + 1;
-
-      if (this.currentStep <= steps) {
-        this.updateProject();
-      } else {
-        this.updateForm();
-      }
-    },
-    updateForm: function updateForm() {
-      var _this2 = this;
-
-      this.form.transform(function (data) {
-        return {
-          name: _this2.form.trust_name,
-          document_data: _objectSpread({}, data)
-        };
-      }).put("/admin/projects/".concat(this.project.id), {
-        preserveScroll: true,
-        onSuccess: function onSuccess(e) {
-          console.log('updateForm onSuccess', e);
-        }
-      }, {
-        resetOnSuccess: false
-      });
-    }
-  },
-  components: {
-    Beneficiaries: _Beneficiaries_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    toWordsOrdinal: converter.toWordsOrdinal,
+    toTitleCase: _helper__WEBPACK_IMPORTED_MODULE_1__.toTitleCase
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -573,13 +266,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.v-stepper--alt-labels .v-stepper__step{\n  flex-basis: auto\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.check[data-v-bcd2ead8]{\n  color:red\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22020,10 +21713,28 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css&":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/number-to-words-en/numberToWords.min.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/number-to-words-en/numberToWords.min.js ***!
+  \**************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+/*!
+ * Number-To-Words util
+ * @version v1.2.5
+ * @link https://github.com/marlun78/number-to-words
+ * @author Martin Eneqvist (https://github.com/marlun78)
+ * @contributors Aleksey Pilyugin (https://github.com/pilyugin),Jeremiah Hall (https://github.com/jeremiahrhall),Adriano Melo (https://github.com/adrianomelo),dmrzn (https://github.com/dmrzn),Lowell Stewart (https://github.com/opendocx)
+ * @license MIT
+ */
+!function(){"use strict";var e="object"==typeof self&&self.self===self&&self||"object"==typeof __webpack_require__.g&&__webpack_require__.g.global===__webpack_require__.g&&__webpack_require__.g||this,t=9007199254740991;function s(e){return!("number"!=typeof e||e!=e||e===1/0||e===-1/0)}function f(e){return"number"==typeof e&&Math.abs(e)<=t}var n=/(hundred|thousand|(m|b|tr|quadr)illion)$/,o=/teen$/,r=/y$/,i=/(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$/,a={zero:"zeroth",one:"first",two:"second",three:"third",four:"fourth",five:"fifth",six:"sixth",seven:"seventh",eight:"eighth",nine:"ninth",ten:"tenth",eleven:"eleventh",twelve:"twelfth"};function l(e){return n.test(e)||o.test(e)?e+"th":r.test(e)?e.replace(r,"ieth"):i.test(e)?e.replace(i,u):e}function u(e,t){return a[t]}var h=10,v=100,m=1e3,p=1e6,d=1e9,g=1e12,b=1e15,y=9007199254740992,c=["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"],w=["zero","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];function x(e,t){var n,o=!1;"object"==typeof t&&t?("string"!=typeof t.negativePrefix&&(t.negativePrefix="minus"),t.useCommas=Boolean(t.useCommas)):(o=t,t={useCommas:!0,negativePrefix:"minus"});var r=parseInt(e,10);if(!s(r))throw new TypeError("Not a finite number: "+e+" ("+typeof e+")");if(!f(r))throw new RangeError("Input is not a safe number; it’s either too large or too small.");return n=function e(t,n){var o,r,i,s=arguments[2],f=n.useCommas?",":"";if(0===t)return s?(i=s.join(" "),n.useCommas&&(i=i.replace(/,$/,"")),i):"zero";s||(s=[]);t<0&&(s.push(n.negativePrefix),t=Math.abs(t));t<20?(o=0,r=c[t]):t<v?(o=t%h,r=w[Math.floor(t/h)],o&&(r+="-"+c[o],o=0)):t<m?(o=t%v,r=e(Math.floor(t/v),n)+" hundred"):t<p?(o=t%m,r=e(Math.floor(t/m),n)+" thousand"+f):t<d?(o=t%p,r=e(Math.floor(t/p),n)+" million"+f):t<g?(o=t%d,r=e(Math.floor(t/d),n)+" billion"+f):t<b?(o=t%g,r=e(Math.floor(t/g),n)+" trillion"+f):t<=y&&(o=t%b,r=e(Math.floor(t/b),n)+" quadrillion"+f);s.push(r);return e(o,n,s)}(r,t),o?l(n):n}var M={toOrdinal:function(e){var t=parseInt(e,10);if(!s(t))throw new TypeError("Not a finite number: "+e+" ("+typeof e+")");if(!f(t))throw new RangeError("Input is not a safe number; it’s either too large or too small.");var n=String(t),o=Math.abs(t%100),r=11<=o&&o<=13,i=n.charAt(n.length-1);return n+(r?"th":"1"===i?"st":"2"===i?"nd":"3"===i?"rd":"th")},toWords:x,toWordsOrdinal:function(e,t){return l(x(e,t))}}; true?( true&&module.exports&&(exports=module.exports=M),exports.numberToWords=M):0}();
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22031,9 +21742,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Wizard.vue?vue&type=style&index=0&lang=css& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_bcd2ead8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css&");
 
             
 
@@ -22042,18 +21753,18 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_bcd2ead8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_bcd2ead8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
-/***/ "./resources/js/document_templates/Trust/Beneficiaries.vue":
-/*!*****************************************************************!*\
-  !*** ./resources/js/document_templates/Trust/Beneficiaries.vue ***!
-  \*****************************************************************/
+/***/ "./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue ***!
+  \*****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22061,49 +21772,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Beneficiaries_vue_vue_type_template_id_66521590___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Beneficiaries.vue?vue&type=template&id=66521590& */ "./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=template&id=66521590&");
-/* harmony import */ var _Beneficiaries_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Beneficiaries.vue?vue&type=script&lang=js& */ "./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Beneficiaries_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Beneficiaries_vue_vue_type_template_id_66521590___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Beneficiaries_vue_vue_type_template_id_66521590___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/document_templates/Trust/Beneficiaries.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/document_templates/Trust/Wizard.vue":
-/*!**********************************************************!*\
-  !*** ./resources/js/document_templates/Trust/Wizard.vue ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Wizard_vue_vue_type_template_id_197bd1ee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Wizard.vue?vue&type=template&id=197bd1ee& */ "./resources/js/document_templates/Trust/Wizard.vue?vue&type=template&id=197bd1ee&");
-/* harmony import */ var _Wizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Wizard.vue?vue&type=script&lang=js& */ "./resources/js/document_templates/Trust/Wizard.vue?vue&type=script&lang=js&");
-/* harmony import */ var _Wizard_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Wizard.vue?vue&type=style&index=0&lang=css& */ "./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _index_vue_vue_type_template_id_bcd2ead8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=bcd2ead8&scoped=true& */ "./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=template&id=bcd2ead8&scoped=true&");
+/* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=script&lang=js&");
+/* harmony import */ var _index_vue_vue_type_style_index_0_id_bcd2ead8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css& */ "./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -22113,27 +21785,27 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _Wizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Wizard_vue_vue_type_template_id_197bd1ee___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Wizard_vue_vue_type_template_id_197bd1ee___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _index_vue_vue_type_template_id_bcd2ead8_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _index_vue_vue_type_template_id_bcd2ead8_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
-  null,
+  "bcd2ead8",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/document_templates/Trust/Wizard.vue"
+component.options.__file = "resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************/
+/***/ "./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22141,345 +21813,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Beneficiaries_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Beneficiaries.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Beneficiaries_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/document_templates/Trust/Wizard.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/document_templates/Trust/Wizard.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************/
+/***/ "./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css&":
+/*!**************************************************************************************************************************************!*\
+  !*** ./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css& ***!
+  \**************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_bcd2ead8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=style&index=0&id=bcd2ead8&scoped=true&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=template&id=bcd2ead8&scoped=true&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=template&id=bcd2ead8&scoped=true& ***!
+  \************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_bcd2ead8_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_bcd2ead8_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Wizard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css&":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css& ***!
-  \*******************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Wizard.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_bcd2ead8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=bcd2ead8&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=template&id=bcd2ead8&scoped=true&");
 
 
 /***/ }),
 
-/***/ "./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=template&id=66521590&":
-/*!************************************************************************************************!*\
-  !*** ./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=template&id=66521590& ***!
-  \************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Beneficiaries_vue_vue_type_template_id_66521590___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Beneficiaries_vue_vue_type_template_id_66521590___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Beneficiaries_vue_vue_type_template_id_66521590___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Beneficiaries.vue?vue&type=template&id=66521590& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=template&id=66521590&");
-
-
-/***/ }),
-
-/***/ "./resources/js/document_templates/Trust/Wizard.vue?vue&type=template&id=197bd1ee&":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/document_templates/Trust/Wizard.vue?vue&type=template&id=197bd1ee& ***!
-  \*****************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_template_id_197bd1ee___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_template_id_197bd1ee___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_template_id_197bd1ee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Wizard.vue?vue&type=template&id=197bd1ee& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=template&id=197bd1ee&");
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=template&id=66521590&":
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Beneficiaries.vue?vue&type=template&id=66521590& ***!
-  \***************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-card",
-    { staticClass: "mt-4 mb-10", attrs: { outlined: "" } },
-    [
-      _c("v-card-title", [_vm._v("Beneficiaries ")]),
-      _vm._v(" "),
-      _vm.hasUnits
-        ? _c("v-card-subtitle", [
-            _vm._v(
-              "\n    Units Left " +
-                _vm._s(_vm.totalUnitsLeft - _vm.newBeneficiary.units) +
-                "\n  "
-            )
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "v-card-text",
-        [
-          _c(
-            "v-row",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.hasUnits,
-                  expression: "hasUnits"
-                }
-              ]
-            },
-            [
-              _c(
-                "v-col",
-                { attrs: { cols: "12", sm: "6" } },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.rules.name,
-                      "error-messages": _vm.errors.name,
-                      label: "Beneficiary Name",
-                      "append-icon-click": "add"
-                    },
-                    on: {
-                      keyup: [
-                        _vm.checkForErrors,
-                        function($event) {
-                          if (
-                            !$event.type.indexOf("key") &&
-                            _vm._k(
-                              $event.keyCode,
-                              "enter",
-                              13,
-                              $event.key,
-                              "Enter"
-                            )
-                          ) {
-                            return null
-                          }
-                          return _vm.add.apply(null, arguments)
-                        }
-                      ]
-                    },
-                    model: {
-                      value: _vm.newBeneficiary.name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.newBeneficiary, "name", $$v)
-                      },
-                      expression: "newBeneficiary.name"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-col",
-                { attrs: { cols: "12", sm: "6" } },
-                [
-                  _c("v-text-field", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !!_vm.newBeneficiary.name,
-                        expression: "!!newBeneficiary.name"
-                      }
-                    ],
-                    attrs: {
-                      "error-messages": _vm.errors.units,
-                      label: "Units",
-                      type: "number"
-                    },
-                    on: {
-                      keyup: [
-                        _vm.checkForErrors,
-                        function($event) {
-                          if (
-                            !$event.type.indexOf("key") &&
-                            _vm._k(
-                              $event.keyCode,
-                              "enter",
-                              13,
-                              $event.key,
-                              "Enter"
-                            )
-                          ) {
-                            return null
-                          }
-                          return _vm.add.apply(null, arguments)
-                        }
-                      ]
-                    },
-                    model: {
-                      value: _vm.newBeneficiary.units,
-                      callback: function($$v) {
-                        _vm.$set(_vm.newBeneficiary, "units", $$v)
-                      },
-                      expression: "newBeneficiary.units"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-slider", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !!_vm.newBeneficiary.name,
-                        expression: "!!newBeneficiary.name"
-                      }
-                    ],
-                    attrs: {
-                      min: "0",
-                      disabled: !_vm.hasUnits,
-                      max: _vm.totalUnitsLeft,
-                      hint:
-                        _vm.newBeneficiary.name +
-                        " will receive " +
-                        _vm.newBeneficiary.units +
-                        " Units",
-                      "persistent-hint": ""
-                    },
-                    model: {
-                      value: _vm.newBeneficiary.units,
-                      callback: function($$v) {
-                        _vm.$set(_vm.newBeneficiary, "units", $$v)
-                      },
-                      expression: "newBeneficiary.units"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm.hasUnits
-            ? _c(
-                "v-row",
-                [
-                  _c(
-                    "v-col",
-                    { attrs: { cols: "12", sm: "6", offset: "6" } },
-                    [
-                      _c(
-                        "v-btn",
-                        { attrs: { color: "primary" }, on: { click: _vm.add } },
-                        [_vm._v("Add Beneficiary")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _c(
-            "v-list",
-            _vm._l(_vm.beneficiaries, function(item, index) {
-              return _c(
-                "v-list-item",
-                { key: index },
-                [
-                  _c("v-text-field", {
-                    attrs: { outlined: "", "single-line": "" },
-                    on: {
-                      change: function($event) {
-                        return _vm.update()
-                      }
-                    },
-                    model: {
-                      value: item.name,
-                      callback: function($$v) {
-                        _vm.$set(item, "name", $$v)
-                      },
-                      expression: "item.name"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      type: "number",
-                      min: "0",
-                      max: _vm.totalUnitsLeft,
-                      label: item.units + " Units"
-                    },
-                    model: {
-                      value: item.units,
-                      callback: function($$v) {
-                        _vm.$set(item, "units", $$v)
-                      },
-                      expression: "item.units"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "v-icon",
-                    {
-                      attrs: { color: "danger" },
-                      on: {
-                        click: function($event) {
-                          return _vm.remove(index)
-                        }
-                      }
-                    },
-                    [_vm._v("mdi-trash-can")]
-                  )
-                ],
-                1
-              )
-            }),
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=template&id=197bd1ee&":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/Wizard.vue?vue&type=template&id=197bd1ee& ***!
-  \********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=template&id=bcd2ead8&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue?vue&type=template&id=bcd2ead8&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22494,915 +21866,280 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "document-template" },
     [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v("\n    " + _vm._s(_vm.trust_name)),
+        _c("br"),
+        _vm._v("\n    7512 Dr. Phillips Blvd. Suite #50-185"),
+        _c("br"),
+        _vm._v("\n    Orlando, Florida, USA\n  ")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("b", { staticClass: "preview-field" }, [
+          _vm._v(
+            _vm._s(_vm.moment(_vm.document_created_at).format("MMMM D, YYYY"))
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v("\n    FIRST TRUSTEE, "),
+        _c("b", { staticClass: "preview-field" }, [
+          _vm._v(_vm._s(_vm.first_trustee))
+        ]),
+        _vm._v(", also acting as the "),
+        _c("b", [_vm._v("Meeting Secretary")]),
+        _vm._v(", is qualified to make the following resolution(s):\n  ")
+      ]),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-center mb-10" }, [
+        _c(
+          "ul",
+          { staticStyle: { "list-style": "none" } },
+          _vm._l(_vm.beneficiaries, function(beneficiary, index) {
+            return _c("li", [
+              _vm._v(
+                "\n        CERTIFICATE " +
+                  _vm._s((index + 1).toString().padStart(3, "0")) +
+                  ": " +
+                  _vm._s(beneficiary.name) +
+                  " - " +
+                  _vm._s(beneficiary.units) +
+                  " UNITS\n      "
+              )
+            ])
+          }),
+          0
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    Said CERTIFICATES are now registered in the Records of the BOARD.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(5),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          '\n    "Any compulsory discovery by extorting the party\'s oath, or compelling the production of his private books and papers, to convict him of a crime or to forfeit his property, is contrary to the principles of a free government. It is abhorrent to the instincts of an Englishman; it is abhorrent to the instincts of an American. It may suit the purposes of despotic power, but it cannot be pure atmosphere of political liberty and personal freedom."\n  '
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(6),
+      _vm._v(" "),
+      _c("b", [_vm._v("MINUTE NO. 5")]),
+      _vm._v(
+        ": Special meetings called in accordance with the Declaration of Trust may be held at any time and/or any place in the best interest of the TRUST upon three (3) days notice, which may be waived by any or all TRUSTEE(s) and/or other titled officers.\n  Board of Trustees Meeting 001 - Page 1 of 3\n  "
+      ),
+      _c("p", [
+        _c("b", [_vm._v("MINUTE NO. 6")]),
+        _vm._v(": The BOARD hereby appoints a SECONDARY TRUSTEE, "),
+        _c("b", { staticClass: "preview-field" }, [
+          _vm._v(_vm._s(_vm.second_trustee))
+        ]),
+        _vm._v(", to this BOARD, effective immediately.\n  ")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    The FIRST TRUSTEE shall designate, from time-to-time, specific tasks, roles, duties and/or authorities for which the SECONDARY TRUSTEE shall be consulted and/or be kept apprised.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    The FIRST TRUSTEE hereby waives the requirement to establish an Independent Contractor Agreement with the SECONDARY TRUSTEEs since the role has already been defined. However, the SECONDARY TRUSTEE shall act in all respects as an Independent Contractor with the Trust and hereby denies an employee / employer relationship with same.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "break-before" }),
+      _vm._v(" "),
+      _c("b", [_vm._v("MINUTE NO. 7")]),
+      _vm._v(
+        ": It is in the best interest of the TRUST to continue operation in as smooth a manner as possible, even if any TRUSTEE is unable to continue their duties due to death, resignation, permanent incapacitation or removal from office. Should this happen, the BOARD hereby nominates the following named SUCCESSOR TRUSTEE(s) to immediately take the place of the following named TRUSTEE in the event that the BOARD desires to fill the vacancy so created, rather than to reduce the number of TRUSTEES on the BOARD:\n\n  "
+      ),
+      _c("div", { staticClass: "pa-10" }, [
+        _c("table", { staticClass: "ma-auto" }, [
+          _c(
+            "tbody",
+            _vm._l(_vm.trustees.first, function(trustee, index) {
+              return _c("tr", [
+                _c("td", { staticClass: "text-right" }, [
+                  index > 0
+                    ? _c("span", { staticClass: "mr-10" }, [
+                        _vm._v(
+                          " " +
+                            _vm._s(_vm.toTitleCase(_vm.toWordsOrdinal(index))) +
+                            " Choice"
+                        )
+                      ])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: " text-right pr-10" }, [
+                  index > 0 ? _c("span", [_vm._v("Successor")]) : _vm._e(),
+                  _vm._v(" First Trustee:")
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  _c("b", { staticClass: "preview-field" }, [
+                    _vm._v(_vm._s(trustee))
+                  ])
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "pa-10" }, [
+        _c("table", { staticClass: "ma-auto" }, [
+          _c(
+            "tbody",
+            _vm._l(_vm.trustees.second, function(trustee, index) {
+              return _c("tr", [
+                _c("td", { staticClass: "text-right" }, [
+                  index > 0
+                    ? _c("span", { staticClass: "mr-10" }, [
+                        _vm._v(
+                          " " +
+                            _vm._s(_vm.toTitleCase(_vm.toWordsOrdinal(index))) +
+                            " Choice"
+                        )
+                      ])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: " text-right pr-10" }, [
+                  index > 0 ? _c("span", [_vm._v("Successor")]) : _vm._e(),
+                  _vm._v(" Secondary Trustee:")
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  _c("b", { staticClass: "preview-field" }, [
+                    _vm._v(_vm._s(trustee))
+                  ])
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    Should any choice for replacement TRUSTEE not be an adult (minimum 18 years old) at the time of request for appointment, the next choice shall be considered. This order of choices shall remain the preferred order of choices for subsequent appointments of a SUCCESSOR TRUSTEE for said positions listed above.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    Any such death, resignation, permanent incapacitation or removal from office of any TRUSTEE or other titled officer shall be noted in the Meeting Minutes of the TRUST, along with the decision of the BOARD to either fill the vacancy so created or to reduce the number of TRUSTEES. Should the BOARD vote to fill such a vacancy, the SUCCESSOR TRUSTEE shall immediately be notified by Certified Mail of their conditional appointment to the BOARD as TRUSTEE. Acceptance of such appointment shall be by special meeting called for such purpose and with an appropriate Meeting Minute signed by the accepting TRUSTEE. Upon the appointment of any new TRUSTEE to the BOARD, the BOARD shall, in like manner, nominate a SUCCESSOR TRUSTEE for such new TRUSTEE.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    The BOARD may, in its discretion, by appropriate Meeting Minute, allow for the pre-acceptance of the position of TRUSTEE by any SUCCESSOR TRUSTEE. The effect of any such pre-acceptance shall be to make the appointment of such SUCCESSOR TRUSTEE automatic upon receipt by such SUCCESSOR TRUSTEE of written notice of the death, resignation, permanent incapacitation or removal from office of the TRUSTEE they are named to succeed. No further action of the BOARD shall then be necessary to enable such TRUSTEE to exercise their authorized powers within this TRUST. However, an appropriate Meeting Minute shall be made reflecting that such action has taken place as soon thereafter as conveniently possible.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(7),
+      _vm._v(" "),
+      _vm._m(8),
+      _vm._v(" "),
+      _vm._m(9),
+      _vm._v(" "),
+      _vm._m(10),
+      _vm._v(" "),
+      _c("p", { staticClass: "ml-10 preview-field" }, [
+        _vm._v("\n    " + _vm._s(_vm.trust_name) + " "),
+        _c("br"),
+        _vm._v("\n    " + _vm._s(_vm.mailing_address.address)),
+        _c("br"),
+        _vm._v(
+          "\n    " +
+            _vm._s(_vm.mailing_address.city) +
+            ", " +
+            _vm._s(_vm.mailing_address.state) +
+            " " +
+            _vm._s(_vm.mailing_address.zip) +
+            "\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    Changing the mailing address at this time does not automatically change the domicile address. The domicile address remains unchanged.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(11),
+      _vm._v(" "),
+      _vm._m(12),
+      _vm._v(" "),
+      _vm._m(13),
+      _vm._v(" "),
+      _vm._m(14),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    An official Resolution may be drafted for any appropriate Meeting Minute above and dispersed to the appropriate party to whom it applies.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n    There being no further business to come before this BOARD at this initial meeting, upon a motion duly made, seconded and carried, the meeting was adjourned.\n  "
+        )
+      ]),
+      _vm._v(" "),
       _c(
-        "v-stepper",
-        {
-          attrs: { "alt-labels": "" },
-          model: {
-            value: _vm.currentStep,
-            callback: function($$v) {
-              _vm.currentStep = $$v
-            },
-            expression: "currentStep"
-          }
-        },
+        "v-container",
         [
           _c(
-            "div",
-            [
-              _vm.form.isDirty
-                ? _c("v-icon", { attrs: { color: "danger" } }, [
-                    _vm._v("mdi-update")
-                  ])
-                : _c("v-icon", { attrs: { color: "green" } }, [
-                    _vm._v("mdi-sticker-check")
-                  ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-stepper-header",
+            "v-row",
             [
               _c(
-                "v-stepper-step",
-                {
-                  attrs: {
-                    editable: "",
-                    complete: _vm.currentStep > 1,
-                    step: "1"
-                  }
-                },
-                [_c("small", [_vm._v("Client")])]
-              ),
-              _vm._v(" "),
-              _c("v-divider"),
-              _vm._v(" "),
-              _c(
-                "v-stepper-step",
-                {
-                  attrs: {
-                    editable: "",
-                    complete: _vm.currentStep > 2,
-                    rules: [
-                      function() {
-                        return !!_vm.form.trust_name
-                      }
-                    ],
-                    step: "2"
-                  }
-                },
-                [_c("small", [_vm._v("Trust")])]
-              ),
-              _vm._v(" "),
-              _c("v-divider"),
-              _vm._v(" "),
-              _c(
-                "v-stepper-step",
-                {
-                  attrs: {
-                    editable: "",
-                    complete: _vm.currentStep > 3,
-                    step: "3"
-                  }
-                },
-                [_c("small", [_vm._v("Trustees")])]
-              ),
-              _vm._v(" "),
-              _c("v-divider"),
-              _vm._v(" "),
-              _c("v-stepper-step", { attrs: { step: "4", editable: "" } }, [
-                _c("small", [_vm._v("Beneficiary")])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              on: {
-                keyup: function($event) {
-                  if (
-                    !$event.type.indexOf("key") &&
-                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                  ) {
-                    return null
-                  }
-                  return _vm.onEnter.apply(null, arguments)
-                }
-              }
-            },
-            [
-              _c(
-                "v-stepper-items",
+                "v-col",
                 [
-                  _c(
-                    "v-stepper-content",
-                    { attrs: { step: "1" } },
-                    [
-                      _c(
-                        "v-card",
-                        { staticClass: "mb-12", attrs: { outlined: "" } },
-                        [
-                          _c(
-                            "v-container",
-                            [
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "First Trustee" },
-                                        model: {
-                                          value: _vm.form.trustees.first[0],
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.trustees.first,
-                                              0,
-                                              $$v
-                                            )
-                                          },
-                                          expression: "form.trustees.first[0]"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "Mailing Address" },
-                                        model: {
-                                          value:
-                                            _vm.form.mailing_address.address,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.mailing_address,
-                                              "address",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.mailing_address.address"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "city" },
-                                        model: {
-                                          value: _vm.form.mailing_address.city,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.mailing_address,
-                                              "city",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.mailing_address.city"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "state" },
-                                        model: {
-                                          value: _vm.form.mailing_address.state,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.mailing_address,
-                                              "state",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.mailing_address.state"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "zip" },
-                                        model: {
-                                          value: _vm.form.mailing_address.zip,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.mailing_address,
-                                              "zip",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "form.mailing_address.zip"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "country" },
-                                        model: {
-                                          value:
-                                            _vm.form.mailing_address.country,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.mailing_address,
-                                              "country",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.mailing_address.country"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "primary" },
-                          on: { click: _vm.nextStep }
-                        },
-                        [_vm._v("\n            Continue\n          ")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-stepper-content",
-                    { attrs: { step: "2" } },
-                    [
-                      _c(
-                        "v-card",
-                        { staticClass: "mb-12", attrs: { outlined: "" } },
-                        [
-                          _c("v-card-title", [
-                            _vm._v("\n              Trust Info\n            ")
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "v-container",
-                            [
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "Trust Name" },
-                                        model: {
-                                          value: _vm.form.trust_name,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form,
-                                              "trust_name",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "form.trust_name"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c(
-                                        "v-menu",
-                                        {
-                                          attrs: {
-                                            label: "Document Created",
-                                            "close-on-content-click": false,
-                                            "max-width": "290"
-                                          },
-                                          scopedSlots: _vm._u([
-                                            {
-                                              key: "activator",
-                                              fn: function(ref) {
-                                                var on = ref.on
-                                                var attrs = ref.attrs
-                                                return [
-                                                  _c(
-                                                    "v-text-field",
-                                                    _vm._g(
-                                                      _vm._b(
-                                                        {
-                                                          attrs: {
-                                                            value:
-                                                              _vm.form
-                                                                .document_created_at,
-                                                            clearable: "",
-                                                            readonly: ""
-                                                          },
-                                                          on: {
-                                                            click: function(
-                                                              $event
-                                                            ) {
-                                                              _vm.form.document_created_at = null
-                                                            }
-                                                          }
-                                                        },
-                                                        "v-text-field",
-                                                        attrs,
-                                                        false
-                                                      ),
-                                                      on
-                                                    )
-                                                  )
-                                                ]
-                                              }
-                                            }
-                                          ]),
-                                          model: {
-                                            value: _vm.MenuDocumentCreated,
-                                            callback: function($$v) {
-                                              _vm.MenuDocumentCreated = $$v
-                                            },
-                                            expression: "MenuDocumentCreated"
-                                          }
-                                        },
-                                        [
-                                          _vm._v(" "),
-                                          _c("v-date-picker", {
-                                            attrs: {
-                                              "show-adjacent-months": ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.form.document_created_at,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.form,
-                                                  "document_created_at",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "form.document_created_at"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "Settlor" },
-                                        model: {
-                                          value: _vm.form.settlor,
-                                          callback: function($$v) {
-                                            _vm.$set(_vm.form, "settlor", $$v)
-                                          },
-                                          expression: "form.settlor"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "Settlor Gift Type" },
-                                        model: {
-                                          value: _vm.form.settlor_gift_type,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form,
-                                              "settlor_gift_type",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "form.settlor_gift_type"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: {
-                                          type: "number",
-                                          "prepend-icon": "mdi-currency-usd",
-                                          label: "Settlor Gift"
-                                        },
-                                        model: {
-                                          value: _vm.form.settlor_gift,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form,
-                                              "settlor_gift",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "form.settlor_gift"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "Term Of Trust" },
-                                        model: {
-                                          value: _vm.form.term_of_trust,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form,
-                                              "term_of_trust",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "form.term_of_trust"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-container",
-                            [
-                              _c("h3", [_vm._v("Domicile Address")]),
-                              _vm._v(" "),
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "address" },
-                                        model: {
-                                          value:
-                                            _vm.form.domicile_address.address,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.domicile_address,
-                                              "address",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.domicile_address.address"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "apartment" },
-                                        model: {
-                                          value: _vm.form.domicile_address.apt,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.domicile_address,
-                                              "apt",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.domicile_address.apt"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-row",
-                                [
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "city" },
-                                        model: {
-                                          value: _vm.form.domicile_address.city,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.domicile_address,
-                                              "city",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.domicile_address.city"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "state" },
-                                        model: {
-                                          value:
-                                            _vm.form.domicile_address.state,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.domicile_address,
-                                              "state",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.domicile_address.state"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "zip" },
-                                        model: {
-                                          value: _vm.form.domicile_address.zip,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.domicile_address,
-                                              "zip",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.domicile_address.zip"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    [
-                                      _c("v-text-field", {
-                                        attrs: { label: "country" },
-                                        model: {
-                                          value:
-                                            _vm.form.domicile_address.country,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.domicile_address,
-                                              "country",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "form.domicile_address.country"
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "primary" },
-                          on: { click: _vm.nextStep }
-                        },
-                        [_vm._v("\n            Continue\n          ")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-stepper-content",
-                    { attrs: { step: "3" } },
-                    [
-                      _c(
-                        "v-card",
-                        { staticClass: "mb-12", attrs: { outlined: "" } },
-                        [
-                          _c("v-card-title", [_vm._v("First Trustees")]),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-text",
-                            [
-                              _vm._l(_vm.form.trustees.first, function(
-                                item,
-                                index
-                              ) {
-                                return _c(
-                                  "div",
-                                  { key: index },
-                                  [
-                                    _c(
-                                      "v-row",
-                                      [
-                                        _c(
-                                          "v-col",
-                                          { attrs: { sm: "9" } },
-                                          [
-                                            _c("v-text-field", {
-                                              attrs: {
-                                                dense: "",
-                                                outlined: "",
-                                                "single-line": ""
-                                              },
-                                              model: {
-                                                value:
-                                                  _vm.form.trustees.first[
-                                                    index
-                                                  ],
-                                                callback: function($$v) {
-                                                  _vm.$set(
-                                                    _vm.form.trustees.first,
-                                                    index,
-                                                    $$v
-                                                  )
-                                                },
-                                                expression:
-                                                  "form.trustees.first[index]"
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-col",
-                                          { attrs: { sm: "3" } },
-                                          [
-                                            index !== 0
-                                              ? _c(
-                                                  "v-icon",
-                                                  {
-                                                    on: {
-                                                      click: function($event) {
-                                                        return _vm.form.trustees.first.splice(
-                                                          index,
-                                                          1
-                                                        )
-                                                      }
-                                                    }
-                                                  },
-                                                  [_vm._v("mdi-trash-can")]
-                                                )
-                                              : _vm._e()
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "v-icon",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.form.trustees.first.push("")
-                                    }
-                                  }
-                                },
-                                [_vm._v("mdi-plus")]
-                              )
-                            ],
-                            2
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-card",
-                        { staticClass: "mb-12", attrs: { outlined: "" } },
-                        [
-                          _c("v-card-title", [_vm._v("Second Trustees")]),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-text",
-                            [
-                              _vm._l(_vm.form.trustees.second, function(
-                                item,
-                                index
-                              ) {
-                                return _c(
-                                  "v-row",
-                                  { key: index },
-                                  [
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c("v-text-field", {
-                                          attrs: {
-                                            outlined: "",
-                                            "single-line": ""
-                                          },
-                                          model: {
-                                            value:
-                                              _vm.form.trustees.second[index],
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                _vm.form.trustees.second,
-                                                index,
-                                                $$v
-                                              )
-                                            },
-                                            expression:
-                                              "form.trustees.second[index]"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-col",
-                                      [
-                                        _c(
-                                          "v-icon",
-                                          {
-                                            on: {
-                                              click: function($event) {
-                                                return _vm.form.trustees.second.splice(
-                                                  index,
-                                                  1
-                                                )
-                                              }
-                                            }
-                                          },
-                                          [_vm._v("mdi-trash-can")]
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "v-icon",
-                                {
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.form.trustees.second.push("")
-                                    }
-                                  }
-                                },
-                                [_vm._v("mdi-plus")]
-                              )
-                            ],
-                            2
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "primary" },
-                          on: { click: _vm.nextStep }
-                        },
-                        [_vm._v("\n            Continue\n          ")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-stepper-content",
-                    { attrs: { step: "4" } },
-                    [
-                      _c("Beneficiaries", {
-                        attrs: { beneficiaries: _vm.form.beneficiaries },
-                        on: {
-                          add: _vm.onAddBeneficiary,
-                          update: _vm.onUpdateBeneficiary,
-                          remove: _vm.onDeleteBeneficiary
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "primary" },
-                          on: { click: _vm.nextStep }
-                        },
-                        [_vm._v("\n            Done\n          ")]
-                      )
-                    ],
-                    1
-                  )
+                  _c("v-text-field", {
+                    attrs: {
+                      filled: "",
+                      "persistent-hint": "",
+                      hint: "By FIRST TRUSTEE: " + _vm.first_trustee
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      filled: "",
+                      "persistent-hint": "",
+                      hint: "By MEETING SECRETARY: " + _vm.first_trustee
+                    }
+                  })
                 ],
                 1
               )
@@ -23416,7 +22153,177 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h3", [
+      _vm._v("MINUTES OF MEETING # "),
+      _c("b", [_vm._v("001")]),
+      _vm._v(", BOARD OF TRUSTEES (hereafter BOARD)")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v(
+        "\n    With all of the BOARD in attendance, the following Meeting Minutes were duly adopted and approved by unanimous consent as Minutes of the "
+      ),
+      _c("b", [_vm._v("First (1st) Meeting")]),
+      _vm._v(" of the BOARD.\n  ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 1:")]),
+      _vm._v(
+        " In accordance with the Declaration of Trust of the entity referenced above and executed on or before this date by and between the SETTLOR thereof and the FIRST TRUSTEE herein, the following property is hereby conveyed as an absolute gift unto the BOARD:\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v(
+        "\n    The full list of described property is attached to the TRUST documents entitled SCHEDULE A, and signed by the SETTLOR and the FIRST TRUSTEE. Said "
+      ),
+      _c("b", [_vm._v("Schedule A")]),
+      _vm._v(
+        " is accepted and ratified as being the true and correct list of all properties conveyed to and held by the BOARD as of this date.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO.2:")]),
+      _vm._v(
+        " In accordance with the Declaration of Trust of the entity referenced above and executed on or before this date by and between the SETTLOR thereof and the FIRST TRUSTEE herein, the BOARD acknowledges the written instructions of the SETTLOR concerning the issuance of the TRUST CERTIFICATES OF BENEFICIAL OWNERSHIP and acknowledges the issuance of one hundred (100) UNITS of beneficial ownership (per "
+      ),
+      _c("b", [_vm._v("Schedule B")]),
+      _vm._v(
+        ") in the following manner, according to the wishes of the SETTLOR, to wit:\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 3")]),
+      _vm._v(
+        ": According to the dictates of United States Supreme Court in the case Boyd v. U.S., 166 US 618 (1886) and the case of Silverthorn v. U.S., 251 385 (1920); The BOARD hereby declares all Meeting Minutes, schedules, letters, and attachments hereto of this TRUST to be private and inviolable and therefore are not to be loaned, read or disclosed to anyone at anytime, unless it is determined by unanimous consent of the BOARD that disclosure of a particular Meeting Minute would be in the best interest of the TRUST. The dictates alluded to above are as follows:\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 4")]),
+      _vm._v(
+        ": The BOARD declares the fiscal year of the TRUST to be the calendar year. The BOARD shall have the power to change such fiscal year by subsequent Meeting Minute if it is determined to be in the best interest of the TRUST to do so.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 8")]),
+      _vm._v(
+        ": The BOARD shall reimburse any TRUSTEE or other applicable titled officer, as appropriate, for all necessary expenses incurred by such TRUSTEE for travel on business of the BOARD, as well as any expenses incurred by such TRUSTEE incidental to his service as TRUSTEE. TO receive repayment of such expense, the TRUSTEE must submit to the BOARD, written evidence of such expense, such as a written log of travel, gas receipts, meal receipts, lodging receipts, and the like. The BOARD may, in its discretion, prepay the expenses of such travel or work for the BOARD by the TRUSTEE. Such TRUSTEE shall account to the BOARD for the expenditure of such prepayment and reimburse the BOARD for any overpayment.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO.9: ")]),
+      _vm._v(
+        "It being the intent of the SETTLOR hereto to preserve this TRUST, it shall be the policy of the BOARD not to employ the services of any individual, unless such can be done on an Independent Contractor and/or Contract Worker basis, to eliminate the added expense of Social Security Taxes, Unemployment Taxes, Workmen's Compensation Insurance, Withholding and the like.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 10")]),
+      _vm._v(
+        ": All Meeting Minutes, Resolutions, Records or other Documents concerning this TRUST shall include the signature of the FIRST TRUSTEE. Meeting Minutes shall also include the signature of the Meeting Secretary.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 11")]),
+      _vm._v(
+        ": As per the allowances in the Declaration of Trust, the BOARD hereby elects to change the Official TRUST Mailing Address to the following:\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 12")]),
+      _vm._v(
+        ": Unless otherwise changed in a future Meeting Minute by the BOARD, the FIRST TRUSTEE shall be the official Custodian of Records for this Trust. Any replacement FIRST TRUSTEE shall automatically assume the role of Custodian of Records also unless otherwise noted in a subsequent Meeting Minute.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 13")]),
+      _vm._v(
+        ": Meeting Minutes need not be notarized but Trust Resolutions must be notarized by the FIRST TRUSTEE before disbursement or presentment.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 14")]),
+      _vm._v(
+        ": Meeting Minute numbers need only be in sequence within a given Meeting and need not continue in succession to the next Meetings. Each Meeting shall start with Minute No. 01.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", { staticClass: "text-decoration-underline" }, [_vm._v("CLOSE:")])
+    ])
+  }
+]
 render._withStripped = true
 
 

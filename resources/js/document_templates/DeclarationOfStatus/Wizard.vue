@@ -13,9 +13,9 @@
         <v-divider/>
 
         <v-stepper-step
-          step="4"
+          step="2"
           editable>
-          Beneficiaries
+          Status Info
         </v-stepper-step>
       </v-stepper-header>
 
@@ -34,6 +34,19 @@
                 label="First Trustee"
                 @blur="updateProject"
                 @keydown.enter="updateProject"/>
+            </v-flex>
+          </v-card>
+
+          <v-btn
+            color="primary"
+            @click="onClick">
+            Continue
+          </v-btn>
+        </v-stepper-content>
+        <v-stepper-content step="2">
+          <v-card class="mb-12" color="grey lighten-5">
+            <v-flex md-6>
+              Status Info
             </v-flex>
           </v-card>
 

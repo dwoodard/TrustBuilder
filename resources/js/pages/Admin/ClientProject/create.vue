@@ -53,10 +53,9 @@
     },
     computed: {
       projectTypes() {
-        return [
-          {text: 'Trust', value: 'Trust'},
-          {text: 'Declaration of Status', value: 'DeclarationOfStatus'}
-        ];
+        return this.$page.props.projectTypes.map((type) => {
+          return {text: pascelToTitleCase(type), value: type};
+        });
       },
       show: {
         get() {

@@ -62,6 +62,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['project', 'client'],
@@ -21653,8 +21666,8 @@ var render = function() {
               _vm._v(" "),
               _c("v-divider"),
               _vm._v(" "),
-              _c("v-stepper-step", { attrs: { step: "4", editable: "" } }, [
-                _vm._v("\n        Beneficiaries\n      ")
+              _c("v-stepper-step", { attrs: { step: "2", editable: "" } }, [
+                _vm._v("\n        Status Info\n      ")
               ])
             ],
             1
@@ -21738,6 +21751,33 @@ var render = function() {
                         ],
                         1
                       )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { attrs: { color: "primary" }, on: { click: _vm.onClick } },
+                    [_vm._v("\n          Continue\n        ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "2" } },
+                [
+                  _c(
+                    "v-card",
+                    {
+                      staticClass: "mb-12",
+                      attrs: { color: "grey lighten-5" }
+                    },
+                    [
+                      _c("v-flex", { attrs: { "md-6": "" } }, [
+                        _vm._v("\n            Status Info\n          ")
+                      ])
                     ],
                     1
                   ),

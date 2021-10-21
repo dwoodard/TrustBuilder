@@ -15,7 +15,6 @@
             :rules="rules.name"
             :error-messages="errors.name"
             label="Beneficiary Name"
-            prepend-icon="account_circle"
             append-icon-click="add"
             @keyup="checkForErrors"
             @keyup.enter="add"/>

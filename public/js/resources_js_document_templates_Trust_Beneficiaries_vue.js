@@ -83,7 +83,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     beneficiaries: {
@@ -296,7 +295,6 @@ var render = function() {
                       rules: _vm.rules.name,
                       "error-messages": _vm.errors.name,
                       label: "Beneficiary Name",
-                      "prepend-icon": "account_circle",
                       "append-icon-click": "add"
                     },
                     on: {

@@ -349,9 +349,9 @@ var converter = __webpack_require__(/*! number-to-words-en */ "./node_modules/nu
       return ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$documen = _this$project.document_data) === null || _this$project$documen === void 0 ? void 0 : _this$project$documen.document_created_at) || new Date();
     },
     first_trustee: function first_trustee() {
-      var _this$project2, _this$project2$docume, _this$client, _this$client2;
+      var _this$project2, _this$project2$docume, _this$project2$docume2, _this$client, _this$client2;
 
-      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : _this$project2$docume.trustees.first[0]) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
+      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : (_this$project2$docume2 = _this$project2$docume.trustees) === null || _this$project2$docume2 === void 0 ? void 0 : _this$project2$docume2.first[0]) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
     },
     trust_name: function trust_name() {
       var _this$project3, _this$project3$docume, _this$project4;
@@ -371,7 +371,7 @@ var converter = __webpack_require__(/*! number-to-words-en */ "./node_modules/nu
     term_of_trust: function term_of_trust() {
       var _this$project7, _this$project7$docume;
 
-      return ((_this$project7 = this.project) === null || _this$project7 === void 0 ? void 0 : (_this$project7$docume = _this$project7.document_data) === null || _this$project7$docume === void 0 ? void 0 : _this$project7$docume.term_of_trust) || '99';
+      return ((_this$project7 = this.project) === null || _this$project7 === void 0 ? void 0 : (_this$project7$docume = _this$project7.document_data) === null || _this$project7$docume === void 0 ? void 0 : _this$project7$docume.term_of_trust) || 99;
     }
   },
   methods: {
