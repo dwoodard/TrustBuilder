@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 64px">
+  <div style="margin-top: 64px">
     <v-app-bar dark flat app class="primary rounded-0 text--white" fixed style="top:64px">
       <v-row>
         <v-col xs3 class="d-flex align-center">

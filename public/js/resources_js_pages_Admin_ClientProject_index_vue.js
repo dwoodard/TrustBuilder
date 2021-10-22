@@ -859,7 +859,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticStyle: { "padding-top": "64px" } },
+    { staticStyle: { "margin-top": "64px" } },
     [
       _c(
         "v-app-bar",
