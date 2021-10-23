@@ -21,7 +21,7 @@
   import DocumentViewer from '../../../../../../components/DocumentViewer';
 
   export default {
-    props:['currentDocument'],
+    props: ['currentDocument'],
     computed: {
       content() {
         console.log(this.currentDocument);
