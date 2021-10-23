@@ -362,14 +362,6 @@ render._withStripped = true
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./DeclarationOfStatus": [
-		"./resources/js/document_templates/DeclarationOfStatus/index.vue",
-		"resources_js_document_templates_DeclarationOfStatus_index_vue"
-	],
-	"./DeclarationOfStatus/": [
-		"./resources/js/document_templates/DeclarationOfStatus/index.vue",
-		"resources_js_document_templates_DeclarationOfStatus_index_vue"
-	],
 	"./DeclarationOfStatus/01_DeclarationOfStatus": [
 		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
 		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
@@ -386,157 +378,133 @@ var map = {
 		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
 		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
 	],
-	"./DeclarationOfStatus/Wizard": [
-		"./resources/js/document_templates/DeclarationOfStatus/Wizard.vue",
-		"resources_js_document_templates_DeclarationOfStatus_Wizard_vue"
-	],
-	"./DeclarationOfStatus/Wizard.vue": [
-		"./resources/js/document_templates/DeclarationOfStatus/Wizard.vue",
-		"resources_js_document_templates_DeclarationOfStatus_Wizard_vue"
-	],
-	"./DeclarationOfStatus/index": [
-		"./resources/js/document_templates/DeclarationOfStatus/index.vue",
-		"resources_js_document_templates_DeclarationOfStatus_index_vue"
-	],
-	"./DeclarationOfStatus/index.vue": [
-		"./resources/js/document_templates/DeclarationOfStatus/index.vue",
-		"resources_js_document_templates_DeclarationOfStatus_index_vue"
-	],
-	"./Trust": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
-	"./Trust/": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
 	"./Trust/1_DeclarationOfTrust": [
 		"./resources/js/document_templates/Trust/1_DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue"
+		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue-_ea6f0"
 	],
 	"./Trust/1_DeclarationOfTrust/": [
 		"./resources/js/document_templates/Trust/1_DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue"
+		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue-_ea6f0"
 	],
 	"./Trust/1_DeclarationOfTrust/index": [
 		"./resources/js/document_templates/Trust/1_DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue"
+		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue-_ea6f0"
 	],
 	"./Trust/1_DeclarationOfTrust/index.vue": [
 		"./resources/js/document_templates/Trust/1_DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue"
+		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue-_ea6f0"
 	],
 	"./Trust/2_TrustIndenture": [
 		"./resources/js/document_templates/Trust/2_TrustIndenture/index.vue",
-		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue"
+		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue-_da8b0"
 	],
 	"./Trust/2_TrustIndenture/": [
 		"./resources/js/document_templates/Trust/2_TrustIndenture/index.vue",
-		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue"
+		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue-_da8b0"
 	],
 	"./Trust/2_TrustIndenture/index": [
 		"./resources/js/document_templates/Trust/2_TrustIndenture/index.vue",
-		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue"
+		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue-_da8b0"
 	],
 	"./Trust/2_TrustIndenture/index.vue": [
 		"./resources/js/document_templates/Trust/2_TrustIndenture/index.vue",
-		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue"
+		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue-_da8b0"
 	],
 	"./Trust/3_ScheduleA": [
 		"./resources/js/document_templates/Trust/3_ScheduleA/index.vue",
-		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc1"
+		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc0"
 	],
 	"./Trust/3_ScheduleA/": [
 		"./resources/js/document_templates/Trust/3_ScheduleA/index.vue",
-		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc1"
+		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc0"
 	],
 	"./Trust/3_ScheduleA/index": [
 		"./resources/js/document_templates/Trust/3_ScheduleA/index.vue",
-		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc1"
+		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc0"
 	],
 	"./Trust/3_ScheduleA/index.vue": [
 		"./resources/js/document_templates/Trust/3_ScheduleA/index.vue",
-		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc1"
+		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc0"
 	],
 	"./Trust/4_ScheduleB": [
 		"./resources/js/document_templates/Trust/4_ScheduleB/index.vue",
-		"resources_js_document_templates_Trust_4_ScheduleB_index_vue"
+		"resources_js_document_templates_Trust_4_ScheduleB_index_vue-_a42b0"
 	],
 	"./Trust/4_ScheduleB/": [
 		"./resources/js/document_templates/Trust/4_ScheduleB/index.vue",
-		"resources_js_document_templates_Trust_4_ScheduleB_index_vue"
+		"resources_js_document_templates_Trust_4_ScheduleB_index_vue-_a42b0"
 	],
 	"./Trust/4_ScheduleB/index": [
 		"./resources/js/document_templates/Trust/4_ScheduleB/index.vue",
-		"resources_js_document_templates_Trust_4_ScheduleB_index_vue"
+		"resources_js_document_templates_Trust_4_ScheduleB_index_vue-_a42b0"
 	],
 	"./Trust/4_ScheduleB/index.vue": [
 		"./resources/js/document_templates/Trust/4_ScheduleB/index.vue",
-		"resources_js_document_templates_Trust_4_ScheduleB_index_vue"
+		"resources_js_document_templates_Trust_4_ScheduleB_index_vue-_a42b0"
 	],
 	"./Trust/5_TrustCertificate": [
 		"./resources/js/document_templates/Trust/5_TrustCertificate/index.vue",
-		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35061"
+		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35060"
 	],
 	"./Trust/5_TrustCertificate/": [
 		"./resources/js/document_templates/Trust/5_TrustCertificate/index.vue",
-		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35061"
+		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35060"
 	],
 	"./Trust/5_TrustCertificate/index": [
 		"./resources/js/document_templates/Trust/5_TrustCertificate/index.vue",
-		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35061"
+		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35060"
 	],
 	"./Trust/5_TrustCertificate/index.vue": [
 		"./resources/js/document_templates/Trust/5_TrustCertificate/index.vue",
-		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35061"
+		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35060"
 	],
 	"./Trust/6_MeetingMinutes001": [
 		"./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue",
-		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77721"
+		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77720"
 	],
 	"./Trust/6_MeetingMinutes001/": [
 		"./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue",
-		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77721"
+		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77720"
 	],
 	"./Trust/6_MeetingMinutes001/index": [
 		"./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue",
-		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77721"
+		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77720"
 	],
 	"./Trust/6_MeetingMinutes001/index.vue": [
 		"./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue",
-		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77721"
+		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77720"
 	],
 	"./Trust/7_MeetingMinutes002": [
 		"./resources/js/document_templates/Trust/7_MeetingMinutes002/index.vue",
-		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue"
+		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue-_f3e30"
 	],
 	"./Trust/7_MeetingMinutes002/": [
 		"./resources/js/document_templates/Trust/7_MeetingMinutes002/index.vue",
-		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue"
+		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue-_f3e30"
 	],
 	"./Trust/7_MeetingMinutes002/index": [
 		"./resources/js/document_templates/Trust/7_MeetingMinutes002/index.vue",
-		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue"
+		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue-_f3e30"
 	],
 	"./Trust/7_MeetingMinutes002/index.vue": [
 		"./resources/js/document_templates/Trust/7_MeetingMinutes002/index.vue",
-		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue"
+		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue-_f3e30"
 	],
 	"./Trust/8_BoardResolution": [
 		"./resources/js/document_templates/Trust/8_BoardResolution/index.vue",
-		"resources_js_document_templates_Trust_8_BoardResolution_index_vue"
+		"resources_js_document_templates_Trust_8_BoardResolution_index_vue-_1b6f0"
 	],
 	"./Trust/8_BoardResolution/": [
 		"./resources/js/document_templates/Trust/8_BoardResolution/index.vue",
-		"resources_js_document_templates_Trust_8_BoardResolution_index_vue"
+		"resources_js_document_templates_Trust_8_BoardResolution_index_vue-_1b6f0"
 	],
 	"./Trust/8_BoardResolution/index": [
 		"./resources/js/document_templates/Trust/8_BoardResolution/index.vue",
-		"resources_js_document_templates_Trust_8_BoardResolution_index_vue"
+		"resources_js_document_templates_Trust_8_BoardResolution_index_vue-_1b6f0"
 	],
 	"./Trust/8_BoardResolution/index.vue": [
 		"./resources/js/document_templates/Trust/8_BoardResolution/index.vue",
-		"resources_js_document_templates_Trust_8_BoardResolution_index_vue"
+		"resources_js_document_templates_Trust_8_BoardResolution_index_vue-_1b6f0"
 	],
 	"./Trust/Beneficiaries": [
 		"./resources/js/document_templates/Trust/Beneficiaries.vue",
@@ -545,22 +513,6 @@ var map = {
 	"./Trust/Beneficiaries.vue": [
 		"./resources/js/document_templates/Trust/Beneficiaries.vue",
 		"resources_js_document_templates_Trust_Beneficiaries_vue"
-	],
-	"./Trust/Wizard": [
-		"./resources/js/document_templates/Trust/Wizard.vue",
-		"resources_js_document_templates_Trust_Wizard_vue"
-	],
-	"./Trust/Wizard.vue": [
-		"./resources/js/document_templates/Trust/Wizard.vue",
-		"resources_js_document_templates_Trust_Wizard_vue"
-	],
-	"./Trust/index": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
-	"./Trust/index.vue": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
 	]
 };
 function webpackAsyncContext(req) {

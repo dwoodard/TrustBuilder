@@ -223,12 +223,10 @@
             </v-btn>
           </v-stepper-content>
           <v-stepper-content step="4">
-            <!-- -->
             <Beneficiaries :beneficiaries="form.beneficiaries"
                            @add="onAddBeneficiary"
                            @update="onUpdateBeneficiary"
                            @remove="onDeleteBeneficiary"/>
-            <!-- -->
 
 
             <v-btn
@@ -245,7 +243,7 @@
 <script>
   import moment from 'moment';
   import axios from 'axios';
-  import Beneficiaries from './Beneficiaries.vue';
+  import Beneficiaries from '../../../../../../document_templates/Trust/Beneficiaries.vue';
 
 
   export default {
@@ -301,18 +299,6 @@
         this.updateProject();
       },
 
-      // onAddTrustee(Trustee) {
-      //   this.form.trustees.push(Trustee);
-      //   this.updateProject();
-      // },
-      // onDeleteTrustee(TrusteeIndex) {
-      //   this.form.trustees.splice(TrusteeIndex, 1);
-      //   this.updateProject();
-      // },
-      // onUpdateTrustee(trustees, index) {
-      //   this.form.trustees = trustees;
-      //   this.updateProject();
-      // },
 
       updateProject() {
         console.log('updateProject');

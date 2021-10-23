@@ -255,7 +255,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       return function () {
-        return __webpack_require__("./resources/js/document_templates lazy recursive ^\\.\\/.*\\/index\\.vue$")("./".concat(_this.project.type, "/index.vue"));
+        return __webpack_require__("./resources/js/pages/Admin/ClientProject/Types lazy recursive ^\\.\\/.*\\/index\\.vue$")("./".concat(_this.project.type, "/index.vue"));
       };
     }
   },
@@ -1083,56 +1083,32 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/document_templates lazy recursive ^\\.\\/.*\\/index\\.vue$":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/document_templates/ lazy ^\.\/.*\/index\.vue$ namespace object ***!
-  \*************************************************************************************/
+/***/ "./resources/js/pages/Admin/ClientProject/Types lazy recursive ^\\.\\/.*\\/index\\.vue$":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/ClientProject/Types/ lazy ^\.\/.*\/index\.vue$ namespace object ***!
+  \**************************************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./DeclarationOfStatus/01_DeclarationOfStatus/index.vue": [
-		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
-		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
+	"./DeclarationOfStatus/Documents/index.vue": [
+		"./resources/js/pages/Admin/ClientProject/Types/DeclarationOfStatus/Documents/index.vue",
+		"resources_js_pages_Admin_ClientProject_Types_DeclarationOfStatus_Documents_index_vue"
 	],
 	"./DeclarationOfStatus/index.vue": [
-		"./resources/js/document_templates/DeclarationOfStatus/index.vue",
-		"node_modules_babel-loader_lib_index_js_clonedRuleSet-5_0_rules_0_use_0_node_modules_vue-loade-dcebb8"
+		"./resources/js/pages/Admin/ClientProject/Types/DeclarationOfStatus/index.vue",
+		"resources_js_pages_Admin_ClientProject_Types_DeclarationOfStatus_index_vue"
 	],
-	"./Trust/1_DeclarationOfTrust/index.vue": [
-		"./resources/js/document_templates/Trust/1_DeclarationOfTrust/index.vue",
-		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue"
+	"./Trust/Documents/index.vue": [
+		"./resources/js/pages/Admin/ClientProject/Types/Trust/Documents/index.vue",
+		"resources_js_pages_Admin_ClientProject_Types_Trust_Documents_index_vue"
 	],
-	"./Trust/2_TrustIndenture/index.vue": [
-		"./resources/js/document_templates/Trust/2_TrustIndenture/index.vue",
-		"resources_js_document_templates_Trust_2_TrustIndenture_index_vue"
-	],
-	"./Trust/3_ScheduleA/index.vue": [
-		"./resources/js/document_templates/Trust/3_ScheduleA/index.vue",
-		"resources_js_document_templates_Trust_3_ScheduleA_index_vue-_fccc0"
-	],
-	"./Trust/4_ScheduleB/index.vue": [
-		"./resources/js/document_templates/Trust/4_ScheduleB/index.vue",
-		"resources_js_document_templates_Trust_4_ScheduleB_index_vue"
-	],
-	"./Trust/5_TrustCertificate/index.vue": [
-		"./resources/js/document_templates/Trust/5_TrustCertificate/index.vue",
-		"resources_js_document_templates_Trust_5_TrustCertificate_index_vue-_35060"
-	],
-	"./Trust/6_MeetingMinutes001/index.vue": [
-		"./resources/js/document_templates/Trust/6_MeetingMinutes001/index.vue",
-		"resources_js_document_templates_Trust_6_MeetingMinutes001_index_vue-_77720"
-	],
-	"./Trust/7_MeetingMinutes002/index.vue": [
-		"./resources/js/document_templates/Trust/7_MeetingMinutes002/index.vue",
-		"resources_js_document_templates_Trust_7_MeetingMinutes002_index_vue"
-	],
-	"./Trust/8_BoardResolution/index.vue": [
-		"./resources/js/document_templates/Trust/8_BoardResolution/index.vue",
-		"resources_js_document_templates_Trust_8_BoardResolution_index_vue"
+	"./Trust/MeetingMinutes/index.vue": [
+		"./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue",
+		"resources_js_pages_Admin_ClientProject_Types_Trust_MeetingMinutes_index_vue"
 	],
 	"./Trust/index.vue": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"node_modules_babel-loader_lib_index_js_clonedRuleSet-5_0_rules_0_use_0_node_modules_vue-loade-be5b43"
+		"./resources/js/pages/Admin/ClientProject/Types/Trust/index.vue",
+		"resources_js_pages_Admin_ClientProject_Types_Trust_index_vue"
 	]
 };
 function webpackAsyncContext(req) {
@@ -1150,7 +1126,7 @@ function webpackAsyncContext(req) {
 	});
 }
 webpackAsyncContext.keys = () => (Object.keys(map));
-webpackAsyncContext.id = "./resources/js/document_templates lazy recursive ^\\.\\/.*\\/index\\.vue$";
+webpackAsyncContext.id = "./resources/js/pages/Admin/ClientProject/Types lazy recursive ^\\.\\/.*\\/index\\.vue$";
 module.exports = webpackAsyncContext;
 
 /***/ })

@@ -78,7 +78,7 @@
     },
     computed: {
       documentTemplateType() {
-        return () => import(`@/document_templates/${this.project.type}/index.vue`)
+        return () => import(`./Types/${this.project.type}/index.vue`)
       }
     },
     methods: {

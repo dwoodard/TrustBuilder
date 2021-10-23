@@ -24,8 +24,8 @@
 </template>
 
 <script>
-  import MeetingMinutes from '../../pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue';
-  import Documents from '../../pages/Admin/ClientProject/Types/Trust/Documents/index.vue';
+  import MeetingMinutes from './MeetingMinutes';
+  import Documents from './Documents';
 
   export default {
     props: ['currentDocument'],
