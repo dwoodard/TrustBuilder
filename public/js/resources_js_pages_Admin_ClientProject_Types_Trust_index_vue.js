@@ -789,8 +789,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _MeetingMinutes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MeetingMinutes */ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue");
-/* harmony import */ var _Documents__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Documents */ "./resources/js/pages/Admin/ClientProject/Types/Trust/Documents/index.vue");
+/* harmony import */ var _MeetingMinutes_index_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MeetingMinutes/index.vue */ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue");
+/* harmony import */ var _Documents_index_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Documents/index.vue */ "./resources/js/pages/Admin/ClientProject/Types/Trust/Documents/index.vue");
 //
 //
 //
@@ -826,8 +826,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   components: {
-    Documents: _Documents__WEBPACK_IMPORTED_MODULE_1__["default"],
-    MeetingMinutes: _MeetingMinutes__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Documents: _Documents_index_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    MeetingMinutes: _MeetingMinutes_index_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -25292,6 +25292,14 @@ var map = {
 		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
 		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
 	],
+	"./Trust": [
+		"./resources/js/document_templates/Trust/index.vue",
+		"resources_js_document_templates_Trust_index_vue"
+	],
+	"./Trust/": [
+		"./resources/js/document_templates/Trust/index.vue",
+		"resources_js_document_templates_Trust_index_vue"
+	],
 	"./Trust/1_DeclarationOfTrust": [
 		"./resources/js/document_templates/Trust/1_DeclarationOfTrust/index.vue",
 		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue-_ea6f0"
@@ -25427,6 +25435,14 @@ var map = {
 	"./Trust/Beneficiaries.vue": [
 		"./resources/js/document_templates/Trust/Beneficiaries.vue",
 		"resources_js_document_templates_Trust_Beneficiaries_vue"
+	],
+	"./Trust/index": [
+		"./resources/js/document_templates/Trust/index.vue",
+		"resources_js_document_templates_Trust_index_vue"
+	],
+	"./Trust/index.vue": [
+		"./resources/js/document_templates/Trust/index.vue",
+		"resources_js_document_templates_Trust_index_vue"
 	]
 };
 function webpackAsyncContext(req) {

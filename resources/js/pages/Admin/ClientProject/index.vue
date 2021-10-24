@@ -61,7 +61,7 @@
 
 <script>
   import Admin from '@/layouts/Admin/Layout';
-  import {pascelToTitleCase} from '@/helper';
+  import {pascalToTitleCase} from '@/helper';
 
   export default {
     layout: Admin,
@@ -82,7 +82,7 @@
       }
     },
     methods: {
-      pascelToTitleCase,
+      pascalToTitleCase,
       onPrint() {
         window.open(`/admin/client/${this.client.id}/project/${this.project.id}/print`, '_blank');
       },

@@ -268,7 +268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "toKebabCase": () => (/* binding */ toKebabCase),
 /* harmony export */   "score": () => (/* binding */ score),
 /* harmony export */   "toPascalCase": () => (/* binding */ toPascalCase),
-/* harmony export */   "pascelToTitleCase": () => (/* binding */ pascelToTitleCase)
+/* harmony export */   "pascalToTitleCase": () => (/* binding */ pascalToTitleCase)
 /* harmony export */ });
 var toTitleCase = function toTitleCase(str) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -313,7 +313,7 @@ var toPascalCase = function toPascalCase(str) {
     return word[0].toUpperCase() + word.slice(1);
   }).join('');
 };
-var pascelToTitleCase = function pascelToTitleCase(str) {
+var pascalToTitleCase = function pascalToTitleCase(str) {
   return str.replace(/([A-Z])/g, ' $1').replace(/^\s/, '');
 };
 

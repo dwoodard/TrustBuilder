@@ -29,7 +29,7 @@
 </template>
 
 <script>
-  import {pascelToTitleCase} from '../../../helper';
+  import {pascalToTitleCase} from '../../../helper';
 
   export default {
     props: {
@@ -54,7 +54,7 @@
     computed: {
       projectTypes() {
         return this.$page.props.projectTypes.map((type) => {
-          return {text: pascelToTitleCase(type), value: type};
+          return {text: pascalToTitleCase(type), value: type};
         });
       },
       show: {

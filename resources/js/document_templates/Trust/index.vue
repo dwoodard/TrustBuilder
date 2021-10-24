@@ -14,7 +14,8 @@
 
     <v-tabs-items v-model="tab">
       <v-tab-item value="documents">
-        <Documents :current-document="currentDocument"/>
+        <Documents
+          :current-document="currentDocument"/>
       </v-tab-item>
       <v-tab-item value="meeting-minutes">
         <MeetingMinutes/>
@@ -24,8 +25,8 @@
 </template>
 
 <script>
-  import MeetingMinutes from './MeetingMinutes/index.vue';
-  import Documents from './Documents/index.vue';
+  import MeetingMinutes from '../../pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue';
+  import Documents from '../../pages/Admin/ClientProject/Types/Trust/Documents/index.vue';
 
   export default {
     props: ['currentDocument'],

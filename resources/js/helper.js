@@ -8,6 +8,6 @@ export const toPascalCase = (str) => {
   return str.replace(/[-_\s]+/g, ' ').split(' ').map((word) => word[0].toUpperCase() + word.slice(1)).join('');
 };
 
-export const pascelToTitleCase = (str) => {
+export const pascalToTitleCase = (str) => {
   return str.replace(/([A-Z])/g, ' $1').replace(/^\s/, '');
 };

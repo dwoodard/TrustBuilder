@@ -260,7 +260,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    pascelToTitleCase: _helper__WEBPACK_IMPORTED_MODULE_1__.pascelToTitleCase,
+    pascalToTitleCase: _helper__WEBPACK_IMPORTED_MODULE_1__.pascalToTitleCase,
     onPrint: function onPrint() {
       window.open("/admin/client/".concat(this.client.id, "/project/").concat(this.project.id, "/print"), '_blank');
     },
@@ -288,7 +288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "toKebabCase": () => (/* binding */ toKebabCase),
 /* harmony export */   "score": () => (/* binding */ score),
 /* harmony export */   "toPascalCase": () => (/* binding */ toPascalCase),
-/* harmony export */   "pascelToTitleCase": () => (/* binding */ pascelToTitleCase)
+/* harmony export */   "pascalToTitleCase": () => (/* binding */ pascalToTitleCase)
 /* harmony export */ });
 var toTitleCase = function toTitleCase(str) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -333,7 +333,7 @@ var toPascalCase = function toPascalCase(str) {
     return word[0].toUpperCase() + word.slice(1);
   }).join('');
 };
-var pascelToTitleCase = function pascelToTitleCase(str) {
+var pascalToTitleCase = function pascalToTitleCase(str) {
   return str.replace(/([A-Z])/g, ' $1').replace(/^\s/, '');
 };
 
