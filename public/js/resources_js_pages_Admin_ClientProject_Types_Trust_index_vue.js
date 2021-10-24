@@ -755,6 +755,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_DocumentViewer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/DocumentViewer.vue */ "./resources/js/components/DocumentViewer.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -772,8 +781,150 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'MeetingMinutes'
+  data: function data() {
+    var _this$$page$props$pro, _this$$page$props$pro2;
+
+    return {
+      menu_date: false,
+      dialog: false,
+      selectedMinute: ((_this$$page$props$pro = this.$page.props.project.document_data) === null || _this$$page$props$pro === void 0 ? void 0 : (_this$$page$props$pro2 = _this$$page$props$pro.meeting_minutes) === null || _this$$page$props$pro2 === void 0 ? void 0 : _this$$page$props$pro2[0]) || null,
+      form: this.$inertia.form({
+        meeting_number: '',
+        resolution: false,
+        date: moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD'),
+        body: '',
+        subject: '',
+        type: '',
+        matters_resolved: [],
+        officers_present: [],
+        closing_statement: ''
+      })
+    };
+  },
+  computed: {
+    content: function content() {
+      var _this = this;
+
+      return [{
+        template: function template() {
+          return __webpack_require__("./resources/js/document_templates lazy recursive ^\\.\\/.*\\/MeetingMinute\\.vue$")("./".concat(_this.$page.props.project.type, "/MeetingMinute.vue"));
+        },
+        props: {
+          client: this.$page.props.client,
+          project: this.$page.props.project,
+          minute: this.selectedMinute
+        }
+      }];
+    },
+    meetingMinutes: function meetingMinutes() {
+      return this.$page.props.project.document_data.meeting_minutes || [];
+    },
+    nextNumber: function nextNumber() {
+      // if no length start at 3 or add 1
+      if (this.meetingMinutes.length === 0) {
+        return 3;
+      }
+
+      return this.meetingMinutes[this.meetingMinutes.length - 1].meeting_number + 1;
+    }
+  },
+  methods: {
+    setSelectedMinute: function setSelectedMinute(minute) {
+      var _this2 = this;
+
+      this.selectedMinute = this.meetingMinutes.find(function (minute) {
+        return minute.meeting_number === _this2.selectedMinute;
+      });
+    },
+    addMinute: function addMinute() {
+      var _this3 = this;
+
+      this.dialog = false;
+      this.form.transform(function (data) {
+        return _objectSpread(_objectSpread({}, data), {}, {
+          meeting_number: _this3.nextNumber
+        });
+      }).post("/admin/client/".concat(this.$page.props.client.id, "/project/").concat(this.$page.props.project.id, "/document_data/meeting_minutes"));
+    }
+  },
+  components: {
+    DocumentViewer: _components_DocumentViewer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
 });
 
 /***/ }),
@@ -851,30 +1002,6 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "[data-v-448921d6].editor {\n  display: block;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  cursor: default;\n}\n[data-v-448921d6].editor ::-webkit-scrollbar {\n  width: 16px;\n  height: 16px;\n}\n[data-v-448921d6].editor ::-webkit-scrollbar-track,[data-v-448921d6].editor ::-webkit-scrollbar-corner {\n  display: none;\n}\n[data-v-448921d6].editor ::-webkit-scrollbar-thumb {\n  background-color: rgba(0, 0, 0, 0.5);\n  border: 5px solid transparent;\n  border-radius: 16px;\n  background-clip: content-box;\n}\n[data-v-448921d6].editor ::-webkit-scrollbar-thumb:hover {\n  background-color: rgba(0, 0, 0, 0.8);\n}\n[data-v-448921d6].editor.hide_children > * {\n  display: none;\n}\n[data-v-448921d6].editor > .content {\n  position: relative;\n  outline: none;\n  margin: 0;\n  padding: 0;\n  min-width: 100%;\n  pointer-events: none;\n}\n[data-v-448921d6].editor > .content > .page {\n  position: absolute;\n  box-sizing: border-box;\n  left: 50%;\n  transform-origin: center top;\n  background: var(--page-background, white);\n  box-shadow: var(--page-box-shadow, 0 1px 3px 1px rgba(60, 64, 67, 0.15));\n  border: var(--page-border);\n  border-radius: var(--page-border-radius);\n  transition: left .3s, top .3s;\n  overflow: hidden;\n  pointer-events: all;\n}\n[data-v-448921d6].editor > .content[contenteditable=true],[data-v-448921d6].editor > .content *[contenteditable=true] {\n  cursor: text;\n}\n[data-v-448921d6].editor > .content *[contenteditable=false] {\n  cursor: default;\n}\n[data-v-448921d6].editor > .overlays {\n  position: relative;\n  margin: 0;\n  padding: 0;\n  min-width: 100%;\n  pointer-events: none;\n}\n[data-v-448921d6].editor > .overlays > .overlay {\n  position: absolute;\n  box-sizing: border-box;\n  left: 50%;\n  transform-origin: center top;\n  transition: left .3s, top .3s;\n  overflow: hidden;\n  z-index: 1;\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22393,36 +22520,6 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_123322be_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../../../../../../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss&");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_123322be_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_123322be_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue-document-editor/src/DocumentEditor/DocumentEditor.vue?vue&type=style&index=0&lang=css&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue-document-editor/src/DocumentEditor/DocumentEditor.vue?vue&type=style&index=0&lang=css& ***!
@@ -23319,17 +23416,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _index_vue_vue_type_template_id_123322be_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=123322be&scoped=true& */ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=template&id=123322be&scoped=true&");
 /* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=script&lang=js&");
-/* harmony import */ var _index_vue_vue_type_style_index_0_id_123322be_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss& */ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
-;
 
 
 /* normalize component */
-
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _index_vue_vue_type_template_id_123322be_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
   _index_vue_vue_type_template_id_123322be_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -23491,19 +23586,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_loader_dist_cjs_js_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_vue_loader_lib_index_js_vue_loader_options_DocumentEditor_vue_vue_type_style_index_1_id_448921d6_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../style-loader/dist/cjs.js!../../../laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../../../sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!../../../vue-loader/lib/index.js??vue-loader-options!./DocumentEditor.vue?vue&type=style&index=1&id=448921d6&lang=scss&scoped=true& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./node_modules/vue-document-editor/src/DocumentEditor/DocumentEditor.vue?vue&type=style&index=1&id=448921d6&lang=scss&scoped=true&");
-
-
-/***/ }),
-
-/***/ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss&":
-/*!***********************************************************************************************************************************************!*\
-  !*** ./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss& ***!
-  \***********************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_123322be_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../../../../../../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=style&index=0&id=123322be&scoped=true&lang=scss&");
 
 
 /***/ }),
@@ -25125,35 +25207,283 @@ var render = function() {
     { attrs: { id: "meeting-minutes" } },
     [
       _c(
-        "v-row",
-        { attrs: { "no-gutters": "" } },
+        "v-container",
+        { attrs: { fluid: "" } },
         [
-          _c("v-col", {
-            staticStyle: { height: "80vh", "overflow-scrolling": "touch" },
-            attrs: { cols: "12", sm: "2" }
-          }),
-          _vm._v(" "),
           _c(
-            "v-col",
-            { attrs: { cols: "12", sm: "4" } },
+            "v-row",
             [
               _c(
-                "v-card",
-                { staticClass: "pa-2", attrs: { outlined: "", tile: "" } },
-                [_vm._v("\n        One of three columns\n      ")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-col",
-            { attrs: { cols: "12", sm: "6" } },
-            [
+                "v-col",
+                { attrs: { sm: "3" } },
+                [
+                  _c(
+                    "v-dialog",
+                    {
+                      attrs: { "max-width": "500px" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            var attrs = ref.attrs
+                            return [
+                              _c(
+                                "v-icon",
+                                _vm._g(
+                                  _vm._b(
+                                    {
+                                      staticClass: "mb-2",
+                                      attrs: { color: "primary", dark: "" }
+                                    },
+                                    "v-icon",
+                                    attrs,
+                                    false
+                                  ),
+                                  on
+                                ),
+                                [
+                                  _vm._v(
+                                    "\n              mdi-plus\n            "
+                                  )
+                                ]
+                              )
+                            ]
+                          }
+                        }
+                      ]),
+                      model: {
+                        value: _vm.dialog,
+                        callback: function($$v) {
+                          _vm.dialog = $$v
+                        },
+                        expression: "dialog"
+                      }
+                    },
+                    [
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        [
+                          _c("v-card-title", [_vm._v("Add Minute")]),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-text",
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  value: _vm.nextNumber,
+                                  disabled: "",
+                                  label: "Meeting Number",
+                                  required: ""
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-menu",
+                                {
+                                  ref: "menu",
+                                  attrs: {
+                                    "close-on-content-click": false,
+                                    "return-value": _vm.form.date,
+                                    transition: "scale-transition",
+                                    "offset-y": "",
+                                    "min-width": "auto"
+                                  },
+                                  on: {
+                                    "update:returnValue": function($event) {
+                                      return _vm.$set(_vm.form, "date", $event)
+                                    },
+                                    "update:return-value": function($event) {
+                                      return _vm.$set(_vm.form, "date", $event)
+                                    }
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "activator",
+                                      fn: function(ref) {
+                                        var on = ref.on
+                                        var attrs = ref.attrs
+                                        return [
+                                          _c(
+                                            "v-text-field",
+                                            _vm._g(
+                                              _vm._b(
+                                                {
+                                                  attrs: {
+                                                    label: "Picker in menu",
+                                                    "prepend-icon":
+                                                      "mdi-calendar",
+                                                    readonly: ""
+                                                  },
+                                                  model: {
+                                                    value: _vm.form.date,
+                                                    callback: function($$v) {
+                                                      _vm.$set(
+                                                        _vm.form,
+                                                        "date",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "form.date"
+                                                  }
+                                                },
+                                                "v-text-field",
+                                                attrs,
+                                                false
+                                              ),
+                                              on
+                                            )
+                                          )
+                                        ]
+                                      }
+                                    }
+                                  ]),
+                                  model: {
+                                    value: _vm.menu_date,
+                                    callback: function($$v) {
+                                      _vm.menu_date = $$v
+                                    },
+                                    expression: "menu_date"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-date-picker",
+                                    {
+                                      attrs: { "no-title": "", scrollable: "" },
+                                      model: {
+                                        value: _vm.form.date,
+                                        callback: function($$v) {
+                                          _vm.$set(_vm.form, "date", $$v)
+                                        },
+                                        expression: "form.date"
+                                      }
+                                    },
+                                    [
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.menu_date = false
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                    Cancel\n                  "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.$refs.menu.save(
+                                                _vm.form.date
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                    OK\n                  "
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-actions",
+                            [
+                              _c("v-spacer"),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { color: "blue", text: "" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.dialog = false
+                                    }
+                                  }
+                                },
+                                [_vm._v("Cancel")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { color: "blue", text: "" },
+                                  on: { click: _vm.addMinute }
+                                },
+                                [_vm._v("Add")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-autocomplete", {
+                    attrs: {
+                      "auto-select-first": "",
+                      chips: "",
+                      "deletable-chips": "",
+                      "small-chips": "",
+                      items: _vm.meetingMinutes,
+                      label: "Meeting Number",
+                      "item-text": "meeting_number"
+                    },
+                    on: { change: _vm.setSelectedMinute },
+                    model: {
+                      value: _vm.selectedMinute,
+                      callback: function($$v) {
+                        _vm.selectedMinute = $$v
+                      },
+                      expression: "selectedMinute"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
               _c(
-                "v-card",
-                { staticClass: "pa-2", attrs: { outlined: "", tile: "" } },
-                [_vm._v("\n        One of three columns\n      ")]
+                "v-col",
+                { staticStyle: { overflow: "scroll" }, attrs: { sm: "9" } },
+                [
+                  _vm.selectedMinute
+                    ? _c(
+                        "div",
+                        [
+                          _c("DocumentViewer", {
+                            attrs: { content: _vm.content }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm._e()
+                ]
               )
             ],
             1
@@ -25436,6 +25766,14 @@ var map = {
 		"./resources/js/document_templates/Trust/Beneficiaries.vue",
 		"resources_js_document_templates_Trust_Beneficiaries_vue"
 	],
+	"./Trust/MeetingMinute": [
+		"./resources/js/document_templates/Trust/MeetingMinute.vue",
+		"resources_js_document_templates_Trust_MeetingMinute_vue-_ae500"
+	],
+	"./Trust/MeetingMinute.vue": [
+		"./resources/js/document_templates/Trust/MeetingMinute.vue",
+		"resources_js_document_templates_Trust_MeetingMinute_vue-_ae500"
+	],
 	"./Trust/index": [
 		"./resources/js/document_templates/Trust/index.vue",
 		"resources_js_document_templates_Trust_index_vue"
@@ -25461,6 +25799,38 @@ function webpackAsyncContext(req) {
 }
 webpackAsyncContext.keys = () => (Object.keys(map));
 webpackAsyncContext.id = "./resources/js/document_templates lazy recursive ^\\.\\/.*$";
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ "./resources/js/document_templates lazy recursive ^\\.\\/.*\\/MeetingMinute\\.vue$":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/document_templates/ lazy ^\.\/.*\/MeetingMinute\.vue$ namespace object ***!
+  \*********************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var map = {
+	"./Trust/MeetingMinute.vue": [
+		"./resources/js/document_templates/Trust/MeetingMinute.vue",
+		"resources_js_document_templates_Trust_MeetingMinute_vue-_ae501"
+	]
+};
+function webpackAsyncContext(req) {
+	if(!__webpack_require__.o(map, req)) {
+		return Promise.resolve().then(() => {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+
+	var ids = map[req], id = ids[0];
+	return __webpack_require__.e(ids[1]).then(() => {
+		return __webpack_require__(id);
+	});
+}
+webpackAsyncContext.keys = () => (Object.keys(map));
+webpackAsyncContext.id = "./resources/js/document_templates lazy recursive ^\\.\\/.*\\/MeetingMinute\\.vue$";
 module.exports = webpackAsyncContext;
 
 /***/ })

@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\SchemalessAttributes\SchemalessAttributes;
+use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
 
 class Project extends Model
 {
     use HasFactory;
+    use SchemalessAttributesTrait;
+    
+
     protected $table = 'projects';
 
     protected $schemalessAttributes = [
@@ -42,10 +46,16 @@ class Project extends Model
         return $this->belongsTo(Client::class);
     }
 
+    public function scopeWithDocumentDataAttribute()
+    {
+        return $this->document_data->modelScope();
+    }
+
     public function getDocumentData(): SchemalessAttributes
     {
         return SchemalessAttributes::createForModel($this, 'document_data');
     }
+     
 
 }
 

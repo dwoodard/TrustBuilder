@@ -105,6 +105,42 @@ class ClientProjectController extends \Inertia\Controller
         });
     }
 
+    /**
+     * Set document data by node for a project
+     * POST: admin/client/{client}/project/{project}/document_data/{node}
+     * @param Client $client
+     * @param Project $project
+     * @param $node
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function documentData(Client $client, Project $project, $node, Request $request)
+    {
+        
+            
+
+        
+        switch (gettype($project->document_data[$node])) {
+            case "NULL":
+                $project->document_data[$node] = [$request->all()];
+                break;
+            case 'array':
+                $project->document_data[$node] = [...$project->document_data[$node], $request->all()];
+                break;
+            case 'object':
+                $project->document_data[$node] = $request->all();
+            
+            case 'string':
+                $project->document_data[$node] = $request->all();
+                break;
+            
+        }
+        
+        $project->save();
+
+        return Redirect::back();
+    }
+
 }
 
 

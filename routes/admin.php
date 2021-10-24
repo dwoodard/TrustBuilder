@@ -37,6 +37,7 @@ Route::group(['as'=>'admin.','middleware' => ['web','role:admin']], function(){
     Route::get('client/{client}/project/{project}/print', [ClientProjectController::class, 'print'])->name('client.project.print');
     Route::get('client/{client}/project/create', [ClientProjectController::class, 'create'])->name('client.project.create');
     Route::post('client/{client}/project', [ClientProjectController::class, 'store'])->name('client.project.store');
+    Route::post('client/{client}/project/{project}/document_data/{node}', [ClientProjectController::class, 'documentData'])->name('client.project.store');
 
 
     //pages

@@ -24969,6 +24969,14 @@ var map = {
 		"./resources/js/document_templates/Trust/Beneficiaries.vue",
 		"resources_js_document_templates_Trust_Beneficiaries_vue"
 	],
+	"./Trust/MeetingMinute": [
+		"./resources/js/document_templates/Trust/MeetingMinute.vue",
+		"resources_js_document_templates_Trust_MeetingMinute_vue-_ae500"
+	],
+	"./Trust/MeetingMinute.vue": [
+		"./resources/js/document_templates/Trust/MeetingMinute.vue",
+		"resources_js_document_templates_Trust_MeetingMinute_vue-_ae500"
+	],
 	"./Trust/index": [
 		"./resources/js/document_templates/Trust/index.vue",
 		"resources_js_document_templates_Trust_index_vue"
