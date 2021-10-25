@@ -3,82 +3,103 @@
     <!-- Add Minute -->
     <v-container fluid>
       <v-row>
-        <v-col sm="3">
-          <v-dialog v-model="dialog" max-width="500px">
-            <template #activator="{ on, attrs }">
-              <v-icon color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                mdi-plus
-              </v-icon>
-            </template>
-            <v-card>
-              <v-card-title>Add Minute</v-card-title>
-              <v-card-text>
-                <v-text-field
-                  :value="nextNumber"
-                  disabled
-                  label="Meeting Number"
-                  required/>
-
-
-                <v-menu
-                  ref="menu"
-                  v-model="menu_date"
-                  :close-on-content-click="false"
-                  :return-value.sync="form.date"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="auto">
+        <v-col sm="4">
+          <v-container>
+            <v-row>
+              <v-col sm="3">
+                <v-dialog v-model="dialog" max-width="500px">
                   <template #activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="form.date"
-                      label="Picker in menu"
-                      prepend-icon="mdi-calendar"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"/>
+                    <v-btn icon color="primary" v-bind="attrs" v-on="on">
+                      <v-icon>mdi-plus</v-icon>
+                    </v-btn>
                   </template>
-                  <v-date-picker
-                    v-model="form.date"
-                    no-title
-                    scrollable>
-                    <v-spacer/>
-                    <v-btn
-                      text
-                      color="primary"
-                      @click="menu_date = false">
-                      Cancel
-                    </v-btn>
-                    <v-btn
-                      text
-                      color="primary"
-                      @click="$refs.menu.save(form.date)">
-                      OK
-                    </v-btn>
-                  </v-date-picker>
-                </v-menu>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer/>
-                <v-btn color="blue" text @click="dialog = false">Cancel</v-btn>
-                <v-btn color="blue" text @click="addMinute">Add</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-dialog>
+                  <v-card>
+                    <v-card-title>Add Minute</v-card-title>
+                    <v-card-text>
+                      <v-text-field
+                        :value="nextNumber"
+                        disabled
+                        label="Meeting Number"
+                        required/>
 
 
-          <v-autocomplete
-            v-model="selectedMinute"
-            auto-select-first
-            chips
-            deletable-chips
-            small-chips
-            :items="meetingMinutes"
-            label="Meeting Number"
-            item-text="meeting_number"
-            @change="setSelectedMinute"/>
+                      <v-menu
+                        ref="menu"
+                        v-model="menu_date"
+                        :close-on-content-click="false"
+                        :return-value.sync="form.date"
+                        transition="scale-transition"
+                        offset-y
+                        min-width="auto">
+                        <template #activator="{ on, attrs }">
+                          <v-text-field
+                            v-model="form.date"
+                            label="Picker in menu"
+                            prepend-icon="mdi-calendar"
+                            readonly
+                            v-bind="attrs"
+                            v-on="on"/>
+                        </template>
+                        <v-date-picker
+                          v-model="form.date"
+                          no-title
+                          scrollable>
+                          <v-spacer/>
+                          <v-btn
+                            text
+                            color="primary"
+                            @click="menu_date = false">
+                            Cancel
+                          </v-btn>
+                          <v-btn
+                            text
+                            color="primary"
+                            @click="$refs.menu.save(form.date)">
+                            OK
+                          </v-btn>
+                        </v-date-picker>
+                      </v-menu>
+                    </v-card-text>
+                    <v-card-actions>
+                      <v-spacer/>
+                      <v-btn color="blue" text @click="dialog = false">Cancel</v-btn>
+                      <v-btn color="blue" text @click="addMinute">Add</v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
+              </v-col>
+              <v-col sm="9">
+
+                <v-autocomplete
+                    v-model="selectedMinute"
+                  :items="meetingMinutes"
+                  label="Meeting Number"
+                  :item-value="(item) => {return item}"
+                  :item-text="item => item.meeting_number.toString().padStart(3, '0')"
+                  @change="setSelectedMinute"
+                />
+
+              </v-col>
+            </v-row>
+
+            <div v-if="selectedMinute">
+              <Wizard :minute="selectedMinute" />
+            </div>
+          </v-container>
+
+
+          <!--          <v-autocomplete-->
+          <!--            v-model="selectedMinute"-->
+          <!--            auto-select-first-->
+          <!--            chips-->
+          <!--            deletable-chips-->
+          <!--            small-chips-->
+          <!--            :items="meetingMinutes"-->
+          <!--            label="Meeting Number"-->
+          <!--            item-text="meeting_number"-->
+          <!--            @change="setSelectedMinute"/>-->
         </v-col>
-        <v-col sm="9" style="overflow:scroll;">
-          
+        <v-col sm="8" style="overflow:scroll;">
           <div v-if="selectedMinute">
             <DocumentViewer :content="content"/>
           </div>
@@ -90,8 +111,9 @@
 <script>
   import moment from 'moment';
   import DocumentViewer from '@/components/DocumentViewer.vue';
+  import Wizard from './Wizard';
 
-  export default {
+   export default {
     data() {
       return {
         menu_date: false,
@@ -113,7 +135,7 @@
     computed: {
       content() {
         return [{
-          template: () => import(`@/document_templates/${this.$page.props.project.type}/MeetingMinute.vue`),
+          template: () => import(`@/document_templates/Trust/MeetingMinute.vue`),
           props: {
             client: this.$page.props.client,
             project: this.$page.props.project,
@@ -138,7 +160,7 @@
     },
     methods: {
       setSelectedMinute(minute) {
-        this.selectedMinute = this.meetingMinutes.find((minute) => minute.meeting_number === this.selectedMinute);
+        this.selectedMinute = this.meetingMinutes.find((minute) => minute.meeting_number === this.selectedMinute.meeting_number);
       },
       addMinute() {
         this.dialog = false;
@@ -152,6 +174,7 @@
       }
     },
     components: {
+      Wizard,
       DocumentViewer
     }
   };
