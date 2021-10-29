@@ -32,7 +32,7 @@
     props: ['currentDocument'],
     data() {
       return {
-        tab: 'meeting-minutes'
+        tab: 'documents' // 'meeting-minutes'
       };
     },
 

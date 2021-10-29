@@ -102,9 +102,11 @@ __webpack_require__.r(__webpack_exports__);
         name: [function (value) {
           return !!value || 'Required.';
         }],
-        units: [// (value) => !!value || 'Required.',
-          // (value) => !!value || 'Can not be 0'
-        ]
+        units: [function (value) {
+          return !!value || 'Required.';
+        }, function (value) {
+          return !!value || 'Can not be 0';
+        }]
       },
       errors: {
         name: null,

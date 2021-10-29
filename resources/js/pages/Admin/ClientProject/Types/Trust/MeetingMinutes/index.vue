@@ -6,7 +6,7 @@
         <v-col sm="4">
           <v-container>
             <v-row>
-              <v-col sm="3">
+              <v-col sm="4">
                 <v-dialog v-model="dialog" max-width="500px">
                   <template #activator="{ on, attrs }">
                     <v-btn icon color="primary" v-bind="attrs" v-on="on">
@@ -21,8 +21,6 @@
                         disabled
                         label="Meeting Number"
                         required/>
-
-
                       <v-menu
                         ref="menu"
                         v-model="menu_date"
@@ -68,36 +66,23 @@
                   </v-card>
                 </v-dialog>
               </v-col>
-              <v-col sm="9">
-
+              <v-col sm="8">
                 <v-autocomplete
                     v-model="selectedMinute"
-                  :items="meetingMinutes"
-                  label="Meeting Number"
-                  :item-value="(item) => {return item}"
-                  :item-text="item => item.meeting_number.toString().padStart(3, '0')"
-                  @change="setSelectedMinute"
+                    :items="meetingMinutes"
+                    label="Meeting Number"
+                    :item-value="(item) => {return item}"
+                    :item-text="item => item.meeting_number.toString().padStart(3, '0')"
+                    @change="setSelectedMinute"
                 />
 
               </v-col>
             </v-row>
 
             <div v-if="selectedMinute">
-              <Wizard :minute="selectedMinute" />
+              <Wizard :meeting_minute="selectedMinute" />
             </div>
           </v-container>
-
-
-          <!--          <v-autocomplete-->
-          <!--            v-model="selectedMinute"-->
-          <!--            auto-select-first-->
-          <!--            chips-->
-          <!--            deletable-chips-->
-          <!--            small-chips-->
-          <!--            :items="meetingMinutes"-->
-          <!--            label="Meeting Number"-->
-          <!--            item-text="meeting_number"-->
-          <!--            @change="setSelectedMinute"/>-->
         </v-col>
         <v-col sm="8" style="overflow:scroll;">
           <div v-if="selectedMinute">
@@ -123,7 +108,13 @@
           meeting_number: '',
           resolution: false,
           date: moment().format('YYYY-MM-DD'),
-          body: '',
+          minutes: [{
+            minute_number: 1,
+            minute_type: '',
+            minute_title: '',
+            minute_content: '',
+            minute_attachment: '',
+          }],
           subject: '',
           type: '',
           matters_resolved: [],
@@ -143,7 +134,6 @@
           }
         }];
       },
-
       meetingMinutes() {
         return this.$page.props.project.document_data.meeting_minutes || [];
       },
@@ -156,7 +146,6 @@
 
         return this.meetingMinutes[this.meetingMinutes.length - 1].meeting_number + 1;
       }
-
     },
     methods: {
       setSelectedMinute(minute) {
@@ -182,5 +171,4 @@
 
 <style scoped lang="scss">
 
-
- </style>
+</style>

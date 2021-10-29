@@ -1,13 +1,24 @@
 <template>
   <div>
-    Wizard
-    <pre>{{ minute }}</pre>
+    {{ meeting_minute }}
   </div>
 </template>
 
 <script>
   export default {
-    props: ['minute']
+    model: {
+      prop: 'meeting_minute',
+      event: 'change'
+    },
+    props: ['meeting_minute'],
+    data() {
+      return {};
+    },
+    methods: {
+      change(meetingMinute) {
+        this.$emit('change', meetingMinute);
+      }
+    }
   };
 </script>
 

@@ -153,9 +153,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['minute']
+  model: {
+    prop: 'meeting_minute',
+    event: 'change'
+  },
+  props: ['meeting_minute'],
+  data: function data() {
+    return {};
+  },
+  methods: {
+    change: function change(meetingMinute) {
+      this.$emit('change', meetingMinute);
+    }
+  }
 });
 
 /***/ }),
@@ -276,21 +287,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -306,7 +302,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         meeting_number: '',
         resolution: false,
         date: moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD'),
-        body: '',
+        minutes: [{
+          minute_number: 1,
+          minute_type: '',
+          minute_title: '',
+          minute_content: '',
+          minute_attachment: ''
+        }],
         subject: '',
         type: '',
         matters_resolved: [],
@@ -22995,10 +22997,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._v("\n  Wizard\n  "),
-    _c("pre", [_vm._v(_vm._s(_vm.minute))])
-  ])
+  return _c("div", [_vm._v("\n  " + _vm._s(_vm.meeting_minute) + "\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -23046,7 +23045,7 @@ var render = function() {
                         [
                           _c(
                             "v-col",
-                            { attrs: { sm: "3" } },
+                            { attrs: { sm: "4" } },
                             [
                               _c(
                                 "v-dialog",
@@ -23324,7 +23323,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "v-col",
-                            { attrs: { sm: "9" } },
+                            { attrs: { sm: "8" } },
                             [
                               _c("v-autocomplete", {
                                 attrs: {
@@ -23360,7 +23359,7 @@ var render = function() {
                             "div",
                             [
                               _c("Wizard", {
-                                attrs: { minute: _vm.selectedMinute }
+                                attrs: { meeting_minute: _vm.selectedMinute }
                               })
                             ],
                             1

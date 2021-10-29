@@ -86,8 +86,8 @@
             (value) => !!value || 'Required.'
           ],
           units: [
-            // (value) => !!value || 'Required.',
-            // (value) => !!value || 'Can not be 0'
+            (value) => !!value || 'Required.',
+            (value) => !!value || 'Can not be 0'
           ]
 
         },
