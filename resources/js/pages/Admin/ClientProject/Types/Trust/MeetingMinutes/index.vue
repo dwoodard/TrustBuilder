@@ -4,84 +4,93 @@
     <v-container fluid>
       <v-row>
         <v-col sm="4">
-          <v-container>
-            <v-row>
-              <v-col sm="4">
-                <v-dialog v-model="dialog" max-width="500px">
-                  <template #activator="{ on, attrs }">
-                    <v-btn icon color="primary" v-bind="attrs" v-on="on">
-                      <v-icon>mdi-plus</v-icon>
-                    </v-btn>
-                  </template>
-                  <v-card>
-                    <v-card-title>Add Minute</v-card-title>
-                    <v-card-text>
-                      <v-text-field
-                        :value="nextNumber"
-                        disabled
-                        label="Meeting Number"
-                        required/>
-                      <v-menu
-                        ref="menu"
-                        v-model="menu_date"
-                        :close-on-content-click="false"
-                        :return-value.sync="form.date"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="auto">
-                        <template #activator="{ on, attrs }">
-                          <v-text-field
-                            v-model="form.date"
-                            label="Picker in menu"
-                            prepend-icon="mdi-calendar"
-                            readonly
-                            v-bind="attrs"
-                            v-on="on"/>
-                        </template>
-                        <v-date-picker
+          <v-container fluid>
+            <v-toolbar flat color="#f1f1f1">
+              <v-autocomplete
+                v-model="selectedMinute"
+                :items="meetingMinutes"
+                hide-details
+                label="Meeting Number"
+                :item-value="(item) => {return item}"
+                :item-text="item => item.meeting_number.toString().padStart(3, '0')"
+                @change="setSelectedMinute">
+                <template #label="{item}">
+                  <span>item</span>
+                </template>
+              </v-autocomplete>
+
+              <v-spacer/>
+              <v-dialog v-model="dialog" max-width="500px">
+                <template #activator="{ on, attrs }">
+                  <v-btn icon v-bind="attrs" v-on="on">
+                    <v-icon>mdi-plus</v-icon>
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-card-title>Add Minute</v-card-title>
+                  <v-card-text>
+                    <v-text-field
+                      :value="nextNumber"
+                      disabled
+                      label="Meeting Number"
+                      required/>
+                    <v-menu
+                      ref="menu"
+                      v-model="menu_date"
+                      :close-on-content-click="false"
+                      :return-value.sync="form.date"
+                      transition="scale-transition"
+                      offset-y
+                      min-width="auto">
+                      <template #activator="{ on, attrs }">
+                        <v-text-field
                           v-model="form.date"
-                          no-title
-                          scrollable>
-                          <v-spacer/>
-                          <v-btn
-                            text
-                            color="primary"
-                            @click="menu_date = false">
-                            Cancel
-                          </v-btn>
-                          <v-btn
-                            text
-                            color="primary"
-                            @click="$refs.menu.save(form.date)">
-                            OK
-                          </v-btn>
-                        </v-date-picker>
-                      </v-menu>
-                    </v-card-text>
-                    <v-card-actions>
-                      <v-spacer/>
-                      <v-btn color="blue" text @click="dialog = false">Cancel</v-btn>
-                      <v-btn color="blue" text @click="addMinute">Add</v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-dialog>
-              </v-col>
-              <v-col sm="8">
-                <v-autocomplete
-                    v-model="selectedMinute"
-                    :items="meetingMinutes"
-                    label="Meeting Number"
-                    :item-value="(item) => {return item}"
-                    :item-text="item => item.meeting_number.toString().padStart(3, '0')"
-                    @change="setSelectedMinute"
-                />
+                          prepend-icon="mdi-calendar"
+                          readonly
+                          v-bind="attrs"
+                          v-on="on"/>
+                      </template>
+                      <v-date-picker
+                        v-model="form.date"
+                        no-title
+                        scrollable>
+                        <v-spacer/>
+                        <v-btn
+                          text
+                          color="primary"
+                          @click="menu_date = false">
+                          Cancel
+                        </v-btn>
+                        <v-btn
+                          text
+                          color="primary"
+                          @click="$refs.menu.save(form.date)">
+                          OK
+                        </v-btn>
+                      </v-date-picker>
+                    </v-menu>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer/>
+                    <v-btn color="blue" text @click="dialog = false">Cancel</v-btn>
+                    <v-btn color="blue" text @click="addMinute">Add</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-toolbar>
 
-              </v-col>
-            </v-row>
+            <v-sheet>
+              <v-card>
+                <v-subheader>Meeting Minutes</v-subheader>
+                <v-card-text>
+                <div v-if="selectedMinute">
+                  <Wizard :meeting_minute="selectedMinute"/>
+                </div>
+                </v-card-text>
+              </v-card>
+            </v-sheet>
 
-            <div v-if="selectedMinute">
-              <Wizard :meeting_minute="selectedMinute" />
-            </div>
+
           </v-container>
         </v-col>
         <v-col sm="8" style="overflow:scroll;">
@@ -98,7 +107,7 @@
   import DocumentViewer from '@/components/DocumentViewer.vue';
   import Wizard from './Wizard';
 
-   export default {
+  export default {
     data() {
       return {
         menu_date: false,
@@ -107,14 +116,15 @@
         form: this.$inertia.form({
           meeting_number: '',
           resolution: false,
-          date: moment().format('YYYY-MM-DD'),
-          minutes: [{
-            minute_number: 1,
-            minute_type: '',
-            minute_title: '',
-            minute_content: '',
-            minute_attachment: '',
-          }],
+          date: moment().format('YYYY-MM-DD hh:mm'),
+          minutes: [
+            {
+              minute_number: 1,
+              minute_type: '',
+              minute_title: '',
+              minute_content: '',
+              minute_attachment: ''
+            }],
           subject: '',
           type: '',
           matters_resolved: [],
@@ -125,14 +135,15 @@
     },
     computed: {
       content() {
-        return [{
-          template: () => import(`@/document_templates/Trust/MeetingMinute.vue`),
-          props: {
-            client: this.$page.props.client,
-            project: this.$page.props.project,
-            minute: this.selectedMinute
-          }
-        }];
+        return [
+          {
+            template: () => import(`@/document_templates/Trust/MeetingMinute.vue`),
+            props: {
+              client: this.$page.props.client,
+              project: this.$page.props.project,
+              minute: this.selectedMinute
+            }
+          }];
       },
       meetingMinutes() {
         return this.$page.props.project.document_data.meeting_minutes || [];
@@ -149,7 +160,9 @@
     },
     methods: {
       setSelectedMinute(minute) {
-        this.selectedMinute = this.meetingMinutes.find((minute) => minute.meeting_number === this.selectedMinute.meeting_number);
+        this.selectedMinute = this.meetingMinutes.find(
+          (minute) => minute.meeting_number === this.selectedMinute.meeting_number
+        );
       },
       addMinute() {
         this.dialog = false;
@@ -159,7 +172,9 @@
             ...data,
             meeting_number: this.nextNumber
           }))
-          .post(`/admin/client/${this.$page.props.client.id}/project/${this.$page.props.project.id}/document_data/meeting_minutes`);
+          .post(
+            `/admin/client/${this.$page.props.client.id}/project/${this.$page.props.project.id}/document_data/meeting_minutes`
+          );
       }
     },
     components: {
@@ -170,5 +185,8 @@
 </script>
 
 <style scoped lang="scss">
-
+  .v-toolbar__content {
+    display: flex;
+    align-items: center;
+  }
 </style>

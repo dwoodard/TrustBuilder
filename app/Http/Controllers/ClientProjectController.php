@@ -6,18 +6,21 @@ use App\Http\Resources\ClientResource;
 use App\Http\Resources\ProjectResource;
 use App\Models\Client;
 use App\Models\Project;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class ClientProjectController extends \Inertia\Controller
 {
     /**
      * Display a listing of the resource.
      * GET: admin/client/{client}/project/{project}
-     * @return \Inertia\Response
+     * @return Response
      */
     public function index(Client $client, Project $project)
     {
@@ -35,7 +38,7 @@ class ClientProjectController extends \Inertia\Controller
     /**
      * Show the form for creating a new resource.
      * GET: admin/client/{client}/project/{project}/create
-     * @return \Inertia\Response
+     * @return Response
      */
     public function create(Request $request, Client $client)
     {
@@ -51,9 +54,9 @@ class ClientProjectController extends \Inertia\Controller
      * Store a newly created resource in storage.
      * POST: admin/client/{client}/project/{project}
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function store(Request $request, Client $client): \Illuminate\Http\RedirectResponse
+    public function store(Request $request, Client $client): RedirectResponse
     {
         $request->validate([
             'name' => ['required'],
@@ -77,9 +80,11 @@ class ClientProjectController extends \Inertia\Controller
     /**
      * Preview for Print
      * GET: admin/client/{client}/project/{project}/print
-     * @return \Inertia\Response
+     * @param Client $client
+     * @param Project $project
+     * @return Response
      */
-    public function print(Client $client, Project $project)
+    public function print(Client $client, Project $project): Response
     {
 
         $data = [
@@ -94,9 +99,9 @@ class ClientProjectController extends \Inertia\Controller
 
     /**
      * @param Project $project
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
-    private function getProjectTemplates(Project $project): \Illuminate\Support\Collection
+    private function getProjectTemplates(Project $project): Collection
     {
         $TemplatePath = resource_path('js/document_templates/' . $project->type);
         $dirs = glob($TemplatePath . '/*', GLOB_ONLYDIR);
@@ -112,14 +117,11 @@ class ClientProjectController extends \Inertia\Controller
      * @param Project $project
      * @param $node
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function documentData(Client $client, Project $project, $node, Request $request)
     {
-        
-            
 
-        
         switch (gettype($project->document_data[$node])) {
             case "NULL":
                 $project->document_data[$node] = [$request->all()];
@@ -129,13 +131,13 @@ class ClientProjectController extends \Inertia\Controller
                 break;
             case 'object':
                 $project->document_data[$node] = $request->all();
-            
+
             case 'string':
                 $project->document_data[$node] = $request->all();
                 break;
-            
+
         }
-        
+
         $project->save();
 
         return Redirect::back();
