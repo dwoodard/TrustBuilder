@@ -178,11 +178,7 @@ var render = function() {
             "\n    "
         )
       ])
-    ]),
-    _vm._v(" "),
-    _c("pre", [_vm._v(_vm._s(_vm.minute))]),
-    _vm._v(" "),
-    _c("pre", [_vm._v(_vm._s(_vm.project))])
+    ])
   ])
 }
 var staticRenderFns = []

@@ -1032,7 +1032,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['currentDocument'],
   data: function data() {
     return {
-      tab: 'meeting-minutes'
+      tab: null // 'meeting-minutes'
+
     };
   },
   components: {

@@ -2,10 +2,10 @@
   <div style="margin-top: 128px">
     <v-app-bar app style="margin-top: 128px">
       <v-tabs v-model="tab" fixed-tabs background-color="primary lighten-4">
-        <v-tab href="#documents">
+        <v-tab>
           Documents
         </v-tab>
-        <v-tab href="#meeting-minutes">
+        <v-tab>
           Meeting Minutes
         </v-tab>
       </v-tabs>

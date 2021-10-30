@@ -347,6 +347,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -24369,6 +24373,8 @@ var render = function() {
     "div",
     { staticStyle: { "margin-top": "128px" } },
     [
+      _c("div", [_vm._v("\n    Where am i?\n  ")]),
+      _vm._v(" "),
       _c(
         "v-app-bar",
         { staticStyle: { "margin-top": "128px" }, attrs: { app: "" } },
@@ -24389,13 +24395,9 @@ var render = function() {
               }
             },
             [
-              _c("v-tab", { attrs: { href: "#documents" } }, [
-                _vm._v("\n        Documents\n      ")
-              ]),
+              _c("v-tab", [_vm._v("\n        Documents\n      ")]),
               _vm._v(" "),
-              _c("v-tab", { attrs: { href: "#meeting-minutes" } }, [
-                _vm._v("\n        Meeting Minutes\n      ")
-              ])
+              _c("v-tab", [_vm._v("\n        Meeting Minutes\n      ")])
             ],
             1
           )

@@ -20,9 +20,11 @@ class ClientProjectController extends \Inertia\Controller
     /**
      * Display a listing of the resource.
      * GET: admin/client/{client}/project/{project}
+     * @param Client $client
+     * @param Project $project
      * @return Response
      */
-    public function index(Client $client, Project $project)
+    public function index(Client $client, Project $project): Response
     {
 
 
@@ -38,9 +40,11 @@ class ClientProjectController extends \Inertia\Controller
     /**
      * Show the form for creating a new resource.
      * GET: admin/client/{client}/project/{project}/create
+     * @param Request $request
+     * @param Client $client
      * @return Response
      */
-    public function create(Request $request, Client $client)
+    public function create(Request $request, Client $client): Response
     {
         $data = [
             'client' => ClientResource::collection([$client])->jsonSerialize(),
@@ -54,6 +58,7 @@ class ClientProjectController extends \Inertia\Controller
      * Store a newly created resource in storage.
      * POST: admin/client/{client}/project/{project}
      * @param Request $request
+     * @param Client $client
      * @return RedirectResponse
      */
     public function store(Request $request, Client $client): RedirectResponse
@@ -119,7 +124,7 @@ class ClientProjectController extends \Inertia\Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function documentData(Client $client, Project $project, $node, Request $request)
+    public function documentData(Client $client, Project $project, $node, Request $request): RedirectResponse
     {
 
         switch (gettype($project->document_data[$node])) {

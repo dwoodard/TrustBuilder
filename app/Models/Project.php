@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\SchemalessAttributes\SchemalessAttributes;
 use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
 
+/**
+ * @property mixed|SchemalessAttributes document_data
+ */
+
 class Project extends Model
 {
     use HasFactory;
     use SchemalessAttributesTrait;
-    
+
 
     protected $table = 'projects';
 
@@ -55,7 +59,7 @@ class Project extends Model
     {
         return SchemalessAttributes::createForModel($this, 'document_data');
     }
-     
+
 
 }
 
