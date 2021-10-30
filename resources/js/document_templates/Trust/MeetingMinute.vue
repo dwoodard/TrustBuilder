@@ -2,7 +2,7 @@
   <div>
     <p>MINUTES OF MEETING # <b>{{ meeting_number }}</b>, BOARD OF TRUSTEES (hereafter BOARD)</p>
 
-    <div class="preview-field">
+    <div v-if="mailing_address" class="preview-field">
       <b>{{ trust_name }}</b> <br/>
       {{ mailing_address.address }}<br/>
       {{ mailing_address.city }} {{ mailing_address.zip }} <br/>
@@ -11,6 +11,9 @@
         <br/>
         {{ moment(document_created_at).format("MMMM D, YYYY") }}
       </b>
+    </div>
+    <div v-else class="preview-field">
+      Need Mailing Address
     </div>
 
 

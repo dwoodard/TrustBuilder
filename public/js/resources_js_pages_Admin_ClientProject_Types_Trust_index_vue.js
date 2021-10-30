@@ -904,8 +904,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -1032,8 +1030,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['currentDocument'],
   data: function data() {
     return {
-      tab: null // 'meeting-minutes'
-
+      tab: 'meeting-minutes'
     };
   },
   components: {
@@ -1085,7 +1082,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".v-toolbar__content[data-v-123322be] {\n  display: flex;\n  align-items: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#meeting-minutes[data-v-123322be] {\n  background: #F2F0EB;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -25449,7 +25446,7 @@ var render = function() {
                     [
                       _c(
                         "v-toolbar",
-                        { attrs: { flat: "", color: "#f1f1f1" } },
+                        { attrs: { flat: "" } },
                         [
                           _c("v-autocomplete", {
                             attrs: {
@@ -25929,14 +25926,6 @@ var map = {
 		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
 		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
 	],
-	"./Trust": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
-	"./Trust/": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
 	"./Trust/1_DeclarationOfTrust": [
 		"./resources/js/document_templates/Trust/1_DeclarationOfTrust/index.vue",
 		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue-_ea6f0"
@@ -26080,14 +26069,6 @@ var map = {
 	"./Trust/MeetingMinute.vue": [
 		"./resources/js/document_templates/Trust/MeetingMinute.vue",
 		"resources_js_document_templates_Trust_MeetingMinute_vue-_ae500"
-	],
-	"./Trust/index": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
-	"./Trust/index.vue": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
 	]
 };
 function webpackAsyncContext(req) {

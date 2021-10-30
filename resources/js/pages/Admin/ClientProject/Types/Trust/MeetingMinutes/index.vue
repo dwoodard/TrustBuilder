@@ -5,7 +5,7 @@
       <v-row>
         <v-col sm="4">
           <v-container fluid>
-            <v-toolbar flat color="#f1f1f1">
+            <v-toolbar flat>
               <v-autocomplete
                 v-model="selectedMinute"
                 :items="meetingMinutes"
@@ -83,14 +83,12 @@
               <v-card>
                 <v-subheader>Meeting Minutes</v-subheader>
                 <v-card-text>
-                <div v-if="selectedMinute">
-                  <Wizard :meeting_minute="selectedMinute"/>
-                </div>
+                  <div v-if="selectedMinute">
+                    <Wizard :meeting_minute="selectedMinute"/>
+                  </div>
                 </v-card-text>
               </v-card>
             </v-sheet>
-
-
           </v-container>
         </v-col>
         <v-col sm="8" style="overflow:scroll;">
@@ -150,11 +148,9 @@
       },
       nextNumber() {
         // if no length start at 3 or add 1
-
         if (this.meetingMinutes.length === 0) {
           return 3;
         }
-
         return this.meetingMinutes[this.meetingMinutes.length - 1].meeting_number + 1;
       }
     },
@@ -185,8 +181,7 @@
 </script>
 
 <style scoped lang="scss">
-  .v-toolbar__content {
-    display: flex;
-    align-items: center;
-  }
+#meeting-minutes{
+  background: #F2F0EB;
+}
 </style>

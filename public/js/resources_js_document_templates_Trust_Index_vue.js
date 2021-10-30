@@ -326,38 +326,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['currentDocument'],
   data: function data() {
     return {
-      tab: 'documents'
+      tab: 'meeting-minutes'
     };
   },
   components: {
@@ -24369,77 +24344,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { "margin-top": "128px" } },
-    [
-      _c("div", [_vm._v("\n    Where am i?\n  ")]),
-      _vm._v(" "),
-      _c(
-        "v-app-bar",
-        { staticStyle: { "margin-top": "128px" }, attrs: { app: "" } },
-        [
-          _c(
-            "v-tabs",
-            {
-              attrs: {
-                "fixed-tabs": "",
-                "background-color": "primary lighten-4"
-              },
-              model: {
-                value: _vm.tab,
-                callback: function($$v) {
-                  _vm.tab = $$v
-                },
-                expression: "tab"
-              }
-            },
-            [
-              _c("v-tab", [_vm._v("\n        Documents\n      ")]),
-              _vm._v(" "),
-              _c("v-tab", [_vm._v("\n        Meeting Minutes\n      ")])
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-tabs-items",
-        {
-          model: {
-            value: _vm.tab,
-            callback: function($$v) {
-              _vm.tab = $$v
-            },
-            expression: "tab"
-          }
-        },
-        [
-          _c(
-            "v-tab-item",
-            { attrs: { value: "documents" } },
-            [
-              _c("Documents", {
-                attrs: { "current-document": _vm.currentDocument }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-tab-item",
-            { attrs: { value: "meeting-minutes" } },
-            [_c("MeetingMinutes")],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+  return _c("div", { staticStyle: { "margin-top": "128px" } })
 }
 var staticRenderFns = []
 render._withStripped = true

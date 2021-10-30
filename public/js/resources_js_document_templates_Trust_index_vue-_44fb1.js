@@ -102,9 +102,11 @@ __webpack_require__.r(__webpack_exports__);
         name: [function (value) {
           return !!value || 'Required.';
         }],
-        units: [// (value) => !!value || 'Required.',
-          // (value) => !!value || 'Can not be 0'
-        ]
+        units: [function (value) {
+          return !!value || 'Required.';
+        }, function (value) {
+          return !!value || 'Can not be 0';
+        }]
       },
       errors: {
         name: null,
@@ -207,13 +209,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['currentDocument'],
   data: function data() {
     return {
-      tab: 'meeting-minutes'
+      tab: 'documents'
     };
   },
   components: {
@@ -638,13 +641,9 @@ __webpack_require__.r(__webpack_exports__);
   props: ['currentDocument'],
   computed: {
     content: function content() {
-      var _this = this;
-
       console.log(this.currentDocument);
       return [{
-        template: function template() {
-          return __webpack_require__("./resources/js/document_templates lazy recursive ^\\.\\/.*$")("./".concat(_this.$page.props.project.type, "/").concat(_this.currentDocument));
-        },
+        // template: () => import(`@/document_templates/${this.$page.props.project.type}/${this.currentDocument}`),
         props: {
           client: this.$page.props.client,
           project: this.$page.props.project
@@ -660,10 +659,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -676,19 +675,226 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'MeetingMinutes'
+  model: {
+    prop: 'meeting_minute',
+    event: 'change'
+  },
+  props: ['meeting_minute'],
+  data: function data() {
+    return {};
+  },
+  methods: {
+    change: function change(meetingMinute) {
+      this.$emit('change', meetingMinute);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_DocumentViewer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/DocumentViewer.vue */ "./resources/js/components/DocumentViewer.vue");
+/* harmony import */ var _Wizard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Wizard */ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    var _this$$page$props$pro, _this$$page$props$pro2;
+
+    return {
+      menu_date: false,
+      dialog: false,
+      selectedMinute: ((_this$$page$props$pro = this.$page.props.project.document_data) === null || _this$$page$props$pro === void 0 ? void 0 : (_this$$page$props$pro2 = _this$$page$props$pro.meeting_minutes) === null || _this$$page$props$pro2 === void 0 ? void 0 : _this$$page$props$pro2[0]) || null,
+      form: this.$inertia.form({
+        meeting_number: '',
+        resolution: false,
+        date: moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD hh:mm'),
+        minutes: [{
+          minute_number: 1,
+          minute_type: '',
+          minute_title: '',
+          minute_content: '',
+          minute_attachment: ''
+        }],
+        subject: '',
+        type: '',
+        matters_resolved: [],
+        officers_present: [],
+        closing_statement: ''
+      })
+    };
+  },
+  computed: {
+    content: function content() {
+      return [{
+        template: function template() {
+          return __webpack_require__.e(/*! import() */ "resources_js_document_templates_Trust_MeetingMinute_vue-_ae501").then(__webpack_require__.bind(__webpack_require__, /*! @/document_templates/Trust/MeetingMinute.vue */ "./resources/js/document_templates/Trust/MeetingMinute.vue"));
+        },
+        props: {
+          client: this.$page.props.client,
+          project: this.$page.props.project,
+          minute: this.selectedMinute
+        }
+      }];
+    },
+    meetingMinutes: function meetingMinutes() {
+      return this.$page.props.project.document_data.meeting_minutes || [];
+    },
+    nextNumber: function nextNumber() {
+      // if no length start at 3 or add 1
+      if (this.meetingMinutes.length === 0) {
+        return 3;
+      }
+
+      return this.meetingMinutes[this.meetingMinutes.length - 1].meeting_number + 1;
+    }
+  },
+  methods: {
+    setSelectedMinute: function setSelectedMinute(minute) {
+      var _this = this;
+
+      this.selectedMinute = this.meetingMinutes.find(function (minute) {
+        return minute.meeting_number === _this.selectedMinute.meeting_number;
+      });
+    },
+    addMinute: function addMinute() {
+      var _this2 = this;
+
+      this.dialog = false;
+      this.form.transform(function (data) {
+        return _objectSpread(_objectSpread({}, data), {}, {
+          meeting_number: _this2.nextNumber
+        });
+      }).post("/admin/client/".concat(this.$page.props.client.id, "/project/").concat(this.$page.props.project.id, "/document_data/meeting_minutes"));
+    }
+  },
+  components: {
+    Wizard: _Wizard__WEBPACK_IMPORTED_MODULE_2__["default"],
+    DocumentViewer: _components_DocumentViewer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
 });
 
 /***/ }),
@@ -709,7 +915,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".v-toolbar__content[data-v-123322be] {\n  display: flex;\n  align-items: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -951,6 +1157,44 @@ component.options.__file = "resources/js/pages/Admin/ClientProject/Types/Trust/D
 
 /***/ }),
 
+/***/ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Wizard_vue_vue_type_template_id_340d30cf_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Wizard.vue?vue&type=template&id=340d30cf&scoped=true& */ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=template&id=340d30cf&scoped=true&");
+/* harmony import */ var _Wizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Wizard.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Wizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Wizard_vue_vue_type_template_id_340d30cf_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Wizard_vue_vue_type_template_id_340d30cf_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "340d30cf",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue":
 /*!*************************************************************************************!*\
   !*** ./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue ***!
@@ -1048,6 +1292,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/Documents/index.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Wizard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -1150,6 +1409,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_1373c9f4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_1373c9f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=1373c9f4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/Documents/index.vue?vue&type=template&id=1373c9f4&");
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=template&id=340d30cf&scoped=true&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=template&id=340d30cf&scoped=true& ***!
+  \*********************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_template_id_340d30cf_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_template_id_340d30cf_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Wizard_vue_vue_type_template_id_340d30cf_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Wizard.vue?vue&type=template&id=340d30cf&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=template&id=340d30cf&scoped=true&");
 
 
 /***/ }),
@@ -1475,13 +1750,9 @@ var render = function() {
               }
             },
             [
-              _c("v-tab", { attrs: { href: "#documents" } }, [
-                _vm._v("\n        Documents\n      ")
-              ]),
+              _c("v-tab", [_vm._v("\n        Documents\n      ")]),
               _vm._v(" "),
-              _c("v-tab", { attrs: { href: "#meeting-minutes" } }, [
-                _vm._v("\n        Meeting Minutes\n      ")
-              ])
+              _c("v-tab", [_vm._v("\n        Meeting Minutes\n      ")])
             ],
             1
           )
@@ -2568,6 +2839,30 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=template&id=340d30cf&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/Wizard.vue?vue&type=template&id=340d30cf&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v("\n  " + _vm._s(_vm.meeting_minute) + "\n")])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=template&id=123322be&scoped=true&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue?vue&type=template&id=123322be&scoped=true& ***!
@@ -2588,35 +2883,364 @@ var render = function() {
     { attrs: { id: "meeting-minutes" } },
     [
       _c(
-        "v-row",
-        { attrs: { "no-gutters": "" } },
+        "v-container",
+        { attrs: { fluid: "" } },
         [
-          _c("v-col", {
-            staticStyle: { height: "80vh", "overflow-scrolling": "touch" },
-            attrs: { cols: "12", sm: "2" }
-          }),
-          _vm._v(" "),
           _c(
-            "v-col",
-            { attrs: { cols: "12", sm: "4" } },
+            "v-row",
             [
               _c(
-                "v-card",
-                { staticClass: "pa-2", attrs: { outlined: "", tile: "" } },
-                [_vm._v("\n        One of three columns\n      ")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-col",
-            { attrs: { cols: "12", sm: "6" } },
-            [
+                "v-col",
+                { attrs: { sm: "4" } },
+                [
+                  _c(
+                    "v-container",
+                    { attrs: { fluid: "" } },
+                    [
+                      _c(
+                        "v-toolbar",
+                        { attrs: { flat: "", color: "#f1f1f1" } },
+                        [
+                          _c("v-autocomplete", {
+                            attrs: {
+                              items: _vm.meetingMinutes,
+                              "hide-details": "",
+                              label: "Meeting Number",
+                              "item-value": function(item) {
+                                return item
+                              },
+                              "item-text": function(item) {
+                                return item.meeting_number
+                                  .toString()
+                                  .padStart(3, "0")
+                              }
+                            },
+                            on: { change: _vm.setSelectedMinute },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "label",
+                                fn: function(ref) {
+                                  var item = ref.item
+                                  return [_c("span", [_vm._v("item")])]
+                                }
+                              }
+                            ]),
+                            model: {
+                              value: _vm.selectedMinute,
+                              callback: function($$v) {
+                                _vm.selectedMinute = $$v
+                              },
+                              expression: "selectedMinute"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-dialog",
+                            {
+                              attrs: { "max-width": "500px" },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "activator",
+                                  fn: function(ref) {
+                                    var on = ref.on
+                                    var attrs = ref.attrs
+                                    return [
+                                      _c(
+                                        "v-btn",
+                                        _vm._g(
+                                          _vm._b(
+                                            { attrs: { icon: "" } },
+                                            "v-btn",
+                                            attrs,
+                                            false
+                                          ),
+                                          on
+                                        ),
+                                        [_c("v-icon", [_vm._v("mdi-plus")])],
+                                        1
+                                      )
+                                    ]
+                                  }
+                                }
+                              ]),
+                              model: {
+                                value: _vm.dialog,
+                                callback: function($$v) {
+                                  _vm.dialog = $$v
+                                },
+                                expression: "dialog"
+                              }
+                            },
+                            [
+                              _vm._v(" "),
+                              _c(
+                                "v-card",
+                                [
+                                  _c("v-card-title", [_vm._v("Add Minute")]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-text",
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          value: _vm.nextNumber,
+                                          disabled: "",
+                                          label: "Meeting Number",
+                                          required: ""
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-menu",
+                                        {
+                                          ref: "menu",
+                                          attrs: {
+                                            "close-on-content-click": false,
+                                            "return-value": _vm.form.date,
+                                            transition: "scale-transition",
+                                            "offset-y": "",
+                                            "min-width": "auto"
+                                          },
+                                          on: {
+                                            "update:returnValue": function(
+                                              $event
+                                            ) {
+                                              return _vm.$set(
+                                                _vm.form,
+                                                "date",
+                                                $event
+                                              )
+                                            },
+                                            "update:return-value": function(
+                                              $event
+                                            ) {
+                                              return _vm.$set(
+                                                _vm.form,
+                                                "date",
+                                                $event
+                                              )
+                                            }
+                                          },
+                                          scopedSlots: _vm._u([
+                                            {
+                                              key: "activator",
+                                              fn: function(ref) {
+                                                var on = ref.on
+                                                var attrs = ref.attrs
+                                                return [
+                                                  _c(
+                                                    "v-text-field",
+                                                    _vm._g(
+                                                      _vm._b(
+                                                        {
+                                                          attrs: {
+                                                            "prepend-icon":
+                                                              "mdi-calendar",
+                                                            readonly: ""
+                                                          },
+                                                          model: {
+                                                            value:
+                                                              _vm.form.date,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.$set(
+                                                                _vm.form,
+                                                                "date",
+                                                                $$v
+                                                              )
+                                                            },
+                                                            expression:
+                                                              "form.date"
+                                                          }
+                                                        },
+                                                        "v-text-field",
+                                                        attrs,
+                                                        false
+                                                      ),
+                                                      on
+                                                    )
+                                                  )
+                                                ]
+                                              }
+                                            }
+                                          ]),
+                                          model: {
+                                            value: _vm.menu_date,
+                                            callback: function($$v) {
+                                              _vm.menu_date = $$v
+                                            },
+                                            expression: "menu_date"
+                                          }
+                                        },
+                                        [
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-date-picker",
+                                            {
+                                              attrs: {
+                                                "no-title": "",
+                                                scrollable: ""
+                                              },
+                                              model: {
+                                                value: _vm.form.date,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "date",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "form.date"
+                                              }
+                                            },
+                                            [
+                                              _c("v-spacer"),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-btn",
+                                                {
+                                                  attrs: {
+                                                    text: "",
+                                                    color: "primary"
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      _vm.menu_date = false
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                        Cancel\n                      "
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-btn",
+                                                {
+                                                  attrs: {
+                                                    text: "",
+                                                    color: "primary"
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.$refs.menu.save(
+                                                        _vm.form.date
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                        OK\n                      "
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { color: "blue", text: "" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.dialog = false
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Cancel")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { color: "blue", text: "" },
+                                          on: { click: _vm.addMinute }
+                                        },
+                                        [_vm._v("Add")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-sheet",
+                        [
+                          _c(
+                            "v-card",
+                            [
+                              _c("v-subheader", [_vm._v("Meeting Minutes")]),
+                              _vm._v(" "),
+                              _c("v-card-text", [
+                                _vm.selectedMinute
+                                  ? _c(
+                                      "div",
+                                      [
+                                        _c("Wizard", {
+                                          attrs: {
+                                            meeting_minute: _vm.selectedMinute
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e()
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
               _c(
-                "v-card",
-                { staticClass: "pa-2", attrs: { outlined: "", tile: "" } },
-                [_vm._v("\n        One of three columns\n      ")]
+                "v-col",
+                { staticStyle: { overflow: "scroll" }, attrs: { sm: "8" } },
+                [
+                  _vm.selectedMinute
+                    ? _c(
+                        "div",
+                        [
+                          _c("DocumentViewer", {
+                            attrs: { content: _vm.content }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm._e()
+                ]
               )
             ],
             1

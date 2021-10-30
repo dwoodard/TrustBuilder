@@ -24827,14 +24827,6 @@ var map = {
 		"./resources/js/document_templates/DeclarationOfStatus/01_DeclarationOfStatus/index.vue",
 		"resources_js_document_templates_DeclarationOfStatus_01_DeclarationOfStatus_index_vue"
 	],
-	"./Trust": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
-	"./Trust/": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
 	"./Trust/1_DeclarationOfTrust": [
 		"./resources/js/document_templates/Trust/1_DeclarationOfTrust/index.vue",
 		"resources_js_document_templates_Trust_1_DeclarationOfTrust_index_vue-_ea6f0"
@@ -24978,14 +24970,6 @@ var map = {
 	"./Trust/MeetingMinute.vue": [
 		"./resources/js/document_templates/Trust/MeetingMinute.vue",
 		"resources_js_document_templates_Trust_MeetingMinute_vue-_ae500"
-	],
-	"./Trust/index": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
-	],
-	"./Trust/index.vue": [
-		"./resources/js/document_templates/Trust/index.vue",
-		"resources_js_document_templates_Trust_index_vue"
 	]
 };
 function webpackAsyncContext(req) {

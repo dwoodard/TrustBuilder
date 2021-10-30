@@ -21618,9 +21618,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("pre", [_vm._v(_vm._s(_vm.minute))]),
-    _vm._v(" "),
-    _c("pre", [_vm._v(_vm._s(_vm.project))])
+    _c("pre", [_vm._v(_vm._s(_vm.minute))])
   ])
 }
 var staticRenderFns = []
