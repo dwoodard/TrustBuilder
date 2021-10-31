@@ -1,3 +1,4 @@
+<!--Meeting Minutes Wizard-->
 <template>
   <div>
     {{ meeting_minute }}

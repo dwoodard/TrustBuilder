@@ -34,6 +34,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['minute', 'client', 'project'],
@@ -21593,32 +21596,36 @@ var render = function() {
       _vm._v(", BOARD OF TRUSTEES (hereafter BOARD)")
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "preview-field" }, [
-      _c("b", [_vm._v(_vm._s(_vm.trust_name))]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v("\n    " + _vm._s(_vm.mailing_address.address)),
-      _c("br"),
-      _vm._v(
-        "\n    " +
-          _vm._s(_vm.mailing_address.city) +
-          " " +
-          _vm._s(_vm.mailing_address.zip) +
-          " "
-      ),
-      _c("br"),
-      _vm._v(" "),
-      _c("b", { staticClass: "preview-field" }, [
-        _c("br"),
-        _vm._v(
-          "\n      " +
-            _vm._s(_vm.moment(_vm.document_created_at).format("MMMM D, YYYY")) +
-            "\n    "
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("pre", [_vm._v(_vm._s(_vm.minute))])
+    _vm.mailing_address
+      ? _c("div", { staticClass: "preview-field" }, [
+          _c("b", [_vm._v(_vm._s(_vm.trust_name))]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v("\n    " + _vm._s(_vm.mailing_address.address)),
+          _c("br"),
+          _vm._v(
+            "\n    " +
+              _vm._s(_vm.mailing_address.city) +
+              " " +
+              _vm._s(_vm.mailing_address.zip) +
+              " "
+          ),
+          _c("br"),
+          _vm._v(" "),
+          _c("b", { staticClass: "preview-field" }, [
+            _c("br"),
+            _vm._v(
+              "\n      " +
+                _vm._s(
+                  _vm.moment(_vm.document_created_at).format("MMMM D, YYYY")
+                ) +
+                "\n    "
+            )
+          ])
+        ])
+      : _c("div", { staticClass: "preview-field" }, [
+          _vm._v("\n    Need Mailing Address\n  ")
+        ])
   ])
 }
 var staticRenderFns = []

@@ -112,22 +112,10 @@
         dialog: false,
         selectedMinute: this.$page.props.project.document_data?.meeting_minutes?.[0] || null,
         form: this.$inertia.form({
-          meeting_number: '',
-          resolution: false,
-          date: moment().format('YYYY-MM-DD hh:mm'),
-          minutes: [
-            {
-              minute_number: 1,
-              minute_type: '',
-              minute_title: '',
-              minute_content: '',
-              minute_attachment: ''
-            }],
-          subject: '',
-          type: '',
-          matters_resolved: [],
-          officers_present: [],
-          closing_statement: ''
+
+          meeting_number: ''
+
+
         })
       };
     },

@@ -763,6 +763,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   model: {
     prop: 'meeting_minute',
@@ -916,21 +917,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       dialog: false,
       selectedMinute: ((_this$$page$props$pro = this.$page.props.project.document_data) === null || _this$$page$props$pro === void 0 ? void 0 : (_this$$page$props$pro2 = _this$$page$props$pro.meeting_minutes) === null || _this$$page$props$pro2 === void 0 ? void 0 : _this$$page$props$pro2[0]) || null,
       form: this.$inertia.form({
-        meeting_number: '',
-        resolution: false,
-        date: moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD hh:mm'),
-        minutes: [{
-          minute_number: 1,
-          minute_type: '',
-          minute_title: '',
-          minute_content: '',
-          minute_attachment: ''
-        }],
-        subject: '',
-        type: '',
-        matters_resolved: [],
-        officers_present: [],
-        closing_statement: ''
+        meeting_number: ''
       })
     };
   },
