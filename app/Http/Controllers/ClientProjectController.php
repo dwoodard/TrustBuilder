@@ -134,13 +134,10 @@ class ClientProjectController extends \Inertia\Controller
             case 'array':
                 $project->project_data[$node] = [...$project->project_data[$node], $request->all()];
                 break;
+            case 'string':
             case 'object':
                 $project->project_data[$node] = $request->all();
-
-            case 'string':
-                $project->project_data[$node] = $request->all();
                 break;
-
         }
 
         $project->save();

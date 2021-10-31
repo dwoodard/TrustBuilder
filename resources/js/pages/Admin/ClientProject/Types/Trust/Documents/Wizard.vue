@@ -299,6 +299,20 @@
         this.updateProject();
       },
 
+      onEnter() {
+        console.log('save onEnter');
+        this.updateProject();
+      },
+      nextStep() {
+        const steps = this.$el.querySelectorAll('.v-stepper__step').length;
+        this.currentStep = this.currentStep === steps ? 1 : Number(this.currentStep) + 1;
+
+        if (this.currentStep <= steps) {
+          this.updateProject();
+        } else {
+          this.updateForm();
+        }
+      },
 
       updateProject() {
         console.log('updateProject');
@@ -315,21 +329,6 @@
             this.$emit('updateProject', JSON.parse(result.config.data));
           });
       },
-      onEnter() {
-        console.log('save onEnter');
-        this.updateProject();
-      },
-      nextStep() {
-        const steps = this.$el.querySelectorAll('.v-stepper__step').length;
-        this.currentStep = this.currentStep === steps ? 1 : Number(this.currentStep) + 1;
-
-        if (this.currentStep <= steps) {
-          this.updateProject();
-        } else {
-          this.updateForm();
-        }
-      },
-
       updateForm() {
         this
           .form

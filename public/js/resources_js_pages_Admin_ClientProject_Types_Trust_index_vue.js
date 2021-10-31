@@ -632,6 +632,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.trust.beneficiaries = beneficiaries;
       this.updateProject();
     },
+    onEnter: function onEnter() {
+      console.log('save onEnter');
+      this.updateProject();
+    },
+    nextStep: function nextStep() {
+      var steps = this.$el.querySelectorAll('.v-stepper__step').length;
+      this.currentStep = this.currentStep === steps ? 1 : Number(this.currentStep) + 1;
+
+      if (this.currentStep <= steps) {
+        this.updateProject();
+      } else {
+        this.updateForm();
+      }
+    },
     updateProject: function updateProject() {
       var _this = this;
 
@@ -648,20 +662,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       .then(function (result) {
         _this.$emit('updateProject', JSON.parse(result.config.data));
       });
-    },
-    onEnter: function onEnter() {
-      console.log('save onEnter');
-      this.updateProject();
-    },
-    nextStep: function nextStep() {
-      var steps = this.$el.querySelectorAll('.v-stepper__step').length;
-      this.currentStep = this.currentStep === steps ? 1 : Number(this.currentStep) + 1;
-
-      if (this.currentStep <= steps) {
-        this.updateProject();
-      } else {
-        this.updateForm();
-      }
     },
     updateForm: function updateForm() {
       var _this2 = this;

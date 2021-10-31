@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class ProjectController extends Controller
 {
@@ -13,9 +16,9 @@ class ProjectController extends Controller
      * Display a listing of the resource.
      * GET: admin/projects
      * admin.projects.index
-     * @return \Inertia\Response
+     * @return Response
      */
-    public function index()
+    public function index(): Response
     {
         $projects = Project::all();
         return Inertia::render('Projects/Index', compact('projects'));
@@ -25,9 +28,9 @@ class ProjectController extends Controller
      * Show the form for creating a new resource.
      * GET: admin/projects/create
      * admin.projects.create
-     * @return \Inertia\Response
+     * @return Response
      */
-    public function create()
+    public function create(): Response
     {
         return Inertia::render('Projects/Create');
     }
@@ -36,14 +39,13 @@ class ProjectController extends Controller
      * Store a newly created resource in storage.
      * POST: admin/projects
      * admin.projects.store
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @return RedirectResponse
+     * @throws ValidationException
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        $this->validate($request, [
-
-        ]);
+        $this->validate($request, []);
 
         $project = Project::create($request->all());
 
@@ -54,12 +56,11 @@ class ProjectController extends Controller
      * Display the specified resource.
      * GET: admin/projects/{id}
      * admin.projects.show
-     * @param  \App\Models\Project  $project
-     * @return \Inertia\Response
+     * @param Project $project
+     * @return Response
      */
-    public function show(Project $project)
+    public function show(Project $project): Response
     {
-
         return Inertia::render('Projects/Show', compact('project'));
     }
 
@@ -67,10 +68,10 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      * GET: admin/projects/{id}/edit
      * admin.projects.edit
-     * @param  \App\Models\Project  $project
-     * @return \Inertia\Response
+     * @param Project $project
+     * @return Response
      */
-    public function edit(Project $project)
+    public function edit(Project $project): Response
     {
         return Inertia::render('Projects/Edit', compact('project'));
     }
@@ -79,15 +80,15 @@ class ProjectController extends Controller
      * Update the specified resource in storage.
      * PUT: admin/projects/{id}
      * admin.projects.update
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Project  $project
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Project $project
+     * @return RedirectResponse
+     * @throws ValidationException
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, Project $project): RedirectResponse
     {
-        $this->validate($request, [
+        $this->validate($request, []);
 
-        ]);
         $project->update($request->only(OnlyColumns($project)));
 
         return redirect()->back()->with([
@@ -99,10 +100,10 @@ class ProjectController extends Controller
      * Remove the specified resource from storage.
      * DELETE: admin/projects/{id}
      * admin.projects.destroy
-     * @param  \App\Models\Project  $project
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Project $project
+     * @return RedirectResponse
      */
-    public function destroy(Project $project)
+    public function destroy(Project $project): RedirectResponse
     {
         $project->delete();
 

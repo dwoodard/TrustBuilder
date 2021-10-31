@@ -45,14 +45,14 @@ __webpack_require__.r(__webpack_exports__);
       return new Date();
     },
     trust_name: function trust_name() {
-      var _this$project, _this$project$project, _this$project2;
+      var _this$project, _this$project$project, _this$project$project2, _this$project2;
 
-      return ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$project = _this$project.project_data) === null || _this$project$project === void 0 ? void 0 : _this$project$project.trust_name) || (this === null || this === void 0 ? void 0 : (_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : _this$project2.name);
+      return ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$project = _this$project.project_data) === null || _this$project$project === void 0 ? void 0 : (_this$project$project2 = _this$project$project.trust) === null || _this$project$project2 === void 0 ? void 0 : _this$project$project2.trust_name) || (this === null || this === void 0 ? void 0 : (_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : _this$project2.name);
     },
     mailing_address: function mailing_address() {
-      var _this$project3, _this$project3$projec;
+      var _this$project3, _this$project3$projec, _this$project3$projec2;
 
-      return (_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$projec = _this$project3.project_data) === null || _this$project3$projec === void 0 ? void 0 : _this$project3$projec.mailing_address;
+      return (_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$projec = _this$project3.project_data) === null || _this$project3$projec === void 0 ? void 0 : (_this$project3$projec2 = _this$project3$projec.trust) === null || _this$project3$projec2 === void 0 ? void 0 : _this$project3$projec2.mailing_address;
     },
     meeting_number: function meeting_number() {
       var _this$minute;
