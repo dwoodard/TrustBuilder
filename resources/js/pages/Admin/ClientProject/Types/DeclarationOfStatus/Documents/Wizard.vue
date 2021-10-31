@@ -70,10 +70,10 @@
         currentStep: 1,
         MenuDocumentCreated: '',
         form: this.$inertia.form({
-          trust_name: this.project?.document_data?.trust_name || this.project.name,
-          first_trustee: this.project?.document_data?.first_trustee || `${this.client.first_name} ${this.client.last_name}`,
-          settlor: this.project?.document_data?.settlor,
-          document_created_at: this.project?.document_data?.document_created_at || this.moment().format('YYYY-MM-DD')
+          trust_name: this.project?.project_data?.trust_name || this.project.name,
+          first_trustee: this.project?.project_data?.first_trustee || `${this.client.first_name} ${this.client.last_name}`,
+          settlor: this.project?.project_data?.settlor,
+          document_created_at: this.project?.project_data?.document_created_at || this.moment().format('YYYY-MM-DD')
         })
       };
     },
@@ -82,7 +82,7 @@
       updateProject() {
         this.form.put(route('admin.projects.update', {
           project: this.project.id,
-          document_data: this.form.data()
+          project_data: this.form.data()
         }));
 
         this.$emit('updateProject');

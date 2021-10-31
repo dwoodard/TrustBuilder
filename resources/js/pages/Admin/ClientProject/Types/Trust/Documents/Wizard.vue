@@ -18,7 +18,7 @@
           editable
           :complete="currentStep > 2"
           :rules="[
-            () => {return !!form.trust_name}
+            () => {return !!form.trust.trust_name}
           ]"
           step="2">
           <small>Trust</small>
@@ -46,7 +46,7 @@
                 <v-row>
                   <v-col>
                     <v-text-field
-                      v-model="form.trustees.first[0]"
+                      v-model="form.trust.trustees.first[0]"
                       label="First Trustee"/>
                   </v-col>
                 </v-row>
@@ -54,21 +54,21 @@
 
                 <v-row>
                   <v-col>
-                    <v-text-field v-model="form.mailing_address.address" label="Mailing Address"/>
+                    <v-text-field v-model="form.trust.mailing_address.address" label="Mailing Address"/>
                   </v-col>
                 </v-row>
                 <v-row>
                   <v-col>
-                    <v-text-field v-model="form.mailing_address.city" label="city"/>
+                    <v-text-field v-model="form.trust.mailing_address.city" label="city"/>
                   </v-col>
                   <v-col>
-                    <v-text-field v-model="form.mailing_address.state" label="state"/>
+                    <v-text-field v-model="form.trust.mailing_address.state" label="state"/>
                   </v-col>
                   <v-col>
-                    <v-text-field v-model="form.mailing_address.zip" label="zip"/>
+                    <v-text-field v-model="form.trust.mailing_address.zip" label="zip"/>
                   </v-col>
                   <v-col>
-                    <v-text-field v-model="form.mailing_address.country" label="country"/>
+                    <v-text-field v-model="form.trust.mailing_address.country" label="country"/>
                   </v-col>
                 </v-row>
               </v-container>
@@ -89,7 +89,7 @@
                 <v-row>
                   <v-col>
                     <v-text-field
-                      v-model="form.trust_name"
+                      v-model="form.trust.trust_name"
                       label="Trust Name"/>
                   </v-col>
 
@@ -100,10 +100,10 @@
                       :close-on-content-click="false"
                       max-width="290">
                       <template #activator="{ on, attrs }">
-                        <v-text-field :value="form.document_created_at" clearable readonly v-bind="attrs" v-on="on" @click="form.document_created_at = null"/>
+                        <v-text-field :value="form.trust.document_created_at" clearable readonly v-bind="attrs" v-on="on" @click="form.document_created_at = null"/>
                       </template>
                       <v-date-picker
-                        v-model="form.document_created_at"
+                        v-model="form.trust.document_created_at"
                         show-adjacent-months/>
                     </v-menu>
                   </v-col>
@@ -112,7 +112,7 @@
                 <v-row>
                   <v-col>
                     <v-text-field
-                      v-model="form.settlor"
+                      v-model="form.trust.settlor"
                       label="Settlor"/>
                   </v-col>
                 </v-row>
@@ -120,12 +120,12 @@
                 <v-row>
                   <v-col>
                     <v-text-field
-                      v-model="form.settlor_gift_type"
+                      v-model="form.trust.settlor_gift_type"
                       label="Settlor Gift Type"/>
                   </v-col>
                   <v-col>
                     <v-text-field
-                      v-model="form.settlor_gift"
+                      v-model="form.trust.settlor_gift"
                       type="number"
                       prepend-icon="mdi-currency-usd"
                       label="Settlor Gift"/>
@@ -135,7 +135,7 @@
                 <v-row>
                   <v-col>
                     <v-text-field
-                      v-model="form.term_of_trust"
+                      v-model="form.trust.term_of_trust"
                       label="Term Of Trust"/>
                   </v-col>
                 </v-row>
@@ -145,24 +145,24 @@
                 <h3>Domicile Address</h3>
                 <v-row>
                   <v-col>
-                    <v-text-field v-model="form.domicile_address.address" label="address"/>
+                    <v-text-field v-model="form.trust.domicile_address.address" label="address"/>
                   </v-col>
                   <v-col>
-                    <v-text-field v-model="form.domicile_address.apt" label="apartment"/>
+                    <v-text-field v-model="form.trust.domicile_address.apt" label="apartment"/>
                   </v-col>
                 </v-row>
                 <v-row>
                   <v-col>
-                    <v-text-field v-model="form.domicile_address.city" label="city"/>
+                    <v-text-field v-model="form.trust.domicile_address.city" label="city"/>
                   </v-col>
                   <v-col>
-                    <v-text-field v-model="form.domicile_address.state" label="state"/>
+                    <v-text-field v-model="form.trust.domicile_address.state" label="state"/>
                   </v-col>
                   <v-col>
-                    <v-text-field v-model="form.domicile_address.zip" label="zip"/>
+                    <v-text-field v-model="form.trust.domicile_address.zip" label="zip"/>
                   </v-col>
                   <v-col>
-                    <v-text-field v-model="form.domicile_address.country" label="country"/>
+                    <v-text-field v-model="form.trust.domicile_address.country" label="country"/>
                   </v-col>
                 </v-row>
               </v-container>
@@ -179,40 +179,40 @@
             <v-card class="mb-12" outlined>
               <v-card-title>First Trustees</v-card-title>
               <v-card-text>
-                <div v-for="(item,index) in form.trustees.first" :key="index">
+                <div v-for="(item,index) in form.trust.trustees.first" :key="index">
                   <v-row>
                     <v-col sm="9">
                       <v-text-field
-                        v-model="form.trustees.first[index]"
+                        v-model="form.trust.trustees.first[index]"
                         dense
                         outlined
                         single-line/>
                     </v-col>
                     <v-col sm="3">
-                      <v-icon v-if="index !== 0" @click="form.trustees.first.splice(index, 1)">mdi-trash-can</v-icon>
+                      <v-icon v-if="index !== 0" @click="form.trust.trustees.first.splice(index, 1)">mdi-trash-can</v-icon>
                     </v-col>
                   </v-row>
                 </div>
-                <v-icon @click="form.trustees.first.push('')">mdi-plus</v-icon>
+                <v-icon @click="form.trust.trustees.first.push('')">mdi-plus</v-icon>
               </v-card-text>
             </v-card>
 
             <v-card class="mb-12" outlined>
               <v-card-title>Second Trustees</v-card-title>
               <v-card-text>
-                <v-row v-for="(item,index) in form.trustees.second" :key="index">
+                <v-row v-for="(item,index) in form.trust.trustees.second" :key="index">
                   <v-col>
                     <v-text-field
-                      v-model="form.trustees.second[index]"
+                      v-model="form.trust.trustees.second[index]"
                       outlined
                       single-line/>
                   </v-col>
                   <v-col>
-                    <v-icon @click="form.trustees.second.splice(index, 1)">mdi-trash-can</v-icon>
+                    <v-icon @click="form.trust.trustees.second.splice(index, 1)">mdi-trash-can</v-icon>
                   </v-col>
                 </v-row>
 
-                <v-icon @click="form.trustees.second.push('')">mdi-plus</v-icon>
+                <v-icon @click="form.trust.trustees.second.push('')">mdi-plus</v-icon>
               </v-card-text>
             </v-card>
 
@@ -223,7 +223,7 @@
             </v-btn>
           </v-stepper-content>
           <v-stepper-content step="4">
-            <Beneficiaries :beneficiaries="form.beneficiaries"
+            <Beneficiaries :beneficiaries="form.trust.beneficiaries"
                            @add="onAddBeneficiary"
                            @update="onUpdateBeneficiary"
                            @remove="onDeleteBeneficiary"/>
@@ -250,17 +250,17 @@
     props: ['project', 'client'],
     data() {
       const user = this.$page.props.auth.user.data;
-      const documentData = this.project?.document_data;
+      const trustData = this.project?.project_data.trust;
       return {
         currentStep: 1,
         MenuDocumentCreated: '',
-        form: this.$inertia.form(
-          {
-            trust_name: documentData?.trust_name || this.project.name,
-            trustees: documentData?.trustees || {first: [`${this.client.first_name} ${this.client.last_name}`], second: []},
-            settlor: documentData?.settlor || `${user.first_name} ${user.last_name}`,
-            document_created_at: documentData?.document_created_at || this.moment().format('YYYY-MM-DD'),
-            mailing_address: documentData?.mailing_address || {
+        form: this.$inertia.form({
+          trust: {
+            trust_name: trustData?.trust_name || this.project.name,
+            trustees: trustData?.trustees || {first: [`${this.client.first_name} ${this.client.last_name}`], second: []},
+            settlor: trustData?.settlor || `${user.first_name} ${user.last_name}`,
+            document_created_at: trustData?.document_created_at || this.moment().format('YYYY-MM-DD'),
+            mailing_address: trustData?.mailing_address || {
               address: this.client.address,
               apt: '',
               city: this.client.city,
@@ -268,7 +268,7 @@
               zip: this.client.zip,
               country: this.client.country
             },
-            domicile_address: documentData?.domicile_address || {
+            domicile_address: trustData?.domicile_address || {
               address: '7512 Dr. Phillips Blvd.',
               apt: 'Suite #50-185',
               city: 'Orlando',
@@ -276,26 +276,26 @@
               zip: '32819',
               country: 'USA'
             },
-            settlor_gift_type: documentData?.settlor_gift_type || 'CASH',
-            settlor_gift: documentData?.settlor_gift || '100',
-            term_of_trust: documentData?.term_of_trust || '99',
-            beneficiaries: documentData?.beneficiaries || []
+            settlor_gift_type: trustData?.settlor_gift_type || 'CASH',
+            settlor_gift: trustData?.settlor_gift || '100',
+            term_of_trust: trustData?.term_of_trust || '99',
+            beneficiaries: trustData?.beneficiaries || []
           }
-        )
+        })
       };
     },
     methods: {
       moment,
       onAddBeneficiary(beneficiary) {
-        this.form.beneficiaries.push(beneficiary);
+        this.form.trust.beneficiaries.push(beneficiary);
         this.updateProject();
       },
       onDeleteBeneficiary(beneficiaryIndex) {
-        this.form.beneficiaries.splice(beneficiaryIndex, 1);
+        this.form.trust.beneficiaries.splice(beneficiaryIndex, 1);
         this.updateProject();
       },
       onUpdateBeneficiary(beneficiaries, index) {
-        this.form.beneficiaries = beneficiaries;
+        this.form.trust.beneficiaries = beneficiaries;
         this.updateProject();
       },
 
@@ -304,8 +304,8 @@
         console.log('updateProject');
         axios.post(`/admin/projects/${this.project.id}`, {
                      _method: 'PUT',
-                     name: this.form.trust_name,
-                     document_data: this.form.data()
+                     name: this.form.trust.trust_name,
+                     project_data: this.form.data()
                    },
                    {
                      params: {resetOnSuccess: false}
@@ -334,8 +334,8 @@
         this
           .form
           .transform((data) => ({
-            name: this.form.trust_name,
-            document_data: {...data}
+            name: this.form.trust.trust_name,
+            project_data: {...data}
           }))
           .put(`/admin/projects/${this.project.id}`,
                {

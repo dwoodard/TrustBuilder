@@ -305,7 +305,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       menu_date: false,
       dialog: false,
-      selectedMinute: ((_this$$page$props$pro = this.$page.props.project.document_data) === null || _this$$page$props$pro === void 0 ? void 0 : (_this$$page$props$pro2 = _this$$page$props$pro.meeting_minutes) === null || _this$$page$props$pro2 === void 0 ? void 0 : _this$$page$props$pro2[0]) || null,
+      selectedMinute: ((_this$$page$props$pro = this.$page.props.project.project_data) === null || _this$$page$props$pro === void 0 ? void 0 : (_this$$page$props$pro2 = _this$$page$props$pro.meeting_minutes) === null || _this$$page$props$pro2 === void 0 ? void 0 : _this$$page$props$pro2[0]) || null,
       form: this.$inertia.form({
         meeting_number: ''
       })
@@ -325,7 +325,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }];
     },
     meetingMinutes: function meetingMinutes() {
-      return this.$page.props.project.document_data.meeting_minutes || [];
+      return this.$page.props.project.project_data.meeting_minutes || [];
     },
     nextNumber: function nextNumber() {
       // if no length start at 3 or add 1
@@ -352,7 +352,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return _objectSpread(_objectSpread({}, data), {}, {
           meeting_number: _this2.nextNumber
         });
-      }).post("/admin/client/".concat(this.$page.props.client.id, "/project/").concat(this.$page.props.project.id, "/document_data/meeting_minutes"));
+      }).post("/admin/client/".concat(this.$page.props.client.id, "/project/").concat(this.$page.props.project.id, "/project_data/meeting_minutes"));
     }
   },
   components: {

@@ -110,7 +110,7 @@
       return {
         menu_date: false,
         dialog: false,
-        selectedMinute: this.$page.props.project.document_data?.meeting_minutes?.[0] || null,
+        selectedMinute: this.$page.props.project.project_data?.meeting_minutes?.[0] || null,
         form: this.$inertia.form({
 
           meeting_number: ''
@@ -132,7 +132,7 @@
           }];
       },
       meetingMinutes() {
-        return this.$page.props.project.document_data.meeting_minutes || [];
+        return this.$page.props.project.project_data.meeting_minutes || [];
       },
       nextNumber() {
         // if no length start at 3 or add 1
@@ -157,7 +157,7 @@
             meeting_number: this.nextNumber
           }))
           .post(
-            `/admin/client/${this.$page.props.client.id}/project/${this.$page.props.project.id}/document_data/meeting_minutes`
+            `/admin/client/${this.$page.props.client.id}/project/${this.$page.props.project.id}/project_data/meeting_minutes`
           );
       }
     },

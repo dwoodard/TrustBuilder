@@ -8,7 +8,7 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
 use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
 
 /**
- * @property mixed|SchemalessAttributes document_data
+ * @property mixed|SchemalessAttributes project_data
  */
 
 class Project extends Model
@@ -20,10 +20,10 @@ class Project extends Model
     protected $table = 'projects';
 
     protected $schemalessAttributes = [
-        'document_data',
+        'project_data',
     ];
     protected $casts = [
-        'document_data' => 'array'
+        'project_data' => 'array'
     ];
     protected $fillable = [
         'name',
@@ -33,7 +33,7 @@ class Project extends Model
         'status',
         'start_date',
         'end_date',
-        "document_data",
+        "project_data",
         "custom_template",
         'description',
         'budget',
@@ -50,14 +50,14 @@ class Project extends Model
         return $this->belongsTo(Client::class);
     }
 
-    public function scopeWithDocumentDataAttribute()
+    public function scopeWithProjectDataAttribute()
     {
-        return $this->document_data->modelScope();
+        return $this->project_data->modelScope();
     }
 
-    public function getDocumentData(): SchemalessAttributes
+    public function getProjectData(): SchemalessAttributes
     {
-        return SchemalessAttributes::createForModel($this, 'document_data');
+        return SchemalessAttributes::createForModel($this, 'project_data');
     }
 
 

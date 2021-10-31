@@ -445,53 +445,55 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this$project;
 
     var user = this.$page.props.auth.user.data;
-    var documentData = (_this$project = this.project) === null || _this$project === void 0 ? void 0 : _this$project.document_data;
+    var trustData = (_this$project = this.project) === null || _this$project === void 0 ? void 0 : _this$project.project_data.trust;
     return {
       currentStep: 1,
       MenuDocumentCreated: '',
       form: this.$inertia.form({
-        trust_name: (documentData === null || documentData === void 0 ? void 0 : documentData.trust_name) || this.project.name,
-        trustees: (documentData === null || documentData === void 0 ? void 0 : documentData.trustees) || {
-          first: ["".concat(this.client.first_name, " ").concat(this.client.last_name)],
-          second: []
-        },
-        settlor: (documentData === null || documentData === void 0 ? void 0 : documentData.settlor) || "".concat(user.first_name, " ").concat(user.last_name),
-        document_created_at: (documentData === null || documentData === void 0 ? void 0 : documentData.document_created_at) || this.moment().format('YYYY-MM-DD'),
-        mailing_address: (documentData === null || documentData === void 0 ? void 0 : documentData.mailing_address) || {
-          address: this.client.address,
-          apt: '',
-          city: this.client.city,
-          state: this.client.state,
-          zip: this.client.zip,
-          country: this.client.country
-        },
-        domicile_address: (documentData === null || documentData === void 0 ? void 0 : documentData.domicile_address) || {
-          address: '7512 Dr. Phillips Blvd.',
-          apt: 'Suite #50-185',
-          city: 'Orlando',
-          state: 'Florida',
-          zip: '32819',
-          country: 'USA'
-        },
-        settlor_gift_type: (documentData === null || documentData === void 0 ? void 0 : documentData.settlor_gift_type) || 'CASH',
-        settlor_gift: (documentData === null || documentData === void 0 ? void 0 : documentData.settlor_gift) || '100',
-        term_of_trust: (documentData === null || documentData === void 0 ? void 0 : documentData.term_of_trust) || '99',
-        beneficiaries: (documentData === null || documentData === void 0 ? void 0 : documentData.beneficiaries) || []
+        trust: {
+          trust_name: (trustData === null || trustData === void 0 ? void 0 : trustData.trust_name) || this.project.name,
+          trustees: (trustData === null || trustData === void 0 ? void 0 : trustData.trustees) || {
+            first: ["".concat(this.client.first_name, " ").concat(this.client.last_name)],
+            second: []
+          },
+          settlor: (trustData === null || trustData === void 0 ? void 0 : trustData.settlor) || "".concat(user.first_name, " ").concat(user.last_name),
+          document_created_at: (trustData === null || trustData === void 0 ? void 0 : trustData.document_created_at) || this.moment().format('YYYY-MM-DD'),
+          mailing_address: (trustData === null || trustData === void 0 ? void 0 : trustData.mailing_address) || {
+            address: this.client.address,
+            apt: '',
+            city: this.client.city,
+            state: this.client.state,
+            zip: this.client.zip,
+            country: this.client.country
+          },
+          domicile_address: (trustData === null || trustData === void 0 ? void 0 : trustData.domicile_address) || {
+            address: '7512 Dr. Phillips Blvd.',
+            apt: 'Suite #50-185',
+            city: 'Orlando',
+            state: 'Florida',
+            zip: '32819',
+            country: 'USA'
+          },
+          settlor_gift_type: (trustData === null || trustData === void 0 ? void 0 : trustData.settlor_gift_type) || 'CASH',
+          settlor_gift: (trustData === null || trustData === void 0 ? void 0 : trustData.settlor_gift) || '100',
+          term_of_trust: (trustData === null || trustData === void 0 ? void 0 : trustData.term_of_trust) || '99',
+          beneficiaries: (trustData === null || trustData === void 0 ? void 0 : trustData.beneficiaries) || []
+        }
       })
     };
   },
   methods: {
     moment: (moment__WEBPACK_IMPORTED_MODULE_0___default()),
     onAddBeneficiary: function onAddBeneficiary(beneficiary) {
-      this.form.beneficiaries.push(beneficiary);
+      this.form.trust.beneficiaries.push(beneficiary);
       this.updateProject();
     },
     onDeleteBeneficiary: function onDeleteBeneficiary(beneficiaryIndex) {
-      this.form.beneficiaries.splice(beneficiaryIndex, 1);
+      this.form.trust.beneficiaries.splice(beneficiaryIndex, 1);
       this.updateProject();
     },
     onUpdateBeneficiary: function onUpdateBeneficiary(beneficiaries, index) {
-      this.form.beneficiaries = beneficiaries;
+      this.form.trust.beneficiaries = beneficiaries;
       this.updateProject();
     },
     updateProject: function updateProject() {
@@ -500,8 +502,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       console.log('updateProject');
       axios__WEBPACK_IMPORTED_MODULE_1___default().post("/admin/projects/".concat(this.project.id), {
         _method: 'PUT',
-        name: this.form.trust_name,
-        document_data: this.form.data()
+        name: this.form.trust.trust_name,
+        project_data: this.form.data()
       }, {
         params: {
           resetOnSuccess: false
@@ -530,8 +532,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.form.transform(function (data) {
         return {
-          name: _this2.form.trust_name,
-          document_data: _objectSpread({}, data)
+          name: _this2.form.trust.trust_name,
+          project_data: _objectSpread({}, data)
         };
       }).put("/admin/projects/".concat(this.project.id), {
         preserveScroll: true,
@@ -22535,7 +22537,7 @@ var render = function() {
                     complete: _vm.currentStep > 2,
                     rules: [
                       function() {
-                        return !!_vm.form.trust_name
+                        return !!_vm.form.trust.trust_name
                       }
                     ],
                     step: "2"
@@ -22606,15 +22608,17 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "First Trustee" },
                                         model: {
-                                          value: _vm.form.trustees.first[0],
+                                          value:
+                                            _vm.form.trust.trustees.first[0],
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.trustees.first,
+                                              _vm.form.trust.trustees.first,
                                               0,
                                               $$v
                                             )
                                           },
-                                          expression: "form.trustees.first[0]"
+                                          expression:
+                                            "form.trust.trustees.first[0]"
                                         }
                                       })
                                     ],
@@ -22634,16 +22638,17 @@ var render = function() {
                                         attrs: { label: "Mailing Address" },
                                         model: {
                                           value:
-                                            _vm.form.mailing_address.address,
+                                            _vm.form.trust.mailing_address
+                                              .address,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.mailing_address,
+                                              _vm.form.trust.mailing_address,
                                               "address",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.mailing_address.address"
+                                            "form.trust.mailing_address.address"
                                         }
                                       })
                                     ],
@@ -22662,16 +22667,17 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "city" },
                                         model: {
-                                          value: _vm.form.mailing_address.city,
+                                          value:
+                                            _vm.form.trust.mailing_address.city,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.mailing_address,
+                                              _vm.form.trust.mailing_address,
                                               "city",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.mailing_address.city"
+                                            "form.trust.mailing_address.city"
                                         }
                                       })
                                     ],
@@ -22684,16 +22690,18 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "state" },
                                         model: {
-                                          value: _vm.form.mailing_address.state,
+                                          value:
+                                            _vm.form.trust.mailing_address
+                                              .state,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.mailing_address,
+                                              _vm.form.trust.mailing_address,
                                               "state",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.mailing_address.state"
+                                            "form.trust.mailing_address.state"
                                         }
                                       })
                                     ],
@@ -22706,15 +22714,17 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "zip" },
                                         model: {
-                                          value: _vm.form.mailing_address.zip,
+                                          value:
+                                            _vm.form.trust.mailing_address.zip,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.mailing_address,
+                                              _vm.form.trust.mailing_address,
                                               "zip",
                                               $$v
                                             )
                                           },
-                                          expression: "form.mailing_address.zip"
+                                          expression:
+                                            "form.trust.mailing_address.zip"
                                         }
                                       })
                                     ],
@@ -22728,16 +22738,17 @@ var render = function() {
                                         attrs: { label: "country" },
                                         model: {
                                           value:
-                                            _vm.form.mailing_address.country,
+                                            _vm.form.trust.mailing_address
+                                              .country,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.mailing_address,
+                                              _vm.form.trust.mailing_address,
                                               "country",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.mailing_address.country"
+                                            "form.trust.mailing_address.country"
                                         }
                                       })
                                     ],
@@ -22789,15 +22800,15 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "Trust Name" },
                                         model: {
-                                          value: _vm.form.trust_name,
+                                          value: _vm.form.trust.trust_name,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form,
+                                              _vm.form.trust,
                                               "trust_name",
                                               $$v
                                             )
                                           },
-                                          expression: "form.trust_name"
+                                          expression: "form.trust.trust_name"
                                         }
                                       })
                                     ],
@@ -22829,7 +22840,7 @@ var render = function() {
                                                         {
                                                           attrs: {
                                                             value:
-                                                              _vm.form
+                                                              _vm.form.trust
                                                                 .document_created_at,
                                                             clearable: "",
                                                             readonly: ""
@@ -22869,16 +22880,17 @@ var render = function() {
                                             },
                                             model: {
                                               value:
-                                                _vm.form.document_created_at,
+                                                _vm.form.trust
+                                                  .document_created_at,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.form,
+                                                  _vm.form.trust,
                                                   "document_created_at",
                                                   $$v
                                                 )
                                               },
                                               expression:
-                                                "form.document_created_at"
+                                                "form.trust.document_created_at"
                                             }
                                           })
                                         ],
@@ -22900,11 +22912,15 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "Settlor" },
                                         model: {
-                                          value: _vm.form.settlor,
+                                          value: _vm.form.trust.settlor,
                                           callback: function($$v) {
-                                            _vm.$set(_vm.form, "settlor", $$v)
+                                            _vm.$set(
+                                              _vm.form.trust,
+                                              "settlor",
+                                              $$v
+                                            )
                                           },
-                                          expression: "form.settlor"
+                                          expression: "form.trust.settlor"
                                         }
                                       })
                                     ],
@@ -22923,15 +22939,17 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "Settlor Gift Type" },
                                         model: {
-                                          value: _vm.form.settlor_gift_type,
+                                          value:
+                                            _vm.form.trust.settlor_gift_type,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form,
+                                              _vm.form.trust,
                                               "settlor_gift_type",
                                               $$v
                                             )
                                           },
-                                          expression: "form.settlor_gift_type"
+                                          expression:
+                                            "form.trust.settlor_gift_type"
                                         }
                                       })
                                     ],
@@ -22948,15 +22966,15 @@ var render = function() {
                                           label: "Settlor Gift"
                                         },
                                         model: {
-                                          value: _vm.form.settlor_gift,
+                                          value: _vm.form.trust.settlor_gift,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form,
+                                              _vm.form.trust,
                                               "settlor_gift",
                                               $$v
                                             )
                                           },
-                                          expression: "form.settlor_gift"
+                                          expression: "form.trust.settlor_gift"
                                         }
                                       })
                                     ],
@@ -22975,15 +22993,15 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "Term Of Trust" },
                                         model: {
-                                          value: _vm.form.term_of_trust,
+                                          value: _vm.form.trust.term_of_trust,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form,
+                                              _vm.form.trust,
                                               "term_of_trust",
                                               $$v
                                             )
                                           },
-                                          expression: "form.term_of_trust"
+                                          expression: "form.trust.term_of_trust"
                                         }
                                       })
                                     ],
@@ -23011,16 +23029,17 @@ var render = function() {
                                         attrs: { label: "address" },
                                         model: {
                                           value:
-                                            _vm.form.domicile_address.address,
+                                            _vm.form.trust.domicile_address
+                                              .address,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.domicile_address,
+                                              _vm.form.trust.domicile_address,
                                               "address",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.domicile_address.address"
+                                            "form.trust.domicile_address.address"
                                         }
                                       })
                                     ],
@@ -23033,16 +23052,17 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "apartment" },
                                         model: {
-                                          value: _vm.form.domicile_address.apt,
+                                          value:
+                                            _vm.form.trust.domicile_address.apt,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.domicile_address,
+                                              _vm.form.trust.domicile_address,
                                               "apt",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.domicile_address.apt"
+                                            "form.trust.domicile_address.apt"
                                         }
                                       })
                                     ],
@@ -23061,16 +23081,18 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "city" },
                                         model: {
-                                          value: _vm.form.domicile_address.city,
+                                          value:
+                                            _vm.form.trust.domicile_address
+                                              .city,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.domicile_address,
+                                              _vm.form.trust.domicile_address,
                                               "city",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.domicile_address.city"
+                                            "form.trust.domicile_address.city"
                                         }
                                       })
                                     ],
@@ -23084,16 +23106,17 @@ var render = function() {
                                         attrs: { label: "state" },
                                         model: {
                                           value:
-                                            _vm.form.domicile_address.state,
+                                            _vm.form.trust.domicile_address
+                                              .state,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.domicile_address,
+                                              _vm.form.trust.domicile_address,
                                               "state",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.domicile_address.state"
+                                            "form.trust.domicile_address.state"
                                         }
                                       })
                                     ],
@@ -23106,16 +23129,17 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "zip" },
                                         model: {
-                                          value: _vm.form.domicile_address.zip,
+                                          value:
+                                            _vm.form.trust.domicile_address.zip,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.domicile_address,
+                                              _vm.form.trust.domicile_address,
                                               "zip",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.domicile_address.zip"
+                                            "form.trust.domicile_address.zip"
                                         }
                                       })
                                     ],
@@ -23129,16 +23153,17 @@ var render = function() {
                                         attrs: { label: "country" },
                                         model: {
                                           value:
-                                            _vm.form.domicile_address.country,
+                                            _vm.form.trust.domicile_address
+                                              .country,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form.domicile_address,
+                                              _vm.form.trust.domicile_address,
                                               "country",
                                               $$v
                                             )
                                           },
                                           expression:
-                                            "form.domicile_address.country"
+                                            "form.trust.domicile_address.country"
                                         }
                                       })
                                     ],
@@ -23179,7 +23204,7 @@ var render = function() {
                           _c(
                             "v-card-text",
                             [
-                              _vm._l(_vm.form.trustees.first, function(
+                              _vm._l(_vm.form.trust.trustees.first, function(
                                 item,
                                 index
                               ) {
@@ -23202,18 +23227,19 @@ var render = function() {
                                               },
                                               model: {
                                                 value:
-                                                  _vm.form.trustees.first[
+                                                  _vm.form.trust.trustees.first[
                                                     index
                                                   ],
                                                 callback: function($$v) {
                                                   _vm.$set(
-                                                    _vm.form.trustees.first,
+                                                    _vm.form.trust.trustees
+                                                      .first,
                                                     index,
                                                     $$v
                                                   )
                                                 },
                                                 expression:
-                                                  "form.trustees.first[index]"
+                                                  "form.trust.trustees.first[index]"
                                               }
                                             })
                                           ],
@@ -23230,7 +23256,7 @@ var render = function() {
                                                   {
                                                     on: {
                                                       click: function($event) {
-                                                        return _vm.form.trustees.first.splice(
+                                                        return _vm.form.trust.trustees.first.splice(
                                                           index,
                                                           1
                                                         )
@@ -23256,7 +23282,9 @@ var render = function() {
                                 {
                                   on: {
                                     click: function($event) {
-                                      return _vm.form.trustees.first.push("")
+                                      return _vm.form.trust.trustees.first.push(
+                                        ""
+                                      )
                                     }
                                   }
                                 },
@@ -23278,7 +23306,7 @@ var render = function() {
                           _c(
                             "v-card-text",
                             [
-                              _vm._l(_vm.form.trustees.second, function(
+                              _vm._l(_vm.form.trust.trustees.second, function(
                                 item,
                                 index
                               ) {
@@ -23296,16 +23324,18 @@ var render = function() {
                                           },
                                           model: {
                                             value:
-                                              _vm.form.trustees.second[index],
+                                              _vm.form.trust.trustees.second[
+                                                index
+                                              ],
                                             callback: function($$v) {
                                               _vm.$set(
-                                                _vm.form.trustees.second,
+                                                _vm.form.trust.trustees.second,
                                                 index,
                                                 $$v
                                               )
                                             },
                                             expression:
-                                              "form.trustees.second[index]"
+                                              "form.trust.trustees.second[index]"
                                           }
                                         })
                                       ],
@@ -23320,7 +23350,7 @@ var render = function() {
                                           {
                                             on: {
                                               click: function($event) {
-                                                return _vm.form.trustees.second.splice(
+                                                return _vm.form.trust.trustees.second.splice(
                                                   index,
                                                   1
                                                 )
@@ -23342,7 +23372,9 @@ var render = function() {
                                 {
                                   on: {
                                     click: function($event) {
-                                      return _vm.form.trustees.second.push("")
+                                      return _vm.form.trust.trustees.second.push(
+                                        ""
+                                      )
                                     }
                                   }
                                 },
@@ -23372,7 +23404,7 @@ var render = function() {
                     { attrs: { step: "4" } },
                     [
                       _c("Beneficiaries", {
-                        attrs: { beneficiaries: _vm.form.beneficiaries },
+                        attrs: { beneficiaries: _vm.form.trust.beneficiaries },
                         on: {
                           add: _vm.onAddBeneficiary,
                           update: _vm.onUpdateBeneficiary,

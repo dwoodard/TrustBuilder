@@ -71,7 +71,7 @@
         currentDocument: this.templates[0],
         form: this.$inertia.form({
           project: this.project.id,
-          document_data: this.project.document_data
+          project_data: this.project.project_data
         }),
         showDelete: false
       };
