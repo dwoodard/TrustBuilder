@@ -69,10 +69,13 @@ class ClientProjectController extends \Inertia\Controller
         ]);
 
         $project = new Project();
-        $project['name'] = $request->name;
+//        $project['name'] = $request->name;
         $project['type'] = $request->type;
         $project['user_id'] = Auth::user()->getAuthIdentifier();
         $project['client_id'] = $client->id;
+        $project['project_data'] = [
+            'name' => $request->name,
+        ];
 
 
         $data = [

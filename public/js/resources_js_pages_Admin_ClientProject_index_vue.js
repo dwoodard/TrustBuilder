@@ -888,7 +888,7 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("span", { staticClass: "heading" }, [
-                    _vm._v(_vm._s(_vm.project.name))
+                    _vm._v(_vm._s(_vm.project.project_data.name))
                   ])
                 ],
                 1

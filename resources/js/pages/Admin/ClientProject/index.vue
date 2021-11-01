@@ -6,7 +6,7 @@
           <inertia-link href="/admin/clients" as="button">
             <v-icon color="white">mdi-menu-left</v-icon>
           </inertia-link>
-          <span class="heading">{{ project.name }}</span>
+          <span class="heading">{{ project.project_data.name }}</span>
         </v-col>
 
         <v-col xs3>

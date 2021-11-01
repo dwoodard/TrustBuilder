@@ -17,8 +17,8 @@
     </div>
 
 
-    <!--    <pre>{{ minute }}</pre>-->
-    <!--    <pre>{{ project }}</pre>-->
+    <pre>{{ minute }}</pre>
+    <pre>{{ project }}</pre>
   </div>
 </template>
 

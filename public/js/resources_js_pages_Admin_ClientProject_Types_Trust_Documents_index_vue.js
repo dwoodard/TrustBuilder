@@ -578,7 +578,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['project', 'client'],
   data: function data() {
-    var _this$project;
+    var _this$project, _this$project2;
 
     var user = this.$page.props.auth.user.data;
     var trustData = (_this$project = this.project) === null || _this$project === void 0 ? void 0 : _this$project.project_data.trust;
@@ -586,8 +586,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       currentStep: 1,
       MenuDocumentCreated: '',
       form: this.$inertia.form({
+        name: (_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : _this$project2.project_data.name,
         trust: {
-          trust_name: (trustData === null || trustData === void 0 ? void 0 : trustData.trust_name) || this.project.name,
           trustees: (trustData === null || trustData === void 0 ? void 0 : trustData.trustees) || {
             first: ["".concat(this.client.first_name, " ").concat(this.client.last_name)],
             second: []
@@ -652,7 +652,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       console.log('updateProject');
       axios__WEBPACK_IMPORTED_MODULE_1___default().post("/admin/projects/".concat(this.project.id), {
         _method: 'PUT',
-        name: this.form.trust.trust_name,
         project_data: this.form.data()
       }, {
         params: {
@@ -664,11 +663,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     updateForm: function updateForm() {
-      var _this2 = this;
-
       this.form.transform(function (data) {
         return {
-          name: _this2.form.trust.trust_name,
           project_data: _objectSpread({}, data)
         };
       }).put("/admin/projects/".concat(this.project.id), {
@@ -23839,7 +23835,7 @@ var render = function() {
                     complete: _vm.currentStep > 2,
                     rules: [
                       function() {
-                        return !!_vm.form.trust.trust_name
+                        return !!_vm.form.name
                       }
                     ],
                     step: "2"
@@ -24102,15 +24098,11 @@ var render = function() {
                                       _c("v-text-field", {
                                         attrs: { label: "Trust Name" },
                                         model: {
-                                          value: _vm.form.trust.trust_name,
+                                          value: _vm.form.name,
                                           callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.form.trust,
-                                              "trust_name",
-                                              $$v
-                                            )
+                                            _vm.$set(_vm.form, "name", $$v)
                                           },
-                                          expression: "form.trust.trust_name"
+                                          expression: "form.name"
                                         }
                                       })
                                     ],

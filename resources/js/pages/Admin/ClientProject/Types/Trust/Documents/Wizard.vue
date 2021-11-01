@@ -18,7 +18,7 @@
           editable
           :complete="currentStep > 2"
           :rules="[
-            () => {return !!form.trust.trust_name}
+            () => {return !!form.name}
           ]"
           step="2">
           <small>Trust</small>
@@ -89,7 +89,7 @@
                 <v-row>
                   <v-col>
                     <v-text-field
-                      v-model="form.trust.trust_name"
+                      v-model="form.name"
                       label="Trust Name"/>
                   </v-col>
 
@@ -255,8 +255,8 @@
         currentStep: 1,
         MenuDocumentCreated: '',
         form: this.$inertia.form({
+          name: this.project?.project_data.name,
           trust: {
-            trust_name: trustData?.trust_name || this.project.name,
             trustees: trustData?.trustees || {first: [`${this.client.first_name} ${this.client.last_name}`], second: []},
             settlor: trustData?.settlor || `${user.first_name} ${user.last_name}`,
             document_created_at: trustData?.document_created_at || this.moment().format('YYYY-MM-DD'),
@@ -318,7 +318,6 @@
         console.log('updateProject');
         axios.post(`/admin/projects/${this.project.id}`, {
                      _method: 'PUT',
-                     name: this.form.trust.trust_name,
                      project_data: this.form.data()
                    },
                    {
@@ -333,7 +332,6 @@
         this
           .form
           .transform((data) => ({
-            name: this.form.trust.trust_name,
             project_data: {...data}
           }))
           .put(`/admin/projects/${this.project.id}`,

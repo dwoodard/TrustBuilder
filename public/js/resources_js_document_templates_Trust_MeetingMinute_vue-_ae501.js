@@ -187,7 +187,11 @@ var render = function() {
         ])
       : _c("div", { staticClass: "preview-field" }, [
           _vm._v("\n    Need Mailing Address\n  ")
-        ])
+        ]),
+    _vm._v(" "),
+    _c("pre", [_vm._v(_vm._s(_vm.minute))]),
+    _vm._v(" "),
+    _c("pre", [_vm._v(_vm._s(_vm.project))])
   ])
 }
 var staticRenderFns = []

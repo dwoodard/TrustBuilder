@@ -24,8 +24,8 @@
           <v-card class="mb-12" color="grey lighten-5">
             <v-flex md-6>
               <v-text-field
-                v-model="form.trust_name"
-                label="Trust Name"
+                v-model="form.name"
+                label="Name"
                 @blur="updateProject"
                 @keydown.enter="updateProject"/>
 
@@ -70,7 +70,7 @@
         currentStep: 1,
         MenuDocumentCreated: '',
         form: this.$inertia.form({
-          trust_name: this.project?.project_data?.trust_name || this.project.name,
+          name: this.project?.project_data?.name || this.project.name,
           first_trustee: this.project?.project_data?.first_trustee || `${this.client.first_name} ${this.client.last_name}`,
           settlor: this.project?.project_data?.settlor,
           document_created_at: this.project?.project_data?.document_created_at || this.moment().format('YYYY-MM-DD')

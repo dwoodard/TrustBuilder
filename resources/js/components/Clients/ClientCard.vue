@@ -34,7 +34,7 @@
     <v-container>
       <v-row v-for="(project,i) in client.projects" :key="i" class="grey lighten-4">
         <v-col>
-          <span>({{ pascalToTitleCase(project.type ) }} ) <br/>{{ project.name }}</span>
+          <span>({{ pascalToTitleCase(project.type ) }} ) <br/>{{ projectName(project) }}</span>
         </v-col>
         <v-col align="right">
           <v-tooltip bottom>
@@ -53,7 +53,6 @@
 
 <script>
   import ClientProjectCreate from '@/pages/Admin/ClientProject/create';
-  import UiAvatar from '@/components/UiAvatar';
   import {pascalToTitleCase} from '@/helper';
 
   export default {
@@ -72,7 +71,11 @@
         showEditClient: false
       };
     },
+
     methods: {
+      projectName(project) {
+        return project.project_data.name;
+      },
       pascalToTitleCase,
       editClient() {
         return this.route('admin.clients.edit', {id: this.client.id});
@@ -87,8 +90,7 @@
       }
     },
     components: {
-      ClientProjectCreate,
-      UiAvatar
+      ClientProjectCreate
     }
   };
 </script>
