@@ -7,7 +7,6 @@ Vue.use(Vuetify);
 
 const opts = {
   theme: {
-    // disable: true,
     dark: false,
     themes: {
       light: {
