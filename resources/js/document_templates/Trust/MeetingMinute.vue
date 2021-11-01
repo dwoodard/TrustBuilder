@@ -33,7 +33,7 @@
         return new Date();
       },
       trust_name() {
-        return this.project?.project_data?.trust?.trust_name || this?.project?.name;
+        return this.project?.project_data?.name;
       },
       mailing_address() {
         return this.project?.project_data?.trust?.mailing_address;

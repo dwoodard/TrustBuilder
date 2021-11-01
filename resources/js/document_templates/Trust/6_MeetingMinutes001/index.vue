@@ -206,7 +206,7 @@
         return this.project?.project_data?.trust?.mailing_address;
       },
       trust_name() {
-        return this.project?.project_data?.trust?.trust_name || this?.project?.name;
+        return this.project?.project_data?.name;
       },
       settlor() {
         return this.project?.project_data?.trust?.settlor;
