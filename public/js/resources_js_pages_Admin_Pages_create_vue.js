@@ -1,4 +1,12 @@
 "use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_Admin_Pages_create_vue"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/Pages/create.vue?vue&type=script&lang=js&":
@@ -7,85 +15,7 @@
   \********************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/helper */ "./resources/js/helper.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: {
-    value: Boolean
-  },
-  data: function data() {
-    return {
-      form: this.$inertia.form({
-        title: '',
-        slug: ''
-      })
-    };
-  },
-  computed: {
-    show: {
-      get: function get() {
-        return this.value;
-      },
-      set: function set(value) {
-        this.$emit('input', value);
-      }
-    },
-    title: function title() {
-      return this.form.title;
-    }
-  },
-  methods: {
-    toKebabCase: _helper__WEBPACK_IMPORTED_MODULE_0__.toKebabCase,
-    submit: function submit() {
-      var _this = this;
-
-      this.form.post(route('admin.page.create'), {
-        onSuccess: function onSuccess(data) {
-          _this.form.reset();
-
-          _this.show = false;
-        },
-        onFinish: function onFinish() {}
-      });
-    }
-  },
-  watch: {
-    title: function title() {
-      this.form.slug = (0,_helper__WEBPACK_IMPORTED_MODULE_0__.toKebabCase)(this.form.title).replace('.', '');
-    }
-  }
-});
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/helper */ \"./resources/js/helper.js\");\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  props: {\n    value: Boolean\n  },\n  data: function data() {\n    return {\n      form: this.$inertia.form({\n        title: '',\n        slug: ''\n      })\n    };\n  },\n  computed: {\n    show: {\n      get: function get() {\n        return this.value;\n      },\n      set: function set(value) {\n        this.$emit('input', value);\n      }\n    },\n    title: function title() {\n      return this.form.title;\n    }\n  },\n  methods: {\n    toKebabCase: _helper__WEBPACK_IMPORTED_MODULE_0__.toKebabCase,\n    submit: function submit() {\n      var _this = this;\n\n      this.form.post(route('admin.page.create'), {\n        onSuccess: function onSuccess(data) {\n          _this.form.reset();\n\n          _this.show = false;\n        },\n        onFinish: function onFinish() {}\n      });\n    }\n  },\n  watch: {\n    title: function title() {\n      this.form.slug = (0,_helper__WEBPACK_IMPORTED_MODULE_0__.toKebabCase)(this.form.title).replace('.', '');\n    }\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9ub2RlX21vZHVsZXMvYmFiZWwtbG9hZGVyL2xpYi9pbmRleC5qcz8/Y2xvbmVkUnVsZVNldC01WzBdLnJ1bGVzWzBdLnVzZVswXSEuL25vZGVfbW9kdWxlcy92dWUtbG9hZGVyL2xpYi9pbmRleC5qcz8/dnVlLWxvYWRlci1vcHRpb25zIS4vcmVzb3VyY2VzL2pzL3BhZ2VzL0FkbWluL1BhZ2VzL2NyZWF0ZS52dWU/dnVlJnR5cGU9c2NyaXB0Jmxhbmc9anMmLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBNEJBO0FBRUE7QUFDQTtBQUNBO0FBREEsR0FEQTtBQUlBLE1BSkEsa0JBSUE7QUFDQTtBQUNBO0FBQ0EsaUJBREE7QUFFQTtBQUZBO0FBREE7QUFNQSxHQVhBO0FBWUE7QUFDQTtBQUNBLFNBREEsaUJBQ0E7QUFDQTtBQUNBLE9BSEE7QUFJQSxTQUpBLGVBSUEsS0FKQSxFQUlBO0FBQ0E7QUFDQTtBQU5BLEtBREE7QUFTQSxTQVRBLG1CQVNBO0FBQ0E7QUFDQTtBQVhBLEdBWkE7QUF5QkE7QUFDQSxpRUFEQTtBQUVBLFVBRkEsb0JBRUE7QUFBQTs7QUFDQTtBQUNBO0FBQ0E7O0FBQ0E7QUFDQSxTQUpBO0FBS0E7QUFMQTtBQU9BO0FBVkEsR0F6QkE7QUFxQ0E7QUFDQSxTQURBLG1CQUNBO0FBQ0EsNkZBQ0EsT0FEQSxDQUNBLEdBREEsRUFDQSxFQURBO0FBRUE7QUFKQTtBQXJDQSIsInNvdXJjZXMiOlsid2VicGFjazovLy9yZXNvdXJjZXMvanMvcGFnZXMvQWRtaW4vUGFnZXMvY3JlYXRlLnZ1ZT9mOGNiIl0sInNvdXJjZXNDb250ZW50IjpbIjx0ZW1wbGF0ZT5cbiAgPHYtZGlhbG9nIHYtbW9kZWw9XCJzaG93XCIgbWF4LXdpZHRoPVwiNTAwcHhcIiBjbGFzcz1cInBhLTNcIj5cbiAgICA8di1jYXJkPlxuICAgICAgPGZvcm0gQHN1Ym1pdC5wcmV2ZW50PVwic3VibWl0XCI+XG4gICAgICAgIDx2LWNhcmQtdGV4dD5cbiAgICAgICAgICA8di10ZXh0LWZpZWxkXG4gICAgICAgICAgICB2LW1vZGVsPVwiZm9ybS50aXRsZVwiXG4gICAgICAgICAgICA6ZXJyb3ItbWVzc2FnZXM9XCJmb3JtLmVycm9ycy50aXRsZVwiXG4gICAgICAgICAgICBsYWJlbD1cIlRpdGxlXCJcbiAgICAgICAgICAgIHJlcXVpcmVkLz5cbiAgICAgICAgICA8di10ZXh0LWZpZWxkXG4gICAgICAgICAgICB2LW1vZGVsPVwiZm9ybS5zbHVnXCJcbiAgICAgICAgICAgIDplcnJvci1tZXNzYWdlcz1cImZvcm0uZXJyb3JzLnNsdWdcIlxuICAgICAgICAgICAgbGFiZWw9XCJTbHVnXCJcbiAgICAgICAgICAgIHJlcXVpcmVkLz5cbiAgICAgICAgPC92LWNhcmQtdGV4dD5cblxuICAgICAgICA8di1jYXJkLWFjdGlvbnM+XG4gICAgICAgICAgPHYtYnRuIGNvbG9yPVwicHJpbWFyeVwiIHRleHQgQGNsaWNrLnN0b3A9XCJzaG93PWZhbHNlXCI+Q2xvc2U8L3YtYnRuPlxuICAgICAgICAgIDx2LXNwYWNlci8+XG4gICAgICAgICAgPHYtYnRuIHR5cGU9XCJzdWJtaXRcIiBjb2xvcj1cInByaW1hcnlcIj5DcmVhdGU8L3YtYnRuPlxuICAgICAgICA8L3YtY2FyZC1hY3Rpb25zPlxuICAgICAgPC9mb3JtPlxuICAgIDwvdi1jYXJkPlxuICA8L3YtZGlhbG9nPlxuPC90ZW1wbGF0ZT5cblxuPHNjcmlwdD5cbiAgaW1wb3J0IHt0b0tlYmFiQ2FzZX0gZnJvbSAnQC9oZWxwZXInO1xuXG4gIGV4cG9ydCBkZWZhdWx0IHtcbiAgICBwcm9wczoge1xuICAgICAgdmFsdWU6IEJvb2xlYW5cbiAgICB9LFxuICAgIGRhdGEoKSB7XG4gICAgICByZXR1cm4ge1xuICAgICAgICBmb3JtOiB0aGlzLiRpbmVydGlhLmZvcm0oe1xuICAgICAgICAgIHRpdGxlOiAnJyxcbiAgICAgICAgICBzbHVnOiAnJ1xuICAgICAgICB9KVxuICAgICAgfTtcbiAgICB9LFxuICAgIGNvbXB1dGVkOiB7XG4gICAgICBzaG93OiB7XG4gICAgICAgIGdldCgpIHtcbiAgICAgICAgICByZXR1cm4gdGhpcy52YWx1ZTtcbiAgICAgICAgfSxcbiAgICAgICAgc2V0KHZhbHVlKSB7XG4gICAgICAgICAgdGhpcy4kZW1pdCgnaW5wdXQnLCB2YWx1ZSk7XG4gICAgICAgIH1cbiAgICAgIH0sXG4gICAgICB0aXRsZSgpIHtcbiAgICAgICAgcmV0dXJuIHRoaXMuZm9ybS50aXRsZTtcbiAgICAgIH1cbiAgICB9LFxuICAgIG1ldGhvZHM6IHtcbiAgICAgIHRvS2ViYWJDYXNlLFxuICAgICAgc3VibWl0KCkge1xuICAgICAgICB0aGlzLmZvcm0ucG9zdChyb3V0ZSgnYWRtaW4ucGFnZS5jcmVhdGUnKSwge1xuICAgICAgICAgIG9uU3VjY2VzczogKGRhdGEpID0+IHtcbiAgICAgICAgICAgIHRoaXMuZm9ybS5yZXNldCgpO1xuICAgICAgICAgICAgdGhpcy5zaG93ID0gZmFsc2U7XG4gICAgICAgICAgfSxcbiAgICAgICAgICBvbkZpbmlzaDogKCkgPT4ge31cbiAgICAgICAgfSk7XG4gICAgICB9XG4gICAgfSxcbiAgICB3YXRjaDoge1xuICAgICAgdGl0bGUoKSB7XG4gICAgICAgIHRoaXMuZm9ybS5zbHVnID0gdG9LZWJhYkNhc2UodGhpcy5mb3JtLnRpdGxlKVxuICAgICAgICAgIC5yZXBsYWNlKCcuJywgJycpO1xuICAgICAgfVxuICAgIH1cbiAgfTtcbjwvc2NyaXB0PlxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/Pages/create.vue?vue&type=script&lang=js&\n");
 
 /***/ }),
 
@@ -95,60 +25,7 @@ __webpack_require__.r(__webpack_exports__);
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "toTitleCase": () => (/* binding */ toTitleCase),
-/* harmony export */   "toKebabCase": () => (/* binding */ toKebabCase),
-/* harmony export */   "score": () => (/* binding */ score),
-/* harmony export */   "toPascalCase": () => (/* binding */ toPascalCase),
-/* harmony export */   "pascalToTitleCase": () => (/* binding */ pascalToTitleCase)
-/* harmony export */ });
-var toTitleCase = function toTitleCase(str) {
-  return str.replace(/\w\S*/g, function (txt) {
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  });
-};
-var toKebabCase = function toKebabCase(str) {
-  return str.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\s+/g, '-').toLowerCase();
-};
-var score = function score(a, b) {
-  if (this === a) return 1;
-  if (a === '') return 0;
-  var c = 0;
-  var d = a.length;
-  var e = this;
-  var f = e.length;
-  var g;
-  var h;
-  var i = 1;
-  var j;
-
-  for (var k = 0, l, m, n, o, p, q; k < d; ++k) {
-    n = a.charAt(k), o = e.indexOf(n.toLowerCase()), p = e.indexOf(n.toUpperCase()), q = Math.min(o, p), m = q > -1 ? q : Math.max(o, p);
-
-    if (m === -1) {
-      if (b) {
-        i += 1 - b;
-        continue;
-      }
-
-      return 0;
-    }
-
-    l = 0.1, e[m] === n && (l += 0.1), m === 0 ? (l += 0.6, k === 0 && (g = 1)) : e.charAt(m - 1) === ' ' && (l += 0.8), e = e.substring(m + 1, f), c += l;
-  }
-
-  h = c / d, j = (h * (d / f) + h) / 2, j /= i, g && j + 0.15 < 1 && (j += 0.15);
-  return j;
-};
-var toPascalCase = function toPascalCase(str) {
-  return str.replace(/[-_\s]+/g, ' ').split(' ').map(function (word) {
-    return word[0].toUpperCase() + word.slice(1);
-  }).join('');
-};
-var pascalToTitleCase = function pascalToTitleCase(str) {
-  return str.replace(/([A-Z])/g, ' $1').replace(/^\s/, '');
-};
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"toTitleCase\": () => (/* binding */ toTitleCase),\n/* harmony export */   \"toKebabCase\": () => (/* binding */ toKebabCase),\n/* harmony export */   \"score\": () => (/* binding */ score),\n/* harmony export */   \"toPascalCase\": () => (/* binding */ toPascalCase),\n/* harmony export */   \"pascalToTitleCase\": () => (/* binding */ pascalToTitleCase)\n/* harmony export */ });\nvar toTitleCase = function toTitleCase(str) {\n  return str.replace(/\\w\\S*/g, function (txt) {\n    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();\n  });\n};\nvar toKebabCase = function toKebabCase(str) {\n  return str.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\\s+/g, '-').toLowerCase();\n};\nvar score = function score(a, b) {\n  if (this === a) return 1;\n  if (a === '') return 0;\n  var c = 0;\n  var d = a.length;\n  var e = this;\n  var f = e.length;\n  var g;\n  var h;\n  var i = 1;\n  var j;\n\n  for (var k = 0, l, m, n, o, p, q; k < d; ++k) {\n    n = a.charAt(k), o = e.indexOf(n.toLowerCase()), p = e.indexOf(n.toUpperCase()), q = Math.min(o, p), m = q > -1 ? q : Math.max(o, p);\n\n    if (m === -1) {\n      if (b) {\n        i += 1 - b;\n        continue;\n      }\n\n      return 0;\n    }\n\n    l = 0.1, e[m] === n && (l += 0.1), m === 0 ? (l += 0.6, k === 0 && (g = 1)) : e.charAt(m - 1) === ' ' && (l += 0.8), e = e.substring(m + 1, f), c += l;\n  }\n\n  h = c / d, j = (h * (d / f) + h) / 2, j /= i, g && j + 0.15 < 1 && (j += 0.15);\n  return j;\n};\nvar toPascalCase = function toPascalCase(str) {\n  return str.replace(/[-_\\s]+/g, ' ').split(' ').map(function (word) {\n    return word[0].toUpperCase() + word.slice(1);\n  }).join('');\n};\nvar pascalToTitleCase = function pascalToTitleCase(str) {\n  return str.replace(/([A-Z])/g, ' $1').replace(/^\\s/, '');\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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Sjs7QUFBQUosRUFBQUEsQ0FBQyxHQUFHTixDQUFDLEdBQUdDLENBQVIsRUFBV08sQ0FBQyxHQUFHLENBQUNGLENBQUMsSUFBSUwsQ0FBQyxHQUFHRyxDQUFSLENBQUQsR0FBY0UsQ0FBZixJQUFvQixDQUFuQyxFQUFzQ0UsQ0FBQyxJQUFJRCxDQUEzQyxFQUE4Q0YsQ0FBQyxJQUFJRyxDQUFDLEdBQUcsSUFBSixHQUFXLENBQWhCLEtBQXNCQSxDQUFDLElBQUksSUFBM0IsQ0FBOUM7QUFBZ0YsU0FBT0EsQ0FBUDtBQUFXLENBQXpwQjtBQUVBLElBQU1hLFlBQVksR0FBRyxTQUFmQSxZQUFlLENBQUNoQyxHQUFELEVBQVM7QUFDbkMsU0FBT0EsR0FBRyxDQUFDQyxPQUFKLENBQVksVUFBWixFQUF3QixHQUF4QixFQUE2QmdDLEtBQTdCLENBQW1DLEdBQW5DLEVBQXdDQyxHQUF4QyxDQUE0QyxVQUFDQyxJQUFEO0FBQUEsV0FBVUEsSUFBSSxDQUFDLENBQUQsQ0FBSixDQUFRL0IsV0FBUixLQUF3QitCLElBQUksQ0FBQ0MsS0FBTCxDQUFXLENBQVgsQ0FBbEM7QUFBQSxHQUE1QyxFQUE2RkMsSUFBN0YsQ0FBa0csRUFBbEcsQ0FBUDtBQUNELENBRk07QUFJQSxJQUFNQyxpQkFBaUIsR0FBRyxTQUFwQkEsaUJBQW9CLENBQUN0QyxHQUFELEVBQVM7QUFDeEMsU0FBT0EsR0FBRyxDQUFDQyxPQUFKLENBQVksVUFBWixFQUF3QixLQUF4QixFQUErQkEsT0FBL0IsQ0FBdUMsS0FBdkMsRUFBOEMsRUFBOUMsQ0FBUDtBQUNELENBRk0iLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvaGVscGVyLmpzPzUzYjYiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IHRvVGl0bGVDYXNlID0gKHN0cikgPT4gc3RyLnJlcGxhY2UoL1xcd1xcUyovZywgKHR4dCkgPT4gdHh0LmNoYXJBdCgwKS50b1VwcGVyQ2FzZSgpICsgdHh0LnN1YnN0cigxKS50b0xvd2VyQ2FzZSgpKTtcblxuZXhwb3J0IGNvbnN0IHRvS2ViYWJDYXNlID0gKHN0cikgPT4gc3RyLnJlcGxhY2UoLyhbYS16XSkoW0EtWl0pL2csICckMS0kMicpLnJlcGxhY2UoL1xccysvZywgJy0nKS50b0xvd2VyQ2FzZSgpO1xuXG5leHBvcnQgY29uc3Qgc2NvcmUgPSBmdW5jdGlvbiAoYSwgYikgeyBpZiAodGhpcyA9PT0gYSkgcmV0dXJuIDE7IGlmIChhID09PSAnJykgcmV0dXJuIDA7IGxldCBjID0gMDsgY29uc3QgZCA9IGEubGVuZ3RoOyBsZXQgZSA9IHRoaXM7IGNvbnN0IGYgPSBlLmxlbmd0aDsgbGV0IGc7IGxldCBoOyBsZXQgaSA9IDE7IGxldCBqOyBmb3IgKGxldCBrID0gMCwgbCwgbSwgbiwgbywgcCwgcTsgayA8IGQ7ICsraykgeyBuID0gYS5jaGFyQXQoayksIG8gPSBlLmluZGV4T2Yobi50b0xvd2VyQ2FzZSgpKSwgcCA9IGUuaW5kZXhPZihuLnRvVXBwZXJDYXNlKCkpLCBxID0gTWF0aC5taW4obywgcCksIG0gPSBxID4gLTEgPyBxIDogTWF0aC5tYXgobywgcCk7IGlmIChtID09PSAtMSkgeyBpZiAoYikgeyBpICs9IDEgLSBiOyBjb250aW51ZTsgfSByZXR1cm4gMDsgfWwgPSAwLjEsIGVbbV0gPT09IG4gJiYgKGwgKz0gMC4xKSwgbSA9PT0gMCA/IChsICs9IDAuNiwgayA9PT0gMCAmJiAoZyA9IDEpKSA6IGUuY2hhckF0KG0gLSAxKSA9PT0gJyAnICYmIChsICs9IDAuOCksIGUgPSBlLnN1YnN0cmluZyhtICsgMSwgZiksIGMgKz0gbDsgfWggPSBjIC8gZCwgaiA9IChoICogKGQgLyBmKSArIGgpIC8gMiwgaiAvPSBpLCBnICYmIGogKyAwLjE1IDwgMSAmJiAoaiArPSAwLjE1KTsgcmV0dXJuIGo7IH07XG5cbmV4cG9ydCBjb25zdCB0b1Bhc2NhbENhc2UgPSAoc3RyKSA9PiB7XG4gIHJldHVybiBzdHIucmVwbGFjZSgvWy1fXFxzXSsvZywgJyAnKS5zcGxpdCgnICcpLm1hcCgod29yZCkgPT4gd29yZFswXS50b1VwcGVyQ2FzZSgpICsgd29yZC5zbGljZSgxKSkuam9pbignJyk7XG59O1xuXG5leHBvcnQgY29uc3QgcGFzY2FsVG9UaXRsZUNhc2UgPSAoc3RyKSA9PiB7XG4gIHJldHVybiBzdHIucmVwbGFjZSgvKFtBLVpdKS9nLCAnICQxJykucmVwbGFjZSgvXlxccy8sICcnKTtcbn07XG4iXSwibmFtZXMiOlsidG9UaXRsZUNhc2UiLCJzdHIiLCJyZXBsYWNlIiwidHh0IiwiY2hhckF0IiwidG9VcHBlckNhc2UiLCJzdWJzdHIiLCJ0b0xvd2VyQ2FzZSIsInRvS2ViYWJDYXNlIiwic2NvcmUiLCJhIiwiYiIsImMiLCJkIiwibGVuZ3RoIiwiZSIsImYiLCJnIiwiaCIsImkiLCJqIiwiayIsImwiLCJtIiwibiIsIm8iLCJwIiwicSIsImluZGV4T2YiLCJNYXRoIiwibWluIiwibWF4Iiwic3Vic3RyaW5nIiwidG9QYXNjYWxDYXNlIiwic3BsaXQiLCJtYXAiLCJ3b3JkIiwic2xpY2UiLCJqb2luIiwicGFzY2FsVG9UaXRsZUNhc2UiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/js/helper.js\n");
 
 /***/ }),
 
@@ -158,35 +35,7 @@ var pascalToTitleCase = function pascalToTitleCase(str) {
   \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _create_vue_vue_type_template_id_1b019e50___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create.vue?vue&type=template&id=1b019e50& */ "./resources/js/pages/Admin/Pages/create.vue?vue&type=template&id=1b019e50&");
-/* harmony import */ var _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create.vue?vue&type=script&lang=js& */ "./resources/js/pages/Admin/Pages/create.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _create_vue_vue_type_template_id_1b019e50___WEBPACK_IMPORTED_MODULE_0__.render,
-  _create_vue_vue_type_template_id_1b019e50___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/pages/Admin/Pages/create.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _create_vue_vue_type_template_id_1b019e50___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create.vue?vue&type=template&id=1b019e50& */ \"./resources/js/pages/Admin/Pages/create.vue?vue&type=template&id=1b019e50&\");\n/* harmony import */ var _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create.vue?vue&type=script&lang=js& */ \"./resources/js/pages/Admin/Pages/create.vue?vue&type=script&lang=js&\");\n/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n;\nvar component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _create_vue_vue_type_template_id_1b019e50___WEBPACK_IMPORTED_MODULE_0__.render,\n  _create_vue_vue_type_template_id_1b019e50___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"resources/js/pages/Admin/Pages/create.vue\"\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvcGFnZXMvQWRtaW4vUGFnZXMvY3JlYXRlLnZ1ZS5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQXFGO0FBQzNCO0FBQ0w7OztBQUdyRDtBQUNBLENBQW1HO0FBQ25HLGdCQUFnQix1R0FBVTtBQUMxQixFQUFFLDRFQUFNO0FBQ1IsRUFBRSw4RUFBTTtBQUNSLEVBQUUsdUZBQWU7QUFDakI7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0EsSUFBSSxLQUFVLEVBQUUsWUFpQmY7QUFDRDtBQUNBLGlFQUFlIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vcmVzb3VyY2VzL2pzL3BhZ2VzL0FkbWluL1BhZ2VzL2NyZWF0ZS52dWU/NWVjYyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyByZW5kZXIsIHN0YXRpY1JlbmRlckZucyB9IGZyb20gXCIuL2NyZWF0ZS52dWU/dnVlJnR5cGU9dGVtcGxhdGUmaWQ9MWIwMTllNTAmXCJcbmltcG9ydCBzY3JpcHQgZnJvbSBcIi4vY3JlYXRlLnZ1ZT92dWUmdHlwZT1zY3JpcHQmbGFuZz1qcyZcIlxuZXhwb3J0ICogZnJvbSBcIi4vY3JlYXRlLnZ1ZT92dWUmdHlwZT1zY3JpcHQmbGFuZz1qcyZcIlxuXG5cbi8qIG5vcm1hbGl6ZSBjb21wb25lbnQgKi9cbmltcG9ydCBub3JtYWxpemVyIGZyb20gXCIhLi4vLi4vLi4vLi4vLi4vbm9kZV9tb2R1bGVzL3Z1ZS1sb2FkZXIvbGliL3J1bnRpbWUvY29tcG9uZW50Tm9ybWFsaXplci5qc1wiXG52YXIgY29tcG9uZW50ID0gbm9ybWFsaXplcihcbiAgc2NyaXB0LFxuICByZW5kZXIsXG4gIHN0YXRpY1JlbmRlckZucyxcbiAgZmFsc2UsXG4gIG51bGwsXG4gIG51bGwsXG4gIG51bGxcbiAgXG4pXG5cbi8qIGhvdCByZWxvYWQgKi9cbmlmIChtb2R1bGUuaG90KSB7XG4gIHZhciBhcGkgPSByZXF1aXJlKFwiL1VzZXJzL2R1c3Rpbi9jb2RlL1RydXN0QnVpbGRlci9ub2RlX21vZHVsZXMvdnVlLWhvdC1yZWxvYWQtYXBpL2Rpc3QvaW5kZXguanNcIilcbiAgYXBpLmluc3RhbGwocmVxdWlyZSgndnVlJykpXG4gIGlmIChhcGkuY29tcGF0aWJsZSkge1xuICAgIG1vZHVsZS5ob3QuYWNjZXB0KClcbiAgICBpZiAoIWFwaS5pc1JlY29yZGVkKCcxYjAxOWU1MCcpKSB7XG4gICAgICBhcGkuY3JlYXRlUmVjb3JkKCcxYjAxOWU1MCcsIGNvbXBvbmVudC5vcHRpb25zKVxuICAgIH0gZWxzZSB7XG4gICAgICBhcGkucmVsb2FkKCcxYjAxOWU1MCcsIGNvbXBvbmVudC5vcHRpb25zKVxuICAgIH1cbiAgICBtb2R1bGUuaG90LmFjY2VwdChcIi4vY3JlYXRlLnZ1ZT92dWUmdHlwZT10ZW1wbGF0ZSZpZD0xYjAxOWU1MCZcIiwgZnVuY3Rpb24gKCkge1xuICAgICAgYXBpLnJlcmVuZGVyKCcxYjAxOWU1MCcsIHtcbiAgICAgICAgcmVuZGVyOiByZW5kZXIsXG4gICAgICAgIHN0YXRpY1JlbmRlckZuczogc3RhdGljUmVuZGVyRm5zXG4gICAgICB9KVxuICAgIH0pXG4gIH1cbn1cbmNvbXBvbmVudC5vcHRpb25zLl9fZmlsZSA9IFwicmVzb3VyY2VzL2pzL3BhZ2VzL0FkbWluL1BhZ2VzL2NyZWF0ZS52dWVcIlxuZXhwb3J0IGRlZmF1bHQgY29tcG9uZW50LmV4cG9ydHMiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/pages/Admin/Pages/create.vue\n");
 
 /***/ }),
 
@@ -196,12 +45,7 @@ component.options.__file = "resources/js/pages/Admin/Pages/create.vue"
   \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./create.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/Pages/create.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./create.vue?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/Pages/create.vue?vue&type=script&lang=js&\");\n /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); //# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvcGFnZXMvQWRtaW4vUGFnZXMvY3JlYXRlLnZ1ZT92dWUmdHlwZT1zY3JpcHQmbGFuZz1qcyYuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBNE4sQ0FBQyxpRUFBZSwyTUFBRyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vcmVzb3VyY2VzL2pzL3BhZ2VzL0FkbWluL1BhZ2VzL2NyZWF0ZS52dWU/NTA3YSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgbW9kIGZyb20gXCItIS4uLy4uLy4uLy4uLy4uL25vZGVfbW9kdWxlcy9iYWJlbC1sb2FkZXIvbGliL2luZGV4LmpzPz9jbG9uZWRSdWxlU2V0LTVbMF0ucnVsZXNbMF0udXNlWzBdIS4uLy4uLy4uLy4uLy4uL25vZGVfbW9kdWxlcy92dWUtbG9hZGVyL2xpYi9pbmRleC5qcz8/dnVlLWxvYWRlci1vcHRpb25zIS4vY3JlYXRlLnZ1ZT92dWUmdHlwZT1zY3JpcHQmbGFuZz1qcyZcIjsgZXhwb3J0IGRlZmF1bHQgbW9kOyBleHBvcnQgKiBmcm9tIFwiLSEuLi8uLi8uLi8uLi8uLi9ub2RlX21vZHVsZXMvYmFiZWwtbG9hZGVyL2xpYi9pbmRleC5qcz8/Y2xvbmVkUnVsZVNldC01WzBdLnJ1bGVzWzBdLnVzZVswXSEuLi8uLi8uLi8uLi8uLi9ub2RlX21vZHVsZXMvdnVlLWxvYWRlci9saWIvaW5kZXguanM/P3Z1ZS1sb2FkZXItb3B0aW9ucyEuL2NyZWF0ZS52dWU/dnVlJnR5cGU9c2NyaXB0Jmxhbmc9anMmXCIiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/pages/Admin/Pages/create.vue?vue&type=script&lang=js&\n");
 
 /***/ }),
 
@@ -227,114 +71,7 @@ __webpack_require__.r(__webpack_exports__);
   \*************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-dialog",
-    {
-      staticClass: "pa-3",
-      attrs: { "max-width": "500px" },
-      model: {
-        value: _vm.show,
-        callback: function($$v) {
-          _vm.show = $$v
-        },
-        expression: "show"
-      }
-    },
-    [
-      _c("v-card", [
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.submit.apply(null, arguments)
-              }
-            }
-          },
-          [
-            _c(
-              "v-card-text",
-              [
-                _c("v-text-field", {
-                  attrs: {
-                    "error-messages": _vm.form.errors.title,
-                    label: "Title",
-                    required: ""
-                  },
-                  model: {
-                    value: _vm.form.title,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "title", $$v)
-                    },
-                    expression: "form.title"
-                  }
-                }),
-                _vm._v(" "),
-                _c("v-text-field", {
-                  attrs: {
-                    "error-messages": _vm.form.errors.slug,
-                    label: "Slug",
-                    required: ""
-                  },
-                  model: {
-                    value: _vm.form.slug,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "slug", $$v)
-                    },
-                    expression: "form.slug"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-card-actions",
-              [
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { color: "primary", text: "" },
-                    on: {
-                      click: function($event) {
-                        $event.stopPropagation()
-                        _vm.show = false
-                      }
-                    }
-                  },
-                  [_vm._v("Close")]
-                ),
-                _vm._v(" "),
-                _c("v-spacer"),
-                _vm._v(" "),
-                _c("v-btn", { attrs: { type: "submit", color: "primary" } }, [
-                  _vm._v("Create")
-                ])
-              ],
-              1
-            )
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render),\n/* harmony export */   \"staticRenderFns\": () => (/* binding */ staticRenderFns)\n/* harmony export */ });\nvar render = function () {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"v-dialog\",\n    {\n      staticClass: \"pa-3\",\n      attrs: { \"max-width\": \"500px\" },\n      model: {\n        value: _vm.show,\n        callback: function ($$v) {\n          _vm.show = $$v\n        },\n        expression: \"show\",\n      },\n    },\n    [\n      _c(\"v-card\", [\n        _c(\n          \"form\",\n          {\n            on: {\n              submit: function ($event) {\n                $event.preventDefault()\n                return _vm.submit.apply(null, arguments)\n              },\n            },\n          },\n          [\n            _c(\n              \"v-card-text\",\n              [\n                _c(\"v-text-field\", {\n                  attrs: {\n                    \"error-messages\": _vm.form.errors.title,\n                    label: \"Title\",\n                    required: \"\",\n                  },\n                  model: {\n                    value: _vm.form.title,\n                    callback: function ($$v) {\n                      _vm.$set(_vm.form, \"title\", $$v)\n                    },\n                    expression: \"form.title\",\n                  },\n                }),\n                _vm._v(\" \"),\n                _c(\"v-text-field\", {\n                  attrs: {\n                    \"error-messages\": _vm.form.errors.slug,\n                    label: \"Slug\",\n                    required: \"\",\n                  },\n                  model: {\n                    value: _vm.form.slug,\n                    callback: function ($$v) {\n                      _vm.$set(_vm.form, \"slug\", $$v)\n                    },\n                    expression: \"form.slug\",\n                  },\n                }),\n              ],\n              1\n            ),\n            _vm._v(\" \"),\n            _c(\n              \"v-card-actions\",\n              [\n                _c(\n                  \"v-btn\",\n                  {\n                    attrs: { color: \"primary\", text: \"\" },\n                    on: {\n                      click: function ($event) {\n                        $event.stopPropagation()\n                        _vm.show = false\n                      },\n                    },\n                  },\n                  [_vm._v(\"Close\")]\n                ),\n                _vm._v(\" \"),\n                _c(\"v-spacer\"),\n                _vm._v(\" \"),\n                _c(\"v-btn\", { attrs: { type: \"submit\", color: \"primary\" } }, [\n                  _vm._v(\"Create\"),\n                ]),\n              ],\n              1\n            ),\n          ],\n          1\n        ),\n      ]),\n    ],\n    1\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9ub2RlX21vZHVsZXMvdnVlLWxvYWRlci9saWIvbG9hZGVycy90ZW1wbGF0ZUxvYWRlci5qcz8/dnVlLWxvYWRlci1vcHRpb25zIS4vbm9kZV9tb2R1bGVzL3Z1ZS1sb2FkZXIvbGliL2luZGV4LmpzPz92dWUtbG9hZGVyLW9wdGlvbnMhLi9yZXNvdXJjZXMvanMvcGFnZXMvQWRtaW4vUGFnZXMvY3JlYXRlLnZ1ZT92dWUmdHlwZT10ZW1wbGF0ZSZpZD0xYjAxOWU1MCYuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsZUFBZSxzQkFBc0I7QUFDckM7QUFDQTtBQUNBO0FBQ0E7QUFDQSxTQUFTO0FBQ1Q7QUFDQSxPQUFPO0FBQ1AsS0FBSztBQUNMO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLGVBQWU7QUFDZixhQUFhO0FBQ2IsV0FBVztBQUNYO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLG1CQUFtQjtBQUNuQjtBQUNBO0FBQ0E7QUFDQTtBQUNBLHFCQUFxQjtBQUNyQjtBQUNBLG1CQUFtQjtBQUNuQixpQkFBaUI7QUFDakI7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsbUJBQW1CO0FBQ25CO0FBQ0E7QUFDQTtBQUNBO0FBQ0EscUJBQXFCO0FBQ3JCO0FBQ0EsbUJBQW1CO0FBQ25CLGlCQUFpQjtBQUNqQjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLDZCQUE2Qiw0QkFBNEI7QUFDekQ7QUFDQTtBQUNBO0FBQ0E7QUFDQSx1QkFBdUI7QUFDdkIscUJBQXFCO0FBQ3JCLG1CQUFtQjtBQUNuQjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsOEJBQThCLFNBQVMsb0NBQW9DO0FBQzNFO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9qcy9wYWdlcy9BZG1pbi9QYWdlcy9jcmVhdGUudnVlP2IzZjciXSwic291cmNlc0NvbnRlbnQiOlsidmFyIHJlbmRlciA9IGZ1bmN0aW9uICgpIHtcbiAgdmFyIF92bSA9IHRoaXNcbiAgdmFyIF9oID0gX3ZtLiRjcmVhdGVFbGVtZW50XG4gIHZhciBfYyA9IF92bS5fc2VsZi5fYyB8fCBfaFxuICByZXR1cm4gX2MoXG4gICAgXCJ2LWRpYWxvZ1wiLFxuICAgIHtcbiAgICAgIHN0YXRpY0NsYXNzOiBcInBhLTNcIixcbiAgICAgIGF0dHJzOiB7IFwibWF4LXdpZHRoXCI6IFwiNTAwcHhcIiB9LFxuICAgICAgbW9kZWw6IHtcbiAgICAgICAgdmFsdWU6IF92bS5zaG93LFxuICAgICAgICBjYWxsYmFjazogZnVuY3Rpb24gKCQkdikge1xuICAgICAgICAgIF92bS5zaG93ID0gJCR2XG4gICAgICAgIH0sXG4gICAgICAgIGV4cHJlc3Npb246IFwic2hvd1wiLFxuICAgICAgfSxcbiAgICB9LFxuICAgIFtcbiAgICAgIF9jKFwidi1jYXJkXCIsIFtcbiAgICAgICAgX2MoXG4gICAgICAgICAgXCJmb3JtXCIsXG4gICAgICAgICAge1xuICAgICAgICAgICAgb246IHtcbiAgICAgICAgICAgICAgc3VibWl0OiBmdW5jdGlvbiAoJGV2ZW50KSB7XG4gICAgICAgICAgICAgICAgJGV2ZW50LnByZXZlbnREZWZhdWx0KClcbiAgICAgICAgICAgICAgICByZXR1cm4gX3ZtLnN1Ym1pdC5hcHBseShudWxsLCBhcmd1bWVudHMpXG4gICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICB9LFxuICAgICAgICAgIH0sXG4gICAgICAgICAgW1xuICAgICAgICAgICAgX2MoXG4gICAgICAgICAgICAgIFwidi1jYXJkLXRleHRcIixcbiAgICAgICAgICAgICAgW1xuICAgICAgICAgICAgICAgIF9jKFwidi10ZXh0LWZpZWxkXCIsIHtcbiAgICAgICAgICAgICAgICAgIGF0dHJzOiB7XG4gICAgICAgICAgICAgICAgICAgIFwiZXJyb3ItbWVzc2FnZXNcIjogX3ZtLmZvcm0uZXJyb3JzLnRpdGxlLFxuICAgICAgICAgICAgICAgICAgICBsYWJlbDogXCJUaXRsZVwiLFxuICAgICAgICAgICAgICAgICAgICByZXF1aXJlZDogXCJcIixcbiAgICAgICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgICAgICBtb2RlbDoge1xuICAgICAgICAgICAgICAgICAgICB2YWx1ZTogX3ZtLmZvcm0udGl0bGUsXG4gICAgICAgICAgICAgICAgICAgIGNhbGxiYWNrOiBmdW5jdGlvbiAoJCR2KSB7XG4gICAgICAgICAgICAgICAgICAgICAgX3ZtLiRzZXQoX3ZtLmZvcm0sIFwidGl0bGVcIiwgJCR2KVxuICAgICAgICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICAgICAgICBleHByZXNzaW9uOiBcImZvcm0udGl0bGVcIixcbiAgICAgICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgICAgfSksXG4gICAgICAgICAgICAgICAgX3ZtLl92KFwiIFwiKSxcbiAgICAgICAgICAgICAgICBfYyhcInYtdGV4dC1maWVsZFwiLCB7XG4gICAgICAgICAgICAgICAgICBhdHRyczoge1xuICAgICAgICAgICAgICAgICAgICBcImVycm9yLW1lc3NhZ2VzXCI6IF92bS5mb3JtLmVycm9ycy5zbHVnLFxuICAgICAgICAgICAgICAgICAgICBsYWJlbDogXCJTbHVnXCIsXG4gICAgICAgICAgICAgICAgICAgIHJlcXVpcmVkOiBcIlwiLFxuICAgICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICAgIG1vZGVsOiB7XG4gICAgICAgICAgICAgICAgICAgIHZhbHVlOiBfdm0uZm9ybS5zbHVnLFxuICAgICAgICAgICAgICAgICAgICBjYWxsYmFjazogZnVuY3Rpb24gKCQkdikge1xuICAgICAgICAgICAgICAgICAgICAgIF92bS4kc2V0KF92bS5mb3JtLCBcInNsdWdcIiwgJCR2KVxuICAgICAgICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICAgICAgICBleHByZXNzaW9uOiBcImZvcm0uc2x1Z1wiLFxuICAgICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICB9KSxcbiAgICAgICAgICAgICAgXSxcbiAgICAgICAgICAgICAgMVxuICAgICAgICAgICAgKSxcbiAgICAgICAgICAgIF92bS5fdihcIiBcIiksXG4gICAgICAgICAgICBfYyhcbiAgICAgICAgICAgICAgXCJ2LWNhcmQtYWN0aW9uc1wiLFxuICAgICAgICAgICAgICBbXG4gICAgICAgICAgICAgICAgX2MoXG4gICAgICAgICAgICAgICAgICBcInYtYnRuXCIsXG4gICAgICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgICAgIGF0dHJzOiB7IGNvbG9yOiBcInByaW1hcnlcIiwgdGV4dDogXCJcIiB9LFxuICAgICAgICAgICAgICAgICAgICBvbjoge1xuICAgICAgICAgICAgICAgICAgICAgIGNsaWNrOiBmdW5jdGlvbiAoJGV2ZW50KSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAkZXZlbnQuc3RvcFByb3BhZ2F0aW9uKClcbiAgICAgICAgICAgICAgICAgICAgICAgIF92bS5zaG93ID0gZmFsc2VcbiAgICAgICAgICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICAgIFtfdm0uX3YoXCJDbG9zZVwiKV1cbiAgICAgICAgICAgICAgICApLFxuICAgICAgICAgICAgICAgIF92bS5fdihcIiBcIiksXG4gICAgICAgICAgICAgICAgX2MoXCJ2LXNwYWNlclwiKSxcbiAgICAgICAgICAgICAgICBfdm0uX3YoXCIgXCIpLFxuICAgICAgICAgICAgICAgIF9jKFwidi1idG5cIiwgeyBhdHRyczogeyB0eXBlOiBcInN1Ym1pdFwiLCBjb2xvcjogXCJwcmltYXJ5XCIgfSB9LCBbXG4gICAgICAgICAgICAgICAgICBfdm0uX3YoXCJDcmVhdGVcIiksXG4gICAgICAgICAgICAgICAgXSksXG4gICAgICAgICAgICAgIF0sXG4gICAgICAgICAgICAgIDFcbiAgICAgICAgICAgICksXG4gICAgICAgICAgXSxcbiAgICAgICAgICAxXG4gICAgICAgICksXG4gICAgICBdKSxcbiAgICBdLFxuICAgIDFcbiAgKVxufVxudmFyIHN0YXRpY1JlbmRlckZucyA9IFtdXG5yZW5kZXIuX3dpdGhTdHJpcHBlZCA9IHRydWVcblxuZXhwb3J0IHsgcmVuZGVyLCBzdGF0aWNSZW5kZXJGbnMgfSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/Admin/Pages/create.vue?vue&type=template&id=1b019e50&\n");
 
 /***/ })
 

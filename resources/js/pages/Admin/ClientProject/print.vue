@@ -12,7 +12,7 @@
 
 <script>
   import DocumentTemplate from '../../../layouts/Admin/DocumentTemplate';
-  require('../../../../css/print.css')
+  require('../../../../sass/print.css')
 
   export default {
     layout: DocumentTemplate,

@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,5 +13,18 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sourceMaps();
+  .vue({
+    'version': 2
+  })
+  .sass('resources/sass/app.scss', 'public/css')
+  .sourceMaps()
+  .browserSync({
+    port: 8002,
+    proxy: 'http://localhost',
+    ui: false
+  });
+
+mix.alias({
+  '@': path.resolve('resources/js'),
+  ziggy: path.resolve('vendor/tightenco/ziggy/dist/vue')
+});
