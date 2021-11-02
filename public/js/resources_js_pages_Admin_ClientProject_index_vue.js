@@ -245,7 +245,7 @@ __webpack_require__.r(__webpack_exports__);
       currentDocument: this.templates[0],
       form: this.$inertia.form({
         project: this.project.id,
-        document_data: this.project.document_data
+        project_data: this.project.project_data
       }),
       showDelete: false
     };
@@ -888,7 +888,7 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("span", { staticClass: "heading" }, [
-                    _vm._v(_vm._s(_vm.project.name))
+                    _vm._v(_vm._s(_vm.project.project_data.name))
                   ])
                 ],
                 1

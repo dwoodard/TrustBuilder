@@ -69,10 +69,13 @@ class ClientProjectController extends \Inertia\Controller
         ]);
 
         $project = new Project();
-        $project['name'] = $request->name;
+//        $project['name'] = $request->name;
         $project['type'] = $request->type;
         $project['user_id'] = Auth::user()->getAuthIdentifier();
         $project['client_id'] = $client->id;
+        $project['project_data'] = [
+            'name' => $request->name,
+        ];
 
 
         $data = [
@@ -117,30 +120,27 @@ class ClientProjectController extends \Inertia\Controller
 
     /**
      * Set document data by node for a project
-     * POST: admin/client/{client}/project/{project}/document_data/{node}
+     * POST: admin/client/{client}/project/{project}/project_data/{node}
      * @param Client $client
      * @param Project $project
      * @param $node
      * @param Request $request
      * @return RedirectResponse
      */
-    public function documentData(Client $client, Project $project, $node, Request $request): RedirectResponse
+    public function projectData(Client $client, Project $project, $node, Request $request): RedirectResponse
     {
 
-        switch (gettype($project->document_data[$node])) {
+        switch (gettype($project->project_data[$node])) {
             case "NULL":
-                $project->document_data[$node] = [$request->all()];
+                $project->project_data[$node] = [$request->all()];
                 break;
             case 'array':
-                $project->document_data[$node] = [...$project->document_data[$node], $request->all()];
+                $project->project_data[$node] = [...$project->project_data[$node], $request->all()];
                 break;
-            case 'object':
-                $project->document_data[$node] = $request->all();
-
             case 'string':
-                $project->document_data[$node] = $request->all();
+            case 'object':
+                $project->project_data[$node] = $request->all();
                 break;
-
         }
 
         $project->save();

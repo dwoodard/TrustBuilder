@@ -191,28 +191,28 @@
     },
     computed: {
       document_created_at() {
-        return this.project?.document_data?.document_created_at || new Date();
+        return this.project?.project_data?.trust?.document_created_at || new Date();
       },
       first_trustee() {
-        return this.project?.document_data?.trustees?.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
+        return this.project?.project_data?.trust?.trustees?.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
       },
       trustees() {
-        return this.project?.document_data?.trustees;
+        return this.project?.project_data?.trust?.trustees;
       },
       second_trustee() {
-        return this.project?.document_data?.trustees?.second[0];
+        return this.project?.project_data?.trust?.trustees?.second[0];
       },
       mailing_address() {
-        return this.project?.document_data?.mailing_address;
+        return this.project?.project_data?.trust?.mailing_address;
       },
       trust_name() {
-        return this.project?.document_data?.trust_name || this?.project?.name;
+        return this.project?.project_data?.name;
       },
       settlor() {
-        return this.project?.document_data?.settlor;
+        return this.project?.project_data?.trust?.settlor;
       },
       beneficiaries() {
-        return this.project?.document_data?.beneficiaries || [];
+        return this.project?.project_data?.trust?.beneficiaries || [];
       }
     },
     methods: {

@@ -45,14 +45,14 @@ __webpack_require__.r(__webpack_exports__);
       return new Date();
     },
     trust_name: function trust_name() {
-      var _this$project, _this$project$documen, _this$project2;
+      var _this$project, _this$project$project;
 
-      return ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$documen = _this$project.document_data) === null || _this$project$documen === void 0 ? void 0 : _this$project$documen.trust_name) || (this === null || this === void 0 ? void 0 : (_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : _this$project2.name);
+      return (_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$project = _this$project.project_data) === null || _this$project$project === void 0 ? void 0 : _this$project$project.name;
     },
     mailing_address: function mailing_address() {
-      var _this$project3, _this$project3$docume;
+      var _this$project2, _this$project2$projec, _this$project2$projec2;
 
-      return (_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$docume = _this$project3.document_data) === null || _this$project3$docume === void 0 ? void 0 : _this$project3$docume.mailing_address;
+      return (_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$projec = _this$project2.project_data) === null || _this$project2$projec === void 0 ? void 0 : (_this$project2$projec2 = _this$project2$projec.trust) === null || _this$project2$projec2 === void 0 ? void 0 : _this$project2$projec2.mailing_address;
     },
     meeting_number: function meeting_number() {
       var _this$minute;
@@ -21625,7 +21625,11 @@ var render = function() {
         ])
       : _c("div", { staticClass: "preview-field" }, [
           _vm._v("\n    Need Mailing Address\n  ")
-        ])
+        ]),
+    _vm._v(" "),
+    _c("pre", [_vm._v(_vm._s(_vm.minute))]),
+    _vm._v(" "),
+    _c("pre", [_vm._v(_vm._s(_vm.project))])
   ])
 }
 var staticRenderFns = []

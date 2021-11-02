@@ -500,29 +500,29 @@ var converter = __webpack_require__(/*! number-to-words-en */ "./node_modules/nu
   },
   computed: {
     document_created_at: function document_created_at() {
-      var _this$project, _this$project$documen;
+      var _this$project, _this$project$project, _this$project$project2;
 
-      return ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$documen = _this$project.document_data) === null || _this$project$documen === void 0 ? void 0 : _this$project$documen.document_created_at) || new Date();
+      return ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$project = _this$project.project_data) === null || _this$project$project === void 0 ? void 0 : (_this$project$project2 = _this$project$project.trust) === null || _this$project$project2 === void 0 ? void 0 : _this$project$project2.document_created_at) || new Date();
     },
     first_trustee: function first_trustee() {
-      var _this$project2, _this$project2$docume, _this$project2$docume2, _this$client, _this$client2;
+      var _this$project2, _this$project2$projec, _this$project2$projec2, _this$project2$projec3, _this$client, _this$client2;
 
-      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : (_this$project2$docume2 = _this$project2$docume.trustees) === null || _this$project2$docume2 === void 0 ? void 0 : _this$project2$docume2.first[0]) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
+      return ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$projec = _this$project2.project_data) === null || _this$project2$projec === void 0 ? void 0 : (_this$project2$projec2 = _this$project2$projec.trust) === null || _this$project2$projec2 === void 0 ? void 0 : (_this$project2$projec3 = _this$project2$projec2.trustees) === null || _this$project2$projec3 === void 0 ? void 0 : _this$project2$projec3.first[0]) || "".concat(this === null || this === void 0 ? void 0 : (_this$client = this.client) === null || _this$client === void 0 ? void 0 : _this$client.first_name, " ").concat(this === null || this === void 0 ? void 0 : (_this$client2 = this.client) === null || _this$client2 === void 0 ? void 0 : _this$client2.last_name);
     },
     trust_name: function trust_name() {
-      var _this$project3, _this$project3$docume, _this$project4;
+      var _this$project3, _this$project3$projec;
 
-      return ((_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$docume = _this$project3.document_data) === null || _this$project3$docume === void 0 ? void 0 : _this$project3$docume.trust_name) || (this === null || this === void 0 ? void 0 : (_this$project4 = this.project) === null || _this$project4 === void 0 ? void 0 : _this$project4.name);
+      return (_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$projec = _this$project3.project_data) === null || _this$project3$projec === void 0 ? void 0 : _this$project3$projec.name;
     },
     settlor: function settlor() {
-      var _this$project5, _this$project5$docume;
+      var _this$project4, _this$project4$projec, _this$project4$projec2;
 
-      return (_this$project5 = this.project) === null || _this$project5 === void 0 ? void 0 : (_this$project5$docume = _this$project5.document_data) === null || _this$project5$docume === void 0 ? void 0 : _this$project5$docume.settlor;
+      return (_this$project4 = this.project) === null || _this$project4 === void 0 ? void 0 : (_this$project4$projec = _this$project4.project_data) === null || _this$project4$projec === void 0 ? void 0 : (_this$project4$projec2 = _this$project4$projec.trust) === null || _this$project4$projec2 === void 0 ? void 0 : _this$project4$projec2.settlor;
     },
     term_of_trust: function term_of_trust() {
-      var _this$project6, _this$project6$docume;
+      var _this$project5, _this$project5$projec, _this$project5$projec2;
 
-      return (_this$project6 = this.project) === null || _this$project6 === void 0 ? void 0 : (_this$project6$docume = _this$project6.document_data) === null || _this$project6$docume === void 0 ? void 0 : _this$project6$docume.term_of_trust;
+      return (_this$project5 = this.project) === null || _this$project5 === void 0 ? void 0 : (_this$project5$projec = _this$project5.project_data) === null || _this$project5$projec === void 0 ? void 0 : (_this$project5$projec2 = _this$project5$projec.trust) === null || _this$project5$projec2 === void 0 ? void 0 : _this$project5$projec2.term_of_trust;
     }
   },
   methods: {

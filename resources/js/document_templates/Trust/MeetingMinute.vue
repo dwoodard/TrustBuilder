@@ -17,8 +17,8 @@
     </div>
 
 
-    <!--    <pre>{{ minute }}</pre>-->
-    <!--    <pre>{{ project }}</pre>-->
+    <pre>{{ minute }}</pre>
+    <pre>{{ project }}</pre>
   </div>
 </template>
 
@@ -33,10 +33,10 @@
         return new Date();
       },
       trust_name() {
-        return this.project?.document_data?.trust_name || this?.project?.name;
+        return this.project?.project_data?.name;
       },
       mailing_address() {
-        return this.project?.document_data?.mailing_address;
+        return this.project?.project_data?.trust?.mailing_address;
       },
       meeting_number() {
         return this.minute?.meeting_number.toString().padStart(3, '0') || 0;

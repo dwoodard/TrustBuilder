@@ -15,12 +15,11 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('client_id');
             $table->string('type');
             $table->enum('status',['new', 'in-progress', 'pending', 'completed', 'cancelled',])->default('new');
-            $table->schemalessAttributes('document_data');
+            $table->schemalessAttributes('project_data');
             $table->text('custom_template')->nullable();
             $table->timestamps();
 

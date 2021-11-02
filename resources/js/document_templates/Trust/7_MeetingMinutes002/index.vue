@@ -153,19 +153,19 @@
     },
     computed: {
       document_created_at() {
-        return this.project?.document_data?.document_created_at || new Date();
+        return this.project?.project_data?.trust?.document_created_at || new Date();
       },
       first_trustee() {
-        return this.project?.document_data?.trustees.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
+        return this.project?.project_data?.trust?.trustees.first[0] || `${this?.client?.first_name} ${this?.client?.last_name}`;
       },
       trust_name() {
-        return this.project?.document_data?.trust_name || this?.project?.name;
+        return this.project?.project_data?.name;
       },
       settlor() {
-        return this.project?.document_data?.settlor;
+        return this.project?.project_data?.trust?.settlor;
       },
       domicile_address() {
-        return this.project?.document_data?.domicile_address || {};
+        return this.project?.project_data?.trust?.domicile_address || {};
       }
     },
     methods: {

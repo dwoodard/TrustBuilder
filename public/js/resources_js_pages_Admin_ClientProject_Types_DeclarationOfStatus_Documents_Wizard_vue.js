@@ -79,16 +79,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['project', 'client'],
   data: function data() {
-    var _this$project, _this$project$documen, _this$project2, _this$project2$docume, _this$project3, _this$project3$docume, _this$project4, _this$project4$docume;
+    var _this$project, _this$project$project, _this$project2, _this$project2$projec, _this$project3, _this$project3$projec, _this$project4, _this$project4$projec;
 
     return {
       currentStep: 1,
       MenuDocumentCreated: '',
       form: this.$inertia.form({
-        trust_name: ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$documen = _this$project.document_data) === null || _this$project$documen === void 0 ? void 0 : _this$project$documen.trust_name) || this.project.name,
-        first_trustee: ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$docume = _this$project2.document_data) === null || _this$project2$docume === void 0 ? void 0 : _this$project2$docume.first_trustee) || "".concat(this.client.first_name, " ").concat(this.client.last_name),
-        settlor: (_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$docume = _this$project3.document_data) === null || _this$project3$docume === void 0 ? void 0 : _this$project3$docume.settlor,
-        document_created_at: ((_this$project4 = this.project) === null || _this$project4 === void 0 ? void 0 : (_this$project4$docume = _this$project4.document_data) === null || _this$project4$docume === void 0 ? void 0 : _this$project4$docume.document_created_at) || this.moment().format('YYYY-MM-DD')
+        name: ((_this$project = this.project) === null || _this$project === void 0 ? void 0 : (_this$project$project = _this$project.project_data) === null || _this$project$project === void 0 ? void 0 : _this$project$project.name) || this.project.name,
+        first_trustee: ((_this$project2 = this.project) === null || _this$project2 === void 0 ? void 0 : (_this$project2$projec = _this$project2.project_data) === null || _this$project2$projec === void 0 ? void 0 : _this$project2$projec.first_trustee) || "".concat(this.client.first_name, " ").concat(this.client.last_name),
+        settlor: (_this$project3 = this.project) === null || _this$project3 === void 0 ? void 0 : (_this$project3$projec = _this$project3.project_data) === null || _this$project3$projec === void 0 ? void 0 : _this$project3$projec.settlor,
+        document_created_at: ((_this$project4 = this.project) === null || _this$project4 === void 0 ? void 0 : (_this$project4$projec = _this$project4.project_data) === null || _this$project4$projec === void 0 ? void 0 : _this$project4$projec.document_created_at) || this.moment().format('YYYY-MM-DD')
       })
     };
   },
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
     updateProject: function updateProject() {
       this.form.put(route('admin.projects.update', {
         project: this.project.id,
-        document_data: this.form.data()
+        project_data: this.form.data()
       }));
       this.$emit('updateProject');
     },
@@ -21692,7 +21692,7 @@ var render = function() {
                         { attrs: { "md-6": "" } },
                         [
                           _c("v-text-field", {
-                            attrs: { label: "Trust Name" },
+                            attrs: { label: "Name" },
                             on: {
                               blur: _vm.updateProject,
                               keydown: function($event) {
@@ -21712,11 +21712,11 @@ var render = function() {
                               }
                             },
                             model: {
-                              value: _vm.form.trust_name,
+                              value: _vm.form.name,
                               callback: function($$v) {
-                                _vm.$set(_vm.form, "trust_name", $$v)
+                                _vm.$set(_vm.form, "name", $$v)
                               },
-                              expression: "form.trust_name"
+                              expression: "form.name"
                             }
                           }),
                           _vm._v(" "),

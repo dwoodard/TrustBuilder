@@ -6,7 +6,7 @@
           <inertia-link href="/admin/clients" as="button">
             <v-icon color="white">mdi-menu-left</v-icon>
           </inertia-link>
-          <span class="heading">{{ project.name }}</span>
+          <span class="heading">{{ project.project_data.name }}</span>
         </v-col>
 
         <v-col xs3>
@@ -71,7 +71,7 @@
         currentDocument: this.templates[0],
         form: this.$inertia.form({
           project: this.project.id,
-          document_data: this.project.document_data
+          project_data: this.project.project_data
         }),
         showDelete: false
       };
