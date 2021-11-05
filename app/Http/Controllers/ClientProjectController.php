@@ -150,8 +150,6 @@ class ClientProjectController extends \Inertia\Controller
             $create = substr($node, -2) === '[]';
             $node = $create ? substr($node, 0, -2) : $node;
 
-            // if it's the last node remove the last dot otherwise add a dot
-            // set path dot notation string
             $path .= $node;
             dump($path);
 
@@ -178,10 +176,10 @@ class ClientProjectController extends \Inertia\Controller
                 $path = substr($path, 0, -1);
                 switch ($type) {
                     case 'array':
-                        Arr::set($project->project_data, $path, [$request->all()]);
+                        $project->project_data->set($path, [$request->all()]);
                         break;
                     default:
-                        $project->project_data->put($path, $request->all());
+                        $project->project_data->set($path, $request->all());
                         break;
                 }
             }
