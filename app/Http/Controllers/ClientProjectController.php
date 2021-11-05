@@ -8,12 +8,14 @@ use App\Models\Client;
 use App\Models\Project;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
+use function Symfony\Component\String\s;
 
 class ClientProjectController extends \Inertia\Controller
 {
@@ -26,8 +28,6 @@ class ClientProjectController extends \Inertia\Controller
      */
     public function index(Client $client, Project $project): Response
     {
-
-
         $data = [
             'client' => ClientResource::collection([$client])->first()->jsonSerialize(),
             'project' => ProjectResource::collection([$project])->first()->jsonSerialize(),
@@ -119,7 +119,12 @@ class ClientProjectController extends \Inertia\Controller
     }
 
     /**
-     * Set document data by node for a project
+     * Sets the Project's project_data object by taking the key called node and passing all the request data to it
+     * using a string that represents the nested path to the data, e.g. "project_data.meeting_minutes[0]['item']" it will
+     * set that key to the value of the request data.
+     *
+     * then saves the project
+     *
      * POST: admin/client/{client}/project/{project}/project_data/{node}
      * @param Client $client
      * @param Project $project
@@ -129,24 +134,82 @@ class ClientProjectController extends \Inertia\Controller
      */
     public function projectData(Client $client, Project $project, $node, Request $request): RedirectResponse
     {
+        $node = 'meeting_minutes[].foo.bar.baz';
 
-        switch (gettype($project->project_data[$node])) {
-            case "NULL":
-                $project->project_data[$node] = [$request->all()];
-                break;
-            case 'array':
-                $project->project_data[$node] = [...$project->project_data[$node], $request->all()];
-                break;
-            case 'string':
-            case 'object':
-                $project->project_data[$node] = $request->all();
-                break;
-        }
+        $project->project_data = collect($project->project_data);
+
+        $nodes = collect(explode('.', $node));
+
+        // a dot notation string. it will be used to set the value of the node. in the last iteration.
+        $path = "";
+
+        // loop through the nodes and set the value of the node
+        $nodes = $nodes->map(function ($node, $key) use (&$path, $request, $project, $nodes) {
+            $last = $key == $nodes->count() - 1;
+
+            $create = substr($node, -2) === '[]';
+            $node = $create ? substr($node, 0, -2) : $node;
+
+            // if it's the last node remove the last dot otherwise add a dot
+            // set path dot notation string
+            $path .= $node;
+            dump($path);
+
+            $hasNode = Arr::has($project->project_data, $path);
+
+            // if create is true and the node does not exist, create it
+            if ($create && !$hasNode) {
+                $nodeArray = Arr::set($project->project_data, $node, []);
+
+                // because we are creating a new array,
+                // we, need to set the path to have '.0.', meaning '.[index]'
+                $path .= '.' . (count($nodeArray[$node])) . '.';
+            }else{
+                $path .= '.';
+            }
+
+
+            // get type of node by the path
+            $type = gettype($project->project_data->get($path));
+
+            // if last node, set the value
+            if ($last) {
+                // remove the last dot
+                $path = substr($path, 0, -1);
+                switch ($type) {
+                    case 'array':
+                        Arr::set($project->project_data, $path, [$request->all()]);
+                        break;
+                    default:
+                        $project->project_data->put($path, $request->all());
+                        break;
+                }
+            }
+
+
+
+            return [
+                'path' => $path,
+                'create' => $create,
+                'node' => $node,
+                'type' => gettype($project->project_data->get($node)),
+                'value' => $last ? $request->all() : null
+            ];
+
+
+        });
+
+
+        dump($nodes);
+        dump($project->project_data->toArray());
+        dump($path);
+        die();
 
         $project->save();
 
         return Redirect::back();
     }
+
 
 }
 

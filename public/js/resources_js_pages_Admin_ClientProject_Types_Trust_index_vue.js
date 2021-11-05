@@ -915,7 +915,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       dialog: false,
       selectedMinute: ((_this$$page$props$pro = this.$page.props.project.project_data) === null || _this$$page$props$pro === void 0 ? void 0 : (_this$$page$props$pro2 = _this$$page$props$pro.meeting_minutes) === null || _this$$page$props$pro2 === void 0 ? void 0 : _this$$page$props$pro2[0]) || null,
       form: this.$inertia.form({
-        meeting_number: ''
+        meeting_number: '',
+        date: moment__WEBPACK_IMPORTED_MODULE_0___default()().format('YYYY-MM-DD'),
+        dummy_data: ''
       })
     };
   },
@@ -960,7 +962,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return _objectSpread(_objectSpread({}, data), {}, {
           meeting_number: _this2.nextNumber
         });
-      }).post("/admin/client/".concat(this.$page.props.client.id, "/project/").concat(this.$page.props.project.id, "/project_data/meeting_minutes"));
+      }).post("/admin/client/".concat(this.$page.props.client.id, "/project/").concat(this.$page.props.project.id, "/project_data/meeting_minutes[]"));
     }
   },
   components: {
@@ -1015,8 +1017,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['currentDocument'],
   data: function data() {
     return {
-      tab: null // 'meeting-minutes'
-
+      tab: 'meeting-minutes'
     };
   },
   components: {

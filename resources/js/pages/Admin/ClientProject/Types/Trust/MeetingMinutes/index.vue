@@ -112,10 +112,9 @@
         dialog: false,
         selectedMinute: this.$page.props.project.project_data?.meeting_minutes?.[0] || null,
         form: this.$inertia.form({
-
-          meeting_number: ''
-
-
+          meeting_number: '',
+          date: moment().format('YYYY-MM-DD'),
+          dummy_data: '',
         })
       };
     },
@@ -156,9 +155,7 @@
             ...data,
             meeting_number: this.nextNumber
           }))
-          .post(
-            `/admin/client/${this.$page.props.client.id}/project/${this.$page.props.project.id}/project_data/meeting_minutes`
-          );
+          .post(`/admin/client/${this.$page.props.client.id}/project/${this.$page.props.project.id}/project_data/meeting_minutes[]`);
       }
     },
     components: {
