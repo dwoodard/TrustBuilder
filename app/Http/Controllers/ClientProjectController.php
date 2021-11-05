@@ -6,6 +6,7 @@ use App\Http\Resources\ClientResource;
 use App\Http\Resources\ProjectResource;
 use App\Models\Client;
 use App\Models\Project;
+use http\Header\Parser;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -120,7 +121,7 @@ class ClientProjectController extends \Inertia\Controller
 
     /**
      * Sets the Project's project_data object by taking the key called node and passing all the request data to it
-     * using a string that represents the nested path to the data, e.g. "project_data.meeting_minutes[0]['item']" it will
+     * using a string that represents the nested path to the data, e.g. "project_data.meeting_minutes.0.meeting_number it will
      * set that key to the value of the request data.
      *
      * then saves the project
@@ -134,77 +135,100 @@ class ClientProjectController extends \Inertia\Controller
      */
     public function projectData(Client $client, Project $project, $node, Request $request): RedirectResponse
     {
-        $node = 'meeting_minutes[].foo.bar.baz';
+        //fake for testing
+        // meeting_minutes
+        // meeting_minutes.[] - push to parent (meeting_minutes)
+        // meeting_minutes.0 - update this to the value of the request
+        // meeting_minutes.[].foo - push to parent (meeting_minutes) then add foo
+        // meeting_minutes.[].foo.bar
+        // meeting_minutes.[].foo.[].bar
+        // meeting_minutes.[].foo.[].bar.[]
+        // meeting_minutes.[].foo.[].bar.[].baz
 
-        $project->project_data = collect($project->project_data);
 
+        $node = 'meeting_minutes';
+        $requestData = [
+            'meeting_number' => '3',
+            'date' => '2021-09-09',
+            'dummy_data' => 'stuff',
+        ];
+        //end testing
+
+        $canAccessFullNode = $project->project_data->get($node) !== null;
+
+        // do a check to see if $node can be accessed
+        // if $canAccessFullNode is true, set the request to that node
+        if ($canAccessFullNode) {
+            //todo: replace request data with the $request->all()
+            dd('this is working');
+            $project->project_data->set($project->project_data, $requestData);
+            $project->save();
+
+            //todo: uncomment this once working
+            //return Redirect::back();
+        }
+
+        dump('cannot access full node, start editing the node to create the right data');
+
+        $projectData = $project->project_data->toArray();
         $nodes = collect(explode('.', $node));
+        $path = '';
 
-        // a dot notation string. it will be used to set the value of the node. in the last iteration.
-        $path = "";
+        $parsedNodes = $nodes->map(function ($node, $key) use (&$path, $nodes) {
 
-        // loop through the nodes and set the value of the node
-        $nodes = $nodes->map(function ($node, $key) use (&$path, $request, $project, $nodes) {
-            $last = $key == $nodes->count() - 1;
+            $first = $nodes->first();
+            $last = $nodes->last();
+            $create = strpos($node, '[]') !== false;
+            $parent = $nodes[$key - 1] ?? null;
+            $hasNext = $nodes->has($key + 1);
+            $type = gettype($node);
+            $child = $hasNext ? $nodes[$key + 1] : null;
+            $isCurrentArray = $node == '[]';
 
-            $create = substr($node, -2) === '[]';
-            $node = $create ? substr($node, 0, -2) : $node;
 
-            $path .= $node;
-            dump($path);
-
-            $hasNode = Arr::has($project->project_data, $path);
-
-            // if create is true and the node does not exist, create it
-            if ($create && !$hasNode) {
-                $nodeArray = Arr::set($project->project_data, $node, []);
-
-                // because we are creating a new array,
-                // we, need to set the path to have '.0.', meaning '.[index]'
-                $path .= '.' . (count($nodeArray[$node])) . '.';
-            }else{
-                $path .= '.';
+            if (!$isCurrentArray) {
+                $path .= $node . ($hasNext ? '.' : '');
             }
 
 
-            // get type of node by the path
-            $type = gettype($project->project_data->get($path));
-
-            // if last node, set the value
-            if ($last) {
-                // remove the last dot
-                $path = substr($path, 0, -1);
-                switch ($type) {
-                    case 'array':
-                        $project->project_data->set($path, [$request->all()]);
-                        break;
-                    default:
-                        $project->project_data->set($path, $request->all());
-                        break;
-                }
-            }
-
-
-
-            return [
-                'path' => $path,
+            return (object) [
+                'isFirst' => $first === $node,
+                'isLast' => $last === $node,
+                'type' => $type,
+                'name' => $node,
                 'create' => $create,
-                'node' => $node,
-                'type' => gettype($project->project_data->get($node)),
-                'value' => $last ? $request->all() : null
+                'index' => is_numeric($node) ? $node : null,
+                'parent' => $parent,
+                'hasNext' => $hasNext,
+                'child' => $child
             ];
-
-
         });
 
+        //loop through the node and add the data
+        foreach ($parsedNodes as $node ) {
 
-        dump($nodes);
-        dump($project->project_data->toArray());
-        dump($path);
+            if ($node->name == '[]'){
+                continue;
+            }
+
+            // if the node has a child where the child  == []
+            if ($node->child == '[]') {
+                data_set($projectData, $path, []);
+
+            }
+            // if the node is the last node
+            if ($node->isLast){
+                data_set($projectData, $path, $requestData);
+            }
+        }
+
+        dump($projectData);
+
+
+//            data_set($projectData, $node, $requestData);
+
+
         die();
-
-        $project->save();
-
         return Redirect::back();
     }
 

@@ -12,7 +12,7 @@
                 hide-details
                 label="Meeting Number"
                 :item-value="(item) => {return item}"
-                :item-text="item => item.meeting_number.toString().padStart(3, '0')"
+                :item-text="item => item.meeting_number"
                 @change="setSelectedMinute">
                 <template #label="{item}">
                   <span>item</span>
@@ -138,6 +138,7 @@
         if (this.meetingMinutes.length === 0) {
           return 3;
         }
+
         return this.meetingMinutes[this.meetingMinutes.length - 1].meeting_number + 1;
       }
     },

@@ -23120,8 +23120,6 @@ var render = function() {
                               },
                               "item-text": function(item) {
                                 return item.meeting_number
-                                  .toString()
-                                  .padStart(3, "0")
                               }
                             },
                             on: { change: _vm.setSelectedMinute },
