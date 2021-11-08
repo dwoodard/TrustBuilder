@@ -227,11 +227,10 @@
       <ul>
         <li>51. The TRUSTEE, through co-execution of this agreement, signifies confirmation and acceptance of his fiduciary position as TRUSTEE, hereby establishing the BOARD and hereby accepting the terms, conditions and provisions of this Declaration of Trust and the Resolutions which are recorded in the Minutes of its meetings from time to time, which shall serve as the governing instruments of the BOARD. The signing and acknowledgement of appropriate TRUST Meeting Minutes by subsequently appointed SECONDARY TRUSTEES, if applicable, shall constitute their acceptance of this Declaration of Trust and related assets in the same manner as the BOARD and the assets and emoluments thereof shall immediately vest in the BOARD as fiduciary for the TRUST without further act or conveyance except as may be required by local law.</li>
         <li>52. The SETTLOR, through co-execution of this Declaration of Trust, signifies confirmation and acceptance of his settlement position to the TRUST by providing the initial asset to fund the TRUST and his Statement of Wishes Letter to the BOARD.</li>
-        <div style="page-break-after: always"></div>
         <li>53. IN WITNESS WHEREOF, the parties hereto have hereunder set their hands and seals in acknowledgement and acceptance of, assent to and covenant to abide by all conditions herein imposed and expressed on or after the day first written above.</li>
       </ul>
 
-      <div class="break-after"></div>
+
       <v-container>
         <v-row class="sm-6">
           <v-col>
@@ -291,7 +290,7 @@
           </v-col>
         </v-row>
 
-        <v-row class="sm-6" style="height: 60mm; background: #f1f1f1;">
+        <v-row class="sm-6" style="height: 30mm; background: #f1f1f1;">
           <v-col>
             <div>
               Notary Stamp / Seal:

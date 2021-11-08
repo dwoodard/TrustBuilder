@@ -93,6 +93,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -226,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#trust_certificates[data-v-70d4396f] {\n}\n.trust_certificate[data-v-70d4396f] {\n  border: double 4px #333333;\n  page-break-after: always;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.trust_certificates[data-v-70d4396f] {\n}\n.trust_certificate[data-v-70d4396f] {\n  min-height: 100vh;\n  border: double 4px #333333;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21820,176 +21821,181 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "trust_certificates" } },
-    [
-      _c("div", { staticClass: "break-after" }),
-      _vm._v(" "),
-      _vm._l(_vm.beneficiaries, function(beneficiary, index) {
-        return _c(
-          "v-container",
-          { key: index, staticClass: "trust_certificate" },
-          [
-            _c(
-              "v-row",
-              { staticClass: "mb-10" },
-              [
-                _c("v-col", [
-                  _c("div", { staticClass: "text-center" }, [
-                    _c("h2", [
+    { staticClass: "trust_certificates" },
+    _vm._l(_vm.beneficiaries, function(beneficiary, index) {
+      return _c(
+        "div",
+        { key: index, staticClass: "trust_certificate" },
+        [
+          _c(
+            "v-container",
+            [
+              _c(
+                "v-row",
+                { staticClass: "mb-10" },
+                [
+                  _c("v-col", [
+                    _c("div", { staticClass: "text-center" }, [
+                      _c("h2", [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s((index + 1).toString().padStart(3, "0"))
+                        ),
+                        _c("br")
+                      ]),
+                      _vm._v("\n            Certificate Number\n          ")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("v-col", [
+                    _c("div", { staticClass: "text-center" }, [
+                      _vm._v("REGISTERED CERTIFICATE")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("v-col", [
+                    _c("div", { staticClass: "text-center" }, [
+                      _c("h2", [
+                        _vm._v("\n              " + _vm._s(beneficiary.units)),
+                        _c("br")
+                      ]),
+                      _vm._v("\n            Number of Units\n          ")
+                    ])
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                { staticClass: "mb-10" },
+                [
+                  _c("v-col", [
+                    _c(
+                      "h1",
+                      {
+                        staticClass: "text-center",
+                        staticStyle: {
+                          "font-family": "serif",
+                          "letter-spacing": "10px"
+                        }
+                      },
+                      [
+                        _vm._v("\n            TRUST CERTIFICATE "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("small", [_vm._v("OF")]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v("\n            BENEFICIAL OWNERSHIP\n          ")
+                      ]
+                    )
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                { staticClass: "mb-10" },
+                [
+                  _c("v-col", [
+                    _c("div", { staticClass: "text-center" }, [
+                      _c("h1", [_vm._v(_vm._s(_vm.trust_name))]),
                       _vm._v(
-                        "\n            " +
-                          _vm._s((index + 1).toString().padStart(3, "0"))
+                        "\n            (A Pure Trust Organization)\n          "
+                      )
+                    ])
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                { staticClass: "mb-8" },
+                [
+                  _c("v-col", [
+                    _c("p", [
+                      _vm._v(
+                        "\n            This is to certify that " +
+                          _vm._s(beneficiary.name) +
+                          " (BENEFICIARY) is the owner of " +
+                          _vm._s(
+                            _vm.toTitleCase(_vm.toWords(beneficiary.units))
+                          ) +
+                          " (" +
+                          _vm._s(beneficiary.units) +
+                          ") Units of Beneficial Ownership (beneficial interest, not vested interest) in the assets of the above name Trust. This Certificate and the referenced Units may be transferred, exchanged or gifted only in accordance with the guidelines described in the Trust Indenture.\n          "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n            The BENEFICIARY may not sell this Certificate or receive any compensation for the transfer, exchange or gift of this Certificate to another person or entity. This Certificate may not be hypothecated, pledged as collateral, liened, or assigned in an attempt that could be interpreted as a means to force an early distribution of assets from the Trust.\n          "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n            All rights represented herein expire upon BENEFICIARY's death unless a proper Transfer-Upon-Death form has been filled with the Board of Trustees prior to BENEFICIARY's death. The Holder of this Certificate has no rights unless said Holder is the BENEFICIARY named herein or their legal guardian.\n          "
+                      )
+                    ])
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                {},
+                [
+                  _c("v-col", [
+                    _c("div", { staticClass: "text-center" }, [
+                      _c(
+                        "div",
+                        { staticStyle: { "border-bottom": "1px solid black" } },
+                        [
+                          _vm._v(
+                            _vm._s(
+                              _vm
+                                .moment(_vm.document_created_at)
+                                .format("MMMM D, YYYY")
+                            )
+                          )
+                        ]
                       ),
-                      _c("br")
-                    ]),
-                    _vm._v("\n          Certificate Number\n        ")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("v-col", [
-                  _c("div", { staticClass: "text-center" }, [
-                    _vm._v("REGISTERED CERTIFICATE")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("v-col", [
-                  _c("div", { staticClass: "text-center" }, [
-                    _c("h2", [
-                      _vm._v("\n            " + _vm._s(beneficiary.units)),
-                      _c("br")
-                    ]),
-                    _vm._v("\n          Number of Units\n        ")
-                  ])
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-row",
-              { staticClass: "mb-10" },
-              [
-                _c("v-col", [
+                      _vm._v("\n            Effective Date\n          ")
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "h1",
-                    {
-                      staticClass: "text-center",
-                      staticStyle: {
-                        "font-family": "serif",
-                        "letter-spacing": "10px"
-                      }
-                    },
+                    "v-col",
+                    { attrs: { offset: "1" } },
                     [
-                      _vm._v("\n          TRUST CERTIFICATE "),
-                      _c("BR"),
-                      _vm._v(" "),
-                      _c("SMALL", [_vm._v("OF")]),
-                      _vm._v(" "),
-                      _c("BR"),
-                      _vm._v("\n          BENEFICIAL OWNERSHIP\n        ")
+                      _c("v-text-field", {
+                        attrs: {
+                          filled: "",
+                          "persistent-hint": "",
+                          hint: _vm.first_trustee + ", Trustee"
+                        }
+                      })
                     ],
                     1
                   )
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-row",
-              { staticClass: "mb-10" },
-              [
-                _c("v-col", [
-                  _c("div", { staticClass: "text-center" }, [
-                    _c("h1", [_vm._v(_vm._s(_vm.trust_name))]),
-                    _vm._v("\n          (A Pure Trust Organization)\n        ")
-                  ])
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-row",
-              { staticClass: "mb-8" },
-              [
-                _c("v-col", [
-                  _c("p", [
-                    _vm._v(
-                      "\n          This is to certify that " +
-                        _vm._s(beneficiary.name) +
-                        " (BENEFICIARY) is the owner of " +
-                        _vm._s(
-                          _vm.toTitleCase(_vm.toWords(beneficiary.units))
-                        ) +
-                        " (" +
-                        _vm._s(beneficiary.units) +
-                        ") Units of Beneficial Ownership (beneficial interest, not vested interest) in the assets of the above name Trust. This Certificate and the referenced Units may be transferred, exchanged or gifted only in accordance with the guidelines described in the Trust Indenture.\n        "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n          The BENEFICIARY may not sell this Certificate or receive any compensation for the transfer, exchange or gift of this Certificate to another person or entity. This Certificate may not be hypothecated, pledged as collateral, liened, or assigned in an attempt that could be interpreted as a means to force an early distribution of assets from the Trust.\n        "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n          All rights represented herein expire upon BENEFICIARY's death unless a proper Transfer-Upon-Death form has been filled with the Board of Trustees prior to BENEFICIARY's death. The Holder of this Certificate has no rights unless said Holder is the BENEFICIARY named herein or their legal guardian.\n        "
-                    )
-                  ])
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-row",
-              {},
-              [
-                _c("v-col", [
-                  _c("div", { staticClass: "text-center" }, [
-                    _c(
-                      "div",
-                      { staticStyle: { "border-bottom": "1px solid black" } },
-                      [
-                        _vm._v(
-                          _vm._s(
-                            _vm
-                              .moment(_vm.document_created_at)
-                              .format("MMMM D, YYYY")
-                          )
-                        )
-                      ]
-                    ),
-                    _vm._v("\n          Effective Date\n        ")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "v-col",
-                  { attrs: { offset: "1" } },
-                  [
-                    _c("v-text-field", {
-                      attrs: {
-                        filled: "",
-                        "persistent-hint": "",
-                        hint: _vm.first_trustee + ", Trustee"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ],
-              1
-            )
-          ],
-          1
-        )
-      })
-    ],
-    2
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "break-after" })
+        ],
+        1
+      )
+    }),
+    0
   )
 }
 var staticRenderFns = []

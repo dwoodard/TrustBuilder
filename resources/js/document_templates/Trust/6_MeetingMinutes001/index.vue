@@ -54,8 +54,9 @@
     <p>
       <b>MINUTE NO. 4</b>: The BOARD declares the fiscal year of the TRUST to be the calendar year. The BOARD shall have the power to change such fiscal year by subsequent Meeting Minute if it is determined to be in the best interest of the TRUST to do so.
     </p>
-    <b>MINUTE NO. 5</b>: Special meetings called in accordance with the Declaration of Trust may be held at any time and/or any place in the best interest of the TRUST upon three (3) days notice, which may be waived by any or all TRUSTEE(s) and/or other titled officers.
-    Board of Trustees Meeting 001 - Page 1 of 3
+    <p>
+      <b>MINUTE NO. 5</b>: Special meetings called in accordance with the Declaration of Trust may be held at any time and/or any place in the best interest of the TRUST upon three (3) days notice, which may be waived by any or all TRUSTEE(s) and/or other titled officers.
+    </p>
     <p>
       <b>MINUTE NO. 6</b>: The BOARD hereby appoints a SECONDARY TRUSTEE, <b class="preview-field">{{ second_trustee }}</b>, to this BOARD, effective immediately.
     </p>
@@ -141,6 +142,7 @@
     <p>
       <b>MINUTE NO. 14</b>: Meeting Minute numbers need only be in sequence within a given Meeting and need not continue in succession to the next Meetings. Each Meeting shall start with Minute No. 01.
     </p>
+    <div class="break-after"></div>
     <p>
       <b class="text-decoration-underline">CLOSE:</b>
     </p>

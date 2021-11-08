@@ -14,7 +14,7 @@
     <p>This list of property is comprehensive and is the written description of those certain properties which were agreed upon and known to both the SETTLOR and the FIRST TRUSTEE at the time of the execution of the Declaration of Trust and includes all properties transferred and accepted, to wit:</p>
 
     <p>
-      <b class="preview-field">{{ settlor_gift_type }}</b>: <span class="preview-field">{{ toTitleCase(toWords(settlor_gift)) }} Dollars $({{ settlor_gift }})</span>
+      <b class="preview-field">{{ settlor_gift_type }}</b>: <span class="preview-field">{{ toTitleCase(toWords(settlor_gift)) }} Dollars ${{ settlor_gift }}</span>
     </p>
 
     <v-container>

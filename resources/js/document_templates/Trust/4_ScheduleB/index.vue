@@ -1,7 +1,8 @@
 <template>
   <div class="document-template">
-    <h3>SCHEDULE B</h3>
-    <h4 class="mb-10">SETTLOR'S STATEMENT OF WISHES</h4>
+    <h1>SCHEDULE B</h1>
+    <h2 class="mb-10">SETTLOR'S STATEMENT OF WISHES</h2>
+
 
     <p>
       <b class="preview-field">{{ moment(document_created_at).format('MMMM D, YYYY') }}</b>
@@ -25,25 +26,24 @@
 
     <p>I am writing this letter as my statement of record, which is in accordance with the Declaration of Trust of:</p>
 
-    <p class="text-center preview-field">{{ trust_name }}</p>
+    <p class="text-center preview-field"><b>{{ trust_name }}</b></p>
 
     <p>to be signed on or after this date, directing you, the Board of Trustees, to make the initial issue of the one hundred (100) Units of Beneficial Ownership to the following entity(ies):</p>
 
 
     <ul class="ownership">
-      <li v-for="(beneficiary, index) in beneficiaries" :key="index" class="">
+      <li v-for="(beneficiary, index) in beneficiaries" :key="index">
         {{ beneficiary.name }} - CERTIFICATE {{ (index+1).toString().padStart(3,"0") }} - {{ beneficiary.units }} UNITS of Beneficial Ownership
       </li>
     </ul>
 
-    <div class="break-before"></div>
     <p>I thank you for your attention to this matter.</p>
 
     <p>Respectfully,</p>
 
 
     <v-container>
-      <v-row class="sm-6">
+      <v-row>
         <v-col>
           <v-text-field
             filled
@@ -54,20 +54,18 @@
       </v-row>
 
       <v-row>
-        <v-col class="sm-6">
-          <div>
+        <v-col>
+          <span>
             NOTARY Public, Weber County <br/>
             State of Utah
-          </div>
+          </span>
         </v-col>
-        <v-col class="sm-6">
-          &nbsp;
-        </v-col>
+        <v-col/>
       </v-row>
 
-      <v-row class="sm-6">
+      <v-row>
         <v-col>
-          <h4 class="mb-5">WITNESS:</h4>
+          <h4>WITNESS:</h4>
 
           <v-text-field
             filled
@@ -79,7 +77,7 @@
             hint="Notary Public SIGNATURE:"/>
         </v-col>
 
-        <v-col class="mt-6" style="height: 46mm; background: #f1f1f1;">
+        <v-col style="background: #f1f1f1;">
           <div>
             Notary Stamp / Seal:
           </div>
@@ -130,10 +128,8 @@
 <style scoped>
 .ownership{
   padding: 0;
-  margin: 0 0 10px;
+  margin: 0;
   list-style: none;
 }
-.check{
-  color:red
-}
+
 </style>

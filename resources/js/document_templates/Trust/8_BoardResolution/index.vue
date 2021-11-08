@@ -1,6 +1,6 @@
 <template>
   <div class="document-template">
-    <v-container class="ma-auto" style="width:75%">
+    <v-container class="ma-auto">
       <v-row>
         <v-col>
           <h2>{{ trust_name }}</h2>

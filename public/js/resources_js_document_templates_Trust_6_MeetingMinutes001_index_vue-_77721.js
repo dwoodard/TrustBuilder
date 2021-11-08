@@ -188,6 +188,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -571,10 +573,8 @@ var render = function() {
       _vm._v(" "),
       _vm._m(6),
       _vm._v(" "),
-      _c("b", [_vm._v("MINUTE NO. 5")]),
-      _vm._v(
-        ": Special meetings called in accordance with the Declaration of Trust may be held at any time and/or any place in the best interest of the TRUST upon three (3) days notice, which may be waived by any or all TRUSTEE(s) and/or other titled officers.\n  Board of Trustees Meeting 001 - Page 1 of 3\n  "
-      ),
+      _vm._m(7),
+      _vm._v(" "),
       _c("p", [
         _c("b", [_vm._v("MINUTE NO. 6")]),
         _vm._v(": The BOARD hereby appoints a SECONDARY TRUSTEE, "),
@@ -690,13 +690,13 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(7),
-      _vm._v(" "),
       _vm._m(8),
       _vm._v(" "),
       _vm._m(9),
       _vm._v(" "),
       _vm._m(10),
+      _vm._v(" "),
+      _vm._m(11),
       _vm._v(" "),
       _c("p", { staticClass: "ml-10 preview-field" }, [
         _vm._v("\n    " + _vm._s(_vm.trust_name) + " "),
@@ -720,13 +720,15 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(11),
-      _vm._v(" "),
       _vm._m(12),
       _vm._v(" "),
       _vm._m(13),
       _vm._v(" "),
       _vm._m(14),
+      _vm._v(" "),
+      _c("div", { staticClass: "break-after" }),
+      _vm._v(" "),
+      _vm._m(15),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -865,6 +867,17 @@ var staticRenderFns = [
       _c("b", [_vm._v("MINUTE NO. 4")]),
       _vm._v(
         ": The BOARD declares the fiscal year of the TRUST to be the calendar year. The BOARD shall have the power to change such fiscal year by subsequent Meeting Minute if it is determined to be in the best interest of the TRUST to do so.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 5")]),
+      _vm._v(
+        ": Special meetings called in accordance with the Declaration of Trust may be held at any time and/or any place in the best interest of the TRUST upon three (3) days notice, which may be waived by any or all TRUSTEE(s) and/or other titled officers.\n  "
       )
     ])
   },

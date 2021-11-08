@@ -325,7 +325,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -22169,8 +22168,6 @@ var render = function() {
         _vm._v(" "),
         _vm._m(16),
         _vm._v(" "),
-        _c("div", { staticClass: "break-after" }),
-        _vm._v(" "),
         _c(
           "v-container",
           [
@@ -22290,7 +22287,7 @@ var render = function() {
               "v-row",
               {
                 staticClass: "sm-6",
-                staticStyle: { height: "60mm", background: "#f1f1f1" }
+                staticStyle: { height: "30mm", background: "#f1f1f1" }
               },
               [
                 _c("v-col", [
@@ -22754,8 +22751,6 @@ var staticRenderFns = [
           "52. The SETTLOR, through co-execution of this Declaration of Trust, signifies confirmation and acceptance of his settlement position to the TRUST by providing the initial asset to fund the TRUST and his Statement of Wishes Letter to the BOARD."
         )
       ]),
-      _vm._v(" "),
-      _c("div", { staticStyle: { "page-break-after": "always" } }),
       _vm._v(" "),
       _c("li", [
         _vm._v(

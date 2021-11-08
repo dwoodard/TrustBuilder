@@ -21809,9 +21809,8 @@ var render = function() {
         _c("span", { staticClass: "preview-field" }, [
           _vm._v(
             _vm._s(_vm.toTitleCase(_vm.toWords(_vm.settlor_gift))) +
-              " Dollars $(" +
-              _vm._s(_vm.settlor_gift) +
-              ")"
+              " Dollars $" +
+              _vm._s(_vm.settlor_gift)
           )
         ])
       ]),

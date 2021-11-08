@@ -21812,7 +21812,7 @@ var render = function() {
     [
       _c(
         "v-container",
-        { staticClass: "ma-auto", staticStyle: { width: "75%" } },
+        { staticClass: "ma-auto" },
         [
           _c(
             "v-row",
