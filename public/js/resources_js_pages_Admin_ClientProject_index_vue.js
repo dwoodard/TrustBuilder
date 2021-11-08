@@ -1102,10 +1102,6 @@ var map = {
 		"./resources/js/pages/Admin/ClientProject/Types/Trust/Documents/index.vue",
 		"resources_js_pages_Admin_ClientProject_Types_Trust_Documents_index_vue"
 	],
-	"./Trust/MeetingMinutes/index.vue": [
-		"./resources/js/pages/Admin/ClientProject/Types/Trust/MeetingMinutes/index.vue",
-		"resources_js_pages_Admin_ClientProject_Types_Trust_MeetingMinutes_index_vue"
-	],
 	"./Trust/index.vue": [
 		"./resources/js/pages/Admin/ClientProject/Types/Trust/index.vue",
 		"resources_js_pages_Admin_ClientProject_Types_Trust_index_vue"

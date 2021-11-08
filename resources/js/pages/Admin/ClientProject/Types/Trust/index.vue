@@ -5,9 +5,6 @@
         <v-tab href="#documents">
           Documents
         </v-tab>
-        <v-tab href="#meeting-minutes">
-          Meeting Minutes
-        </v-tab>
       </v-tabs>
     </v-app-bar>
 
@@ -16,15 +13,11 @@
       <v-tab-item value="documents">
         <Documents :current-document="currentDocument"/>
       </v-tab-item>
-      <v-tab-item value="meeting-minutes">
-        <MeetingMinutes/>
-      </v-tab-item>
     </v-tabs-items>
   </div>
 </template>
 
 <script>
-  import MeetingMinutes from './MeetingMinutes/index.vue';
   import Documents from './Documents/index.vue';
 
   export default {
@@ -36,8 +29,7 @@
     },
 
     components: {
-      Documents,
-      MeetingMinutes
+      Documents
     }
   };
 </script>

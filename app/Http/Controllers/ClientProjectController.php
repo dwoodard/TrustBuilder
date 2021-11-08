@@ -117,37 +117,6 @@ class ClientProjectController extends \Inertia\Controller
             return basename($dir);
         });
     }
-
-    /**
-     * Set document data by node for a project
-     * POST: admin/client/{client}/project/{project}/project_data/{node}
-     * @param Client $client
-     * @param Project $project
-     * @param $node
-     * @param Request $request
-     * @return RedirectResponse
-     */
-    public function projectData(Client $client, Project $project, $node, Request $request): RedirectResponse
-    {
-
-        switch (gettype($project->project_data[$node])) {
-            case "NULL":
-                $project->project_data[$node] = [$request->all()];
-                break;
-            case 'array':
-                $project->project_data[$node] = [...$project->project_data[$node], $request->all()];
-                break;
-            case 'string':
-            case 'object':
-                $project->project_data[$node] = $request->all();
-                break;
-        }
-
-        $project->save();
-
-        return Redirect::back();
-    }
-
 }
 
 
