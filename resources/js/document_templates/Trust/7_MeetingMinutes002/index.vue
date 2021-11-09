@@ -37,7 +37,7 @@
       As a signatory to said account, the named officer(s) shall be entrusted with, but not limited to, the following duties:
     </p>
 
-    <p class="ml-16">
+    <div class="ml-16">
       <ul style="list-style: lower-alpha">
         <li>Work with said account(s) and the appropriate institution officers.</li>
         <li>Deliver payment documentation for said account.</li>
@@ -45,13 +45,14 @@
         <li>Send funds to or receive funds from said account.</li>
         <li>Conduct any subsequent transaction associated with said account.</li>
       </ul>
-    </p>
+    </div>
+
 
     <p>
       As a signatory to said account(s), the officer(s) shall be expected to retain their active duties unless and until one or more of the following events occurs:
     </p>
 
-    <p class="ml-16">
+    <div class="ml-16">
       <ul style="list-style: lower-alpha">
         <li>Medically certified death of said officer.</li>
         <li>Certified medical incapacitation of said officer.</li>
@@ -60,7 +61,7 @@
         <li>Removal of said officer by subsequent Sealed Minute & Resolution by the Board, for reasonable cause.</li>
         <li>Premature dissolution of this Trust by any legal means.</li>
       </ul>
-    </p>
+    </div>
 
     <p>
       A single or dual signature requirement (if applicable) to affect any of the foregoing authorizations shall be determined by the officer(s) at the time said account is opened.

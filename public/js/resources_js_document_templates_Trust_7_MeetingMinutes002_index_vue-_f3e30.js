@@ -152,6 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -21963,7 +21964,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "ml-16" }, [
+    return _c("div", { staticClass: "ml-16" }, [
       _c("ul", { staticStyle: { "list-style": "lower-alpha" } }, [
         _c("li", [
           _vm._v(
@@ -21989,7 +21990,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "ml-16" }, [
+    return _c("div", { staticClass: "ml-16" }, [
       _c("ul", { staticStyle: { "list-style": "lower-alpha" } }, [
         _c("li", [_vm._v("Medically certified death of said officer.")]),
         _vm._v(" "),
