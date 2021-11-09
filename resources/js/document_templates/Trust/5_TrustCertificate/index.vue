@@ -37,6 +37,8 @@
         <v-row class="mb-10">
           <v-col>
             <div class="text-center">
+              <h2>{{ beneficiary.name }} <br/> Owner of {{ (beneficiary.units) }} Units of Beneficial Ownership </h2>
+              <div class="text-center">in</div>
               <h1>{{ trust_name }}</h1>
               (A Pure Trust Organization)
             </div>

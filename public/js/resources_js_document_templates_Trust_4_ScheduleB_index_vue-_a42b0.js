@@ -102,7 +102,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -166,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.ownership[data-v-5e805de0]{\n  padding: 0;\n  margin: 0;\n  list-style: none;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.ownership[data-v-5e805de0]{\n  padding: 0;\n  margin: 0;\n  list-style: none;\n}\n.ownership li[data-v-5e805de0]{\n  display: flex;\n  flex-wrap: wrap;\n  flex-direction: row;\n  align-content: stretch;\n  justify-content: flex-start;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21804,7 +21803,7 @@ var render = function() {
         "ul",
         { staticClass: "ownership" },
         _vm._l(_vm.beneficiaries, function(beneficiary, index) {
-          return _c("li", { key: index }, [
+          return _c("li", { key: index, staticClass: "mb-3" }, [
             _vm._v(
               "\n      " +
                 _vm._s(beneficiary.name) +
@@ -21818,6 +21817,8 @@ var render = function() {
         }),
         0
       ),
+      _vm._v(" "),
+      _c("div", { staticClass: "break-after" }),
       _vm._v(" "),
       _c("p", [_vm._v("I thank you for your attention to this matter.")]),
       _vm._v(" "),
@@ -21901,9 +21902,7 @@ var render = function() {
           )
         ],
         1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "break-after" })
+      )
     ],
     1
   )

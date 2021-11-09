@@ -152,7 +152,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -21799,7 +21798,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "text-center" }, [
+      _c("h2", { staticClass: "text-center" }, [
         _c("span", { staticClass: "preview-field" }, [
           _vm._v(_vm._s(_vm.first_trustee))
         ]),
@@ -21849,7 +21848,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "text-center" }, [
+      _c("h2", { staticClass: "text-center" }, [
         _c("span", { staticClass: "preview-field" }, [
           _vm._v(_vm._s(_vm.first_trustee))
         ]),

@@ -30,9 +30,9 @@
     <p>
       Within said institutions, the officer may place any Trust officer into a signatory position, at their own discretion, either at the time of opening of said account, or at a later date as may be pre-arranged with the institution. The following officer(s) may be utilized in any signatory capacity as described above:
     </p>
-    <p class="text-center">
+    <h2 class="text-center">
       <span class="preview-field">{{ first_trustee }}</span>, Trustee
-    </p>
+    </h2>
     <p>
       As a signatory to said account, the named officer(s) shall be entrusted with, but not limited to, the following duties:
     </p>
@@ -73,10 +73,9 @@
 
     <p>Within said entity(s), the officer may place any Trust officer or other officer or employee into a signatory position, or other titled position, at their own discretion, either at the time of the forming of said entity(s), or at a later date as may deemed necessary. The following officer(s) may be utilized in any signatory capacity as described above:</p>
 
-    <p class="text-center">
+    <h2 class="text-center">
       <span class="preview-field">{{ first_trustee }}</span>, Trustee
-    </p>
-
+    </h2>
 
     <p>
       As a signatory to said entity(s), the named officer(s) shall be entrusted with, but not limited to, the following duties:

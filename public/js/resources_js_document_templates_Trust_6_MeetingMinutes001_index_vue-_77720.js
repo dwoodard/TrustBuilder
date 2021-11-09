@@ -22030,12 +22030,8 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "break-before" }),
+      _vm._m(8),
       _vm._v(" "),
-      _c("b", [_vm._v("MINUTE NO. 7")]),
-      _vm._v(
-        ": It is in the best interest of the TRUST to continue operation in as smooth a manner as possible, even if any TRUSTEE is unable to continue their duties due to death, resignation, permanent incapacitation or removal from office. Should this happen, the BOARD hereby nominates the following named SUCCESSOR TRUSTEE(s) to immediately take the place of the following named TRUSTEE in the event that the BOARD desires to fill the vacancy so created, rather than to reduce the number of TRUSTEES on the BOARD:\n\n  "
-      ),
       _c("div", { staticClass: "pa-10" }, [
         _c("table", { staticClass: "ma-auto" }, [
           _c(
@@ -22056,7 +22052,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", { staticClass: " text-right pr-10" }, [
                   index > 0 ? _c("span", [_vm._v("Successor")]) : _vm._e(),
-                  _vm._v(" First Trustee:")
+                  _vm._v(" First Trustee:\n          ")
                 ]),
                 _vm._v(" "),
                 _c("td", [
@@ -22124,13 +22120,13 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(8),
-      _vm._v(" "),
       _vm._m(9),
       _vm._v(" "),
       _vm._m(10),
       _vm._v(" "),
       _vm._m(11),
+      _vm._v(" "),
+      _vm._m(12),
       _vm._v(" "),
       _c("p", { staticClass: "ml-10 preview-field" }, [
         _vm._v("\n    " + _vm._s(_vm.trust_name) + " "),
@@ -22154,15 +22150,13 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(12),
-      _vm._v(" "),
       _vm._m(13),
       _vm._v(" "),
       _vm._m(14),
       _vm._v(" "),
-      _c("div", { staticClass: "break-after" }),
-      _vm._v(" "),
       _vm._m(15),
+      _vm._v(" "),
+      _vm._m(16),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -22312,6 +22306,17 @@ var staticRenderFns = [
       _c("b", [_vm._v("MINUTE NO. 5")]),
       _vm._v(
         ": Special meetings called in accordance with the Declaration of Trust may be held at any time and/or any place in the best interest of the TRUST upon three (3) days notice, which may be waived by any or all TRUSTEE(s) and/or other titled officers.\n  "
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("b", [_vm._v("MINUTE NO. 7")]),
+      _vm._v(
+        ": It is in the best interest of the TRUST to continue operation in as smooth a manner as possible, even if any TRUSTEE is unable to continue their duties due to death, resignation, permanent incapacitation or removal from office. Should this happen, the BOARD hereby nominates the following named SUCCESSOR TRUSTEE(s) to immediately take the place of the following named TRUSTEE in the event that the BOARD desires to fill the vacancy so created, rather than to reduce the number of TRUSTEES on the BOARD:\n  "
       )
     ])
   },

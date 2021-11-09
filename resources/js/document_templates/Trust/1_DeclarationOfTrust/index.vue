@@ -218,7 +218,7 @@
         <li>47. Any person shall be entitled to rely upon a COPY of the original DECLARATION OF TRUST and any instruments duly executed in accordance with the provisions thereof, to the same extent as the original document if such copy is approved by the BOARD for display.</li>
         <li>48. An approved Meeting Minute of the BOARD and appropriate distributed Resolution authorizing what it is they determine to do or have done shall be sufficient evidence that such an act is within their power to those doing business with the Trust.</li>
         <li>49. The BOARD shall have the power to amend the TRUST (via an appropriate Meeting Minute) to better carry out the purposes and intent thereof, or in order to conform to or comply with any law, rule, regulation or order of any government body, provided, however, that any such amendment may not be inconsistent with the basic TRUST purposes and intent, and not in derogation of the fiduciary obligations to the BENEFICIARY(ies). No amendment shall be revocable by the SETTLOR or by any other person or entity except for the BOARD.</li>
-        <li>50. This Declaration of Trust consists of <span class="preview-field">ten (10)</span> pages.</li>
+        <li>50. This Declaration of Trust consists of <span class="preview-field">eight (8)</span> pages.</li>
       </ul>
 
       <div class="grey lighten-2 ma-2 pa-2 text-center">
@@ -230,7 +230,8 @@
         <li>53. IN WITNESS WHEREOF, the parties hereto have hereunder set their hands and seals in acknowledgement and acceptance of, assent to and covenant to abide by all conditions herein imposed and expressed on or after the day first written above.</li>
       </ul>
 
-
+      <div class="break-after"></div>
+      <p class="text-center">Declaration of Trust</p>
       <v-container>
         <v-row class="sm-6">
           <v-col>

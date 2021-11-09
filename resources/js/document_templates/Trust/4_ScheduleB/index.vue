@@ -32,11 +32,11 @@
 
 
     <ul class="ownership">
-      <li v-for="(beneficiary, index) in beneficiaries" :key="index">
+      <li v-for="(beneficiary, index) in beneficiaries" :key="index" class="mb-3">
         {{ beneficiary.name }} - CERTIFICATE {{ (index+1).toString().padStart(3,"0") }} - {{ beneficiary.units }} UNITS of Beneficial Ownership
       </li>
     </ul>
-
+    <div class="break-after"></div>
     <p>I thank you for your attention to this matter.</p>
 
     <p>Respectfully,</p>
@@ -84,7 +84,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <div class="break-after"></div>
   </div>
 </template>
 
@@ -130,6 +129,14 @@
   padding: 0;
   margin: 0;
   list-style: none;
+}
+.ownership li{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: flex-start;
+
 }
 
 </style>

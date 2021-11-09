@@ -67,11 +67,9 @@
       The FIRST TRUSTEE hereby waives the requirement to establish an Independent Contractor Agreement with the SECONDARY TRUSTEEs since the role has already been defined. However, the SECONDARY TRUSTEE shall act in all respects as an Independent Contractor with the Trust and hereby denies an employee / employer relationship with same.
     </p>
 
-
-    <div class="break-before"></div>
-
-
-    <b>MINUTE NO. 7</b>: It is in the best interest of the TRUST to continue operation in as smooth a manner as possible, even if any TRUSTEE is unable to continue their duties due to death, resignation, permanent incapacitation or removal from office. Should this happen, the BOARD hereby nominates the following named SUCCESSOR TRUSTEE(s) to immediately take the place of the following named TRUSTEE in the event that the BOARD desires to fill the vacancy so created, rather than to reduce the number of TRUSTEES on the BOARD:
+    <p>
+      <b>MINUTE NO. 7</b>: It is in the best interest of the TRUST to continue operation in as smooth a manner as possible, even if any TRUSTEE is unable to continue their duties due to death, resignation, permanent incapacitation or removal from office. Should this happen, the BOARD hereby nominates the following named SUCCESSOR TRUSTEE(s) to immediately take the place of the following named TRUSTEE in the event that the BOARD desires to fill the vacancy so created, rather than to reduce the number of TRUSTEES on the BOARD:
+    </p>
 
     <div class="pa-10">
       <table class="ma-auto">
@@ -80,7 +78,9 @@
             <td class="text-right">
               <span v-if="index > 0" class="mr-10"> {{ toTitleCase(toWordsOrdinal(index)) }} Choice</span>
             </td>
-            <td class=" text-right pr-10"><span v-if="index > 0">Successor</span> First Trustee:</td>
+            <td class=" text-right pr-10">
+              <span v-if="index > 0">Successor</span> First Trustee:
+            </td>
             <td><b class="preview-field">{{ trustee }}</b></td>
           </tr>
         </tbody>
@@ -142,7 +142,7 @@
     <p>
       <b>MINUTE NO. 14</b>: Meeting Minute numbers need only be in sequence within a given Meeting and need not continue in succession to the next Meetings. Each Meeting shall start with Minute No. 01.
     </p>
-    <div class="break-after"></div>
+
     <p>
       <b class="text-decoration-underline">CLOSE:</b>
     </p>

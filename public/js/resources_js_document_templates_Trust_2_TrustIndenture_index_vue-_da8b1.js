@@ -485,6 +485,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 var converter = __webpack_require__(/*! number-to-words-en */ "./node_modules/number-to-words-en/numberToWords.min.js");
@@ -899,6 +900,8 @@ var render = function() {
       _vm._m(16),
       _vm._v(" "),
       _c("div", { staticClass: "break-after" }),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-center" }, [_vm._v("Trust Indenture")]),
       _vm._v(" "),
       _c(
         "v-container",
@@ -1663,9 +1666,7 @@ var staticRenderFns = [
         )
       ]),
       _vm._v(" "),
-      _c("li", [
-        _vm._v("90. This Trust Indenture consists of eleven (11) pages.")
-      ])
+      _c("li", [_vm._v("90. This Trust Indenture consists of nine (9) pages.")])
     ])
   },
   function() {

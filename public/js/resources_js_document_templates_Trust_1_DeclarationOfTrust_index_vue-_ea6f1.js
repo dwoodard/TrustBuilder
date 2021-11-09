@@ -325,6 +325,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -733,6 +734,12 @@ var render = function() {
         ]),
         _vm._v(" "),
         _vm._m(16),
+        _vm._v(" "),
+        _c("div", { staticClass: "break-after" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-center" }, [
+          _vm._v("Declaration of Trust")
+        ]),
         _vm._v(" "),
         _c(
           "v-container",
@@ -1296,7 +1303,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("li", [
         _vm._v("50. This Declaration of Trust consists of "),
-        _c("span", { staticClass: "preview-field" }, [_vm._v("ten (10)")]),
+        _c("span", { staticClass: "preview-field" }, [_vm._v("eight (8)")]),
         _vm._v(" pages.")
       ])
     ])

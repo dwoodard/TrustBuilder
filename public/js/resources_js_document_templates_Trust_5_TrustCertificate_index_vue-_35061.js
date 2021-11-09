@@ -94,6 +94,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -467,6 +469,18 @@ var render = function() {
                 [
                   _c("v-col", [
                     _c("div", { staticClass: "text-center" }, [
+                      _c("h2", [
+                        _vm._v(_vm._s(beneficiary.name) + " "),
+                        _c("br"),
+                        _vm._v(
+                          " Owner of " +
+                            _vm._s(beneficiary.units) +
+                            " Units of Beneficial Ownership "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "text-center" }, [_vm._v("in")]),
+                      _vm._v(" "),
                       _c("h1", [_vm._v(_vm._s(_vm.trust_name))]),
                       _vm._v(
                         "\n            (A Pure Trust Organization)\n          "
