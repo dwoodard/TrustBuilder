@@ -121,7 +121,6 @@ __webpack_require__.r(__webpack_exports__);
       toggleMini: false,
       items: [{
         title: 'Dashboard',
-        // active: true,
         link: '/admin/dashboard',
         icon: 'mdi-view-dashboard'
       }, {
@@ -130,6 +129,7 @@ __webpack_require__.r(__webpack_exports__);
         icon: 'mdi-account'
       }, {
         title: 'Clients',
+        active: true,
         link: '/admin/clients',
         icon: 'mdi-account-box-multiple'
       }, {

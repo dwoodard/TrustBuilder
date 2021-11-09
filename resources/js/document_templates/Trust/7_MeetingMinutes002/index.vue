@@ -37,7 +37,7 @@
       As a signatory to said account, the named officer(s) shall be entrusted with, but not limited to, the following duties:
     </p>
 
-    <div class="ml-16">
+    <div>
       <ul style="list-style: lower-alpha">
         <li>Work with said account(s) and the appropriate institution officers.</li>
         <li>Deliver payment documentation for said account.</li>
@@ -52,7 +52,7 @@
       As a signatory to said account(s), the officer(s) shall be expected to retain their active duties unless and until one or more of the following events occurs:
     </p>
 
-    <div class="ml-16">
+    <div>
       <ul style="list-style: lower-alpha">
         <li>Medically certified death of said officer.</li>
         <li>Certified medical incapacitation of said officer.</li>

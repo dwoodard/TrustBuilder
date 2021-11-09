@@ -55,7 +55,6 @@
         items: [
           {
             title: 'Dashboard',
-            // active: true,
             link: '/admin/dashboard',
             icon: 'mdi-view-dashboard'
           },
@@ -66,6 +65,7 @@
           },
           {
             title: 'Clients',
+            active: true,
             link: '/admin/clients',
             icon: 'mdi-account-box-multiple'
           },
