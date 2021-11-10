@@ -22737,7 +22737,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("li", [
         _vm._v("50. This Declaration of Trust consists of "),
-        _c("span", { staticClass: "preview-field" }, [_vm._v("eight (8)")]),
+        _c("span", { staticClass: "preview-field" }, [_vm._v("seven (7)")]),
         _vm._v(" pages.")
       ])
     ])
