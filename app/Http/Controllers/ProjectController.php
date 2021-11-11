@@ -87,13 +87,13 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project): RedirectResponse
     {
-        $this->validate($request, []);
+        $this->validate($request, [
+            'redirect_route' => 'required',
+        ]);
 
         $project->update($request->only(OnlyColumns($project)));
 
-        return redirect()->back()->with([
-            'project' => $project
-        ]);
+        return Redirect::route($request->input('redirect_route'));
     }
 
     /**
