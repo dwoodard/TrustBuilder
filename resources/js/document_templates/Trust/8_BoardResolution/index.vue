@@ -99,7 +99,7 @@
     </p>
 
 
-    <v-container>
+    <v-container class="pa-0">
       <v-row class="sm-6">
         <v-col>
           <v-text-field
@@ -122,15 +122,21 @@
       <v-row>
         <v-col>
           <div>
-            NOTARY Public, Weber County <br/>
-            State of Utah
+            Subscribed and sworn to before me on this <span class="preview-field">{{ moment(document_created_at).format('Do [of] MMMM[, in the year] YYYY') }}</span>
           </div>
         </v-col>
       </v-row>
-
       <v-row>
-        <v-col sm="6">
+        <v-col>
+          NOTARY Public, Weber County, State of Utah
+        </v-col>
+      </v-row>
+      <v-row class="sm-6">
+        <v-col>
           <h4 class="mb-5">WITNESS:</h4>
+          <div>
+            Witness my hand and official seal:
+          </div>
 
           <v-text-field
             filled
@@ -141,14 +147,17 @@
             persistent-hint
             hint="Notary Public SIGNATURE:"/>
         </v-col>
-      </v-row>
 
-      <v-row>
-        <v-col sm="6" style="height: 60mm; background: #f1f1f1;">
+        <v-col/>
+      </v-row>
+      <v-row class="sm-6" style="height: 30mm; background: #f1f1f1;">
+        <v-col>
           <div>
             Notary Stamp / Seal:
           </div>
         </v-col>
+
+        <v-col/>
       </v-row>
     </v-container>
   </div>

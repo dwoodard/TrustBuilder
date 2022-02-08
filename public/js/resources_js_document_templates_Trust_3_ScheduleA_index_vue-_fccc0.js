@@ -91,25 +91,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -21817,6 +21798,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-container",
+        { staticClass: "pa-0" },
         [
           _c(
             "v-row",
@@ -21856,20 +21838,29 @@ var render = function() {
           _c(
             "v-row",
             [
-              _c("v-col", { staticClass: "sm-6" }, [
-                _c("div", [
-                  _vm._v("\n          NOTARY Public, Weber County "),
-                  _c("br"),
-                  _vm._v("\n          State of Utah\n        ")
+              _c("v-col", [
+                _vm._v("\n        Subscribed and sworn to before me on this "),
+                _c("span", { staticClass: "preview-field" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm
+                        .moment(_vm.document_created_at)
+                        .format("Do [of] MMMM[, in the year] YYYY")
+                    )
+                  )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("v-col", { staticClass: "sm-6" }, [
-                _c("div", [
-                  _vm._v("\n          NOTARY Public, Weber County "),
-                  _c("br"),
-                  _vm._v("\n          State of Utah\n        ")
-                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            [
+              _c("v-col", [
+                _vm._v(
+                  "\n        NOTARY Public, Weber County, State of Utah\n      "
+                )
               ])
             ],
             1
@@ -21883,6 +21874,12 @@ var render = function() {
                 "v-col",
                 [
                   _c("h4", { staticClass: "mb-5" }, [_vm._v("WITNESS:")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v(
+                      "\n          Witness my hand and official seal:\n        "
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("v-text-field", {
                     attrs: {
@@ -21903,29 +21900,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c(
-                "v-col",
-                [
-                  _c("h4", { staticClass: "mb-5" }, [_vm._v("WITNESS:")]),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      filled: "",
-                      "persistent-hint": "",
-                      hint: "Notary Public PRINT NAME:"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      filled: "",
-                      "persistent-hint": "",
-                      hint: "Notary Public SIGNATURE:"
-                    }
-                  })
-                ],
-                1
-              )
+              _c("v-col")
             ],
             1
           ),
@@ -21934,7 +21909,7 @@ var render = function() {
             "v-row",
             {
               staticClass: "sm-6",
-              staticStyle: { height: "60mm", background: "#f1f1f1" }
+              staticStyle: { height: "30mm", background: "#f1f1f1" }
             },
             [
               _c("v-col", [
@@ -21943,11 +21918,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c("div", [
-                  _vm._v("\n          Notary Stamp / Seal:\n        ")
-                ])
-              ])
+              _c("v-col")
             ],
             1
           )

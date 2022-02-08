@@ -394,7 +394,8 @@
 
     <div class="break-after"></div>
     <p class="text-center">Trust Indenture</p>
-    <v-container>
+
+    <v-container class="pa-0">
       <v-row class="sm-6">
         <v-col>
           <v-text-field
@@ -411,24 +412,21 @@
       </v-row>
 
       <v-row>
-        <v-col class="sm-6">
-          <div>
-            NOTARY Public, Weber County <br/>
-            State of Utah
-          </div>
-        </v-col>
-        <v-col class="sm-6">
-          <div>
-            NOTARY Public, Weber County <br/>
-            State of Utah
-          </div>
+        <v-col>
+          Subscribed and sworn to before me on this <span class="preview-field">{{ moment(document_created_at).format('Do [of] MMMM[, in the year] YYYY') }}</span>
         </v-col>
       </v-row>
-
+      <v-row>
+        <v-col>
+          NOTARY Public, Weber County, State of Utah
+        </v-col>
+      </v-row>
       <v-row class="sm-6">
         <v-col>
           <h4 class="mb-5">WITNESS:</h4>
-
+          <div>
+            Witness my hand and official seal:
+          </div>
           <v-text-field
             filled
             persistent-hint
@@ -439,32 +437,16 @@
             hint="Notary Public SIGNATURE:"/>
         </v-col>
 
-        <v-col>
-          <h4 class="mb-5">WITNESS:</h4>
-
-          <v-text-field
-            filled
-            persistent-hint
-            hint="Notary Public PRINT NAME:"/>
-          <v-text-field
-            filled
-            persistent-hint
-            hint="Notary Public SIGNATURE:"/>
-        </v-col>
+        <v-col/>
       </v-row>
-
-      <v-row class="sm-6" style="height: 60mm; background: #f1f1f1;">
+      <v-row class="sm-6" style="height: 30mm; background: #f1f1f1;">
         <v-col>
           <div>
             Notary Stamp / Seal:
           </div>
         </v-col>
 
-        <v-col>
-          <div>
-            Notary Stamp / Seal:
-          </div>
-        </v-col>
+        <v-col/>
       </v-row>
     </v-container>
     <div class="break-after"></div>

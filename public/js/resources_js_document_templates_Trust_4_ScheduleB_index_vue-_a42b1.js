@@ -102,6 +102,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -385,6 +393,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-container",
+        { staticClass: "pa-0" },
         [
           _c(
             "v-row",
@@ -412,14 +421,17 @@ var render = function() {
             "v-row",
             [
               _c("v-col", [
-                _c("span", [
-                  _vm._v("\n          NOTARY Public, Weber County "),
-                  _c("br"),
-                  _vm._v("\n          State of Utah\n        ")
+                _vm._v("\n        Subscribed and sworn to before me on this "),
+                _c("span", { staticClass: "preview-field" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm
+                        .moment(_vm.document_created_at)
+                        .format("Do [of] MMMM[, in the year] YYYY")
+                    )
+                  )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("v-col")
+              ])
             ],
             1
           ),
@@ -427,10 +439,29 @@ var render = function() {
           _c(
             "v-row",
             [
+              _c("v-col", [
+                _vm._v(
+                  "\n        NOTARY Public, Weber County, State of Utah\n      "
+                )
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { staticClass: "sm-6" },
+            [
               _c(
                 "v-col",
                 [
-                  _c("h4", [_vm._v("WITNESS:")]),
+                  _c("h4", { staticClass: "mb-5" }, [_vm._v("WITNESS:")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v(
+                      "\n          Witness my hand and official seal:\n        "
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("v-text-field", {
                     attrs: {
@@ -451,11 +482,25 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("v-col", { staticStyle: { background: "#f1f1f1" } }, [
+              _c("v-col")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            {
+              staticClass: "sm-6",
+              staticStyle: { height: "30mm", background: "#f1f1f1" }
+            },
+            [
+              _c("v-col", [
                 _c("div", [
                   _vm._v("\n          Notary Stamp / Seal:\n        ")
                 ])
-              ])
+              ]),
+              _vm._v(" "),
+              _c("v-col")
             ],
             1
           )
